@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+    <esp:name>Advanced conventions</esp:name>
+    <esp:title>ATF Advanced Conventions</esp:title>
+ <html><head/><body>
+   <p class="firstpara">This document describes ATF features which are not
+    needed for everyday documents and which some users will never
+    need.</p>
+
+<esp:h>Legacy</esp:h>
+<p>To save the time and bother of converting legacy transliteration into ATF you can use:</p>
+<pre class="cookbook">#atf: use legacy</pre>
+<p>to get the processor to treat typographic features such as diacritics, half-brackets, and intra-sign square brackets as if they were valid ATF.</p>
+
+<esp:h>Line Numbers</esp:h>
+
+<p>By default the ATF processor renumbers lines, storing the original
+line number and generating a new one according to consistently defined
+rules.  This procedure was adopted because of the lack of consistency
+in numbering administrative texts.</p>
+
+<p>It is possible to suppress this behaviour and, indeed, it is
+necessary to suppress this behaviour if intertext linking is in use.
+The relevant protocol to achieve this is:</p>
+<pre class="cookbook">
+#atf: use mylines</pre>
+
+<esp:h>Cells &amp; Fields</esp:h>
+
+<p>Two mechanisms provide structural subdivisions of lines: cells and
+fields.</p>
+
+<p>Cells are alignment units (like table cells); they can be of use to
+organize the data in a way that mimics the layout on the object.
+Fields are logical subdivisions in a line which are not necessarily
+laid out in a special way on the object.  Cells can contain fields but
+fields cannot contain cells; fields are lower in the structural
+hierarchy than cells.</p>
+
+<p>Fields can have a type specified so that higher order processors
+working with the XTF data can work intelligently with them.</p>
+
+<p>In ATF, cells are separated by ampersand characters
+(<code>&amp;</code>); fields are separated by commas.  Both separators
+must be preceded by one or more spaces.</p>
+<p>Field types are indicated with an exclamation mark followed by one
+or more lowercase letters; see the <esp:link page="lexical">lexical
+documentation for examples of how this works</esp:link>.</p>
+
+<pre class="cookbook">
+&amp;P123123=UET 3,2
+1. a &amp; e
+
+&amp;P123123=UET 3,2
+1. a , e
+
+&amp;P123123=UET 3,2
+1. e4 ,!sv A</pre>
+
+<esp:h>Streams</esp:h>
+
+<p>Streams are XTF's mechanism for entering data several times in
+several different ways; no automatic alignment is done between
+streams, but an alignment-group mechanism is provided for those
+occasions where alignment is a requirement.  There are three kinds of
+stream in XTF:</p>
+
+<dl>
+<dt>MTS: Main Transliteration Stream</dt>
+<dd>This is the default line-type and is the only one that is normally
+used.  Lemmatization information is aligned with the MTS unless there
+is an NTS.</dd>
+<dt>NTS: Normalized Transliteration Stream</dt>
+<dd>This is a transliteration stream in which adjustments have been
+made to normalize the text; a normal-orthography version of an emesal
+text could be created using this mechanism, for example.
+Lemmatization information is aligned with the NTS if present.  If NTS
+and LGS are both given, NTS must come before LGS.</dd>
+<dt>LGS: Linearized Grapheme Stream</dt>
+<dd>This is the sequence of graphemes exactly in order and linearized
+to the extent possible; this is mainly used in transliterations of ED
+texts where the presumed reading sequence and the actual grapheme
+sequence often diverge.  No alignment is ever done with the LGS.</dd>
+<dt>GUS: Gloss Underneath Stream</dt>
+<dd>Implemented for compatibility with the SAA corpus, this stream
+allows glosses which appear on the tablet underneath the main text
+line to be given in their own line.</dd>
+</dl>
+
+<p>In ATF, the MTS is the unmarked case (the one with the line
+number).  The NTS is introduced by the sequence equals-period-space at
+the start of the line (<code>=. </code>).  The LGS is introduced by
+the sequence equals-colon-space at the start of the line (<code>=:
+</code>).  A simple, if contrived example of all the streams is:</p>
+<pre class="cookbook">
+&amp;P246246=Streams
+1. a
+={ e
+=. e4
+=: A
+#lem: a[water]
+</pre>
+
+<esp:h>Alignment</esp:h>
+
+<p>Alignment between MTS and NTS can be effected through the
+alignment-groups mechanism in which groups of words can be defined and
+labelled such that the groups in one stream correspond to the groups
+in the other stream.</p>
+
+<p>If groups are used at all in a stream then every word in the stream
+must belong to a group.</p>
+
+<p>In ATF, alignment groups must be enabled using a protocol; the
+groups are then indicated using matched parentheses with one or more
+lowercase letters following the closing parenthesis:</p>
+<pre class="cookbook">
+&amp;P122221=Align
+#atf: use alignment-groups
+1.  %u  (UD)a  (GAL UM ME)b (BA LAGAB)c
+=.      (kur)a (umeda)b     (ba-jen)c
+#lem: 	kur[mountain]; umeda[nurse]; jen[go]
+</pre>
+
+<esp:h>Zones</esp:h>
+
+<p>Zones are an experimental feature; at the schema level they are
+defined in the GDL, but it is convenient to discuss them here because
+they are another mechanism for grouping graphemes.  The concept is
+that part of an inscription, e.g., a case, may exhibit ordering which
+may not be linear but is nevertheless be based on some spatial
+relationship between signs.  Transliterators can assign graphemes to
+zones and label the graphemes by zone.</p>
+
+<esp:image position="float" file="builder/UGN_example.png" description="UD GAL NUN
+example"/>
+<p>In ATF, zones are indicated using a dollar sign followed by digits
+(e.g., <code>$1</code>.  In the Ebla version of the text in the
+alignment example, the words are stacked vertically as in the image
+here.  This could be transliterated as follows:</p>
+<pre class="cookbook">
+&amp;P122221=Align
+#atf: use alignment-groups
+1.  %u  (UD$1)a (GAL$2 UM$3 ME$3)b (BA$4 LAGAB$4)c
+=.      (kur)a  (umeda)b           (ba-jen)c
+#lem: 	kur[mountain]; umeda[nurse]; jen[go]</pre>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body>
+</html>
+</esp:page>

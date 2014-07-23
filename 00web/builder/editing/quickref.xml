@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Quick reference</esp:name>
+<esp:title>ATF Quick Reference</esp:title>
+<html><head/><body>
+
+<p class="firstpara">A quick reference sheet for the ATF
+    format.</p>
+
+
+
+<esp:h>Structure Conventions</esp:h>
+<p>See the <esp:link page="atftut">Structure Tutorial</esp:link> for more details.</p>
+    <table class="pretty">
+      <tr>
+        <td>&amp;</td>
+        <td>Text/catalogue number designator</td>
+      </tr>
+      <tr>
+        <td>@&lt;type&gt;</td>
+        <td>@composite (for composite texts)</td>
+      </tr>
+      <tr>
+        <td>@&lt;object&gt;</td>
+        <td><esp:bookmark id="object"/>Object = @tablet, @envelope, @prism, @object
+&lt;object-type&gt;</td>
+      </tr>
+      <tr>
+        <td>@&lt;surface&gt;</td>
+        <td><esp:bookmark id="surface"/>Surface = @obverse, @reverse, @surface, @edge,
+@left, @right, @top, @bottom, @face [a..z]</td>
+      </tr>
+      <tr>
+        <td>@seal &lt;n&gt;</td>
+        <td>for transliteration of seal impressions on
+objects; n=number</td>
+      </tr>
+      <tr>
+        <td>@column</td>
+        <td>column</td>
+      </tr>
+      <tr>
+        <td>&lt;number&gt;.</td>
+        <td>line of text</td>
+      </tr>
+      <tr>
+        <td>&lt;number&gt;.&lt;subcases&gt;.</td>
+        <td>line of text with subdivision into cases</td>
+      </tr>
+      <tr>
+        <td>$ &lt;qualification&gt; &lt;extent&gt; &lt;scope&gt; &lt;state&gt;</td>
+        <td>non-text, such as breakage, blank lines, etc. <br/>
+	qualification = at least, at most, about<br/>
+	number = NUMBER, RANGE, n, several, some, start of, beginning of, middle of, end of, rest of<br/>
+	scope = <esp:link bookmark="object">OBJECT</esp:link>, <esp:link bookmark="surface">SURFACE</esp:link>, case(s), column(s), line(s), surface<br/>
+	state = blank, broken, damaged, effaced, illegible, missing, traces</td>
+      </tr>
+      <tr>
+	<td>$ &lt;multiple&gt; ruling</td>
+	<td>horizontal ruling(s) in the text<br/>
+	multiple = single, double, triple</td>
+      </tr>
+      <tr>
+	<td>$ (image N = &lt;text&gt;)</td>
+	<td>location of inline image, such as a seal impression or a diagram</td>
+      </tr>
+      <tr>
+        <td>#</td>
+        <td>comment line</td>
+      </tr>
+      <tr>
+        <td>=:</td>
+        <td>multiplexing comment line giving original order of
+interpreted/reordered signs in preceding line of
+transliteration.</td>
+      </tr>
+      <tr>
+        <td>&lt;whitespace&gt;</td>
+        <td>continues previous line (modern convenience, not
+ancient line break)</td>
+      </tr>
+    </table>
+
+  <esp:h>Inline ASCII Conventions</esp:h>
+<p>See the <esp:link page="gdltut">ATF Inline Tutorial</esp:link> for more details.</p>
+    <table class="pretty">
+      <tr>
+        <td>[A-Z<span class="atf">ṢŠṬ</span>][a-z<span class="atf">ṣšṭ</span>][<span class="atf">₀-₉</span>]</td>
+        <td>grapheme name</td>
+      </tr>
+      <tr>
+        <td>&lt;hyphen&gt;</td>
+        <td>joiner for graphemes of single word</td>
+      </tr>
+      <tr>
+        <td>&lt;space&gt;</td>
+        <td>word separator</td>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>flags correction of sign</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>flags uncertainty of identification or
+reading</td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>flags collation</td>
+      </tr>
+      <tr>
+        <td>#</td>
+        <td>flags damage to sign</td>
+      </tr>
+      <tr>
+        <td>[...]</td>
+        <td>encloses material broken away from object</td>
+      </tr>
+      <tr>
+        <td>[(...)]</td>
+        <td>encloses material perhaps broken away from
+object</td>
+      </tr>
+      <tr>
+        <td>value(SIGN)</td>
+        <td>explanatory name or variant form after value</td>
+      </tr>
+      <tr>
+        <td>value!(SIGN)</td>
+        <td>actual signs on object given after corrected
+version</td>
+      </tr>
+      <tr>
+        <td>&lt;...&gt;</td>
+        <td>accidental omission supplied by editor</td>
+      </tr>
+      <tr>
+        <td>&lt;(...)&gt;</td>
+        <td>intentional omission supplied by editor</td>
+      </tr>
+      <tr>
+        <td>MIN&lt;(...)&gt;</td>
+        <td>surrogate text supplied by editor</td>
+      </tr>
+      <tr>
+        <td>&lt;&lt;...&gt;&gt;</td>
+        <td>material removed by editor</td>
+      </tr>
+      <tr>
+        <td>{...}</td>
+        <td>determinative delimiters
+(written in normal script)</td>
+      </tr>
+      <tr>
+        <td>{{...}}</td>
+        <td>gloss delimiters</td>
+      </tr>
+      <tr>
+        <td>$</td>
+        <td>following sign is not a logogram</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>unclear sign</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>clear sign not yet identified</td>
+      </tr>
+      <tr>
+        <td>|...|</td>
+        <td>compound grapheme delimiters</td>
+      </tr>
+      <tr>
+        <td>[.x%&amp;+()]</td>
+        <td>compound grapheme operators (see
+<small>QR</small>.3 below)</td>
+      </tr>
+      <tr>
+        <td>[<span class="atf">āēīū</span>], [<span class="atf">âêîû</span>]</td>
+        <td>long vowels in normalized Akkadian</td>
+      </tr>
+      <tr>
+        <td>%[sahrux]</td>
+        <td>language shift</td>
+      </tr>
+      <tr>
+        <td>%e,%u,%g,%n</td>
+        <td>register/writing system shift</td>
+      </tr>
+    </table>
+
+  <esp:h>Compound Grapheme Conventions</esp:h>
+<p>See the <esp:link page="gdltut" bookmark="Compound">ATF Inline Tutorial</esp:link> for full documentation of these conventions.</p>
+
+    <table class="pretty">
+      <tr>
+        <td>.</td>
+        <td>juxtaposed signs, e.g., DU.DU <esp:image position="inline" file="builder/du.png" description="du"/><esp:image position="inline" file="builder/du.png" description="du"/></td>
+      </tr>
+      <tr>
+        <td><span class="atf">×</span></td>
+        <td>following sign(s) written over/within preceding
+sign, e.g., <span class="atf">GA₂×AN</span> <esp:image position="inline" file="builder/ga2-times-an.png" description="ga2-times-an"/></td>
+      </tr>
+
+      <tr>
+        <td>&amp;</td>
+        <td>signs are written one above the other, e.g.,
+DU&amp;DU <esp:image position="inline" file="builder/du-over-du.png" description="du-over-du"/> as opposed to standard DU <esp:image position="inline" file="builder/du.png" description="du"/></td>
+      </tr>
+
+      <tr>
+        <td>+</td>
+        <td>signs are ligatured, e.g.,
+|LAGAB+LAGAB|(nigin<span class="atf">₂</span>) <esp:image position="inline" file="builder/nigin2.png" description="nigin2"/></td>
+      </tr>
+
+      <tr>
+        <td>(...)</td>
+        <td>grouping of signs, e.g., <span class="atf">GA₂×</span>(ME.EN) <esp:image position="inline" file="builder/ga2-times-me-en.png" description="ga2-times-me-en"/></td>
+      </tr>
+
+      <tr>
+        <td>@g</td>
+        <td>gunu, e.g., DU@g <esp:image position="inline" file="builder/du-gunu.png" description="du-gunu.png"/> as opposed to
+standard DU <esp:image position="inline" file="builder/du.png" description="du"/></td>
+      </tr>
+      <tr>
+        <td>@t</td>
+        <td>tenu, e.g., GAN<span class="atf">₂</span>@t <esp:image position="inline" file="builder/gan2-tenu.png" description="gan2-tenu"/></td>
+      </tr>
+
+      <tr>
+        <td>@v</td>
+        <td>variant, e.g., 4(ban<span class="atf">₂</span>)@v <esp:image position="inline" file="builder/4ban2-variant.png" description="4ban2-variant"/> as opposed to the standard 4(ban<span class="atf">₂</span>)
+<esp:image position="inline" file="builder/4ban2.png" description="4ban2"/></td>
+      </tr>
+    </table>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

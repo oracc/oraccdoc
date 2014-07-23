@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>About</esp:name>
+	<esp:title>About Oracc: Essentials for Oracc users</esp:title>
+
+	<html><head></head><body>
+		
+<p class="firstpara"><esp:link bookmark="h_browsers">Browsers</esp:link> | <esp:link bookmark="h_fonts">Fonts</esp:link> | <esp:link bookmark="h_information">Information</esp:link> | <esp:link bookmark="h_licensing">Licensing</esp:link> | <esp:link bookmark="h_accessibility">Accessibility</esp:link> | <esp:link bookmark="h_contributing">Contributing</esp:link> | <esp:link bookmark="h_contact">Contact</esp:link></p>
+
+<esp:sh>Browsers</esp:sh>
+
+<p>Oracc emphasizes standards-compliant, cross-platform software so FireFox is a good choice of browser. Safari and Chrome are also supported, and reports about Opera are welcome. Internet Explorer is not supported.</p>
+
+<esp:sh>Fonts and Encodings</esp:sh>
+<p>Oracc uses <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/cuneiformrevealed/aboutcuneiform/computercuneiform/#h_unicodetransliterationandnormalisation" hide-print="yes">Unicode in the UTF-8 encoding</esp:link>. You may like to <esp:link page="visitor-fonts">install the Ungkam font</esp:link>, which provides all the characters Oracc uses for transliterated cuneiform. If you would like to make it easier to type accented characters you might find <esp:link page="visitor-keyboards">the Oracc keyboards page</esp:link> useful.</p>
+
+<esp:sh>Information</esp:sh>
+
+<p>Oracc has several pages describing its organization, practicalities and philosopy which begin with the <esp:link page="about-oracc">About Oracc</esp:link> page. There are also plenty of <esp:link page="help">help pages</esp:link>.</p>
+<p>Oracc notes and news are disseminated on the <esp:link url="http://oracc.blogspot.com" rel="external">blog</esp:link>, <esp:link url="http://www.facebook.com/opencuneiform" rel="external">FaceBook page</esp:link> and two Twitter accounts: <esp:link url="http://www.twitter.com/oracctivity/" rel="external">@oracctivity</esp:link> regularly posts links to tidbits from Oracc, while <esp:link url="http://www.twitter.com/opencuneiform/" rel="external">@opencuneiform</esp:link> tweets technical news and updates.</p>
+
+<esp:sh>Licensing</esp:sh>
+<p>Unless otherwise stated, all Oracc content is licensed under a <esp:link url="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</esp:link>, which is described in more detail on the <esp:link page="licensing">licensing</esp:link> page.</p>
+<p>See the page on <esp:link page="visitor-reusing">how to re-use elements of Oracc</esp:link> for concrete examples of what this means in practice.</p>
+
+<esp:sh>Accessibility</esp:sh>
+<p>Oracc sites aim to be as accessible as possible, whichever standards-compliant browser you use. If you have any access difficulties please contact the Oracc Steering Committee  at <esp:email address="osc@oracc.org"/>. For more information see our pages on:</p>
+<dl>
+<dt><esp:link page="accesskeys">Access Keys</esp:link></dt>
+<dd>A list of shortcuts to key Oracc help pages.</dd>
+<dt><esp:link page="sitemap">Site Map</esp:link></dt>
+<dd>A listing of all Oracc information and help pages to help navigation.</dd>
+<dt><esp:link page="privacy">Cookies</esp:link></dt>
+<dd>A simple explanation of Oracc's use of cookies, in compliance with EU Cookies law.</dd>
+<dt><esp:link page="accessibility">Accessibility</esp:link></dt>
+<dd>A simple description of Oracc's policy of compliance with web accessibility standards.</dd>
+</dl>
+
+<esp:sh>Contributing</esp:sh>
+
+<p>Oracc corpus contributions are properly described on <esp:link page="contributing">the contributing page</esp:link>, along with <esp:link page="howandwhy">the how-and-why page</esp:link>. But the short story is:</p>
+<ul>
+    <li>If you are done with your stuff and would like to put it on Oracc under a license that allows it to be reused by other people and included in the CDLI transliterations file, just send it to us.</li>
+<li>If you would like to continue looking after your stuff under a license that allows it to be reused by other people and included in the CDLI transliterations file, just contact us.</li>
+</ul>
+
+<esp:sh>Standards</esp:sh>
+<p>Oracc aims to be compatible with major international standards; see the following documentation:</p>
+<ul>
+<li>Schemas</li>
+<li>O-ATF and C-ATF</li>
+<li><esp:link page="standards-opendocument">OpenDocument</esp:link></li>
+<li><esp:link page="standards-tei">Text Encoding Initiative</esp:link></li>
+</ul>
+<esp:sh>Contact</esp:sh>
+<p>Oracc can be reached via <esp:link url="http://oracc.blogspot.com" rel="external">blog</esp:link>, <esp:link url="http://www.facebook.com/opencuneiform" rel="external">FaceBook</esp:link> and <esp:link url="http://www.twitter.com/oracctivity/" rel="external">either</esp:link> of our <esp:link url="http://www.twitter.com/opencuneiform/" rel="external">Twitter</esp:link> accounts, as well as by email to the Oracc Steering Committee at <esp:email address="osc@oracc.org"/>.</p>
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>			
+	</body></html>
+
+</esp:page>

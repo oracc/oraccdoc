@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+	<esp:name>How and why</esp:name>
+	<!-- 	used in e.g. text of navigation links;
+			also processed for use in URLs, so must be unique at its own level in site hierarchy -->
+	<esp:title>Contributing to Oracc: How and Why</esp:title>
+	<!-- 	used in e.g. page titles -->
+
+	
+	<!-- 	used in HTML META tags -->
+
+	<html><head></head><body>
+<p class="firstpara">Oracc projects minimally consist of an educational 'portal' website and an optional corpus of cuneiform texts. They come in all shapes and sizes from small student projects to large international research collaborations. We welcome them all. Here we outline what is involved in creating an Oracc project, and what the benefits are.</p>
+
+<p><esp:link bookmark="h_whyandhowbuildanoraccportalsite">Portals: why and how</esp:link> | <esp:link bookmark="h_howbuildinganoracccorpusworks">Corpora: how</esp:link> | <esp:link bookmark="h_whybuildacorpususingtheoracctools">Corpora: why</esp:link></p>
+
+<esp:h>Why and how build an Oracc 'portal' site?</esp:h>
+
+<p>Here are some reasons why you should consider using Oracc to create an educational online resource about the ancient cuneiform world, whether or not you are also building and Oracc corpus.</p>
+<ul>
+<li>Your project will reach a far wider readership than any book you write. Oracc's public websites rank very highly in Google searches, so people will find your project. Oracc's <esp:link url="http://oracc.museum.upenn.edu/amgg/">Ancient Mesopotamian Gods and Goddesses</esp:link> site gets thousands of visitors a month, for instance. </li>
+<li>You will have far more control over your work (subject to Oracc's basic editorial standards), and much clearer identification as its creator, than if you contribute to Wikipedia or similar crowd-sourced initiatives.</li> 
+<li>Oracc's default <esp:link page="licensing">licensing</esp:link> encourages people to re-use your material while insisting that they clearly attribute it to you.</li>
+<li>If you are a teacher, you will be able to direct your students away from less reliable sites to your own resources. You can even get your students to contribute. Many of <esp:link url="http://oracc.museum.upenn.edu/amgg/">AMGG</esp:link>'s pages were written by graduate students, for instance.</li>
+<li>You can create your website in private and release it only when you are ready to do so. You can correct, update, and add to your website at any time.</li>
+<li>You can draw on all of Oracc's existing resources, easily linking to cuneiform texts in other projects, or creating a corpus of your own.</li>
+<li>You only need to know some basic HTML and a few extra tags. We will provide training and guidance, and there is <esp:link page="portals">full documentation</esp:link> on this website.</li>
+<li>You can be confident that your site will be readable on any web browser on any computer or handheld device. Your site will be securely backed up and maintained to current web standards for as long as you want it to be available.</li>
+</ul>
+
+<esp:h>How building an Oracc corpus works</esp:h>
+
+<p>Our basic model for corpus and tool development is that text
+corpora are <esp:link bookmark="atf">edited</esp:link> and <esp:link bookmark="lemm">annotated</esp:link>
+at the source (or manuscript or tablet) level. We also know that it is often desirable to add new texts, joins, and fragments to the corpus; and to improve or update existing transliterations, translations, and annotations. Oracc thus works by merging manuscript files with lists of varying complexity to produce tools for describing and exploring the corpora in many ways. Whenever an editor or project manager edits, adds or updates the texts or data lists, the tools are rebuilt programmatically from scratch, so that the latest improvements to the annotated texts and the lists of data are automatically incorporated throughout the project.</p>
+
+<p><esp:bookmark id="atf"/>The core Oracc standard for entering textual data is known as <esp:link page="editing">ATF</esp:link>, the ASCII Transliteration Format. ATF can support multiple translations, in any language.</p>
+
+<p><esp:bookmark id="lemm"/><esp:link page="lemm">Lemmatization</esp:link> is the process of annotating instances of forms of
+words according to their dictionary headword.  Oracc uses interlinear
+lemmatization in the ATF transliterations to enable lemmatization
+data to remain synchronized with textual changes. Even for completely new projects, the lemmatizer can be set up to draw on relevant glossaries from existing Oracc projects, thus automating much of the process. </p>
+
+<!-- <p>This page is under development: additional sections are planned
+which will cover the generation of various kinds of scholarly metadata
+&#x2014; signlists, concordances, dictionaries and other tools &#x2014; from corpora
+prepared according to the corpus specifications described here.</p> -->
+
+<esp:h>Why build a corpus using the Oracc tools?</esp:h>
+
+
+<esp:sh>Text Cataloguing</esp:sh>
+<p>The CDLI catalogue provides a global repository of unique
+identifiers for inscribed objects:</p>
+<ul>
+<li>you can use this catalogue to develop a corpus and eliminate duplication;</li>
+<li>you can also use additional catalogue data for fields not in the CDLI
+catalogue.</li>
+</ul>
+
+<esp:sh>Data Entry</esp:sh>
+
+<p>You can use old data and enter new data easily:</p>
+<ul>
+<li>The heart of the Oracc tools is a strictly defined text format which
+has an ASCII or Unicode input version, ATF, and an XML version used by programs (XTF).</li>
+<li>The Oracc group has extensive experience in legacy data
+conversion and we are willing to help with substantial conversion jobs
+by bringing old data into ATF.</li>
+<li>ATF makes easy things easy and difficult things
+possible.</li>
+<li>ATF provides a complete solution to
+transliteration needs for cuneiform texts in any of the languages
+written in cuneiform.</li>
+<li>An online template generator takes some of the drudgery out of
+entering new texts.</li>
+<li>Many data preparers can still create consistent results thanks to
+the simplicity and thorough documentation of ATF.</li>
+</ul>
+
+<esp:sh>Data Consistency</esp:sh>
+
+<p>The Oracc tools help you get data into a well-defined and highly
+consistent format and keep it that way:</p>
+<ul>
+<li>An online service, the web-based ATF checker, identifies hundreds
+of different kinds of errors and can also do content validation of
+graphemes and more.</li>
+<li>The ATF checker can produce lists of graphemes and words, with
+their frequencies, and these lists can be edited to eliminate
+inconsistent transliterations.  The checker can then use the revised
+lists to check the content of your data, ensuring that it stays valid
+both in structure and content.</li>
+<li>ATF is backed by a rigorously defined XML document
+definition in the international standard Relax/NG Schema language.
+Both the ATF input mechanism and the XML schemas are fully documented
+and available on the web.</li></ul>
+<esp:sh>Data Backup and Version History</esp:sh>
+<p>The Oracc server can look after your data:</p>
+<ul>
+<li>the repository is backed up nightly;</li>
+<li>files are available from anywhere to download, work on, and upload again;</li>
+<li>a history of changes is maintained; old versions can be retrieved easily.</li>
+</ul>
+
+<esp:sh>Data Development</esp:sh>
+<p>Once texts are entered they can be enhanced in various ways:</p>
+<ul>
+<li>Lemmatization can be added either with interlinear tags or
+dynamically during ATF processing.</li>
+<li>Sentence boundaries may be added.</li>
+<li>Full support is provided for different translation styles;
+translation units can be lines, groups of lines, or sentences.</li>
+<li>The XML format, XTF, is able to provide a very rich version of
+your textual data for programs to work on while the approach of typing
+simple ASCII or Unicode texts and augmenting them automatically via lists means that the
+benefits of XTF are achieved with as little human effort as possible.</li>
+</ul>
+<esp:sh>Presentation</esp:sh>
+<p>The same transliterations and translation can be presented in several ways:</p>
+<ul>
+<li>Online, as HTML; we can even host your project either in its
+entirety or in part.</li>
+<li>In print, by <esp:link page="converting">converting</esp:link> and importing the results into most modern
+word processors and page-layout programs.</li>
+<li>Projects hosted on the Oracc web server can easily take advantage of
+sophisticated searching and web-display facilities.</li>
+<li>Glossaries derived from your lemmatization, and/or the various lists produced by the ATF web service, can be used as
+indices of print publications.</li>
+</ul>
+<esp:sh>Enhanced Usefulness</esp:sh>
+<p>Corpora prepared with these tools are reusable and more useful:</p>
+<ul>
+<li>they add to the globally searchable and browsable Oracc;</li>
+<li>they provide more and a greater variety of instances for use in online sign lists and dictionaries.</li>
+</ul>
+
+<p>For more information on how to manage a project, go to
+the <esp:link page="manager">Manager</esp:link> section of the Oracc
+documentation.</p>	
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html>
+
+</esp:page>

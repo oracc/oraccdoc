@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Embedded content</esp:name>
+<esp:title>Embedded content in ESP</esp:title>
+<html><head/><body>
+<p class="firstpara">This page describes how to add a search bar, project statistics, videos, Google Earth and Google Maps files, and other types of non-textual data in ESP. See the help page on <esp:link page="visitor-reusing" bookmark="h_embeddingobjects">reusing Oracc content</esp:link> for instructions on how to embed Cuneify, texts from a corpus, and other Oracc content in your ESP pages.</p>
+
+<p><esp:link bookmark="h_searchbar">Search bar</esp:link> | <esp:link bookmark="h_corpusstatistics">Corpus statistics</esp:link> | <esp:link bookmark="h_googleearthandgooglemapscontent">Google Earth and Google Maps </esp:link> | <esp:link bookmark="h_videocontent">Video content</esp:link> | <esp:link bookmark="h_twitterfeeds">Twitter feeds</esp:link></p>
+
+<esp:h>Search bar</esp:h>
+<p>To enable users to search across your project's site, add the following code to your ESP page:</p>
+
+<pre>
+&lt;form method="get" action="http://oracc.museum.upenn.edu/PROJECT/find" id="PROJECT_search">
+   &lt;p>
+	&lt;span class="button">Search PROJECT  &lt;/span>
+	&lt;input class="textbox" name="phrase" id="phrase" type="text" size="14" accesskey="s" value=""/>
+   &lt;/p>
+&lt;/form>
+</pre>
+
+<p>Remember to replace the word <code>PROJECT</code> with the Oracc code for your project or subproject (e.g., <code>saao/saa17</code> or <code>etcsri</code>). You can resize the searchbox by changing the value of the <code>size</code> attribute.</p> 
+
+<p>If you are using this code in a non-ESP website, replace <code>&lt;esp:link url</code> with <code>&lt;a href</code> and <code>&lt;/esp:link</code> with <code>&lt;/a></code>.</p>
+
+<p>This, for instance, is what a search box for the CAMS/GKAB project would look like:</p>
+
+<form method="get" action="http://oracc.museum.upenn.edu/cams/gkab/find" id="camsgkab_search">
+<p>
+<span class="button">Search CAMS/GKAB  </span>
+<input class="textbox" name="phrase" id="phrase" type="text" size="14" accesskey="s" value=""
+	/></p>
+    </form>
+<esp:h>Corpus statistics</esp:h>
+<p>To embed a live set of statistics about a project's corpus in your ESP page, use the following code:</p>
+
+<pre>
+&lt;p>
+   &lt;object width="380px" height="240px" data="/PROJECT/statistics" title="PROJECT Statistics"> 
+   &lt;/object>
+&lt;/p>
+</pre>
+
+<p>Remember to replace the word <code>PROJECT</code> with the Oracc code for your project or subproject (e.g., <code>saao/saa17</code> or <code>etcsri</code>). You can resize the embedded page by changing the value of the <code>width</code> and <code>height</code> attributes.</p>
+
+<p>This, for instance, is what the DCCLT project's statistics looks like:</p>
+
+<p><object width="500px" height="240px" data="http://oracc.org/dcclt/statistics" title="DCCLT's statistics"> </object></p>
+
+<esp:h>Google Earth and Google Maps content</esp:h>
+<p>Google allows people to make their own content that will display in both Google Earth (GE) and Google Maps (GM). You need a Google account to do this.</p>
+
+<esp:sh>Custom Google Maps</esp:sh>
+<p>Projects can create their own <esp:link url="link: https://support.google.com/maps/answer/62843?hl=en" rel="external">custom-made maps</esp:link> via GM. Use the URL provided by Google to link directly to the map, e.g.:</p>
+
+<pre>&lt;esp:link url="https://maps.google.co.uk/maps/ms?msid=204599863567827172960.0004e9e3e5e5d5b82b694&amp;msa=0" 
+rel="external">View map using Google Maps&lt;/esp:link></pre>
+
+<p>An advantage of creating GM content in this way is that custom-made maps can be <esp:link bookmark="h_embeddingagooglemap">embedded</esp:link> into your portal pages.</p>
+
+<p>One disadvantage though is that the content of these custom GMs is not directly editable or re-usable by website users. It is recommended that projects also save GM content in .KML or .KMZ format and <esp:link bookmark="h_creatingreuseablegeandgmcontentusingkmlandkmzfiles">make these files available for download</esp:link>. KML / KMZ files allow users to incorporate the GM content into their own maps, and re-use it as they wish.</p>
+
+<p>For instance, the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/teachingresources">Knowledge &amp; Power</esp:link> project created overlays of archaeological sites and tags showing place names, etc.</p>
+
+<esp:sh>Embedding a Google Map</esp:sh>
+
+<p>Custom-made Google Maps can also be embedded into ESP pages.
+Do not embed your map by copying and pasting the code provided on the Google Maps page (as it uses the non-standards-compliant <code>&lt;iframe></code> element). Instead, use the standards-compliant <code>&lt;object></code> element, as outlined in this sample code:</p>
+
+<pre>&lt;p>&lt;object type="text/html" width="425" height="350"
+data="https://maps.google.co.uk/maps/ms?msid=EXAMPLE&amp;z=X&amp;output=embed">
+&lt;/object>&lt;/p></pre>
+
+<p>Replace the example map URL  (i.e., <code>https://maps.google.co.uk/maps/ms?msid=EXAMPLE</code>)
+with that of your custom map.</p>
+
+<p>Notes:</p>
+<ul>
+<li>The <code>&lt;object></code> element needs to reside inside a <code>&lt;p</code> element.</li>
+<li>Alter the width and height of the map as required. Be aware that embedded maps are not responsive: they do not resize if the viewport width changes, so choose an appropriate maximum width. Provide a link to Google Maps to view a larger version.</li>
+<li>Appending  <code>&amp;z=X</code> to the end of the URL (where X is a number) sets the zoom level of the map.  <code>X=1</code> sets the zoom at the highest level.</li>
+</ul>
+<p>Good articles on standards-compliant embedding include:</p>
+<ul>
+<li><esp:link url="http://www.masteringhtml5css3.com/standard-compliant-googlemaps-embedding-code/" rel="external" hide-print="yes">http://www.masteringhtml5css3.com/standard-compliant-googlemaps-embedding-code/</esp:link></li>
+<li><esp:link url="http://alistapart.com/article/byebyeembed" rel="external" hide-print="yes">http://alistapart.com/article/byebyeembed</esp:link></li>
+<li><esp:link url="http://oregonstate.edu/cws/training/faq/how-do-i-embed-google-map?page=7" rel="external" hide-print="yes">http://oregonstate.edu/cws/training/faq/how-do-i-embed-google-map?page=7</esp:link></li>
+</ul>
+
+<esp:sh>Sample code for a GM/GE map</esp:sh>
+
+<p>The following code gives an example of an embedded custom map, followed by a link to the same map using Google Maps, and a link to download the KMZ file.</p>
+
+<pre>
+&lt;p>&lt;object type="text/html" width="425" height="350" 
+data="https://maps.google.co.uk/maps/ms?msid=204599863567827172960.0004e9e3e5e5d5b82b694&amp;msa=0&amp;z=1&amp;output=embed">
+&lt;/object>&lt;/p>
+
+&lt;p>&lt;esp:link url="https://maps.google.co.uk/maps/ms?msid=204599863567827172960.0004e9e3e5e5d5b82b694&amp;msa=0" 
+rel="external">View larger version of map using Google Maps&lt;/esp:link>&lt;br/>
+&lt;esp:link url="nd-reliefs-nw-palace-distribution.kmz" 
+title="Map showing worldwide distribution of reliefs from Assurnasirpal's Northwest Palace, 
+Nimrud">Download map content to view using Google Earth or re-use within your own custom maps 
+(KMZ file, 7 KB)&lt;/esp:link>&lt;/p>
+</pre>
+
+<p>Do not copy this code directly, as it will not work. Replace the map ID with that of your custom map.</p>
+
+
+<esp:sh>Creating re-usable GE and GM content using .KML and .KMZ files</esp:sh>
+
+<p>Providing KML or KMZ files allows website users to re-use GE and GM content within their own maps.</p>
+
+<p>Create KMZ files:</p>
+<ul>
+<li>within GE; or</li>
+<li>by creating a custom map within GM and exporting the KML/KMZ file. (Click on the KML button next to the map to download the file.)</li>
+</ul>
+
+<p>As technologies develop, KML and KMZ files may need updating to ensure they remain readable. Keep accessible copies of all files.</p>
+
+
+
+<esp:sh>Displaying KMZ files in Google Earth</esp:sh>
+<p>To allow website visitors to view KMZ content in GE, create a link to the KMZ file using the <code>&lt;esp:link&gt;</code> element with a relative URL, as described in the section on <esp:link page="esplinks" bookmark="h_linkstodownloadablecontent">Links to downloadable content</esp:link>.</p>
+
+<p>NB. If the user has GE installed on their computer, the file should automatically open in GE.  If the user does not have GE installed, they will receive a prompt asking what they want to do with the file.  Currently there is no means of automatically asking the user whether they want to download Google Earth.</p>
+
+<esp:sh>Displaying KMZ files in Google Maps</esp:sh>
+<p>For users who do not want to install GE, the same KMZ files will also display within a GM web page.  To display the content in this way, create a link to the GM web page using <code>&lt;esp:link&gt;</code>.  Append the complete location of the specific KMZ file on your webserver to the end of the URL for the GM web page.</p>
+
+<p>So, to display the KMZ file entitled <code>adian_eski_kalak.kmz</code> that sits in the <code>downloads</code> folder for the site <code>http://oracc.museum.upenn.edu/saao/knpp</code> you would use the following URL in the element <code>&lt;esp:link&gt;</code>:</p>
+
+<pre class="example">&lt;esp:link url="http://maps.google.com/maps?q=http://oracc.museum.upenn.edu/
+saao/knpp/downloads/adian_eski_kalak.kmz&amp;t=k" 
+      title="View location of Adian using Google Earth"&gt;
+
+      View location using Google Maps
+
+&lt;/esp:link&gt;</pre>
+
+<p>Note that appending <code>&amp;t=k</code> to the end of the URL forces GM to open satellite view rather than the default map view.</p>
+
+<esp:sh>Example code for linking to GE and GM content</esp:sh>
+
+<p>Example code showing links to Google Earth and Google Maps within a glossary definition is given below.</p>
+
+<pre class="example">
+&lt;esp:definition term="Adian (place)"&gt;A town in central Assyria, possibly now 
+Eski Kalak.
+   &lt;esp:link url="~/downloads/adian_eski_kalak.kmz" title="View location of 
+   Adian using Google Earth"&gt;View location using Google Earth
+   &lt;/esp:link&gt; |
+   &lt;esp:link url="http://maps.google.com/maps?q=http://oracc.museum.upenn.edu/
+   saao/knpp/downloads/adian_eski_kalak.kmz&amp;t=k" title="View location of Adian using 
+   Google Maps"&gt;View location using Google Maps
+   &lt;/esp:link&gt;
+&lt;/esp:definition&gt;
+</pre>
+
+
+<esp:h>Video content</esp:h>
+<p>We no longer recommend embedding Flash movies directly into ESP pages, as Flash is not compatible with the browsers used on most hand-held and mobile devices. Instead we recommend embedding video via Youtube.</p>
+
+<p>Ask your Oracc liaison to upload Quicktime movies to Oracc's <esp:link url="http://www.youtube.com">Youtube</esp:link> channel.</p>
+
+<p>Embed youtube Flash videos using standards compliant tags, using the method described at: <esp:link url="http://www.alistapart.com/articles/byebyeembed/">http://www.alistapart.com/articles/byebyeembed/</esp:link>.</p>
+
+<p>The code used is:</p>
+
+<pre class="cookbook">&lt;object type="application/x-shockwave-flash"
+ data="http://www.youtube.com/v/mADrWB6F5CU&amp;hl=en&amp;fs=1&amp;rel=0&amp;showinfo=0" 
+ width="425" height="344" id="VideoPlayback"&gt;
+ &lt;param name="movie" 
+  value="http://www.youtube.com/v/mADrWB6F5CU&amp;hl=en&amp;fs=1&amp;rel=0&amp;showinfo=0" /&gt;
+  &lt;param name="allowScriptAcess" value="sameDomain" /&gt;
+  &lt;param name="quality" value="best" /&gt;
+  &lt;param name="bgcolor" value="#FFFFFF" /&gt;
+  &lt;param name="scale" value="noScale" /&gt;
+  &lt;param name="salign" value="TL" /&gt;
+  &lt;param name="FlashVars" value="playerMode=embedded" /&gt;
+&lt;/object&gt;
+</pre>
+
+<p>This places the video left-aligned onto the page.</p>
+
+<p>NB. Added on to the end of the URL (<code class="example">http://www.youtube.com/v/mADrWB6F5CU&amp;hl=en&amp;fs=1&amp;rel=0&amp;showinfo=0</code>) are two modifiers: <code>&amp;rel=0</code> means that it doesn't display the 'related videos' link, and  <code>'&amp;showinfo=0'</code> remove the stars and crap that youtube wants to overlay onto the video.   </p>
+
+<esp:h>Twitter feeds</esp:h>
+<p>You need to have your own <esp:link url="https://twitter.com/signup">Twitter account</esp:link> in order to do this.</p>
+
+<p>First log in to Twitter. Then:</p>
+<ul>
+<li>Go to your <esp:link url="https://twitter.com/settings/widgets">widgets page</esp:link> in Twitter and click on the <code>Create new</code> button in the top right corner.</li>
+<li>A new page will open, called "Configure a user widget". Fill in the form as you want (there is further help on a separate <esp:link url="https://dev.twitter.com/docs/embedded-timelines">Twitter page</esp:link>). In the "Domains" box, make sure you enter <code class="cookbook">oracc.museum.upenn.edu</code>.</li>
+<li>When you click the blue "Create a widget" button at the bottom of the page, a piece of HTML code will appear next to it, which will look something like this:<br/> <br/>
+<code class="example">&lt;a class="twitter-timeline" data-dnt=true
+href="https://twitter.com/Eleanor_Robson"<br/>
+data-widget-id="296639878718947328"&gt;Tweets by @Eleanor_Robson&lt;/&gt;<br/>
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)<br/>
+[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;<br/>
+js.src="//platform.twitter.com/widgets.js";fjs.parentNode.<br/>
+insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;</code>
+
+<br/><br/>
+Copy that code and click the blue "Save changes" button.</li>
+</ul>
+
+<p>Then use Emacs to open the ESP page in which you want to embed the Twitter feed, if it's not already open.</p> 
+<ul>
+<li>Paste the code into the relevant part of your ESP page. You will now need to edit it to make it valid XML. (It is already valid HTML.)
+<ul>
+<li>Change the opening and closing <code>a</code> tags to <code class="cookbook">esp:link</code>.</li>
+<li>Change the <code>href</code> attribute to <code class="cookbook">url</code>.</li>
+<li>Add double quotes around any attribute values which are currently lacking them (e.g., <code>data-dnt=true</code> should become <code class="cookbook">data-dnt="true"</code>).</li> 
+<li>Add a paragraph (<code>p</code>) element around the whole.</li>
+</ul>
+</li>
+<li>Your modified code should look something like this:
+<br/><br/>
+<code class="example">&lt;p&gt;&lt;esp:link class="twitter-timeline" data-dnt="true"
+url="https://twitter.com/Eleanor_Robson"<br/>
+data-widget-id="296639878718947328"&gt;Tweets by @Eleanor_Robson&lt;/esp:link&gt;<br/>
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)<br/>
+[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;<br/>
+js.src="//platform.twitter.com/widgets.js";fjs.parentNode.<br/>
+insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;&lt;/p&gt;</code>
+<br/><br/>
+<strong>NB:</strong> do not just copy and modify the code on this page: it will not work!
+</li>
+<li>Save the ESP page. Don't worry if certain attributes of the <code>esp:link</code> element show up red in Emacs: that just means you are using an old ESP schema for Emacs which does not include Twitter attributes. It will not affect ESP's ability to update your website.</li> 
+<li>When you <esp:link page="esp-build" bookmark="h_rebuilding">do <code>oracc esp</code></esp:link> you may see an error message about <code>data-dnt</code>, which you can ignore. However, if you see other ESP error messages which you think may be related to the Twitter code, do contact your liaison.</li>
+</ul>
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body>
+</html></esp:page>

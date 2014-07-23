@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+    <esp:name>Commentary</esp:name>
+    <esp:title>Base Text and Commentary</esp:title>
+<html><head/><body>
+    <p class="firstpara">This page describes the ATF mechanism for
+    linking a scholarly commentary to its base text.</p>
+
+<esp:h>Commentary Protocol</esp:h>
+
+<p>Each ATF file that uses this mechanim must start include the <esp:link page="protocols">protocol line</esp:link>:</p> 
+
+<pre class="cookbook">#atf: use commentary</pre>
+
+<p>at the top of each file, after the project declaration.</p>
+
+<esp:h>Encoding text types</esp:h>
+<p>Within the transliteration of the text, use the following field designations:</p>
+<dl>
+<dt><code class="cookbook">,b</code></dt>    <dd>to introduce a quote from the base text;</dd>
+<dt><code class="cookbook">,o</code></dt>    <dd>to introduce an observation
+from a commentary;</dd>
+<dt><code class="cookbook">,z</code></dt>     <dd>to introduce unknown material.</dd>
+</dl>
+<p>each of these elements is surround by white space.</p>
+
+<p>The milestone <code>,b</code> may be followed by a number, so that
+each <code>,b</code> field designation within a single line of text has a unique identifier. The base text may then be identified in a comment line as follows:</p>
+
+<pre class="example">#,b1 = SB Anzu 1 = cams/anzu:Q002769 56
+#,b2 = CT 19, pl.44, K 04226 = dcclt:P365422 o i 11</pre>
+
+<p>At the moment those notes don't do anything - but at some point in the future it may be possible to transform those into actual links. If the text referred to is not available anywhere on oracc (doesn't have a project name), and/or doesn't have a Q or P number, you may write those notes more informally - but obviously they will not result in a link.</p>
+
+<esp:h>Example</esp:h>
+
+<p>This example is based on a real-life text but has been adapted to
+showcase all three field designations.</p>
+
+<pre class="example">
+&amp;P415763 = CM 31, 139
+
+#project: cams/gkab
+#atf: use unicode
+#atf: use commentary
+#atf: lang akk-x-stdbab
+
+@tablet
+@obverse
+
+1. ,b BE iz-bu SAG.DU UR.MAH GAR NUN LUGAL{+tu₂} ŠU₂{+tu₂} DAB{+bat}
+#,b = SB Šumma Izbu 8 = cams/gkab:Q003013 1
+
+2. ,b1 meṭ-lu-tu₂ DU{+ak} ,o me₂-eṭ-lu-tu₂ : ,b2 ši-bu-u₂-tu₂ : MIN
+li-tu-tu₂ ,z $ŠU $A x
+#,b1 = SB Šumma Izbu 8 = cams/gkab:Q003013 2
+#,b2 = SB Šumma Izbu 9 = cams/gkab:Q003014 43
+</pre>
+
+<esp:author first-names="Niek" last-name="Veldhuis"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body>
+</html>
+</esp:page>

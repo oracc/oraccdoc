@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Editing in ATF</esp:name>
+<esp:title>Working with ATF to edit texts</esp:title>
+<html><head/><body>
+<p class="firstpara">Building a project can comprise any one or more of the following functions:</p>
+
+<esp:sh>Working with CDLI ATF</esp:sh>
+<p>Oracc and CDLI use slightly different versions of ATF. CDLI ATF is called Canonical ATF (C-ATF) and it is described in these pages:</p>
+<dl>
+<dt><esp:link page="cdli">CDLI ATF primer</esp:link></dt>
+<dd>If you are preparing texts for insertion directly into the CDLI repository you should read this document first.</dd>
+<dt><esp:link page="numbers">Numbers and metrology in CDLI corpora</esp:link></dt>
+<dd>This page gives basic guidelines for entering numbers and metrological transliterations for CDLI.</dd>
+<dt><esp:link page="dates">Date specifications for CDLI/Oracc</esp:link></dt>
+<dd>This document describes the conventions used for specifying dates in the CDLI catalogs and gives a list of kings and dynasties.</dd>
+</dl>
+<p>You may also find some or all of the <esp:link page="tools">Oracc webtools</esp:link> useful.</p>
+<esp:sh>Learning Oracc ATF</esp:sh>
+<p>These pages help you start using Oracc-style ATF. You will probably want to <esp:link page="emacssetup">install Emacs</esp:link> before you begin.</p>
+<dl>
+<dt><esp:link page="primer">Oracc ATF primer</esp:link></dt>
+<dd>A very quick start to get you up and running with your first ATF texts by giving some annotated examples.</dd>
+<dt><esp:link page="atftut">ATF structure tutorial</esp:link></dt>
+<dd>This document gives a tutorial on how to type the block structure features of texts in ATF, the ASCII Transliteration Format.</dd>
+<dt><esp:link page="gdltut">ATF inline tutorial</esp:link></dt>
+<dd>This page gives a tutorial on how to type graphemes and other inline content in ATF.</dd>
+</dl>
+
+<esp:sh>Creating ATF files</esp:sh>
+<p>For regular creators of ATF files, the following documentation gives more detailed information about particular aspects of this work:</p>
+<dl>
+<dt><esp:link page="quickref">ATF quick reference</esp:link></dt>
+<dd>A quick reference sheet for the ATF format.</dd>
+<dt>Overview of <esp:link page="labels">ATF labelling conventions</esp:link></dt>
+<dd>Labels are generated for lines by the ATF processor and are used to reference lines in some parts of the ATF system. This document describes the syntax of labels.</dd>
+<dt><esp:link page="translation">ATF translation conventions</esp:link></dt>
+<dd>Translations may be input as interlinear, within the ATF files, or extralinear either within ATF files or separately. The Oracc translation format and the special facilities it provides are described here.</dd>
+<dt><esp:link page="metrology">Numbers and metrology in Oracc corpora</esp:link></dt>
+<dd>This document describes how to transliterate weights and measures in ATF for Oracc corpora.</dd>
+<dt>Overview of <esp:link page="protocols">ATF protocols</esp:link></dt>
+<dd>Protocols are statements which are interpreted or stored by the ATF processor but are not part of the text edition proper. This page offers an overview of the protocols which may be used in ATF documents.</dd>
+</dl>
+<p>You may also find some or all of the <esp:link page="tools">Oracc webtools</esp:link> useful.</p>
+
+<esp:sh>Working with specific ATF formats</esp:sh>
+<p>If you are working on particular genres of cuneiform text you may find this specialist documentation particularly helpful:</p>
+
+<dl>
+<dt><esp:link page="scores">Scores</esp:link></dt>
+<dd>This document describes how to create synoptic and matrix scores using Oracc.</dd>
+<dt><esp:link page="composite">Composite texts</esp:link></dt>
+<dd>This document describes ATF features which are available when
+entering composite texts.</dd>
+<dt><esp:link page="commentary">Base text and commentary</esp:link></dt>
+<dd>This page describes the ATF mechanism for
+    linking a scholarly commentary to its base text.</dd>
+<dt><esp:link page="linkage">ATF linkage</esp:link></dt>
+<dd>This document describes the ATF mechanisms for intertext linking, for instance between scores and composite texts</dd>
+<dt><esp:link page="bilinguals">Bilingual and multilingual texts</esp:link></dt>
+<dd>This page describes how to transliterate bilinguals using Oracc (the same principles apply to trilinguals, etc.).</dd>
+<dt><esp:link page="lexical">ATF lexical conventions</esp:link></dt>
+<dd>This page describes the ATF features for working with lexical texts.</dd>
+<dt><esp:link page="math">Mathematical notations</esp:link> in Oracc corpora</dt>
+<dd>Mathematical notations use some conventions which are specific to mathematical and astronomical texts, as well as employing a variant of the standard <esp:link page="numbers">CDLI method</esp:link> of notating sexagesimal numbers. They are described here.</dd>
+<dt><esp:link page="layouts">Complex layouts</esp:link></dt>
+<dd>This document describes how to deal with complex layouts, such as tabular formatting, in ATF.</dd>
+<dt><esp:link page="advanced">ATF advanced conventions</esp:link> </dt>
+<dd>This document describes ATF features which are not needed for everyday documents and which some users will never need.</dd>
+</dl>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

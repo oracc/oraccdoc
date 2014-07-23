@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Lemmatising</esp:name>
+<esp:title>Lemmatising: How To Use L2</esp:title>
+<html><head/><body>
+<p class="firstpara">This page summarises the steps required to use 
+L2, the lemmatiser used by Oracc. First we describe what you need to know about editing ATF files, then glossary management, then rebuilding the whole project. </p>
+
+<p>This page is designed as a refresher for those already familiar with lemmatisation. If you have not already done so, read the <esp:link page="linganno">tutorial on linguistic annotation</esp:link> first.</p>
+
+<esp:h>Editing and fixing ATF files</esp:h>
+
+<esp:sh>Languages</esp:sh>
+
+<p>If your project uses Akkadian, set the default language of your text using the <esp:link url="http://oracc.museum.upenn.edu/ns/xtf/1.0/protocols.html">protocol line</esp:link> <code class="cookbook">#atf: lang akk-x-[DIALECT]</code>. For instance, if your project's language should be described as, e.g., Old
+Babylonian, you will need to write:</p>
+
+<pre class="example">#atf: lang akk-x-oldbab</pre>
+
+<p>If you need to switch languages or dialects in the middle of a text, you can use a <esp:link url="http://oracc.museum.upenn.edu/doc/developer/l2/languages/#Language_codes">short code</esp:link>. For instance, to mark a Neo-Assyrian dialect word in an otherwise Standard Babylonian text, you can write, e.g.,</p>
+<pre class="example">{d}NIN.LIL₂ ana {d}BAD %na a-bu-su %sb DAB-su</pre>
+
+<p>Here, the code <code class="example">%na</code> marks the switch into Neo-Assyrian, while <code class="example">%sb</code> marks the switch back to Standard Babylonian.</p>
+
+<p>You do not mark a language switch at the end of a line, as the processor automatically returns to the default language at the start of each line.</p>
+
+<p>For more about L2's handling of languages see the <esp:link page="gdltut" bookmark="h_languages">languages</esp:link> section of the Inline Tutorial.</p>
+
+<esp:sh>SENSE and EPOS</esp:sh>
+<p>When you add a new lemmatisation which has a <esp:link page="linganno" bookmark="h_senseandepos">SENSE</esp:link> as well as a <esp:link page="linganno" bookmark="h_replacingxs">GW</esp:link>, you always need to add an EPOS too, even when it is the same as the POS. For instance, instead of <code>+šaknu[appointee//governor]N$</code> the correct entry is:</p>
+<pre class="example">+šaknu[appointee//governor]N'N$</pre>
+<p>But if there is no SENSE, there is no need to add an EPOS:</p>
+<pre class="example">+šaknu[appointee]N$</pre>
+<p>If you forget to add an EPOS where it's needed, the checker will tell you!</p>
+
+<esp:sh>COFs and PSUs</esp:sh>
+<p>Lemmatise Compound Orthographic Forms (COFs) <esp:link page="cofs" bookmark="h_lemmatizing">as described here</esp:link>.</p>
+
+<p>You can add SENSEs to individual components of a Phrasal Semantic Unit (PSU) if this is appropriate. An overview of PSUs in L2 is given <esp:link page="psus" bookmark="h_glossarizing">here</esp:link>.</p>
+
+<esp:sh>Sentence boundaries</esp:sh>
+<p>If you are in the habit of marking sentence boundaries in the lemmatisation with <code>+.</code> you will need to ensure that they occur <em>before</em> the semi-colons that mark the end of a lemmatisation, not after them. That is, the correct form is, e.g.,</p>
+
+<pre class="example">iddâk[kill]V +.; šumma[if]MOD;</pre>
+
+<p>not <code>iddâk[kill]V; +. šumma[if]MOD;</code>.</p>
+
+<esp:h>Editing and fixing glossaries</esp:h>
+<esp:sh>Language/dialect glossaries</esp:sh>
+<p>There is a glossary for each dialect of the languages in your corpus (as defined by the <esp:link bookmark="h_languages">language</esp:link> tags in your ATF files), with names such as <code class="example">akk-x-oldass.glo</code> and <code class="example">akk-x-stdbab.glo</code>. The higher-level language glossaries, such as <code class="example">akk.glo</code> are now generated from these lower-level ones. So, when you need to hand-edit glossary entries, you will need to do so in the relevant dialect-level glossary or glossaries, not in the top-level language glossaries as before.</p>
+
+<esp:sh>Byforms</esp:sh>
+<p>You can now use the <esp:link page="bffs">byforms</esp:link> mechanism in your Sumerian glossary to handle phenomena such as suppletive verbs, collapsed compounds and variant frozen forms.</p> 
+<p>Byforms are not yet implemented for Akkadian, but if you see a need for them in your project please contact your liaison.</p>
+
+<esp:sh>COF and PSU handling</esp:sh>
+<p>L2 handles Compound Orthographic Forms (COFs) in exactly the same way as before. You should not need to fix COF entries in the glossary if they are already entered correctly. A brief overview of COFs in L2 glossaries is given <esp:link page="cofs" bookmark="h_glossarizing">here</esp:link>.</p>
+
+<p>Error-checks of Phrasal Semantic Units (PSUs) are rigorous. You should not need to fix PSUs entries in the glossary if they are already entered correctly, except if they also contain a COF. A brief overview of PSUs in L2 glossaries is given <esp:link page="psus" bookmark="h_glossarizing">here</esp:link>.</p>
+
+<esp:h>Rebuilding L2 projects</esp:h>
+
+<p>Here are some hints on how to fix most of the error messages relating to lemmatisation but if you notice error messages that you cannot interpret, please contact your liaison for help.</p> 
+<ul>
+<li>error messages with the label <esp:link page="errors" bookmark="h_f2errors">(f2)</esp:link></li>
+<li>error messages with the label <esp:link page="errors" bookmark="h_lemerrors">(lem)</esp:link></li>
+<li>error messages with the label <esp:link page="cofs" bookmark="h_unknowncofcomponent">unknown COF component</esp:link></li>
+<li>error messages with the label <esp:link page="psus" bookmark="h_psucomponentnotfoundinglossary">PSU component not found in glossary</esp:link>.</li>
+</ul>
+
+<esp:h>Project configuration: Glossaries</esp:h>
+<p>You can control which glossaries are used to lemmatise your project, language by language. Use following option as many times as you need to:</p>
+<pre class="cookbook">&lt;option name="[LANGUAGE]" value="[PROJECT AND/OR GLOSSARY NAMES]"&gt;</pre>
+<p>For instance:</p>
+
+<pre class="example">&lt;option name="%akk-x-ltebab" value="hbtin cams/gkab"/&gt;
+&lt;option name="%akk-x-neoass" value=". .:akk-x-stdbab"/&gt;</pre>
+<p>Here, the lemmatiser is told to look up forms tagged as Late Babylonian first in the HBTIN project's glossary (which is all LB), then in CAMS/GKAB's LB glossary. Neo-Assyrian forms are to be looked up first in the project's own NA glossary (the meaning of <code>.</code>) and then in the project's own SB glossary (the <code>.</code> followed by a <code>:</code> and the relevant language code).</p>
+<p>If you do not add an entry to the config file for a particular language, the system will just use the project glossary for that language, as expected.</p>
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

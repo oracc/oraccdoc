@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Getting started</esp:name>
+<esp:title>Getting started with Oracc online corpora</esp:title>
+<html><head/><body>
+
+<p class="firstpara">These pages describes how to browse and sort any of Oracc's online corpora. </p>
+
+<p><esp:link bookmark="h_beforeyoustart">Before you start</esp:link> |
+<esp:link bookmark="h_whatyousee">What you see</esp:link> | <esp:link
+bookmark="h_theheader">The header</esp:link> | <esp:link
+bookmark="h_outlinemode">Outline mode</esp:link> | <esp:link
+bookmark="h_textitemmode">Text item mode</esp:link> | <esp:link
+bookmark="h_catalogueitemmode">Project hub page</esp:link></p>
+ 
+<esp:h>Before you start</esp:h>
+
+<p>You may find it helpful to print this page out for reference before you start to explore any of the Oracc corpora for the first time. If your browser has problems displaying all the special transliteration characters you may want to download and install a <esp:link page="visitor-fonts">Unicode transliteration font</esp:link> for Mac, Windows, or Linux.</p>
+
+<esp:h>What you see</esp:h>
+<p>When you go to the front page of an Oracc corpus, you will see the screen split into three parts:</p>
+<ul>
+<li>the coloured <esp:link bookmark="h_theheader">header</esp:link> at the top;</li>
+<li>the outliner pane below it, to the left;</li>
+<li>the main pane in the centre of the screen;</li>
+<li>and the name of the project in the footer.</li>
+</ul>
+<p>The contents of the <esp:link bookmark="h_theheader">header</esp:link> stay mostly the same as you move through the corpus. The contents of the outliner pane and main pane change, though, depending on whether you are paging through a listing of texts, glossary entries, or search results in <esp:link bookmark="h_outlinemode">Outline Mode</esp:link> or reading a whole text in <esp:link bookmark="h_textitemmode">Text Item Mode</esp:link>.</p>
+
+<p>On this page we briefly describe how the Header, Outline Mode, and Text Item Mode work. There are separate pages about <esp:link page="visitor-searching">searching</esp:link>, <esp:link page="visitor-advanced">advanced search</esp:link>, and <esp:link page="visitor-glossaries">glossaries</esp:link>.</p>
+
+<esp:h>The Header</esp:h>
+<p>You can use the coloured header at the top of the screen to
+navigate your way around the corpus, and to perform searches. It is
+divided into three different zones, from left to right and top to bottom:</p>
+<ul>
+<li>the <esp:link bookmark="h_thenavigationzone">navigation zone</esp:link>, for moving to different parts of the website;</li>
+<li>the <esp:link bookmark="h_thesearchzone">search zone</esp:link>, for finding signs, words and phrases in the corpus;</li>
+<li>and the <esp:link bookmark="h_thepagerzone">pager zone</esp:link>, for paging through different texts, catalogue entries, and search results.</li>
+</ul>
+
+<esp:sh>The navigation zone</esp:sh>
+<p>The navigation zone, at top left, enables you to move to different parts of the project's website, and out of it to other useful parts of Oracc. It has three components:</p>
+<dl>
+  <dt>
+    <esp:image class="p3icon" url="/img/p3-help.png" name="Help" description="Question mark icon for help"/></dt>
+  <dd>Takes you to this page.</dd>
+
+  <dt>
+    <esp:image class="p3icon" url="/img/p3-reset.png" name="Reset" description="Circling arrow icon for reset"/>
+  </dt>
+  <dd>Resets the pager, displaying the appropriate initial page
+  (glossary or list of texts).</dd>
+
+  <dt>
+    <esp:image class="p3icon" url="/img/p3-plus.png" name="More resources" description="Plus sign icon for project hub"/>
+  </dt>
+  <dd>Takes you to the <esp:link bookmark="h_theprojecthubpage">project hub</esp:link>—a page listing additional resources
+  including links to the <esp:link page="visitor-advanced">Advanced
+  Search</esp:link>, <esp:link page="visitor-glossaries">glossaries</esp:link>, subprojects and more.</dd>
+
+</dl>
+
+<esp:sh>The search zone</esp:sh>
+<p>The search bar, at top right, gives you all the tools you need to perform simple searches on the corpus. There is more information on searching on <esp:link page="visitor-searching">a separate page</esp:link>.</p>
+<p>If you need to carry out more complex searches, use the <esp:link
+page="visitor-advanced"><code>Advanced Search</code> link</esp:link>
+on the project's <esp:link bookmark="h_theprojecthubpage">hub page</esp:link>.</p>
+
+<dl>
+ 
+  <dt>Search box</dt>
+  <dd>Type your search terms into this box. These may include
+  transliterated or normalised Akkadian, Sumerian, or other ancient
+  languages (as appropriate to the corpus), catalogue terms, or words
+  in the translation. Go to the <esp:link page="visitor-searching">separate page on searching</esp:link> to find out how best to enter search terms.</dd>
+  <dt><esp:image class="p3icon" url="/img/p3-search.png" name="Search" description="Magnifying glass icon for search"/></dt>
+  <dd>Click this to perform your search.</dd>
+
+</dl>
+
+<esp:sh>The pager zone</esp:sh>
+<p>Use the tools on the bottom row of the header to page through the texts, catalogue data, glossary entries, and search results. The outline sorter to the left of the pager bar is described in the section on <esp:link bookmark="h_outlinemode">Outline Mode</esp:link> below.</p>
+<p>The number of tools in the pager bar is context-dependent. Here we describe the three that are always present:</p>
+<dl>
+<dt>
+  <esp:image class="p3icon" url="/img/p3-backward.png" name="Back arrow" description="Left chevron for go back one page/item"/></dt>
+<dd>Use this to move back one page or item.</dd>
+<dt>Page number box</dt>
+<dd>Enter a number here to jump to any page or item in the current list.</dd>
+<dt>
+  <esp:image class="p3icon" url="/img/p3-forward.png" name="Forward arrow" description="Right chevron for go forward one page/item"/>
+</dt>
+<dd>Use this to move back one page.</dd>
+</dl>
+<p>The other pager bar tools are described in the sections on
+<esp:link bookmark="h_outlinemode">Outline Mode</esp:link> and <esp:link bookmark="h_textitemmode">Text Item Mode</esp:link> below.</p>
+
+<esp:h>Outline Mode</esp:h>
+<p>Outline Mode is what you see when you first access the corpus online. You can use it to browse the corpus. The screen is divided into two unequal halves: the narrow <esp:link bookmark="h_outlinemodeoutlinepane">Outline Pane</esp:link> on the left, and a full listing of the corpus in the <esp:link bookmark="h_outlinemodemainpane">Main Pane</esp:link> on the right.</p>
+
+<esp:sh>Outline Mode Main Pane</esp:sh>
+<p>In the Main Pane, the tablets are listed by a short, standardised
+designation, usually based on their place of publication, and grouped
+by criteria such as period, genre, and provenance. You can move
+through the listing using the tools in the <esp:link
+bookmark="h_thepagerzone">pager zone</esp:link> immediately above
+it.</p> 
+<p>You will also see a couple of extra items in the pager zone:</p>
+<dl>
+<dt>
+  <esp:image class="p3icon" url="/img/p3-pageitem.png" name="Toggle Page/Item view" description="Triple bar icon for toggle content display"/>
+</dt>
+<dd>Switches between Outline Mode and <esp:link bookmark="h_textitemmode">Text Item Mode</esp:link>.</dd>
+<dt><esp:image class="p3icon" url="/img/p3-full.png" name="showhide" description="Left/right arrows icon for hiding/showing left outline pane"/></dt>
+<dd>Toggles between hiding the left-hand <esp:link bookmark="h_outlinemodeoutlinepane">Outline Pane</esp:link> and showing it.</dd>
+</dl>
+<p>Try clicking on them a few times to see how they work.</p>
+
+
+<p>The main component of each outline listing is the text's
+designation (usually a composition name or a publication
+number). Designations that are coloured link to the Text Item View,
+which displays the transliteration and translation of a single
+text. Black designations list texts that have not yet been edited as
+part of the corpus.</p>
+
+<p>Alternatively, you can click on the document icon (<esp:image
+url="/img/viewtext.png" name="viewtext" description="Document with
+green arrow icon for viewing text edition"/>) to the left of each
+designation to view an edition of the text if one is available.</p>
+
+
+<p>The following columns list information such as textual genre and ancient author, taken from the project's catalogue. They vary from project to project and corpus to corpus. For more information on project-specific keywords, go to that project's home page.</p>
+
+<esp:sh>Outline Mode Outline Pane</esp:sh>
+<p>In Outline Mode the left-hand sidebar gives an overview of the whole of the project's corpus, which in many Oracc projects is grouped by period, genre, and provenance. You can select any one of these groups by clicking on it. You are now in Zoom Mode.</p>
+
+<p>In some projects, the following tools help you move through the outline of the corpus in Zoom Mode:</p>
+
+<dl>
+<dt>Time/Genre/Place menu</dt>
+<dd>This drop-down menu is immediately above the Outline Pane. You can use it to change the order in which the corpus is sorted</dd>
+<dt>"All Results" button</dt>
+<dd>When you enter Zoom Mode, by selecting a group in the corpus, this button appears immediately to the left of the &lt;&lt; button in the <esp:link bookmark="h_thepagerzone">pager zone</esp:link>. Use it to return to browsing the entire corpus.</dd>
+</dl> 
+
+<esp:h>Text Item Mode</esp:h>
+<esp:sh>Text Item Mode Main Pane</esp:sh>
+<p>In Text Item Mode the Main Pane shows the transliteration and/or
+translation of a single tablet or composite text.</p> 
+
+<p>If the text has been lemmatised, you can place the cursor over any
+word of the transliteration to see its outline <esp:link page="visitor-glossaries">glossary entry</esp:link>, and click on the word to go to its full glossary entry. If the line numbers of the transliteration are shown in blue, you can click them to view an associated tablet or composite text.</p>
+
+<p>The following tools in the <esp:link bookmark="h_thepagerbar">pager bar</esp:link> allow you to control what you see in Text Item Mode:</p>
+<dl>
+<dt><esp:image class="p3icon" url="/img/p3-full.png" name="showhide" description="Left/right arrows icon for hiding/showing left outline pane"/></dt>
+<dd>Clicking on this button, which is immediately above the left-hand
+<esp:link bookmark="h_textitemmodeoutlinepane">Outline
+Pane</esp:link>, toggles between hiding the left-hand Outline Pane and
+showing it.</dd>
+<dt><esp:image class="p3icon" url="/img/p3-pageitem.png" name="Toggle Page/Item view" description="Triple bar icon for toggle content display"/>
+</dt>
+<dd>Switches between <esp:link bookmark="h_outlinemode">Outline Mode</esp:link> and Text Item Mode.</dd>
+<dt>
+  <esp:image class="p3icon" url="/img/p3-backward.png" name="Back arrow" 
+	     description="Left chevron for go back one page/item"/>&#xa0;&#xa0;Item box&#xa0;&#xa0;<esp:image 
+	     class="p3icon" url="/img/p3-forward.png" name="Forward arrow" description="Right chevron for go forward one page/item"/>
+</dt>
+<dd>Use these tools to move between texts, just like in Outline Mode.</dd>
+<dt>Translations menu</dt>
+<dd>Use this drop-down menu to choose whether you want to see the translation or not. In some projects you can also choose which language to see the translation in.</dd>
+<dt>Translation only tick-box</dt>
+<dd>Select this box if you wish only to see the translation. Note that if you select this box, the "No translation" option in the Translations menu disappears!</dd>
+</dl>
+
+<esp:h>Text Item Mode Outline Pane</esp:h>
+<p>In Text Item Mode the left-hand Outline Pane gives a set of information about the tablet and text. Its exact contents depend on the project, but it may include some or all of the following data:</p>
+<dl>
+<dt>Names</dt>
+<dd>usually the abbreviated form of the name under which the tablet was published</dd>
+<dt>Numbers</dt>
+    <dd>CDLI catalogue P-number (external link) or Oracc Q-number;</dd>
+    <dd>museum number;</dd>
+    <dd>excavation number (as appropriate)</dd>
+<dt>Views</dt>
+    <dd>Cuneified (for which you need to install the relevant <esp:link page="visitor-fonts">Unicode cuneiform font</esp:link>)</dd>
+    <dd>Line Art (i.e., cuneiform copy, from <esp:link url="http://cdli.ucla.edu">CDLI</esp:link>)</dd>
+    <dd>Image (i.e., photograph, from <esp:link url="http://cdli.ucla.edu">CDLI</esp:link>)</dd>
+    <dd><esp:link url="http://oracc.museum.upenn.edu/doc/developer/tei">TEI</esp:link> (i.e., marked up according to the Text Encoding Initiative's <esp:link url="http://www.tei-c.org/Guidelines/P5">P5 Guidelines</esp:link>)</dd>
+<dt>Details</dt>
+    <dd>period</dd>
+    <dd>provenance</dd>
+    <dd>genre</dd>
+    <dd>subgenre or composition name</dd>
+<dt>Bibliography</dt>
+    <dd>short references to relevant secondary literature</dd>
+</dl>
+
+<esp:h>The Project Hub page</esp:h>
+<p>The Project Hub page is reached from the <esp:image class="p3icon"
+url="/img/p3-plus.png" name="More resources" description="Plus sign
+icon for project hub"/> icon in the Header of any project corpus
+page. Or you can find it at <code
+class="cookbook">http://oracc.org/PROJECT/hub.html</code> (replacing
+PROJECT with the name of the project or subproject, e.g., <code
+class="example">http://oracc.org/cams/gkab/hub.html</code>). </p>
+
+<p>On the hub page you will typically find two or more lists of
+links, depending on the project:</p>
+
+<esp:sh>Core Resources</esp:sh>
+<p>All corpus projects have a basis set of core resources, which you
+can access via these links:</p>
+<dl>
+<dt>Home Page</dt>
+<dd>Takes you to the home page of the project's portal (not to the
+list of texts in the project's corpus).</dd>
+<dt>Text Catalogue</dt>
+<dd>Takes you to the main list of texts in the project's corpus.</dd>
+<dt>Transliterated Texts</dt>
+<dd>Takes you to a list of the texts in the project's corpus that have
+publicly available transliterations. This list is particularly helpful
+in projects have not yet finished editing their corpus.</dd>
+<dt>Lemmatized Texts</dt>
+<dd>Takes you to a list of the transliterated texts in the project's
+corpus that have been lemmatized; that is, they have been linked into
+the project's <esp:link page="visitor-glossaries">glossaries</esp:link>.</dd>
+<dt>Advanced Search</dt>
+<dd>Takes you to the project's <esp:link
+page="visitor-advanced">Advanced Search</esp:link> page.</dd>
+</dl>
+
+<esp:sh>Glossaries</esp:sh>
+<p>If a project has lemmatized some or all of the texts in its corpus,
+it will have one or more glossaries. You can reach the glossaries
+either by <esp:link bookmark="h_itemmodemainpane">clicking on a
+transliterated word in a text</esp:link> or via this list.</p>
+<p>Different projects have different glossaries, depending on the
+languages in the corpus, but you will typically find:</p>
+
+<dl>
+<dt>Akkadian</dt>
+<dd>And dialects such as Old Babylonian, Middle Assyrian, Standard
+Babylonian, etc.</dd>
+<dt>Proper Nouns</dt>
+<dd>And types such as celestial names (stars and constellations),
+divine names, ethnic names, lineage names (ancestral names), month
+names, object names, people, places, temples, and watercourses.</dd>
+<dt>Sumerian</dt>
+<dd>And maybe also the Emesal variety of Sumerian.</dd>
+<dt>Other ancient languages</dt>
+<dd>Such as Aramaic, Greek, Hurrian, Ugaritic, etc.</dd>
+</dl>
+
+<esp:sh>Subprojects</esp:sh>
+<p>Some projects have subprojects, which you can access via these
+links.</p>
+
+
+<esp:sh>Special Lists</esp:sh>
+<p>Some projects define special lists of texts, which you can access
+via these links.</p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

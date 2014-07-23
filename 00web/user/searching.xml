@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Searching corpora</esp:name>
+<esp:title>Searching the Oracc corpora</esp:title>
+<html><head/><body>
+<p class="firstpara">There are many ways to search the Oracc corpora. This page describes how to search the transliterations, lemmatisations, translations, and catalogue data. Instructions on searching the glossaries and on advanced search are given on separate pages.</p>
+
+     
+<esp:h>General principles</esp:h>
+<p>Read the help section about <esp:link page="user-userguide" bookmark="The search bar">the search bar</esp:link> before you begin.</p>
+                 
+<esp:h>Searching the transliterations</esp:h>
+
+<p>You can use <esp:link page="user-userguide" bookmark="The search bar">the search bar</esp:link> in <esp:link page="user-userguide" bookmark="The Header">the header</esp:link> to search for sequences of signs within the transliterations. However, searching for Akkadian or Sumerian words, regardless of spelling, is best done within the <esp:link page="user-glossaries">glossaries</esp:link>.</p>
+
+
+<p>To search within the transliterations, type the
+sequence of signs you want to find into <esp:link page="user-userguide" bookmark="The search bar">the search box</esp:link> and click "Search". The lines containing that sequence will be displayed in the <esp:link page="user-userguide" bookmark="Outline Main Pane">the Main Pane</esp:link>, with the relevant word highlighted. You can choose whether to see the results within lines, sentences, or keyword-in-context.</p>
+<p>Click on the coloured designation (publication number or composition name) to
+the right to see the whole text of each tablet or composition found. Place
+the cursor over a word to see its outline <esp:link page="user-glossaries">glossary</esp:link> entry, and click on the
+word to go to its full <esp:link page="user-glossaries">glossary</esp:link> entry. In some Oracc Projects you can sort the found records by
+genre, period, and provenance as described for <esp:link page="user-userguide" bookmark="Outline Outline Pane">Outline Mode</esp:link>.</p>
+
+<p>Use the following conventions when you type in the search box depending on whether or not you have ticked the Unicode box:</p>
+
+<esp:sh>Unicode</esp:sh>
+<ul>
+<li>type consonants such as <code>ḫ</code>, <code>ŋ</code>, <code>ṣ</code>, <code>š</code>, and <code>ṭ</code> in the usual way. You can find suitable <esp:link page="user-fonts">Unicode fonts</esp:link> and <esp:link page="user-keyboards">keyboards</esp:link> elsewhere on this site.</li> 
+<li>type diacritics as subscript numerals <i>not</i> as acute or grave accents (e.g., <code>ša₂</code> and <code>ša₃</code>)</li>
+<li>type logograms in capital letters, preceded by <code>l:</code> (ell then colon) (e.g., <code>l:ŠA₃</code> finds all occurrences of ŠÀ in logograms)</li>
+<li>type sign names in capital letters, preceded by <code>s:</code> (s colon) (e.g., <code>s:ŠA₃</code> finds all occurrences of  ŠÀ in logograms and syllabic writings <i>lìb</i>)</li></ul>
+
+
+<esp:sh>ASCII (non-Unicode)</esp:sh>
+<ul>
+<li>type <code>h</code> for <i>ḫ</i> (e.g., <code>ha</code> finds <i>ḫa</i>)</li>
+<li>type <code>j</code> for <i>ŋ</i> (e.g., <code>jen</code> finds <i>ŋen</i>)</li>
+<li>type <code>s,</code> (s comma) for <i>ṣ</i> (e.g., <code>s,a</code> finds <i>ṣa</i>)</li>
+<li>type <code>sz</code> for <i>š</i> (e.g., <code>sza</code> finds <i>ša</i>)</li>
+<li>type <code>t,</code> (t comma) for <i>ṭ</i> (e.g., <code>t,a</code> finds <i>ṭa</i>)</li>
+<li>type diacritics as normal numerals 0-9 (e.g., <code>sza2</code> finds <i>šá</i> and <code>sza3</code> finds <i>šà</i>)</li>
+<li>type logograms in capital letters, preceded by <code>l:</code> (ell then colon) (e.g., <code>l:SZA3</code> finds all occurrences of ŠÀ in logograms)</li>
+<li>type sign names are in capital letters, preceded by <code>s:</code> (s colon) (e.g., <code>s:SZA3</code> finds all occurrences of  ŠÀ in logograms and syllabic writings <i>lìb</i>)</li></ul>
+
+<esp:sh>Either/both</esp:sh>
+<ul>
+<li>type hyphens <code>-</code> to connect signs within words (e.g., <code>i-na</code> finds the sequence <i>i-na</i> in any word)</li>
+<li>type underscores <code>_</code> to connect adjacent signs in different words (e.g., <code>i_na</code> finds all words that end with <i>-i</i> and that are followed by a word beginning with <i>na-</i>)</li>
+<li>type tildes <code>~</code> to connect adjacent signs, whether they are in the same word or not (e.g., <i>i~na</i> finds both of the above)</li>
+</ul>
+
+<p>There is a <esp:link page="user-unicode">list of unicode characters for cuneiform transliteration</esp:link> elsewhere on these help pages, and an explanation of the difference between unicode and ASCII transliteration on the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/cuneiformrevealed/aboutcuneiform/computercuneiform">Cuneiform Revealed</esp:link> website.</p>
+
+<esp:h>Searching the lemmatisations</esp:h>
+<p>Use this search box to search for Akkadian or Sumerian words, regardless of how they are spelled, by entering their citation form(s) (dictionary headwords). The project's <esp:link page="user-glossaries" bookmark="Outline Pane">glossary outlines</esp:link> give complete lists of citation forms found in the current corpus.</p>
+<p>You can only search for one or more whole words. Separate words by spaces (e.g., <code>kugsig zagin</code>), not underscores or hyphens.</p>
+
+<esp:h>Searching the translations</esp:h>
+<p>You can use the search box to search for words within the English translations.</p>
+
+<p>The search engine understands the basics of English morphology so that if, for instance, you search for "king", it will find "king" and related words such as "kings" and "kingly". But it will not find words such as "asking", "speaking" or "waking" which contain the characters "king" but have nothing to do with monarchs.</p>
+
+<p>The search engine will display all relevant paragraphs with your search term highlighted. You can click on the link on the right of each entry to see the word in the context of the entire text. You can sort your finding by period, provenance, and genre using the outline of the left.</p>
+
+<p>You can also search for English words in any of the project's <esp:link page="user-glossaries">glossaries</esp:link>.</p>
+
+<esp:h>Searching the catalogue data</esp:h>
+
+<p>To search within the catalogue data, type into the search box. Here are some  hints for more efficient catalogue
+searching:</p>
+
+<ul>
+<li>You don't need to use long vowels to search the catalogue data: just use
+normal vowel characters.</li>
+<li>The catalogue search is not case-sensitive: do not worry about capital letters.</li>
+<li>Do not use leading (initial) zero in numbers or commas between words.</li>
+
+<li>To search for multi-word phrases, separate the words with
+an underscore (e.g., <code>STT_1_15</code> finds <i>STT 1, 015</i>)</li>
+
+
+
+</ul>
+
+<p>You can restrict your catalogue searches to particular fields, by
+entering the field name followed by a colon and then what you are searching
+for, with no space between. Not every project uses the same catalogue fields; see the project's website for more information about these.</p>
+
+<ul>
+<li>Designation (publication number) - e.g., <code>designation:CTN_4_117</code></li>
+<li>CDLI catalogue number - e.g., <code>id_text:p363531</code></li>
+<li>Museum collection - e.g., <code>owner:National_Museum_of_Iraq</code></li>
+<li>Museum number - e.g., <code>museum_no:IM_67576</code></li>
+<li>Joins - e.g., <code>join_information:VAT_7828</code></li>
+</ul>
+
+<ul>
+<li>Genre - e.g., <code>genre:medical</code></li>
+<li>One or more words (in sequence) of the subgenre (including composition
+names), e.g, <code>subgenre:medical_recipe</code></li>
+<li>Language - e.g., <code>language:bilingual</code></li>
+</ul>
+
+<ul>
+<li>Period - e.g., <code>period:Neo-Assyrian</code></li>
+<li>Ancient date, as recorded on the tablet - e.g.,
+<code>date_of_origin:SE_61</code> (where SE = Seleucid Era)</li>
+<li>Date BC, as calculated from ancient date - e.g.,
+<code>date_remarks:250_BC</code></li>
+</ul>
+
+<ul>
+<li>Provenance - e.g., <code>provenience:Kalhu</code> (note US spelling)</li>
+<li>Findspot - e.g., <code>findspot:Ue_XVIII_1</code></li>
+<li>Excavation number - e.g, <code>excavation_no:ND_4404</code></li>
+</ul>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

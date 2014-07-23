@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Converting ATF</esp:name>
+<esp:title>Converting ATF to and from other formats</esp:title>
+<html><head/><body>
+<esp:sh>Converting legacy data to ATF</esp:sh>
+<p>For help with converting word processing files, databases, and other legacy data formats to ATF, please contact us directly at <esp:email address="osc@oracc.org"/>.</p>
+
+<esp:sh>Converting ATF to other formats</esp:sh>
+<dl>
+<dt>HTML, RTF and XML</dt>
+<dd>You can generate HTML, RTF and/or XML from ATF without running an Oracc project. Just use the ATF processor web tool, and choose the <code>Make XML</code>, <code>Make HTML</code> and/or <code>Make RTF</code> option(s) as appropriate.</dd> <!-- add link -->
+<dt><esp:link page="otf">Oracc Text Format</esp:link></dt>
+<dd>This page explains how to create OTF (Oracc Text Format) files in order to generate OpenOffice documents from ATF files and other text, in order to write books, articles, etc., that draw on Oracc transliterations and translations. OpenOffice (.odt) files can then be saved as Word (.docx) or other word-processing or typesetting formats.</dd>
+<dt><esp:link page="standards-tei">Text Encoding Initiative</esp:link></dt>
+<dd>Here is some technical documentation on converting from ATF to TEI P5.</dd>
+</dl>
+
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

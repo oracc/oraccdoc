@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+<esp:name>Installing ESP</esp:name><esp:title>Installing the ESP templates and schema</esp:title><html><head/><body>
+
+<p class="firstpara">Whether you will be managing the whole ESP portal site yourself, or are you just writing ESP pages that someone else will edit and upload, you will need to do some basic set-up.</p>
+
+<p>You will need to:</p>
+<ul>
+<li><esp:link page="emacssetup" bookmark="h_obtainingemacs">download and install a copy of Emacs</esp:link> on your computer;</li> 
+<li><esp:link bookmark="h_howtoinstalltheespschemasonyourcomputer">install a set of schemas</esp:link> on your computer that Emacs will use automatically to ensure that your files are valid.</li>
+</ul>
+ 
+
+<esp:sh>How to install the ESP schemas and templates on your computer</esp:sh>
+<p>The schemas are used by Emacs to check that the ESP file is valid. The templates save you time by providing editable outlines for the sorts of files your project is likely to need.</p>
+<ul>
+<li><p>Download these two zip files: <esp:link url="/doc2/downloads/portals/esp-schemas.zip"><code>esp-schemas.zip</code></esp:link> and <esp:link url="/doc2/downloads/portals/esp-templates.zip"><code>esp-templates.zip</code></esp:link>.</p></li>
+<li><p>Create a directory (folder) called, say, <code>oracc</code>, in the directory <esp:link page="emacssetup" bookmark="h_forunixandmacosxusers">where your <code>.emacs</code> file lives</esp:link>.</p></li>
+<li><p>Unzip <code>esp-schemas.zip</code> into the directory you just created (e.g., <code>oracc</code>).</p></li>
+<li><p><esp:link page="emacssetup" bookmark="h_forunixandmacosxusers">Open your <code>.emacs</code> file</esp:link> and add this line of code to it:</p>
+<pre class="cookbook">(eval-after-load 'rng-loc '(add-to-list 'rng-schema-locating-files
+ "~/oracc/schemas/schemas.xml"))</pre>
+<p>(Note that if you chose a different name/place for what we are calling the <code>oracc</code> directory, you should replace <code>~/oracc</code> with the directory name you chose.)</p></li>
+<li><p>Save your <code>.emacs</code> file, quit Emacs and restart.</p></li>
+<li><p>You can unzip <code>esp-templates.zip</code> and keep it wherever it would be most useful to you, for instance in the directory where you plan to create your ESP site.</p> 
+</li></ul>
+
+<esp:sh>Validating ESP files</esp:sh>
+<p>With the schemas installed, Emacs will validate your ESP files as you write. Invalid ESP pages will be omitted from your portal site on rebuild, so it is important to check their validity as you work.</p> 
+
+<p>When you open an ESP XML file, the <code>XML</code> menu will appear. Make sure the <code>Validation</code> option is checked on that menu. Emacs will choose the correct schema automatically if you edit with the ESP template files provided. However, you can change the schema Emacs is using by going to <code>XML > Set Schema > For Document Type > ESP</code> at any time.</p>
+
+<p>As you type, invalid coding will be highlighted red; correct coding will show shades of blue and brown. Look at the bottom bar of the window too, to see whether the file is <code>Valid</code> or <code>Invalid</code>. You can use the <code>First Error</code> and <code>Next Error</code> items on the <code>XML</code> menu to find and fix coding errors.</p>
+
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body>
+</html>
+</esp:page>

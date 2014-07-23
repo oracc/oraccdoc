@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+    <esp:name>Linkage</esp:name>
+    <esp:title>ATF Linkage</esp:title>
+<html><head/><body>
+    <p class="firstpara">This document describes the ATF mechanisms for
+    intertext linking.  The original version of this document was
+    written by Madeleine Fitzgerald and Steve Tinney.</p>
+
+<p> <esp:link bookmark="h_background">Background</esp:link> | <esp:link bookmark="h_operators">Operators</esp:link> | <esp:link bookmark="h_targetsandlinkdefinitions">Targets and Link Definitions</esp:link> | <esp:link bookmark="h_labels">Labels</esp:link> |
+<esp:link bookmark="h_syntax">Syntax</esp:link> | <esp:link
+bookmark="h_implementation">Implementation</esp:link> | <esp:link
+bookmark="h_examples">Examples</esp:link> </p>
+
+    <esp:h>Background</esp:h>
+    
+      <p>The ATF format supports inline notations of three relationships
+between lines in different texts:</p>
+      <ul>
+        <li>parallels, in which a line or lines in one text are similar to
+lines in another text</li>
+        <li>sources, or lines which are being included in a composite text
+but originate in other texts</li>
+        <li>contributors, or lines which are being entered in a
+transliteration and at the same time are relevant to the
+reconstruction of a composite text</li>
+      </ul>
+    
+    <esp:h>Operators</esp:h>
+    
+      <p>Linking composite text lines to lines in individual texts, lines
+in exemplars to lines in composite texts, and matching lines in two
+or more individual exemplars or composite texts are indicated with
+the following notation at the beginning of the next line after the
+line of transliterated text to be linked.</p>
+      <dl>
+        <dt>&lt;&lt;</dt>
+        <dd>line comes from tablet instance (source)</dd>
+        <dt>&gt;&gt;</dt>
+        <dd>line goes to composite text (contributor)</dd>
+        <dt>||</dt>
+        <dd>before reference to line in parallel composite or tablet
+(parallel)</dd>
+      </dl>
+      <p>The source ('comes from') and contributor ('goes to') facilities
+are intended to allow creation of composite texts in the absence of
+a complete set of transliterated sources and, conversely, to allow
+the transliteration of individual sources by reference to a
+composite text which may not yet include the original sources.</p>
+      <p>The parallel link facility is especially useful for editing
+tablets such as those containing liturgical texts and incantations
+where creating a composite text may be practically futile as well
+as methodologically dubious.</p>
+    
+    <esp:h>Targets and Link Definitions</esp:h>
+    
+      <p>A <code>TARGET</code> is a reference to another text related to
+the one at hand. Every linked text must be defined and given a
+<code>TARGET</code> identifier in the file in which it is to be
+used before the first use; we recommend grouping all the
+definitions together just before the <code>&amp;</code>-line (text
+ID/name line).</p>
+      <p>A linked text definition takes the form:</p>
+      <pre>
+#link: def linktext &lt;TARGET&gt; = &lt;ID&gt; = &lt;NAME&gt;
+</pre>
+      <p>For example:</p>
+      <pre>
+#link: def A =  P227635 = CBS 10792 (OB Syllabary B)
+</pre>
+      <p>The variable elements of this definition are:</p>
+      <dl>
+        <dt>TARGET</dt>
+        <dd>the name that is used in the link specifiers; this is normally
+an uppercase letter, e.g., <code>A</code>, but the only actual
+restriction on the spelling of a target is that it may not contain
+any whitespace.</dd>
+        <dt>ID</dt>
+        <dd>the ID as assigned by the CDLI project; for transliterated
+objects this begins with a 'P', e.g., P123456. Other text types
+have similar identifiers with different initial letters.</dd>
+        <dt>NAME</dt>
+        <dd>the human-readable name assigned by the CDLI project; in the
+XML format this is the value of the 'N' attribute.</dd>
+      </dl>
+      <p>The ID and NAME values of texts can be obtained from the CDLI
+website; for texts which have not yet been assigned ID's, use an
+initial 'X' followed by digits as an interim measure and e-mail the
+CDLI staff to request IDs (cdli@ucla.edu).</p>
+    
+    <esp:h>Labels</esp:h>
+    
+      <p>The target is followed by a label that gives the location of the
+related text in the target document. Labels are constructed
+according to the following abbreviations (which are designed to be
+easy to type while still allowing programmatic reconstruction of
+the location of the reference in the XML dataset):</p>
+      <ul>
+        <li>o = obverse</li>
+        <li>r = reverse</li>
+        <li>t = top edge</li>
+        <li>b = bottom edge</li>
+        <li>l = left edge</li>
+        <li>r = right edge</li>
+        <li>e = edge</li>
+        <li>&lt;surface&gt; = other surface, e.g.,
+<code>shoulder</code></li>
+        <li>face a..z = prism face a to z</li>
+        <li>seal n = seal n (n = the number of the seal in the
+transliteration)</li>
+        <li>&lt;roman&gt; = column number in lowercase roman numerals</li>
+        <li>&lt;line number&gt;</li>
+      </ul>
+      <p>Spaces are required between elements of a label, for example, o
+i 2 = obverse, column 1, line 2.</p>
+      <p>Two labels, a 'from' label and a 'to' label, are used when there
+is a need to indicate a range of text beyond a single line in the
+target document. A range requires a hypehn character between the
+two labels.</p>
+    
+    <esp:h>Syntax</esp:h>
+    
+      <p>The syntax of these constructs is either:</p>
+      <pre>
+&lt;OPERATOR&gt; &lt;TARGET&gt; &lt;LABEL&gt;</pre>
+      <p>or:</p>
+      <pre>
+&lt;OPERATOR&gt; &lt;TARGET&gt; &lt;FROM_LABEL&gt; - &lt;TO_LABEL&gt;</pre>
+    
+    <esp:h>Implementation
+Notes</esp:h>
+    
+      <p>A separate program manages the links in such a way that it is
+unnecessary to group together all of the links to a specific
+parallel. In other words, given three texts which contain the same
+parallel, let's say Liturgy 1, 2 and 3, one can encode the
+relationship as follows:</p>
+      <pre>
+@transliteration
+#link: def A = P222222 = Liturgy 2
+&amp;P111111 = Liturgy 1
+1. a-u-a
+|| A 1</pre>
+      <pre>
+&amp;P222222 = Liturgy 2
+1. a-u2-a</pre>
+      <pre>
+#link: def A = P222222 = Liturgy 2
+&amp;P333333 = Liturgy 3
+1. a-u3-a
+|| A 1</pre>
+      <p>The link manager will resolve the links in Liturgy 1 and Liturgy
+3 and construct a link-ring in which all three parallels refer
+mutually to each other. The search engine will automatically
+display all parallels whenever a match is found in any of the
+lines.</p>
+    
+    <esp:h>Examples</esp:h>
+    
+      <p>
+        <b>(a) Source (line in composite 'comes from' exemplar):</b>
+      </p>
+      <p>
+        <i>File 1:</i>
+      </p>
+      <pre>
+&amp;P121323 = OB Lu excerpt N 4304
+1. lu2</pre>
+      <p>
+        <i>File 2:</i>
+      </p>
+      <pre>
+@composite
+#link: def A = P123123 = OB Lu excerpt N 4304
+&amp;Q123238 = A = OB Lu A
+1. lu2
+&lt;&lt; A 1</pre>
+      <p>
+        <b>(b) Contributor (line in exemplar 'goes to'
+composite)</b>
+      </p>
+      <p>
+        <i>File 1:</i>
+      </p>
+      <pre>
+@composite
+&amp;Q123238 = OB Lu A
+1. lu2</pre>
+      <p>
+        <i>File 2:</i>
+      </p>
+      <pre>
+#link: def A = Q128238 = OB Lu A
+&amp;P121323 = OB Lu excerpt N 4304
+1. A
+&gt;&gt;A 1</pre>
+      <p>
+        <b>(c) Parallel</b>
+      </p>
+      <p>
+        <i>File 1:</i>
+      </p>
+      <pre>
+&amp;P123456 = Kusu Incantation version 1
+@reverse
+@column 2
+1. [am husz gal] du7-du7 gi-[izi-la2] </pre>
+      <p>
+        <i>File 2:</i>
+      </p>
+      <pre>
+#link: def D = P123456 = Kusu Incantation version 1
+&amp;P123457 = Kusu Incantation version 2
+1. am husz# gal du7-du7 gi-[izi-la2]
+|| D r ii 1</pre>
+      <p>The above example shows two exemplars of a text. The second
+transliteration contains a definition of the first text as "D" and
+indicates that its first line is paralleled (||) in the first line
+of the second column of the reverse of the first text. Parallels
+may be drawn between composite texts, transliterations or a
+combination of the two.</p>
+
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body>
+</html>
+</esp:page>

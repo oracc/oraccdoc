@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Images</esp:name>
+<esp:title>Images in ESP</esp:title>
+<html><head/><body>
+<p class="firstpara">This page describes how to mark up images in ESP.</p>
+
+<p><esp:link bookmark="h_preparingimagesfortheweb">Preparing images for the web</esp:link> | <esp:link bookmark="h_markupforimages">Markup for images</esp:link> | <esp:link bookmark="h_imagecaptions">Image captions</esp:link> | <esp:link bookmark="h_externallyhostedimages">Externally hosted images</esp:link> | <esp:link bookmark="h_imagemaps">Image maps</esp:link></p>
+
+<esp:h>Images</esp:h>
+<esp:sh>Preparing images for the web</esp:sh>
+<p>Decide on a width for standard-size images and stick to it.  (The 
+ images on the <esp:link url="/saao/knpp">Knowledge &amp; Power</esp:link> site are 9cm in width but have varying heights.)</p>
+
+<p>If large images are required, create <esp:link bookmark="h_linkingtolargeversionsofimages">a link to a larger version</esp:link>  from the standard-sized image.  Choose sizes for large images according to how much detail is required, but remember to keep the file size as small as possible.</p>
+
+<p>Follow the <esp:link page="espstyle" bookmark="h_selectingimagesandwritingcaptions">Style Guide</esp:link> when selecting images, writing captions and citing image sources.</p> 
+
+<p>Images need to be optimised correctly for use on the web. Please use the following guidelines:</p>
+
+<dl>
+<dt>Manipulation</dt>
+<dd>Use a graphics editor to manipulate image size and resolution. Only use a graphics editor with a 'save for web' option. We recommend <esp:link url="http://www.gimp.org/" rel="external">GIMP</esp:link> (for Windows, Mac, Unix) which is free and has a similar level of functionality to Photoshop.</dd>
+
+<dt>Resolution and format</dt>
+<dd>Images need to be 72dpi resolution PNG or JPG files. JPG is a compressed format that gives a smaller file size. PNG format gives better quality but larger file size. A good brief guide to optimising images for the web is given by <esp:link url="https://developers.google.com/speed/articles/optimizing-images" rel="external">Google Developers</esp:link>. As a general rule: use PNG-8 for graphics; use JPG for photographic images and adjust the compression to an acceptable level (the Nimrud project uses compression level 60).</dd>
+
+<dt>File size</dt>
+<dd>The ESP processor will report a warning if images within xml pages are too large (over XX KB in size).</dd>
+<!-- how much?? -->
+</dl>
+
+
+<p>Store all images for use on the site in your project's <code>00res/images</code> folder, or in subfolders inside it.  To organise your images, consider creating subfolders with the same hierarchy as your site’s navigational structure.</p>
+
+<esp:sh>Markup for images</esp:sh>
+<p>Images are inserted using the <code><esp:bookmark id="esp:image"/>&lt;esp:image&gt;</code> element.  Image width and height are retrieved and used automatically by the processor.</p>
+
+<p>By default, the processor will look for the images in the <code>00res/images</code> folder. The <code>file</code> attribute within <code>&lt;esp:image&gt;</code> specifies the location of the image relative to the <code>.../images</code> folder.  So for an image entitled <code>esarhaddon.jpg</code> located in the folder <code>.../images/contexts</code>, the <code>file</code> attribute should read: <code class="example">file="contexts/esarhaddon.jpg"</code>.</p>
+
+<p>Do not include a leading forward slash when specifying the image location (i.e., do not do this: <code class="example">file="/contexts/esarhaddon.jpg"</code>) or the image and its caption will not float correctly.</p>
+
+<p>The specification for how to use the <code>&lt;esp:image&gt;</code> element is given below:</p>
+
+<pre class="listing">&lt;esp:image
+	file="example.jpg"
+	description="Example image"
+	position="float" or position="inline" (default)	
+&gt;
+        &lt;esp:link url="blah"&gt; (optional)
+	&lt;esp:caption&gt;Here is a caption.&lt;/esp:caption&gt;
+&lt;/esp:image&gt;
+</pre>
+
+<dl>
+<dt><code>file</code></dt>
+<dd>Mandatory. The location of the image relative to the <code>00res/images</code> folder. Image files must be JPG or GIF format.</dd>
+
+<dt><code>description</code></dt>
+<dd>Mandatory. Will be presented to users of text browsers or screen readers, and is required for <esp:link url="http://www.w3.org/WAI/">WAI</esp:link> compliance. Should give a concise description of the image.</dd>
+
+<dt><code>position</code></dt>
+<dd>Optional. May be <code>float</code>, which causes the image to appear on the right and text to flow around it, or <code>inline</code> (the default), which causes the image to break up the text above and below it.  (The images for the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp">Knowledge &amp; Power</esp:link> site are all aligned to the right using the <code>float</code> attribute.)</dd>
+</dl>
+
+<esp:sh>Image captions</esp:sh>
+<p><esp:bookmark id="esp:caption"/>The <code><esp:link bookmark="esp:image">&lt;esp:image&gt;</esp:link></code> element can contain a <code>&lt;esp:caption&gt;</code> element, which will display caption text underneath the image.  The caption can contain links, e.g., to a large version of the image, as described in the section on <esp:link page="esplinks" bookmark="h_linkswithincaptions">Links within image captions</esp:link>.</p>
+
+<p>The <code>&lt;esp:image&gt;</code> element itself may contain zero or one empty <esp:link page="esplinks" bookmark="esp:link"><code>&lt;esp:link&gt;</code></esp:link> elements, which will make the image into a link, as described in the section on <esp:link page="esplinks" bookmark="h_linkswithincaptions">Links within image captions</esp:link>.</p>
+
+
+<esp:sh>Linking to large versions of images</esp:sh>
+<p>It is possible to create a <esp:link page="esplinks" bookmark="h_linkstostandalonelargeimages">link to a large version</esp:link> of an image using a relative URL. This linked image will appear as a standalone entity, rather than within a page.</p>
+
+<esp:sh>Externally hosted images</esp:sh>
+<p>The <code>&lt;esp:image&gt;</code> tag can be utilised to include images hosted on other websites, using the <code>url</code> attribute instead of the <code>file</code> attribute:</p>
+
+<pre class="listing">&lt;esp:image
+	url="http://www.example.com/example.jpg"
+	description="Example image"
+	position="left" or position="right"  or position="inline" (default)	
+&gt;
+Example image caption (optional)
+&lt;/esp:image&gt;</pre>
+
+<dl>
+<dt><code>url</code></dt>
+<dd>Mandatory. The location of the image.</dd>
+
+<dt><code>description</code></dt>
+<dd>Mandatory. Will be presented to users of text browsers or screen readers, and is required for <esp:link url="http://www.w3.org/WAI/">WAI</esp:link> compliance. Should give a concise description of the image.</dd>
+
+<dt><code>position</code></dt>
+<dd>Optional. May be <code>right</code> or <code>left</code> which causes the image to appear on the right/left and text to flow around it, or <code>inline</code> (the default), which causes the image to break up the text above and below it. The value <code>right</code> replaces the old value <code>float</code> and gives the same effect.</dd>
+</dl>
+ 
+<p>The element may contain zero or one empty <code>&lt;esp:link&gt;</code> tags, which will end up placed around the image itself. If there is no <code>&lt;esp:link&gt;</code> tag, it may contain zero or one <code>&lt;esp:caption&gt;</code> tags.</p>
+
+<esp:h>Image maps</esp:h>
+<p>ESP no longer supports image maps as they are very difficult to scale to fit small screens on hand-held devices. Email <esp:email address="osc@oracc.org"/> to discuss alternatives.</p>
+
+<esp:h>Next steps</esp:h>
+<p>Once you have some textual and image content you are ready to <esp:link page="esp-build">check and (re)build</esp:link> your ESP website if you are an ESP site manager. If you are creating ESP content for someone else, ask them to check and upload it for you.</p>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

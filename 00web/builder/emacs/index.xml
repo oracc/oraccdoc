@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Using Emacs</esp:name>
+<esp:title>Using Emacs for Oracc work</esp:title>
+<html><head/><body>
+<p class="firstpara">Emacs is a high-powered text editor which, while not particularly pretty, is extremely useful for editing ATF files, managing projects and writing ESP portals. On these pages we discuss:</p>
+
+<dl>
+<dt><esp:link page="emacssetup">Preparing to work with Emacs</esp:link></dt>
+<dd>On this page we describe how to obtain, install and configure it for Oracc work.</dd>
+<dt><esp:link page="aquamacs">Starting to use Aquamacs (Emacs for Mac)</esp:link></dt>
+<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in Aquamacs (Emacs for Mac), apart from those provided by atf-mode.</dd>
+<dt><esp:link page="emacsw32">Starting to use EmacsW32 (Emacs for PC)</esp:link></dt>
+<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in EmacsW32 (Emacs for Windows), apart from those provided by atf-mode.</dd>
+<dt><esp:link page="emacsuse">Working with ATF in Emacs using atf-mode</esp:link></dt>
+<dd>An Emacs major mode is available which makes editing ATF files a bit easier and gives access to the template generator and checker.</dd>
+</dl>
+<p>See also the pages on <esp:link page="projemacs">managing projects with Emacs</esp:link> and <esp:link page="esp">building ESP portals</esp:link>.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

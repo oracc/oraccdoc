@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>OTF</esp:name>
+<esp:title>Oracc Text Format (OTF)</esp:title>
+<html><head/><body>
+
+<p class="firstpara">This page explains how to create OTF (Oracc Text Format) files in order to generate OpenOffice documents from ATF files and other text, in order to write books, articles, etc., that draw on Oracc transliterations and translations. OpenOffice (.odt) files can then be saved as Word (.docx) or other word-processing or typesetting formats. There is also a more technical description <esp:link page="standards-opendocument">here</esp:link>.</p>
+
+<esp:h>Basic principles</esp:h>
+<p>Work in <esp:link page="emacs">Emacs</esp:link> or another text editor. Save your file in your project's <code>/00atf/</code> directory as <code>[FILENAME].otf</code>.</p> 
+
+<p><esp:link bookmark="h_structuralelements">Structural elements</esp:link> begin on a new line and start with the <code>@</code> sign. New paragraphs start after an empty line <esp:link bookmark="h_inlineelements">Inline elements</esp:link> start with <code>@</code> and are enclosed in <code>{ }</code>.</p>
+
+<p>When you have finished, run the Oracc Command <code>oracc odt</code> to generate an OpenOffice file called <code>[FILENAME].odt</code>. You can then copy it off the Oracc server and edit and format it further if you wish.</p>
+
+<esp:sh>Example</esp:sh>
+<p>Here is a very simple example, consisting of an introduction, catalogue and edition of a text from the CAMS/GKAB corpus.</p>
+
+<pre>
+@document
+@project cams/gkab
+@section introduction
+@h1 Rituals to obtain an oracular decision
+This composition from Neo-Assyrian Huzirina contains incantations and rituals. 
+
+It was copied by the @i{šamallû ṣeḫru} (junior apprentice) Nabu-šabši.
+@end section
+
+@section catalog
+@catalog
+@record
+@:copy	 STT 1, 73
+@:exc_no SU 51/1 + SU 51/25
+@:prov	 Huzirina
+@:period Neo-Assyrian
+@:lit	 Reiner 1960; Hunger 1968: no. 380 (colophon); Butler 1998: 349–77 (ms A); CAMS http://oracc.org/cams/gkab/stt_1_73/
+@:edit	 Greta Van Buylaere
+@end record
+@end catalog
+@end section
+
+@section edition
+@h2 STT 1, 73
+@atffile stt_1_073.atf
+@end section
+@end document
+</pre>
+
+<esp:h>Structural elements</esp:h>
+<p>Structural elements begin on a new line and start with the <code>@</code> sign.</p>
+
+<dl>
+<dt>@document</dt>
+<dt>@end document</dt>
+<dd>Every OTF file must begin and end with these lines.</dd>
+
+<dt>@project [PROJECT NAME]</dt>
+<dd>Mandatory. After the <code>@document</code> element, you need to declare the project and, if relevant, subproject which the document belongs to: e.g., <code>@project rinap/rinap4</code> or <code>@project etcsri</code>.</dd>
+
+<dt>@title [TEXT]</dt>
+<dd>Mandatory. This single-line element gives the title of your document. It can be whatever you like.</dd>
+
+<dt>@atffile [FILENAME].atf</dt>
+<dd>Optional. Inserts and formats the contents of an ATF file in your document. If the ATF file is not in the same Oracc directory as your OTF file, you will need to specify the path too. For instance, if your OTF file is in <code>/00any/</code> and the ATF file <code>gilgamesh.atf</code> is in <code>/00atf</code>, write <code>@atffile ../00atf/gilgamesh.atf</code>.</dd>
+<dd>All the appropriate italics, superscripts, subscripts, etc. will be formatted into the transliteration when the file is converted to ODT format.</dd>
+
+<dt>@h1 [TEXT]</dt> 
+<dt>@h2 [TEXT]</dt>
+<dt>etc.</dt>
+<dd>Optional. You can use these single-line elements to mark different levels of heading in your document.</dd>
+
+<dt>@section [STYLE NAME]</dt>
+<dt>@end section</dt>
+<dd>Optional. If you like, you can define different types of section in a <esp:link url="http://oracc.museum.upenn.edu/doc/developer/opendocument/">style file</esp:link>, so that they are formatted differently. For instance, you may want to distinguish <code>@section introduction</code> from <code>@section bibliography</code>. If not, then Oracc will generate the OpenOffice document with a default paragraph style throughout. Each section must end with an <code>@end section</code> line.</dd>
+<dd>You can put <code>@h1</code> headings, etc., within a section.</dd>
+
+<dt># [COMMENT TEXT]</dt>
+<dd>You can add a comment line, starting with a <code>#</code> sign,  anywhere in the file. It will be ignored during the conversion to ODT format.</dd>
+</dl>
+
+<esp:h>Catalogue entries</esp:h>
+<dl>
+<dt>@catalog</dt>
+<dt>@end catalog</dt>
+<dd>Optional. Use this pair of tags if you want to include formally structured catalogue data in your document. It must be enclosed in a <code>@section catalog</code> element and must comprise one or more <code>@record</code> elements.</dd>
+
+<dt>@record</dt>
+<dt>@end record</dt>
+<dd>Use this pair of tags to delimit <code>@catalog</code> entries. Each <code>@record</code> comprises onr or more of the following single-line entries in any order of your choosing. (Here they are listed in alphabetical order.) Note the colon after the <code>@</code> sign.</dd>
+
+<dt>@:acc_no</dt>
+<dd>Museum accession number of the tablet, e.g., <code>@:ass_no K 3459</code>.</dd>
+<dt>@:copy [TEXT]</dt>
+<dd>Place of publication of the copy, e.g., <code>@:copy STT 1, 72</code>.</dd>
+<dt>@:cpn [TEXT]</dt>
+<dd>Used by the RINAP project to mark entries as c, p, or n.</dd>
+<dt>@:dimen [TEXT]</dt>
+<dd>Dimensions of the object, e.g., <code>@:dimen 34 × 56 × 24 mm</code>.</dd>
+<dt>@:edit [TEXT]</dt>
+<dd>Editor of the atf file, e.g., <code>@:edit Graham Cunningham</code>.</dd>
+<dt>@:exc_no [TEXT]</dt>
+<dd>Excavation number of the tablet, e.g., <code>@:exc_no ND 4536</code>.</dd>
+<dt>@:exemplar [TEXT]</dt>
+<dd>Sigla of manuscripts in an edition or composite text, e.g., <code>@:exemplar N1</code>.</dd> 
+<dt>@:lit [TEXT]</dt>
+<dd>Short list of relevant bibliography (but note you can also use a <code>@section bibliography</code> for longer ones).</dd>
+<dt>@:mus no [TEXT]</dt>
+<dd>Museum number of the tablet, e.g., <code>@:mus_no BM 79862</code>.</dd>
+<dt>@:period [TEXT]</dt>
+<dd>Historical period of the tablet, e.g., <code>@:period Old Babylonian</code>.</dd>
+<dt>@:prov [TEXT]</dt>
+<dd>Provenance/provenience of the tablet, e.g., <code>@:prov Nimrud NT Room 12</code>.</dd>
+</dl>
+
+<esp:h>Inline formatting</esp:h>
+<dl>
+<dt>@b{TEXT}</dt>
+<dd>Use to mark bold text.</dd>
+<dt>@i{TEXT}</dt>
+<dd>Use to mark italic text, e.g., <code>The Akkadian word @akk{šamallû} @i{originally} meant "merchant's assitant".</code>.</dd>
+<dt>@r{TEXT}</dt>
+<dd>Use to mark roman (non-italic) text.</dd>
+<dt>@sub{TEXT}</dt>
+<dd>Use to mark subscript text.</dd>
+<dt>@sup{TEXT}</dt>
+<dd>Use to mark superscript text, e.g., <code>100 m@sup{2}.</code>.</dd>
+<dt>@u{TEXT}</dt>
+<dd>Use to mark underlined text.</dd>
+<dt>@akk{TEXT}</dt>
+<dd>Use to mark Akkadian text in transliteration or normalisation, e.g., <code>The Akkadian word @akk{šamallû} means "apprentice".</code>.</dd>
+<dt>@sux{TEXT}</dt>
+<dd>Use to mark Sumerian text in transliteration or normalisation, e.g., <code>The Sumerian word @sux{lugal} means "king".</code>.</dd>
+</dl>
+<p>You can define further inline formatting styles in the <esp:link url="http://oracc.museum.upenn.edu/doc/developer/opendocument/">style file</esp:link>.</p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

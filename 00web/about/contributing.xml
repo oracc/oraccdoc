@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+	<esp:name>Contributing</esp:name>
+	<esp:title>Contributing to Oracc</esp:title>
+
+	<html><head></head><body>
+<p class="firstpara">On this page we explain the various ways of participating in
+project-building with Oracc and what it means to contribute texts
+following either of our two models: <esp:link bookmark="h_donation">donation</esp:link> and <esp:link bookmark="h_curation">curation</esp:link>.</p>
+
+<esp:sh>Donation</esp:sh>
+
+<p>Under the donation model, you simply send us your text
+editions — which may include additional information like translations,
+prosopographies, etc. — and we take care of installing them on Oracc and
+maintaining them.  We may ask you to review the results of our
+conversion processes to ensure that the material that goes online is
+representative of your work, but after that we may edit it as
+necessary to interoperate smoothly with other Oracc corpora.  Note that
+it is not our policy to introduce arbitrary or unnecessary edits
+(quite apart from anything else we have many other things to do), but
+we may make changes following collation or further research in the
+field.</p>
+
+<p>We will identify you as the source of the data, and indicate the
+identity of subsequent revisers of the data as necessary.</p>
+
+<esp:sh>Curation</esp:sh>
+
+<p>Under the curation model, we will help you set up your texts as a
+separate project or subproject on the Oracc server.  We will look to you
+to lemmatize and maintain the texts, and to develop appropriate educational 'portal' material about them. You will retain greater
+control over subsequent edits.</p>
+
+<p>Because the Oracc software is well-suited to the development of
+corpora, and because a corpus or a portal can be transformed into a book, we hope
+that people will find it advantageous to begin projects under the
+curation model even if they later feel that it is better ultimately to
+donate their texts, perhaps after the publication of the book, or when
+their research interests shift.</p>
+
+<p>We welcome inquiries about planning new projects at any time. You
+do not need specialist computer skills to run an Oracc project. We can
+assist with all aspects of the process, from grant-writing onwards. In
+fact the earlier you consult us, the more we can help. Please email us
+at <esp:email address="osc@oracc.org"/> to tell us more about your interests and needs.</p>
+
+<esp:sh>Implications</esp:sh>
+
+<p>Our policy is that all material in Oracc is available for
+re-use under a <esp:link page="licensing">Creative
+Commons Attribution Share-Alike license</esp:link>. That means, in practice,
+that anybody can download texts, change them and publish them again as
+long as the source is mentioned and the new work is released under the
+same (or similar) license.</p>
+
+<p>As the size of the Oracc user base grows, there is an increasing
+likelihood that something like that will indeed happen. For example,
+someone who is working on a project about some aspect of Mesopotamian
+culture may need to prepare editions of texts which have
+special-purpose annotation and then may well use your text, or another
+project's version of it, as her point of departure.  For us, this
+ability to build on the work of others — always crediting them for
+their contributions — is a key reason for the implementation of the Oracc
+system and a major factor in our willingness to invest large amounts
+of time in the project.</p>
+
+<esp:sh>More Information</esp:sh>
+
+<p>To read more introductory information about Oracc you can go
+to <esp:link page="howandwhy">the How and Why page</esp:link>.  If you have
+further questions or would like to donate or curate texts, you can
+e-mail us at <esp:email address="osc@oracc.org"/>.</p>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+	</body></html>
+
+</esp:page>

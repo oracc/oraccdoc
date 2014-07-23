@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+  <esp:name>Composites</esp:name>
+    <esp:title>ATF Composites Conventions</esp:title>
+<html><head/><body>
+    <p class="firstpara">This document describes ATF features which are available when
+    entering composite texts.</p>
+
+<p>Composite texts by convention have an ID beginning with Q and are
+declared by an @-line which immediately follows the &amp;-line for the
+text:</p>
+<pre class="cookbook">
+&amp;Q000002 = Archaic Lu A
+@composite</pre>
+
+<p>Composite IDs are listed in the <esp:link url="http://oracc.museum.upenn.edu/qcat">Oracc Qcat</esp:link>. To obtain an ID for a composite text email <esp:email address="osc@oracc.org"/>.</p>
+
+<esp:h>Structure</esp:h>
+
+<p>Most of the @-lines which are permitted in transliterations are not
+permitted in composites; this is because composites are organized
+around documentary structure rather than the structure of a physical
+object.  The one exception is that milestones are allowed in
+composites.</p>
+
+<p>Documentary divisions are indicated in ATF by use of the
+<code>@div</code> tag which is followed by the name of the division
+and an optional name for the division.  The <code>@div</code> tag
+requires a closing <code>@end</code> tag, which must take as its
+single argument the name of its corresponding opening
+<code>@div</code>.  <code>@div</code>'s of different kinds may not be
+interwoven.</p>
+
+<pre class="cookbook"> 
+@div part 1
+...
+@end part
+
+@div colophon
+...
+@end colophon</pre>
+
+<p>In the liturgical corpus (including ETCSL editions of texts which
+could reasonably be considered liturgical), kirugu and other rubrics
+are used as logical structures, and they contain subdivisions giving
+the actual rubric; this is supported with the following syntax:</p>
+
+<pre class="cookbook">
+@div kirugu 1
+1.  tur3-ra-na ...
+
+@div rubric kirugu
+10. ki-ru-gu2 1(disz)-a-kam
+@end rubric
+
+@end kirugu
+
+@div giszgigal 1
+11. u2-a a-u3-a u2-a-u2-a
+
+@div rubric giszgigal
+12. gisz-gi4-gal2-bi-im
+@end rubric
+
+@end giszgigal</pre>
+
+<p>A physical location may be given in a composite by using the
+locator milestone; the content after locator is a label.  This is
+intended for use when the documentary structure of composites is being
+used to edit a text which is preserved only in one exemplar (the ePSD
+royal inscriptions corpus edits all royal inscriptions as composites):</p>
+
+<pre class="cookbook">
+1. a
+@m=locator o 1</pre>
+
+<esp:h>Variants</esp:h>
+
+<p>Variants are implemented to support the ETCSL corpus but may be
+used in any composite.</p>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body>
+</html>
+</esp:page>

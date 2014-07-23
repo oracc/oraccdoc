@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	<esp:name>Schemas</esp:name>
+	<esp:title>Oracc schemas</esp:title>
+
+	<html>
+		<head>
+		
+		</head>
+		<body>
+
+<esp:sh><esp:link url="http://oracc.org/ns/cbd/1.0">CBD: Corpus-Based Dictionary</esp:link></esp:sh>
+<p>The CBD format is used for glossaries and lexicons.
+  The architecture is designed to support the inclusion of arbitrary
+  items of information tailored to the needs of different languages or
+  types of name books.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/cbd/2.0">CBD: Corpus-Based Dictionary</esp:link></esp:sh>
+<p>The CBD format is used for glossaries and lexicons,
+  and this document describes version 2 of the CBD, a.k.a., G2.
+  The architecture is designed to support the inclusion of arbitrary
+  items of information tailored to the needs of different languages or
+  types of name books.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/cdf/1.0">CDF: CDL Document Format</esp:link></esp:sh><p>CDF is an XML format for representing a variety of
+  document types from text transliterations to books.  The format
+  combines narrative facilities with technical data types such as XTF
+  data and corpus-based dictionaries.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/esp/1.0">ESP: Electrostatic Portal</esp:link></esp:sh>
+<p>ESP is a port of George MacKerron's Electrostatic
+  website building software to Oracc.  It is used for the portal components of all Oracc projects.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/gdl/1.0">GDL: Grapheme Description Language</esp:link></esp:sh>
+<p>Grapheme Description Language for embedding in
+  higher-order document types such as text editions and
+  signlists.  A formal definition with RNC schema is given interwoven
+  with the ATF conventions for representing each element in
+  the schema.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/sl/1.0">SL: Sign Lists</esp:link></esp:sh>
+<p>Sign list source files are maintained as a simple
+  plain text file with @-commands in the manner of Oracc
+  glossaries. This document gives an simple overview of the SL
+  commands.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xcf/1.0">XCF: XML Configuration Files</esp:link></esp:sh>
+<p>XCF is an XML vocabulary for setting program
+  configuration values; one day there will be a more user-friendly
+  ASCII front end.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xcl/1.0">XCL:  XML Chunks and Lemmas</esp:link></esp:sh>
+<p>XCL is the format used as a basis for linguistic
+  annotation.</p>
+
+<!-- <esp:sh><esp:link url="http://oracc.org/ns/xdf/1.0">XDF:
+	  XML Documentation Format</esp:link></esp:sh><p>The XDF format is an XML vocabulary which blends
+  special-purpose tags, RelaxNG, Dublin Core metadata, and XHTML to
+  implement a literate XML programming environment for RelaxNG's
+  compact syntax.  Because XDF formalizes the metadata component of
+  the work and creates a TOC automatically, it is also useful for
+  general purpose documentation.</p> -->
+
+<esp:sh><esp:link url=".org/">XFF: XML Forms Files</esp:link></esp:sh>
+<p>This document contains a preliminary description of  the XFF data format.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/XMD/1.0">XMD: XML MetaData</esp:link></esp:sh>
+<p>XMD is a CDL subsystem which imports catalogs
+  containing metadata concerning texts and compositions and creates an
+  XML version of the data.  Some validation of the catalog content is
+  performed and sort codes are generated and added to some fields.
+  XMD also encompasses a keyset-generator to create keys for
+  indexing.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xse/1.0">XSE: XML Search Expressions</esp:link></esp:sh>
+<p>XSE is a schema for expressing the search
+  expressions that are understood by the Oracc native search
+  engine.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xst/1.0">XST: XML Syntax Trees</esp:link></esp:sh>
+<p>XML Syntax Trees provide a generic vocabulary for
+  expressing syntactic data which is based closely on XCES.  This
+  document describes the CDL system-level support for XST, including
+  the facilities in the ATF notation for expressing syntactic
+  annotation.  Such annotations may range from isolated hints to a
+  parser which generates the bulk of syntax trees automatically to
+  complete syntax trees interwoven with lemmatization in the
+  linguistic annotation layer of ATF.  The annotations themselves are
+  language-specific and are described in separate
+  documents.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xtc/1.0">XTC: XML Text Corpus</esp:link></esp:sh>
+<p>XTC (besides being a tribute) is a very simple XML
+  vocabulary which provides a list of texts on which downstream corpus
+  processing can operate.  The principle is that further linguistic
+  service processing does not need to know anything system-specific,
+  enabling the higher-order tools to operate on a variety of source
+  corpora.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xtf/1.0">XTF:  XML Transliteration Format Version</esp:link></esp:sh><p>XTF is an XML format for describing the
+  transliteration of cuneiform texts; it also encompasses facilities
+  for other kinds of editions commonly used in cuneiform studies.</p>
+
+<esp:sh><esp:link url="http://oracc.org/ns/xtr/1.0">XTR: XML Translations</esp:link></esp:sh>
+<p>This document provides the RNG schema used by the
+XML version of translations and explains implementation details useful
+for programmers; if you are typing translations in ATF you don't need
+to read this page.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+		</body>
+	</html>
+
+</esp:page>

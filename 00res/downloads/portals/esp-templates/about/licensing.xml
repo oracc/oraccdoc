@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+		xmlns:esp="http://oracc.org/ns/esp/1.0"
+		xmlns="http://www.w3.org/1999/xhtml">
+	
+	<esp:name>Licensing</esp:name>
+	<esp:title>Licensing statement</esp:title>
+	
+	<html>
+		<head></head>
+		<body>
+
+
+<p class="firstpara">The contents of this online documentation are released under a <esp:link url="http://creativecommons.org/licenses/by-sa/3.0/" hide-print="yes" rel="external">Creative Commons Attribution Share-Alike</esp:link> license.</p> 
+
+<p>This means that you are free to copy, distribute, transmit and adapt our work without permission, under the following conditions:</p> 
+<ul>
+<li><p>You must attribute the work to PROJECT and (if relevant) the individual author, and also acknowledge the fact that we are funded by FUNDER. We recommend the following wording: "Based on data prepared by AUTHOR [or another project member] for the FUNDER-funded PROJECT" or "Based on data prepared by the FUNDER-funded PROJECT".</p></li>
+<li><p>If you alter, transform, or build upon any material in this website, you may distribute the resulting work only under the same or similar license to this one.</p></li>
+</ul>
+<p>Any of these conditions may be waived in the right circumstances, if you explicitly ask us for permission. You can email us at <esp:email address="osc@oracc.org" />.</p>
+
+<p>Read the hints and suggestions for <esp:link url="http://oracc.org/help/visitor/reusing/">reusing material from Oracc</esp:link>.</p>
+
+<p>Images taken from third-party websites are all credited and linked to those websites, where information about copyright may be found.</p>
+
+<esp:sh>Software Development</esp:sh>
+<p>The website is based on a design by <esp:link url="http://mackerron.com/home/" rel="external">George MacKerron</esp:link> for the <esp:link url="http://www.hps.cam.ac.uk/whipple/" rel="external">Whipple Museum</esp:link>, and was created using <esp:link url="http://oracc.org/help/portals/esp/">ESP</esp:link>, Steve Tinney's Oracc port of MacKerron's electrostatic website-building software.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+		</body>
+	</html>
+
+</esp:page>

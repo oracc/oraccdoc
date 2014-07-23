@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Links</esp:name>
+<esp:title>Creating Links in ESP Pages</esp:title>
+
+<html><head/><body>
+
+<p class="firstpara">This page describes how to make links and bookmarks of various sorts in ESP pages.</p>
+
+<p><esp:link bookmark="h_links">Links</esp:link> | <esp:link bookmark="h_internallinks">Internal links</esp:link> | <esp:link bookmark="h_externallinks">External links</esp:link> | <esp:link bookmark="h_linkstodownloads">Links to downloads</esp:link> | <esp:link bookmark="h_Linkstostandalonelargeimages">Links to standalone large images</esp:link> | <esp:link bookmark="h_linkswithincaptions">Links within captions</esp:link> | <esp:link bookmark="h_linkstootheroraccwebsites">Links to other Oracc websites</esp:link> | <esp:link bookmark="h_bookmarks">Bookmarks</esp:link> | <esp:link bookmark="h_creatinglinkstoabibliography">Creating links to a bibliography</esp:link></p>
+<esp:h>Links</esp:h>
+<esp:sh><code>&lt;esp:link&gt;</code></esp:sh>
+<p>The <code>&lt;esp:link&gt;</code> tag is used to create links and is equivalent to the HTML tag  <code>&lt;a href="..."&gt;</code>.</p>  
+
+<esp:h>Internal links</esp:h>
+<p>To create a link to another page within the site (i.e., an internal link) use the <code>&lt;esp:link&gt;</code> tag together with the <code>page</code> attribute. To create a link to a bookmarked point in a page (within the site), use the <code>&lt;esp:link&gt;</code> tag together with the <code>bookmark</code> attribute.</p>
+
+<pre class="listing">&lt;esp:link
+	page="example"
+	bookmark="example"
+	title="Example title"
+	accesskey="X"
+&gt;
+	Inline content (optional)
+&lt;/esp:link&gt;</pre>	
+	
+<dl>
+<dt><code>page</code></dt>
+<dd>Optional. The id of another page within the site. Must be present if there is no <code>bookmark</code> attribute.</dd>
+
+<dt><code>bookmark</code></dt>
+<dd>Optional. The <code>id</code> of a <code><esp:link bookmark="esp:bookmark">bookmark</esp:link></code> on this page or (if a <code>page</code> attribute is given) another page. Must be present if there is no <code>page</code> attribute.</dd>
+
+<dt><code>title</code></dt>
+<dd>Optional. Title text for the link (read by screen readers, displayed as a yellow ‘tool-tip’ in standard browsers). Overrides any title text that is automatically generated. If title="", no title text is present on the link on the final page.</dd>
+
+<dt><code>accesskey</code></dt>
+<dd>Optional. Define an access key for this link. Overrides any access key specified in <code><esp:link page="esp-setup" bookmark="h_sitestructure">structure.xml</esp:link></code>. Use not recommended.</dd>
+</dl>
+
+<p><strong>NB.</strong>  If the element has content (i.e., contains text), this content becomes the link.  If the element has no content, the name of the destination page (or title of the destination bookmark) is used as the link text. This usage is recommended, because it guarantees that the link text is consistent with any changes made to the destination page name or bookmark title.</p>
+
+<esp:h>External links</esp:h>
+<p>The <code>&lt;esp:link&gt;</code> tag is used to create links and is equivalent to the HTML tag  <code>&lt;a href="..."&gt;</code>.  To create a link to an external web page use the <code>&lt;esp:link&gt;</code> tag together with the <code>url</code> attribute.</p>
+
+<pre class="listing">&lt;esp:link
+	url="http://www.example.com/"
+	site-name="Example and Sons Ltd."
+	title="Example title"
+	accesskey="X"
+	hide-print="yes"
+&gt;
+	Inline content (optional)
+&lt;/esp:link&gt;</pre>
+
+<dl>
+<dt><code>url</code></dt>
+<dd>Mandatory. The URL of the external website. Will usually begin <code>http://...</code>. </dd>
+
+<dt><code>site-name</code></dt>
+<dd>Optional. Used as the link text if element is empty. Used in automatically generated title text if the element is not empty and the <code>title</code> attribute is not specified.</dd>
+
+<dt><code>title</code></dt>
+<dd>Optional. Title text for the link. Overrides any title text (after the words “External site") that is automatically generated.</dd>
+
+<dt><code>accesskey</code></dt>
+<dd>Optional. Defines an access key for this link. Use not recommended.</dd>
+
+<dt><code>hide-print="yes"</code></dt>
+<dd>If present this prevents the default behaviour, which is to show the URL of an external link in square brackets after the link text when the page is printed.</dd>
+</dl>
+
+<p><strong>NB</strong>.  If the element has content (i.e., contains text), this content becomes the link. If the element has no content, the <code>site-name</code> or (failing that) <code>url</code> attribute is used as the link text.</p>
+
+<p>Some URLs include the <code>&amp;</code> (ampersand) character.  For such URLs, you must substitute the entity <code>&amp;amp;</code> in place of the ampersand or else ESP will return an error when you <esp:link page="esp-build">build the site</esp:link>.</p>
+
+<p>You must link to other web pages, whether <esp:link bookmark="h_linkstootheroraccwebsites">on Oracc</esp:link> or elsewhere, using full URLs, not the short forms ("tiny URLs") offered by services such as tiny.cc.</p>
+
+<esp:h>Links to downloads</esp:h>
+<p>Sometimes you may want to link to a resource within the site which is not a page with an <code>id</code>, for example, a downloadable PDF file or a KMZ file <esp:link page="esp-images" bookmark="h_googleearthandgooglemapscontent">to open in Google Earth</esp:link>.</p>
+<p>Files for download should be placed in the <code>00res/downloads</code> folder or one of its subfolders.</p> 
+<p>Then use the <code>&lt;esp:link&gt;</code> tag together with the <code>url</code> attribute (as described in the section on <esp:link bookmark="h_externallinks">External links</esp:link>) and begin the URL with the <code>~</code> character: this will be replaced with the root of the site (known as a relative URL). For example,</p>
+
+<pre class="example">&lt;esp:link url="~/downloads/example.pdf" title="blah"&gt;... &lt;/esp:link&gt;</pre>
+
+<pre class="example">&lt;esp:link url="~/downloads/adian_eski_kalak.kmz" 
+   title="View location of Adian using Google Earth"&gt;View location 
+   using Google Earth&lt;/esp:link&gt;</pre>
+
+<esp:h>Links to standalone large images</esp:h>
+
+<p>It is possible to link directly to a standalone larger version of an image, which is not a page with an <code>id</code>.</p>
+
+<p>All large versions images should be placed in the <code>00res/images</code> folder, or one of its subfolders.</p>
+
+<p>Linking to a large standalone image uses the same method as linking
+to a downloadable file. Use the <code>&lt;esp:link></code> tag
+together with the url attribute (as described in the section on
+<esp:link bookmark="h_externallinks">External links</esp:link>) and
+begin the URL with a <code>/</code> character followed the name of the project. For
+instance:</p> 
+
+<pre class="example">&lt;esp:link url="/saao/knpp/images/essentials/kingsadvisors/bm-ane-124537-large.jpg" 
+   title="blah"&gt;...&lt;/esp:link&gt;</pre>
+
+<esp:h>Links within captions</esp:h>
+<p>The <code>&lt;esp:link&gt;</code> element can be used within the <code>&lt;esp:image&gt;</code> element (described on the <esp:link page="esp-images" bookmark="esp:image">Images page</esp:link>) to:</p>
+<ol>
+<li>make images into links;</li>
+<li>add a text link within an image caption.</li>
+</ol>
+<p>Most commonly, both types will be links to larger versions of images.  If these larger images are on external web pages, you should use the <code>url</code> attribute to specify the URL of the image (described in the <esp:link bookmark="h_externallinks">External links</esp:link> section).  Otherwise, specify the location of the large image within the site using the <code>~</code> character to create a relative URL to the correct folder (described in the section on <esp:link bookmark="h_linkstodownloads">Links to downloadable content</esp:link>).</p>
+
+<p>The example below shows how to use the <code>&lt;esp:link&gt;</code> element within the <code>&lt;esp:image&gt;</code> element to (a) make an image into a link to an external web page and (b) create a text link within the image caption.</p>
+
+<pre class="example">
+&lt;esp:image file="essentials/assurbanipalslibrary/ps086972_m.jpg" 
+description="Cuneiform tablet telling the legend of Ishtar's descent 
+to the Underworld" position="float"&gt;
+   
+   &lt;esp:link  url="http://www.thebritishmuseum.ac.uk/blah1/" 
+   title="Large image of Cuneiform tablet telling the legend of 
+   Ishtar's descent to the Underworld" hide-print="yes"/&gt;
+
+   &lt;esp:caption&gt;This tablet, telling the myth of the goddess 
+   Ishtar's visit to her sister, the underworld goddess Ereshkigal, 
+   ends with a colophon describing it as the property of Assurbanipal, 
+   'king of the world, king of the land of Ashur'; from Assurbanipal's
+   Library in Nineveh (BM K 162). Photo © The British Museum. 
+
+       &lt;esp:link url="http://www.thebritishmuseum.ac.uk/blah2/"
+       title="Large image of Cuneiform tablet telling the legend of 
+       Ishtar's descent to the Underworld" hide-print="yes"&gt;View  
+       large image on the British Museum's website&lt;/esp:link&gt;.
+
+    &lt;/esp:caption&gt;
+
+&lt;/esp:image&gt;
+</pre>
+
+<esp:h>Links to other Oracc websites</esp:h>
+<p>You may wish to link to a resource on Oracc that is not within the generated site structure. In this case, use a standard absolute URL beginning with the <code>/</code> character. For example, <code class="example">&lt;esp:link url="http://oracc.museum.upenn.edu/cams/gkab/P348777.html" title="blah"&gt;...&lt;/esp:link&lt;</code>.</p>
+
+<p>Oracc URLs are explained <esp:link page="projurls">on a separate page</esp:link>.</p>
+
+<esp:sh>Inserting page titles, etc.</esp:sh>
+<p>The <code>&lt;esp:page-name&gt;</code> element can be used to conveniently refer to other pages within the site:</p>
+
+<pre class="listing">&lt;esp:page-name
+	page="example"
+/&gt;
+</pre>
+
+<p>Inserts the name of the page with the given id. If you want to refer to a page by name, use this element to ensure that the name remains consistent with any future changes. Always empty.</p>
+
+<p>If you want to refer to a page by title, use the <code>&lt;esp:page-title&gt;</code> element to ensure that the title remains consistent with any future changes. Always empty.</p>
+
+<pre class="listing">&lt;esp:page-title
+	page="example"
+/&gt;</pre>
+
+<p>Inserts the title of the page with the given id.</p>
+
+<esp:h>Bookmarks</esp:h>
+<p>Bookmarking functionality allows you to jump directly to any point on a specific page by following a link.</p>
+
+<p>The <code><esp:bookmark id="esp:bookmark"/>&lt;esp:bookmark&gt;</code> element defines the point on a page that may be jumped to directly from a link, either on the same page or on another page.  The link to the bookmark is a straightforward <code>&lt;esp:link&gt;</code> element that uses the <code>page</code> attribute.</p>
+
+<p>Bookmarking requires two steps:</p>  
+<ol>
+<li>placing a <code>&lt;esp:bookmark&gt;</code> element around the text to which you would like to jump:</li>
+<li>creating a link to the bookmark using <code>&lt;esp:link&gt;</code>.</li>
+</ol>
+
+<p>The specification of the <code>&lt;esp:bookmark&gt;</code> element is as follows:</p>
+
+<pre class="listing">&lt;esp:bookmark
+	id="example"
+	title="Example bookmark"
+	hide-highlight="yes"
+&gt;
+	Inline content (optional)
+&lt;/esp:bookmark&gt;
+</pre>
+
+<dl>
+<dt><code>id</code></dt>
+<dd>Mandatory. Identifies the bookmark. Must be unique within the page. Becomes part of the URL for that page/bookmarked section, so as well as being unique, each id should be reasonably short, contain no spaces and no accented characters.
+</dd>
+
+<dt><code>title</code></dt>
+<dd>Mandatory. Used to describe the point that will be jumped to by a link (e.g. <code>"Jump to description of microscope on this page"</code>).</dd>
+
+<dt><code>hide-highlight="yes"</code></dt>
+<dd>Optional. By default, the content of the <code>&lt;esp:bookmark&gt;</code> element is highlighted when the bookmark is jumped to. This attribute prevents that behaviour.</dd>
+</dl>
+
+<p><strong>NB.</strong>  The <code>&lt;esp:bookmark&gt;</code> can be empty, i.e., it does not have to be placed around text, but should usually contain a term or short phrase.</p>
+
+<esp:sh>Creating links to a bibliography</esp:sh>
+<p>The <esp:link url="http://oracc.museum.upenn.edu/saao/knpp">Knowledge &amp; Power</esp:link> website is an example of a site that uses bookmarks to create links to the bibliography. At the end of each introductory essay is a link to the relevant bookmarked entry in the bibliography.</p>
+
+<p>So, for example, here are four links, used at the end of an essay to jump to bookmarked entries in the bibliography:</p>
+
+<pre class="example">&lt;ul&gt;
+	&lt;li&gt;&lt;esp:link page="biblio-index" bookmark="faleslanfranchi"&gt;Fales and 
+Lanfranchi&lt;/esp:link&gt;, 'The impact of oracular materials', 1997&lt;/li&gt;
+
+	&lt;li&gt;&lt;esp:link page="biblio-index" 
+bookmark="leichty_1997"&gt;Leichty&lt;/esp:link&gt;, 'Divination, magic, and 
+astrology', 1997&lt;/li&gt;
+
+	&lt;li&gt;&lt;esp:link page="biblio-index" bookmark="mattila"&gt;Mattila&lt;/esp:link&gt;, 
+&lt;i&gt;The king's magnates&lt;/i&gt;, 2000&lt;/li&gt;
+
+	&lt;li&gt;&lt;esp:link page="biblio-index" 
+bookmark="pecirkova"&gt;Péçirková&lt;/esp:link&gt;, 'Divination and politics', 1985&lt;/li&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>and here is the text that appears on the bibliography page, containing the <code>&lt;esp:bookmark&gt;</code> element:</p>
+
+<pre class="example">
+&lt;p&gt;
+   &lt;esp:bookmark id="faleslanfranchi" title="entry"&gt;Fales, F.M. and 
+   G.B. Lanfranchi&lt;/esp:bookmark&gt;, 'The impact of oracular materials on 
+   the political utterances and political actions of the Sargonid dynasty', 
+   in J.-G. Heintz (ed.), &lt;i&gt;Oracles et propheties dans l'antiquité&lt;/i&gt;, 
+   Paris: de Boccard, 1997, pp. 99-114.
+&lt;/p&gt;
+
+&lt;p&gt;
+   &lt;esp:bookmark id="leichty_1997" title="entry">Leichty, E.&gt;/esp:bookmark>, 
+   'Divination, magic, and astrology in the Assyrian royal court', in 
+   S. Parpola and R. Whiting (eds.), &lt;i>Assyria 1995&lt;/i>, Helsinki
+   1997, pp. 161-164.
+&lt;/p>
+
+&lt;p>
+   &lt;esp:bookmark id="mattila" title="entry>Mattila, R.&lt;/esp:bookmark>, 
+   &lt;i>The king's magnates: a study of the highest officials 
+   of the Neo-Assyrian empire&gt;/i> (State Archives of Assyria 
+   Studies 11), Helsinki: Helsinki University Press, 2000.
+&lt;/p>
+
+&lt;p>
+   &lt;esp:bookmark id="pecirkova" title="entry">Péçirková, J.&lt;/esp:bookmark>, 
+   'Divination and politics in the Late Assyrian empire', &lt;i>Archiv 
+   Orientální&lt;/i&gt; &lt;b>53&lt;/b&gt; (1985), 155-168.
+&lt;/p>
+</pre>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Configuration</esp:name><esp:title>Project Configuration</esp:title>
+<html><head/><body>
+<p class="firstpara">This page explains how to configure the functionality and appearance of your Oracc project.</p>
+
+
+<p><esp:link bookmark="h_files">Files</esp:link> | <esp:link bookmark="h_lists">Lists</esp:link> | <esp:link bookmark="h_proxies">Proxies</esp:link> | <esp:link bookmark="h_updating">Updating</esp:link> | <esp:link bookmark="h_00libconfigxml">00lib/config.xml</esp:link> | <esp:link bookmark="h_editablecomponents">Editable components</esp:link> | <esp:link bookmark="h_relatedpages">Related pages</esp:link></p>
+<esp:h>Files</esp:h>
+
+<p>Oracc project configuration is handled by several files:</p>  
+<ul>
+<li><p>The project configuration is handled by an XML project definition file called <code>00lib/config.xml</code>. This is the file you are most likely to need to edit. We give more detailed instructions <esp:link bookmark="h_corpusconfiguration">below</esp:link>.</p></li>  
+<li><p>The colours of your project website are given in the file <code>00lib/p3colours.txt</code>, as described <esp:link page="webcolours">on a separate page</esp:link>.</p></li>
+<li><p>If your corpus borrows ("proxies") ATF files from another project, their P, Q or X-numbers are listed in <code>00lib/proxy.lst</code>, described further below.</p></li>
+<li><p>In principle, several corpus configuration issues are dealt with by
+the XML Text Corpus (XTC) definition file <code>00lib/corpus.xtc</code>.  In practice, the default
+ never needs editing, so we will say nothing more about it here.</p></li>  
+</ul>
+
+<esp:h>Lists</esp:h>
+
+<p>Several lists of ID-numbers provide control over what is included
+in the project and what is displayed. </p>
+
+<p>The two important lists are <code>00lib/approved.lst</code> and
+<code>00lib/outlined.lst</code>.  The first gives all the texts which
+are considered part of the project.  The second gives the texts which
+are displayed by the pager.  Whether or not the pager actually uses
+<code>00lib/outlined.lst</code> is controlled by the pager
+option <code>pager-outlined-lst</code> in <code>00lib/config.xml</code>, as described <esp:link url="http://oracc.museum.upenn.edu/configdoc/build.html">build</esp:link> page.</p>
+<p>The other two lists
+(<code>00lib/new.lst</code> and <code>00lib/rejected.lst</code>) are
+presently irrelevant as they are intended to support dynamic tracking
+of new additions to the CDLI catalogue in a manner that is not yet
+implemented.</p>
+
+<p>Secondary lists influence the build process if any kind of dynamic
+editing is being done by the system.  They are:</p>
+
+<dl>
+<dt>not-approved.lst</dt>
+<dd>Any numbers in this list are removed from the generated
+  <code>approved.lst</code></dd>
+<dt>add-approved.lst</dt>
+<dd>Any numbers in this list are added to the generated
+  <code>approved.lst</code></dd>
+</dl>
+
+<p>Similar lists influence the creation of <code>outlined.lst</code>:
+  <code>not-outlined.lst</code> and <code>add-outlined.lst</code>
+  contain numbers to be excluded or included in the generated
+  <code>outlined.lst</code> respectively.</p>
+
+<h3>Proxies</h3>
+<p>Finally, if you want to borrow ("proxy") ATF files from another corpus, you should make a file <code>00lib/proxy.lst</code>, that lists the P, Q or X-number of each proxied text, one to each line. Precede each text-id with the relevant project abbreviation and a colon; if you want to borrow the other project's catalogue data, follow the text-id with an @-sign and the project name. If you don't include an @-statement, the CDLI catalogue data will be used.</p> 
+<p>For instance:</p>
+<pre class="example">
+dccmt:P345916@dccmt
+dccmt:P347486@dccmt
+cams/gkab:P348765@dccmt
+cams/gkab:P348767@dccmt
+</pre>
+<p>In this example the first two texts are proxied from <esp:link url="http://oracc.museum.upenn.edu/dccmt/">DCCMT</esp:link> and the second from the CAMS subcorpus <esp:link url="http://oracc.museum.upenn.edu/cams/gkab/">GKAB</esp:link>. However, all four take catalogue data from DCCMT.</p>
+
+<p>You can use proxy lists to make corpora or subcorpora entirely of proxied texts (e.g., <esp:link url="dccmt/paper11">DCCMT/Paper11</esp:link>, a collection of texts for an undergraduate course). If you do this, set the (sub)project's <esp:link url="http://oracc.museum.upenn.edu/configdoc/build.html"><code>catalogue-build-policy</code> option</esp:link> to "virtual" to generate a glossary.</p>
+<esp:h>Updating</esp:h> 
+<p>When you have edited the file <code>00lib/config.xml</code> as described below, use <esp:link page="the-oracc-command">the <code>oracc</code> command</esp:link> to
+update the web version of the configuration file:</p>
+
+<pre class="cookbook">
+oracc config
+</pre>
+
+<esp:h>Corpus configuration</esp:h>
+
+
+<esp:sh>00lib/config.xml</esp:sh>
+
+<p>The configuration file <code>00lib/config.xml</code> ("the config
+file") is the one which projects will modify most.  It is an XML file
+with a simple syntax and simple tags, the most important of which are
+described here.</p>  
+
+
+
+
+
+<p>Config files are generated automatically when a project is first
+created. Let's start by looking at a typical config file (this one has
+been simplified a little for clarity):</p>
+
+<pre class="example">
+&lt;project n="dcclt"&gt;
+
+&lt;name&gt;Digital Corpus of Cuneiform Lexical Texts&lt;/name&gt;
+&lt;abbrev&gt;DCCLT&lt;/abbrev&gt;
+&lt;logo type="text"&gt;dcclt&lt;/logo&gt;
+&lt;url/&gt;
+&lt;type&gt;corpus&lt;/type&gt;
+&lt;public&gt;yes&lt;/public&gt;
+&lt;blurb&gt;Editions and translations of lexical texts (word lists and sign lists) from all
+periods of cuneiform writing &lt;br/&gt;
+Project directed by Niek Veldhuis at UC Berkeley and supported by the 
+&lt;a href="http://www.neh.gov"&gt;National Endowment for the Humanities&lt;/a&gt;.&lt;/blurb&gt;
+&lt;image&gt;P000120.png&lt;/image&gt;
+&lt;image-alt&gt;Drawing of a list of vessels from Archaic Uruk, circa 3500 BCE&lt;/image-alt&gt;
+
+&lt;option name="build-approved-policy" value="mixed"/&gt;
+&lt;option name="build-outlined-policy" value="Q"/&gt;
+&lt;option name="catalog-build-policy" value="auto"/&gt;
+
+&lt;option name="cbd-mode" value="mixed"/&gt;
+&lt;option name="%sux" value=". epsd2 dcclt/nineveh"/&gt;
+&lt;option name="%akk" value="."/&gt;
+
+&lt;option name="pager-back-button" value="DCCLT Portal"/&gt;
+&lt;option name="pager-back-url" value="http://oracc.museum.upenn.edu/dcclt"/&gt;
+
+&lt;option name="outline-default-select" value="true"/&gt;
+&lt;option name="outline-default-sort-fields" value="period,genre,provenience"/&gt;
+&lt;option name="outline-default-sort-labels" value="Time,Genre,Place"/&gt;
+
+&lt;option name="outline-special-select" value="true"/&gt;
+&lt;option name="outline-special-list-name" value="outlined.lst"/&gt;
+&lt;option name="outline-special-sort-fields" value="period,subgenre"/&gt;
+&lt;option name="outline-special-heading-template" value="1 2"/&gt;
+&lt;option name="outline-special-catalog-fields" value="designation,subgenre,keywords"/&gt;
+&lt;option name="outline-special-catalog-widths" value="30,25,41"/&gt;
+
+&lt;/project&gt;
+</pre>
+
+<p>The words following the angle bracket, <code>&lt;</code>, we call
+`tags'.  The words before an equals sign followed by a quoted string
+we call `attributes'.  These are the building blocks of XML.  XML
+files are always balanced: tags may contain tags, but the closing tags
+must always match at the same level of containment.</p>
+
+<p>Certain elements of the config file should not be edited: the
+opening and closing tags must be `project', and the `xmlns' code in
+the first line should never be changed.  The project name and
+abbreviations at the start of the file are generally set up when the
+project is created, and also should not be changed (because they are
+used by the Oracc software to work with the project's files--changing
+an abbreviation will result in files not being found).</p>
+
+<esp:sh>Editable components</esp:sh>
+<p>Several components of the config file may be edited by projects, however.</p> 
+
+<p>Some are required for all projects. They are described on the page of <esp:link url="http://oracc.museum.upenn.edu/configdoc/core.html">core</esp:link> config elements.</p>
+
+<p>Then there are a large number of configuration options. In order to ensure some
+kind of systematization in the options we categorize them into groups.
+Each one begins with its own prefix and has its own page of documentation:</p>
+
+<dl>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/build.html">build</esp:link></dt>
+<dd>affects the project rebuilding process</dd>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/atf.html">ATF processor</esp:link></dt>
+<dd>controls the behaviour of the ATF processor</dd>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/cbd.html">glossary</esp:link></dt>
+<dd>controls glossary building behaviour</dd>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/pager.html">pager</esp:link></dt>
+<dd>controls the behaviour of the corpus pager on the project website</dd>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/render.html">render</esp:link></dt>
+<dd>controls rendering of the project website (e.g., HTML, print)</dd>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/outline.html">outline</esp:link></dt>
+<dd>controls how catalogue contents and search results are sorted and outlined online</dd>
+<dt><esp:link url="http://oracc.museum.upenn.edu/configdoc/views.html">views</esp:link></dt>
+<dd>adds extra views of texts in the corpus to the project website</dd>
+</dl>
+
+
+<p>In the configuration file <code>00lib/config.xml</code> an option is
+declared using the following XML syntax:</p>
+
+<pre class="example">
+&lt;option name="NAME" value="VALUE"/&gt;
+</pre>
+
+<p>For example, to set the <code>build-approved-policy</code> option
+described below to the value <code>atf</code> you would write:</p>
+
+<pre class="cookbook">
+&lt;option name="build-approved-policy" value="atf"/&gt;
+</pre>
+
+<p>The options must be given within an <code>&lt;options&gt;</code>
+block.  If your <code>00lib/config.xml</code> doesn't have such a block
+yet, you will need to say:</p>
+
+<pre class="cookbook">
+&lt;options&gt;
+  &lt;option name="build-approved-policy" value="atf"/&gt;
+&lt;/options&gt;
+</pre>
+
+<p>We are currently developing a web interface for project configuration, which will mean that you no longer have to edit config files by hand. However, the options available will remain the same.</p>
+
+<esp:h>Related pages</esp:h>
+<p>More documentation on project configuration can be found here:</p>
+<ul>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/core.html">Core</esp:link> config elements</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/build.html">Build</esp:link> options</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/atf.html">ATF processor</esp:link> options</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/cbd.html">Glossary</esp:link> options</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/pager.html">Pager</esp:link> options</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/render.html">Render</esp:link> options</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/outline.html">Outline</esp:link> options</li>
+<li><esp:link url="http://oracc.museum.upenn.edu/configdoc/views.html">Views</esp:link> options</li>
+<li>The <esp:link page="webcolours">website colours</esp:link> file</li>
+</ul>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

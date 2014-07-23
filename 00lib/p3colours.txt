@@ -1,0 +1,15 @@
+colour-def-dark         #333366
+colour-def-mid          #777b9d
+colour-def-light        #ffcc00
+colour-def-very-light   #fefefe
+colour-def-bright       #33627d
+colour-def-pale         #ffcc00
+colour-def-gray #3c3c3c
+
+colour-bind-dark        banner-bg 
+colour-bind-mid         border bborder
+colour-bind-light       banner-fg heading-bg
+colour-bind-very-light  
+colour-bind-bright      hover-bg
+colour-bind-pale        hover-fg
+colour-bind-gray    heading-fg href-fg

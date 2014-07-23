@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Citing URLs</esp:name>
+<esp:title>Citing Oracc URLs online and in print</esp:title>
+<html><head/><body>
+
+<p class="firstpara">This page describes how to refer to Oracc web pages online or in print, using short, stable URLs. A wider range of options, described in more technical language, is given on the <esp:link page="projurls">Oracc URI patterns</esp:link> page.</p>
+
+<p><esp:link bookmark="h_oraccorg">Oracc.org</esp:link> | <esp:link bookmark="h_projects">Projects</esp:link> | <esp:link bookmark="h_singletexts">Single texts</esp:link> | <esp:link bookmark="h_listsoftexts">List of texts</esp:link> | <esp:link bookmark="h_wholeglossaries">Whole glossaries</esp:link> | <esp:link bookmark="h_glossaryentries">Glossary entries</esp:link></p>
+
+<esp:h>Oracc.org</esp:h>
+<p>Whether you are linking to Oracc from a web page or another online resource, or citing Oracc resources in print, you should not cite the
+<code>oracc.museum.upenn.edu</code> server directly. Instead, use the hostname
+<code>http://oracc.org</code>.  Then append the relevant part of the
+URL as given in the examples, which are designed to be
+permanent. The hostname <code>http://oracc.org</code> will always redirect to the
+current Oracc server, wherever it is hosted.</p>
+
+<esp:h>Projects</esp:h>
+<p>Decide whether you want to link to the home page of a project (which is likely to include a text-based description of its aims and scope), or directly to the corpus outline. Always the lower-case project abbreviation, and remember to include the final <code>/</code>. For instance:</p>
+ 
+<dl>
+<dt>Project home page</dt>
+<dd><code class="example"><esp:link url="http://oracc.org/dccmt/" hide-print="yes">http://oracc.org/dccmt/</esp:link></code></dd>
+<dt>Corpus home page</dt>
+<dd><code class="example"><esp:link url="http://oracc.org/dccmt/corpus/" hide-print="yes">http://oracc.org/dccmt/corpus/</esp:link></code></dd>
+</dl>
+<p>Some projects have subprojects:</p>
+<dl>
+<dt>Subproject home page</dt>
+<dd><code class="example"><esp:link url="http://oracc.org/cams/gkab/" hide-print="yes">http://oracc.org/cams/gkab/</esp:link></code></dd>
+<dt>Subproject corpus home page</dt>
+<dd><code class="example"><esp:link url="http://oracc.org/cams/gkab/corpus/" hide-print="yes">http://oracc.org/cams/gkab/corpus/</esp:link></code></dd>
+</dl>
+<p>If a project (or subproject) does not have a separate home page, the home-page URL defaults to the corpus home page. For instance, <code class="example"><esp:link url="http://oracc.org/contrib/amarna/" hide-print="yes">http://oracc.org/contrib/amarna/</esp:link></code> is equivalent to <code class="example"><esp:link url="http://oracc.org/contrib/amarna/corpus/" hide-print="yes">http://oracc.org/contrib/amarna/corpus/</esp:link></code>.</p>
+
+<esp:h>Texts</esp:h>
+<p>There are various different ways of linking to single or several texts in a corpus. For instance:</p>
+
+<esp:sh>Single texts</esp:sh>
+<p>To link directly to a single text in a project, for instance to embed it in another web page, use the the text's ID (i.e., <esp:link page="visitor-userguide" bookmark="h_outlinemodemainpane">P-, Q- or X-number</esp:link>) and add <code>/html</code>. For example:</p>
+<ul>
+<li> <code class="example"><esp:link url="http://oracc.org/dcclt/Q000001/html" hide-print="yes">http://oracc.org/dcclt/Q000001/html</esp:link></code></li>
+<li><code class="example"><esp:link url="http://oracc.org/cams/gkab/P363523/html" hide-print="yes">http://oracc.org/cams/gkab/P363523/html</esp:link></code></li>
+</ul>
+<p>We don't recommend this method for print citations. In this case, use the text ID alone, as described <esp:link bookmark="usingtextids">below</esp:link>.</p>
+
+<esp:sh>Lists of texts</esp:sh>
+<p>There are a few different ways of generating a list of one or more texts in a project:</p>
+
+<dl>
+<dt><esp:bookmark id="usingtextids"/>Using text IDs</dt>
+<dd>List the IDs <esp:link page="visitor-userguide" bookmark="h_outlinemodemainpane">P-, Q- or X-number(s) </esp:link>) of one or more texts, separated by commas (but no spaces) and no final <code>.html</code> or <code>/</code>. For example:</dd>
+<dd>
+<ul>
+<li><code class="example"><esp:link url="http://oracc.org/dcclt/Q000001,Q000002" hide-print="yes">http://oracc.org/dcclt/Q000001,Q000002</esp:link></code></li>
+<li><code class="example"><esp:link url="http://oracc.org/dcclt/Q000003" hide-print="yes">http://oracc.org/dcclt/Q000003</esp:link></code></li>
+<li><code class="example"><esp:link url="http://oracc.org/cams/gkab/Q002715,P363442,P363443" hide-print="yes">http://oracc.org/cams/gkab/Q002715,P363442,P363443</esp:link></code></li></ul>
+</dd>
+<dt>Using keywords from the catalogue</dt>
+<dd>Sometimes it is useful to provide a list of texts as if they were the results of a <esp:link page="visitor-searching" bookmark="h_searchingthecataloguedata">catalogue search</esp:link>. Use a question mark <code>?</code> before the search term. For instance:</dd>
+<dd>
+<ul>
+<li><code class="example"><esp:link url="http://oracc.org/qcat?sargon" hide-print="yes">http://oracc.org/qcat?sargon</esp:link></code> lists all compositions in the Q-catalogue that have "Sargon" in the title, whether Sargon the Great or Sargon II;</li>
+<li><code class="example"><esp:link url="http://oracc.org/saao?query" hide-print="yes">http://oracc.org/saao?query</esp:link></code> lists all the divinatory queries in State Archives of Assyria online;</li>
+<li><code class="example"><esp:link url="http://oracc.org/cams/gkab?iqqur-ipuš" hide-print="yes">http://oracc.org/cams/gkab?iqqur-ipuš</esp:link></code> lists all the manuscripts and Tablets of <i>Iqqur Ipuš</i> in CAMS/GKAB. Note the hyphen instead of the space.</li>
+</ul>
+</dd>
+
+</dl>
+
+<esp:h>Glossaries</esp:h>
+
+<esp:sh>Whole glossaries</esp:sh>
+<p>Give the lower-case abbreviation for the glossary or subglossary, without a final <code>/</code>. For example: </p>
+
+<ul>
+<li><code class="example"><esp:link url="http://oracc.org/cams/akk" hide-print="yes">http://oracc.org/cams/gkab/akk</esp:link></code> for the top-level CAMS/GKAB Akkadian glossary;</li>
+<li><code class="example"><esp:link url="http://oracc.org/etcsri/qpn-x-divine" hide-print="yes">http://oracc.org/etcsri/qpn-x-divine</esp:link></code> for ETCSRI's Divine Names subglossary of the Proper Nouns;</li>
+<li><code class="example"><esp:link url="http://oracc.org/saao/saa01/akk-x-neoass" hide-print="yes">http://oracc.org/saao/saa01/akk-x-neoass</esp:link></code> for the Neo-Assyrian subglossary of the Akkadian glossary of State Archives of Assyria online, volume 1.</li>
+</ul>
+
+
+
+<esp:sh>Glossary entries</esp:sh>
+<p>You can also give lists of one more glossary entries, using Sumerian, Akkadian and/or English keywords. For instance:</p>
+
+<ul>
+<li><code class="example"><esp:link url="http://oracc.org/cams/gkab/akk-x-stdbab?adru" hide-print="yes">http://oracc.org/cams/gkab/akk-x-stdbab?adru</esp:link></code> lists the entries for both <code>adru [AFRAID] AJ</code> and <code>adru [DARK]</code> in CAMS/GKAB's Standard Babylonian glossary;</li>
+<li><code class="example"><esp:link url="http://oracc.org/cams/gkab/akk-x-stdbab?afraid" hide-print="yes">http://oracc.org/cams/gkab/akk-x-stdbab?afraid</esp:link></code> lists all the entries for Akkadian words that mean "afraid" in CAMS/GKAB's Standard Babylonian glossary;</li>
+<li> and <code class="example"><esp:link url="http://oracc.org/cams/gkab/akk-x-stdbab/adru[afraid]AJ" hide-print="yes">http://oracc.org/cams/gkab/akk-x-stdbab/adru[afraid]AJ</esp:link></code> lists only the entry for <code>adru [afraid] AJ</code>.</li>
+</ul>
+<p>Note the <code>akk/</code> instead of <code>akk?</code> in that last example.</p>
+
+<esp:h>Further information</esp:h>
+<p>The range of citation patterns, described in more technical language, is given on the <esp:link page="projurls">Oracc URI Patterns</esp:link> page.</p>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

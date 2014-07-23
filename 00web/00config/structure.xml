@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<struct:page 
+	xmlns:struct="http://oracc.org/ns/esp-struct/1.0"
+        xmlns:wm="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+	file="home.xml" id="home" accesskey="1" type="page">
+
+<!-- dummy featured project -->
+<struct:page file="featured.xml" id="featured" hide-menu-link="yes" type="page"/>
+
+
+<!-- PROJECT LIST -->
+<struct:link url="http://oracc.museum.upenn.edu/projectlist.html" id="projlist" title="Projects"/>
+
+<!-- SEARCH PAGES -->
+<struct:page file="search.xml" id="search" accesskey="3" type="page">
+	<struct:page file="visitor/fulltextsearch.xml" id="visitor-fulltextsearch"  type="page"/>
+	<struct:page file="visitor/searching.xml" id="visitor-searching"  type="page"/>	
+	<struct:page file="visitor/advanced.xml" id="visitor-advanced"  type="page"/>	
+</struct:page>
+
+<!-- HELP PAGES -->
+<struct:page file="help.xml" id="help" accesskey="4" type="page">
+
+  <!-- VISITOR DOCO -->
+  <struct:page file="visitor/index.xml" id="visitor" accesskey="5" type="page">	
+	<struct:page file="visitor/visitorguide.xml" id="visitor-userguide"  type="page"/>
+	<struct:page file="visitor/glossaries.xml" id="visitor-glossaries"  type="page"/>
+	<struct:page file="visitor/citing.xml" id="visitor-citing"  type="page"/>
+	<struct:page file="visitor/reusing.xml" id="visitor-reusing"  type="page"/>	
+	<struct:page file="visitor/unicode.xml" id="visitor-unicode"  type="page"/>
+	<struct:page file="visitor/fonts.xml" id="visitor-fonts"  type="page">
+	  <struct:page file="visitor/fonts/cuneitab_0.xml" id="cuneitab_0" type="page"/>
+	  <struct:page file="visitor/fonts/cuneitab_1.xml" id="cuneitab_1" type="page"/>
+	  <struct:page file="visitor/fonts/cuneitab_2.xml" id="cuneitab_2" type="page"/>
+	  <struct:page file="visitor/fonts/cuneitab_3.xml" id="cuneitab_3" type="page"/>
+	  <struct:page file="visitor/fonts/cuneitab_4.xml" id="cuneitab_4" type="page"/>
+	  </struct:page>
+	<struct:page file="visitor/keyboards.xml" id="visitor-keyboards"  type="page"/>
+  </struct:page>
+
+  <!-- EDITOR DOCO -->
+  <struct:page file="builder/builder.xml" id="editing" type="page">
+     <struct:page file="builder/editing/cdli.xml" id="cdli" type="page">
+       <struct:page file="builder/editing/numbers.xml" id="numbers" type="page"/>
+	  <struct:page file="builder/editing/dates.xml" id="dates" type="page"/>
+     </struct:page>
+     <struct:page file="builder/editing/primer.xml" id="primer" type="page">
+     <struct:page file="builder/editing/atftut.xml" id="atftut" type="page"/>
+     <struct:page file="builder/editing/gdltut.xml" id="gdltut" type="page"/>
+     </struct:page>
+	  <struct:page file="builder/editing/quickref.xml" id="quickref" type="page"/>
+	  <struct:page file="builder/editing/labels.xml" id="labels" type="page" />
+	  <struct:page file="builder/editing/translation.xml" id="translation" type="page"/>
+	  <struct:page file="builder/editing/metrology.xml" id="metrology" type="page">
+	  <struct:page file="builder/editing/metrol-tables.xml" id="metrol-tables" type="page"/>
+	    </struct:page>
+	  <struct:page file="builder/editing/protocols.xml" id="protocols" type="page"/>
+
+	  <!-- ATF TYPES -->
+	  <struct:page file="builder/editing/scores.xml" id="scores" type="page"/>
+	  <struct:page file="builder/editing/composites.xml"
+		       id="composite" type="page"/>
+	  <struct:page file="builder/editing/commentary.xml" id="commentary" type="page"/>
+	  <struct:page file="builder/editing/linkage.xml" id="linkage" type="page"/>
+	  <struct:page file="builder/editing/bilinguals.xml" id="bilinguals" type="page"/>
+	  <struct:page file="builder/editing/lexical.xml" id="lexical" type="page"/>
+	  <struct:page file="builder/editing/math.xml" id="math" type="page"/>
+	  <struct:page file="builder/editing/layouts.xml" id="layouts" type="page"/>
+	  <struct:page file="builder/editing/advanced.xml" id="advanced" type="page"/>
+    </struct:page>
+    <!-- EMACS -->
+    <struct:page file="builder/emacs/index.xml" id="emacs" type="page">
+	    <struct:page file="builder/emacs/setup.xml" id="emacssetup" type="page" />
+	    <struct:page file="builder/emacs/aquamacs.xml" id="aquamacs" type="page" />
+	    <struct:page file="builder/emacs/emacsw32.xml" id="emacsw32" type="page" />
+            <struct:page file="builder/emacs/emacs.xml" id="emacsuse" type="page"/>
+	</struct:page>
+	  
+   <!-- LANGUAGES -->
+   <struct:page file="builder/linganno/languages.xml" id="languages" type="page">
+     <struct:page file="builder/linganno/akk-anno.xml" id="akk-anno" type="page">
+       <struct:page file="builder/linganno/akkstyle.xml" id="akkstyle" type="page"/>
+       <struct:page file="builder/linganno/akk-ob.xml" id="akk-ob" type="page"/>
+       <struct:page file="builder/linganno/akk-roots.xml" id="akk-roots" type="page"/>
+     </struct:page>
+     <struct:page file="builder/linganno/qpn-anno.xml" id="qpn-anno" type="page"/>
+     <struct:page file="builder/linganno/sux-anno.xml" id="sux-anno" type="page">
+       <struct:page file="builder/linganno/sux-primer.xml" id="sux-primer" type="page"/>
+       <struct:page file="builder/linganno/sux-syntax.xml" id="sux-syntax" type="page"/>
+     </struct:page>
+     <struct:page file="builder/linganno/arc-anno.xml" id="arc-anno" type="page"/>
+     <struct:page file="builder/linganno/elx-anno.xml" id="elx-anno" type="page"/>
+     <struct:page file="builder/linganno/grc-anno.xml" id="grc-anno" type="page"/>
+     <struct:page file="builder/linganno/peo-anno.xml" id="peo-anno" type="page"/>
+     <struct:page file="builder/linganno/uga-anno.xml" id="uga-anno" type="page"/>
+   </struct:page>
+
+
+   <!-- LEMMATISATION -->
+   <struct:page file="builder/l2/index.xml" id="lemm" type="page">
+     <struct:page file="builder/l2/howtouseit.xml" id="howtouseit" type="page"/>
+     <struct:page file="builder/l2/linganno.xml" id="linganno" type="page"/>
+     <struct:page file="builder/l2/COFs.xml" id="cofs" type="page" />
+     <struct:page file="builder/l2/PSUs.xml" id="psus" type="page" />
+     <struct:page file="builder/l2/BFFs.xml" id="bffs" type="page" />
+     <struct:page file="builder/l2/errors.xml" id="errors" type="page" />
+     <struct:page file="builder/l2/howitworks.xml" id="howitworks" type="page" />
+     <struct:page file="builder/l2/lemsyntax.xml" id="lemsyntax" type="page" />
+     <struct:page file="builder/l2/psa.xml" id="psa" type="page"/>
+   </struct:page>
+
+   <!-- CONVERSION -->
+   <struct:page file="builder/converting/index.xml" id="converting" type="page">
+     <struct:page file="builder/converting/otf.xml" id="otf" type="page"/>
+   </struct:page>
+
+   <!-- PORTALS -->
+   <struct:page file="portals/esp.xml" id="esp" type="page">
+     <struct:page file="portals/portals.xml" id="portals"  type="page"/>
+     <struct:page file="portals/espinstall.xml" id="esp-install" type="page"/>
+     <struct:page file="portals/esppages.xml" id="esp-pages" type="page"/>
+     <struct:page file="portals/espcontent.xml" id="esp-content" type="page"/>
+     <struct:page file="portals/espstyle.xml" id="espstyle" type="page"/>
+     <struct:page file="portals/espelements.xml" id="esp-elements" type="page"/>	 
+     <struct:page file="portals/projurls.xml" id="projurls" type="page"/>
+     <struct:page file="portals/esplinks.xml" id="esplinks" type="page"/>
+     <struct:page file="portals/espglossaries.xml" id="espglossaries" type="page"/>
+     <struct:page file="portals/esprefs.xml" id="esprefs" type="page"/>
+     <struct:page file="portals/espimages.xml" id="esp-images" type="page"/>
+     <struct:page file="portals/espdownloads.xml" id="espdownloads" type="page"/>
+     <struct:page file="portals/espoverview.xml" id="esp-overview" type="page"/>
+     <struct:page file="portals/espsetup.xml" id="esp-setup" type="page"/>
+     <struct:page file="portals/espbuild.xml" id="esp-build" type="page"/>
+   </struct:page>
+
+   <!-- MANAGER -->
+   <struct:page file="manager/index.xml" id="manager"  type="page">
+     <struct:page file="manager/projects.xml" id="projects"  type="page"/>
+ <!--    <struct:page file="manager/projemacs.xml" id="projemacs"
+ type="page"/> -->
+     <struct:page file="manager/projunix.xml" id="projunix"  type="page"/>
+     <struct:page file="manager/the-oracc-command.xml" id="the-oracc-command"  type="page"/>
+     <struct:page file="manager/filesystem.xml" id="filesystem"  type="page"/>
+     <struct:page file="manager/projconfig.xml" id="projconfig"  type="page">
+       <struct:page file="manager/webcolours.xml" id="webcolours" type="page"/>
+     </struct:page>
+     <struct:page file="manager/projcats.xml" id="projcats"  type="page"/>
+     <!--<struct:page file="manager/projlife.xml" id="projlife"  type="page"/>-->
+   </struct:page>
+
+   <!--INSTALLATION -->
+   <struct:page file="install/index.xml" id="install" hide-menu-link="yes" type="page">
+     <struct:page file="install/basics.xml" id="basics" type="page"/>
+     <struct:page file="install/prereqs.xml" id="prereqs" type="page"/>
+     <struct:page file="install/neworacc.xml" id="neworacc" type="page"/>
+   </struct:page>
+</struct:page>
+
+<!-- ABOUT ORACC -->
+<struct:page file="about.xml" id="about" accesskey="6" type="page">
+  <struct:page file="about/oracc.xml" id="about-oracc" type="page"/>
+  <struct:page file="accessibility.xml" id="accessibility"  type="page"/>
+    <struct:page file="accesskeys.xml" id="accesskeys" accesskey="0" type="page"/>
+    <struct:page file="sitemap.xml" id="sitemap" accesskey="9"  type="page"/>
+  <struct:page file="privacy.xml" id="privacy" accesskey="7"  type="page"/>
+  <struct:page file="copyright.xml" id="licensing" accesskey="8"  type="page"/>
+  <struct:page file="about/contributing.xml" id="contributing" type="page">
+    <struct:page file="about/howandwhy.xml" id="howandwhy" type="page"/>
+  </struct:page>
+  <struct:page file="standards/index.xml" id="standards" type="page">
+    <struct:page file="standards/schemas.xml" id="schemas" type="page"/>
+    <struct:page file="standards/opendocument.xml" id="standards-opendocument" type="page"/>
+    <struct:page file="standards/tei.xml" id="standards-tei" type="page"/>
+</struct:page>
+</struct:page>
+
+<!-- TOOLS -->
+<struct:page file="tools.xml" id="tools" type="page">
+  <struct:page file="tools/cuneify.xml" id="cuneify" type="page"/>
+</struct:page>
+<struct:page file="404.xml" id="404" hide-menu-link="yes" type="page"/>
+
+</struct:page>
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	<esp:name>Cuneify</esp:name>
+	<esp:title>Cuneify</esp:title>
+
+	<html>
+		<head>
+		</head>
+		<body>
+		
+<p class="firstpara">Cuneify is a facility for generating Sumero-Akkadian
+  cuneiform in Unicode encoding. For simple instructions on embedding Cuneify into a web page, see <esp:link page="visitor-reusing" bookmark="h_cuneify">here</esp:link>.</p>
+
+<esp:h>Implementation</esp:h>
+
+<p>The underlying implementation of Cuneify is presently built-in to
+the <esp:link page="editing">ATF</esp:link> processor.  The processor can decorate
+its output tree with the Unicode character for each grapheme, and this
+output can then be post-processed in various ways.</p>
+
+<esp:h>Interfaces</esp:h>
+
+<p>At present, the only public interface is via the CGI script at:</p>
+
+<pre class="example">
+http://oracc.museum.upenn.edu/cgi-bin/cuneify
+</pre>
+
+<esp:h>CGI API</esp:h>
+
+<esp:sh>Parameters</esp:sh>
+
+<p>The CGI API takes two parameters:</p>
+
+<dl>
+<dt>input</dt>
+<dd>The transliteration to convert which must be in valid ATF format</dd>
+<dt>project</dt>
+<dd>An optional argument naming an Oracc project located on the same Oracc
+server as the CGI script. The path <code class="example">/cuneify/index.html</code> is appended to the
+project name to locate the form to return.</dd>
+</dl>
+
+<esp:sh>Return</esp:sh>
+
+<p>When the CGI script is executed, it looks for the project's Cuneify
+form and, if found, it performs variable substitutions and returns the
+form as follows:</p>
+
+<ul>
+  <li>The <code>&lt;input&gt;</code> element whose <code>name</code>
+  attribute is <code>input</code> is edited so that its
+  <code>value</code> attribute is the user's input
+  transliteration.</li>
+  <li>The <code>&lt;span&gt;</code> element whose <code>id</code>
+  attribute is <code>CuneifyOutput</code> is edited to insert the
+  result string after the <code>&gt;</code> character.</li>
+</ul>
+
+<p>No XML/HTML parsing is done on the file, which results in the
+following constraints:</p>
+
+<ul>
+  <li>The <code>&lt;input&gt;</code> element which is to be edited must
+  be the first element in the line with an attribute named
+  <code>value</code>.</li>
+  <li>The <code>&lt;span&gt;</code> element which is to be edited must be
+  empty, but must not be expressed using the XML empty tag syntax
+  (i.e., it must be <code>&lt;span id="CuneifyOutput" class="some
+  classes"&gt;&lt;/span&gt;</code>).  The closing <code>&gt;</code> must be on
+  the same line as the span element.  If you are generating the form
+  using an XML processing chain you can subvert any tendency for it to
+  output <code>&lt;span id="CuneifyOutput"/&gt;</code> by including a
+  space character--the space will be included at the end of the
+  cuneiform return string but this should be benign.</li>
+</ul>
+
+<esp:sh>Errors</esp:sh>
+
+<p>If the input is not valid ATF the CGI script returns an apology for
+its inability to understand the input.</p>
+
+<esp:sh>Example</esp:sh>
+
+<p>For an example of how to use the Cuneify CGI interface, see the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/cuneiformrevealed/cuneify">
+Cuneiform Revealed</esp:link> pages for which the CGI interface was
+originally developed.</p>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+		</body>
+	</html>
+
+</esp:page>

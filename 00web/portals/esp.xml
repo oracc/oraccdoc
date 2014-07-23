@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+<esp:name>Portals</esp:name>
+<esp:title>Building a Portal Website</esp:title><html><head/>
+
+<body><p class="firstpara">ESP is a package for creating XHTML websites that contain mainly text and images. It is Oracc's bespoke portal-writing software. These pages explain how to install the ESP templates in your Oracc project and edit them with <esp:link page="emacs">Emacs</esp:link> in order to create a portal website. To use ESP you will need to know the basics of HTML.</p>
+
+<p>Are you managing the whole ESP portal site yourself, or are you just writing ESP pages that someone else will edit and upload? Some of this documentation is just for ESP managers, and some is for all editors of ESP pages.</p>
+
+
+<esp:sh>For both editors and managers</esp:sh>
+<dl>
+<dt><esp:link page="esp-install">Installing the ESP Templates and Schema</esp:link></dt>
+<dd>This page describes how to obtain, install and configure ESP.  You only need to do this once!</dd>
+<dt><esp:link page="esp-pages">Understanding ESP Page Structure</esp:link></dt>
+<dd>ESP pages are written in XML. Here we describe what they look like.</dd>
+<dt><esp:link page="esp-content">Creating Textual Content in ESP XML Files</esp:link></dt>
+<dd>This page describes how to use the system-specific ESP elements and attributes to create web pages. It assumes that you know how to use Emacs and are familiar with the basics of HTML.</dd>
+<dt><esp:link page="espstyle">ESP Style Guide</esp:link></dt>
+<dd>This page describes how to write clear and accessible portal pages. It assumes that you know how to use Emacs and ESP and are familiar with the basics of HTML.</dd>
+<dt><esp:link page="esp-elements">ESP System Elements</esp:link></dt>
+<dd>This page gives an alphabetical listing of all the system-specific elements available in ESP, as documented in more detail on the <esp:link page="esp-content">Creating content</esp:link> and <esp:link page="esp-images">Embedding images</esp:link> pages.</dd>
+<dt><esp:link page="projurls">Referring to Project URLs</esp:link></dt>
+<dd>You will doubtless want to link to other Oracc pages. This document describes how to refer to Oracc web pages online or in print, using short, stable URIs. See also the <esp:link page="visitor-citing">user page on citing Oracc URLs</esp:link>.</dd>
+</dl>
+
+<esp:sh>Further details for both editors and managers</esp:sh>
+<dl>
+<dt><esp:link page="esplinks">Creating Links in ESP Pages</esp:link></dt>
+<dd>This page describes how to make links and bookmarks of various sorts in ESP pages.</dd>
+<dt><esp:link page="espglossaries">Creating Glossaries, Lists of Technical Terms and Indices in ESP Pages</esp:link></dt>
+<dd><esp:link page="espglossaries" bookmark="h_glossary">Glossaries</esp:link> are mostly used for lists of People, Gods and Places which recur throughout an ESP site and/or an Oracc text corpus. There is also a similar set-up for <esp:link page="espglossaries" bookmark="h_listoftechnicalterms">lists of Technical Terms</esp:link> and for a site-wide <esp:link bookmark="Index functionality">Index</esp:link>. This page describes how to make them.</dd>
+<dt><esp:link page="esprefs">Creating References and Bibliography in ESP Pages</esp:link></dt>
+<dd>This page explains how to make a list of reference works (books, articles, etc.) and when and how to use it.</dd>
+<dt><esp:link page="esp-images">Images and Image Maps in ESP</esp:link></dt>
+<dd>This page describes how to mark up images and image maps in ESP.</dd>
+<dt><esp:link page="espdownloads">Embedded content in ESP</esp:link></dt>
+<dd>This page describes how to mark up videos, Google Earth files, and other types of non-textual data in ESP.</dd>
+</dl>
+
+<esp:sh>For ESP managers only</esp:sh>
+<dl>
+<dt><esp:link page="esp-overview">Overview of ESP Directory Structure</esp:link></dt>
+<dd>In the course of making your ESP portal website you will need to edit several different directories and automatically generate others. This page describes what's what. ESP editors may find it helpful to know about too.</dd>
+<dt><esp:link page="esp-setup">Setting up your ESP Portal Website</esp:link></dt>
+<dd>This page describes how to configure the parameters, structure, appearance, and privacy preferences of your ESP website. </dd>
+<dt><esp:link page="esp-build">Checking, Correcting and Rebuilding your ESP Website</esp:link></dt>
+<dd>This page explains how to (re)build your ESP website, how to correct errors that emerge during the rebuild, and how to avoid them in the first place.</dd>
+</dl>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

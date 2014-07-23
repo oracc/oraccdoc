@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Search</esp:name>
+	<esp:title>Search Oracc</esp:title>
+
+	<html><head></head><body>
+		
+	
+
+
+
+<p class="firstpara">There are three different ways to search Oracc.</p>
+
+
+<esp:sh><esp:link page="visitor-fulltextsearch">Full text search in Oracc</esp:link></esp:sh>
+<form method="get" action="http://oracc.museum.upenn.edu/find" id="hp_search">
+<p>
+  <span class="button">Search Oracc  </span>
+<input class="textbox" name="phrase" id="phrase" type="text" size="14" accesskey="s" value=""
+	/></p>
+    </form>
+<p>You can use the Search Oracc box, here or on the Oracc home page, to search intuitively across the whole of the Oracc site. Many individual projects allow you to search across that project too. This page gives some hints on how to do carry out these full text searches most effectively.</p>
+<esp:sh><esp:link page="visitor-searching">Searching the Oracc corpora</esp:link></esp:sh>
+<p>There are many ways to search the Oracc corpora. This page describes how to search the transliterations, lemmatisations, translations, and catalogue data. Instructions on searching the <esp:link page="visitor-glossaries">glossaries</esp:link> and on <esp:link page="visitor-advanced">advanced search</esp:link> are given separately.</p>
+<esp:sh>
+<esp:link page="visitor-advanced">Advanced searching in Oracc corpora</esp:link></esp:sh>
+<p>In Oracc corpora you can carry out complex combinations of context-dependent searches. This page describes how to use the Advanced Search tool.</p>
+
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+	</body></html>
+
+</esp:page>

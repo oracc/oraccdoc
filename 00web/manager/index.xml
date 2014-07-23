@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Managing projects</esp:name>
+<esp:title>Oracc Manager Documentation</esp:title>
+<html><head/><body>
+<p class="firstpara">This page lists all the documentation you will need to manage an Oracc project.</p>
+
+<esp:sh>General principles</esp:sh>
+<dl>
+
+<dt><esp:link page="projects">Overview of Oracc project management</esp:link></dt>
+<dd>The basic unit in the Oracc system is the project. This document gives a basic introduction to how projects are organized and how to create and work with them.</dd>
+
+<!--<dt><esp:link page="projemacs">Project management through Emacs</esp:link></dt><dd>This page describes how to manage your lemmatised Oracc corpus through Emacs, using the CBD (corpus-based dictionary) and ORACC menus. It takes you through uploading files to Oracc, checking the project, adding new entries to the glossaries, making corrections to texts that are already online, and rebuilding the project website.</dd>-->
+
+<dt><esp:link page="projunix">Project management procedures</esp:link></dt>
+<dd>This page describes how to manage your Oracc corpus through a Unix terminal from a PC or Mac. It takes you through uploading files to Oracc, checking the project, adding new entries to the glossaries, making corrections to texts that are already online, and rebuilding the project website.</dd>
+
+<dt><esp:link page="the-oracc-command">The Oracc command</esp:link></dt>
+<dd>This page documents the various project management tasks you can carry out using the oracc programme on the Oracc server.</dd>
+</dl>
+
+<esp:sh>More details</esp:sh>
+
+<dl>
+<dt><esp:link page="filesystem">Project files</esp:link></dt>
+<dd>The files belonging to a project are organized according to a specific set of conventions which are described here.</dd>
+
+<dt><esp:link page="projconfig">Project configuration</esp:link></dt>
+<dd>This page explains how to configure your project: what it contains and how it looks and behaves.</dd>
+
+<dt><esp:link page="projcats">Project catalogues</esp:link></dt>
+<dd>Oracc projects use metadata catalogues to store consistent, searchable information about the tablets and/or composite texts that they contain. For most projects, the CDLI catalogue will be more than adequate. However, this page documents how to create custom catalogues in Filemaker Pro (a commercial database programme for Macs and PCs), and how to export them to XML for use by Oracc. It assumes that you are already familiar with the basic commands in Filemaker.</dd>
+
+<dt><esp:link page="portals">Managing portal websites</esp:link></dt><dd>The documentation on portal websites gives instructions for managers and editors on how to set up and write web pages to serve as the introductory front end to your corpus using <esp:link page="esp">ESP</esp:link>, Oracc's website-writing package.</dd>
+
+</dl>
+
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

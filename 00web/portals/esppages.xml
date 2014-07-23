@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Page structure</esp:name>
+<esp:title>Understanding ESP page structure</esp:title>
+
+<html><head/>
+<body>
+<p class="firstpara">ESP pages are written in XML. Here we describe what they look like.</p> 
+
+<p><esp:link bookmark="h_thebasicoutline">The basic outline</esp:link> | <esp:link bookmark="h_systemelementsandxhtmlelements">System elements and XHTML elements</esp:link> | <esp:link bookmark="h_addingdublincoremetadataoptional">Adding Dublin Core metadata (optional)</esp:link></p>
+
+<p>You can find blank template pages (called <code>template-blank.xml</code>) in the Oracc schemas directory installed on your own computer and in the <code>00web/ directory</code> on Oracc. When you edit a template page in Emacs, save it as <code>FILENAME.xml</code>, where FILENAME = the name of your file, with no spaces in it.</p>
+
+<esp:h>The basic outline</esp:h>
+<p>The content of each ESP page is defined in its own XML file. Here is an example of an XML page file:</p>
+
+<pre class="example">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+&gt;
+	&lt;esp:name&gt;Home&lt;/esp:name&gt;
+	&lt;esp:title&gt;Home&lt;/esp:title&gt;
+	
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;meta name="DC.rights.copyright" 
+			content="Released under a CC-BY-SA 3.0 license"&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;p&gt;Good morning.&lt;/p&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+	
+&lt;/esp:page&gt;
+</pre>
+
+<p>All XML documents must start with the XML declaration:</p>
+<pre class="cookbook">&lt;?xml version="1.0" encoding="utf-8?&gt;</pre>
+
+<p>The <code>encoding</code> attribute should match the encoding used to save the document; utf-8 is recommended in order that the characters display correctly.</p>
+
+<p>The root element is <code>&lt;esp:page&gt;</code>. The root element of an XML document must declare the namespace prefixes used in that document. Therefore, ensure that the first element in your document includes the following attributes:</p>
+
+<pre class="cookbook">xmlns:esp=""http://oracc.org/ns/esp/1.0"
+xmlns="http://www.w3.org/1999/xhtml"</pre>
+
+<p><esp:bookmark id="esp:name"/>The <code>&lt;esp:name&gt;</code> element gives the short name of the page. Keep this short and meaningful as it will appear in the navigation menu and also becomes the page URL. Do not use any special characters (ṣ, š, etc.) within <code>&lt;esp:name></code> as they will not display as part of a URL.</p> 
+
+<p><esp:bookmark id="esp:title"/>The <code>&lt;esp:title&gt;</code> element gives a longer description (used as the title of the page, and in the site map, for example). Special characters are fine to use within <code>&lt;esp:title></code>.</p>
+
+
+<p>There then follows a skeleton HTML page.</p>
+
+<esp:h>System elements and XHTML elements</esp:h>
+<p>The <code>&lt;html&gt;</code> element can contain system elements (such as <esp:link page="esp-images" bookmark="esp:image"><code>&lt;esp:image&gt;</code></esp:link>) and a subset of valid XHTML elements (such as the paragraph, <code>&lt;p&gt;</code>). The system elements are processed in various ways, most of which cause XHTML elements to be added to the final page. XHTML elements may be processed or may be copied directly to the final page.</p> 
+
+<p>Unrecognised elements of any kind (such as <code>&lt;a href=""&gt; or &lt;h2&gt;</code> or mistyped elements such as <code>&lt;esp:glsoarry&gt;</code>) will be stripped from the final page, but their content is retained and processed as normal. This is why we recommend using Emacs with <esp:link page="esp-install">the ESP schemas</esp:link>, so that you can <esp:link page="esp-install" bookmark="h_validatingespfiles">check and correct</esp:link> your coding as you work.</p>
+
+
+
+<p>The recognised XHTML elements are:</p>
+<ul>
+<li><code>abbr</code>, <code>acronym</code>, <code>address</code></li>
+<li><code>b</code>, <code>blockquote</code>, <code>body</code>, <code>br</code></li>
+<li><code>code</code></li>
+<li><code>dd</code>, <code>dl</code>, <code>dt</code></li>
+<li><code>embed</code>, <code>em</code></li>
+<li><code>h2</code>, <code>h3</code>, <code>head</code>, <code>html</code></li>
+<li><code>i</code></li>
+<li><code>kbd</code></li>
+<li><code>li</code></li>
+<li><code>meta</code></li>
+<li><code>object</code>, <code>ol</code></li>
+<li><code>p</code>, <code>param</code></li>
+<li><code>q</code></li>
+<li><code>span</code>, <code>sub</code>, <code>sup</code></li>
+<li><code>table</code>, <code>td</code>, <code>th</code>, <code>tr</code></li>
+<li><code>ul</code></li>
+</ul>
+
+<p>For details of these elements, please consult an XHTML reference such as <esp:link url="http://www.w3schools.com/xhtml/xhtml_ref_byfunc.asp">w3schools.com</esp:link>. Always try to use a semantic tag (such as <code>&lt;emph&gt;</code> or <code>&lt;q&gt;</code>) in preference to a presentational tag (such as <code>&lt;b&gt;</code> or <code>&lt;i&gt;</code>), athough be aware that semantic tags do not display in the same way over all browsers (e.g., <code>&lt;emph&gt;</code> displays as italics in some browsers and bold in others). </p>
+
+<esp:h>Adding Dublin Core metadata (optional)</esp:h>
+<p>Note that the <code>&lt;meta&gt;</code> element may be used to add <esp:link url="http://dublincore.org/">Dublin Core</esp:link> metadata specific to each page. <code>DC.title</code> and <code>DC.identifier</code> are added automatically to each page where appropriate, and items common to all pages can be added within <code>&lt;esp:common-headers</code> in <code>parameters.xml</code>. However, there are many other useful page-specific metadata items, including <code>DC.date.issued</code>, <code>DC.date.modified</code>, <code>DC.description</code>, and so on, which may be placed within the head element on each page.</p>
+
+<p>For example, </p>
+
+<pre class="example">&lt;meta name="DC.date.modified" scheme="DCTERMS.W3CDTF" content="2005-02-03" /&gt;</pre>
+
+<p>You can just leave the <code>head</code> element empty though: <code>&lt;head />.</code></p>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body>
+</html>
+</esp:page>

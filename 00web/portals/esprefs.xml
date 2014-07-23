@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Referencing</esp:name>
+<esp:title>Creating References and Bibliography in ESP Pages</esp:title>
+
+<html><head/><body>
+
+<p class="firstpara">This page explains how to make a list of reference works (books, articles, etc.) and when and how to use it.</p>
+
+<p><esp:link bookmark="h_furtherreadingfunctionality">Further reading functionality</esp:link> | <esp:link bookmark="h_methodi">Method I</esp:link> | <esp:link bookmark="h_methodii">Method II</esp:link> | <esp:link bookmark="h_references">References</esp:link> | <esp:link bookmark="referents">The <code>referents.xml</code> file</esp:link> | <esp:link bookmark="h_addingtothereferencelist">Adding to the reference list</esp:link> | <esp:link bookmark="h_referringtothereferencelist">Referring to the reference list</esp:link> | <esp:link bookmark="h_examplesofreferencefunctionality">Examples of reference functionality</esp:link> </p>
+
+<esp:h>Further reading functionality</esp:h>
+<p>ESP has functionality for referencing articles, journals, books, websites etc. within the site’s pages.</p>
+
+<p>There are two methods to create a list of materials suggested for further reading:</p>
+
+<ol>
+<li>using links to a bookmarked bibliography; or</li>
+<li>using the list of references in the <code>referents.xml</code> file.</li>
+</ol>
+
+<p><esp:link bookmark="h_methodi">Method I</esp:link> is recommended for sites where you require links to a bibliography page, which may contain links to downloadable resources, such as PDF files.  This method was used on the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp">Knowledge &amp; Power</esp:link> website.</p>
+
+<p><esp:link bookmark="h_methodii">Method II</esp:link> is recommended for sites such as the Whipple Museum’s <esp:link rel="external" url="http://www.hps.cam.ac.uk/whipple/explore">Explore</esp:link> website that have a limited bibliography and no requirement for a separate bibliography page.</p>
+
+<esp:sh>Method I</esp:sh>
+<p>First, create a bibliography page that contains all of the reference material for your site.  Here you can create links to downloadable material, such as PDF files and multimedia content.</p>
+
+<p>Use the <code>&lt;esp:bookmark&gt;</code> element to create a bookmark for each entry in your bibliography to which you would like to refer.  On the page where you wish to place the further reading list, create a set of links to the relevant bookmarks in your bibliography.</p>
+
+<p>See the section on <esp:link page="esplinks" bookmark="h_bookmarks">bookmarks</esp:link> for details of how to do this.</p>
+
+<p>You can place the links anywhere on the page, though it may be helpful to put them together at the end.</p>
+
+<esp:sh>Method II</esp:sh>
+<p>The list of references created in the <code>referents.xml</code> file (see the section on <esp:link bookmark="h_references">References</esp:link>) can be used to add a list of materials for further reading to the bottom of a page.</p>
+
+<p>At the bottom of your page, insert the <code>&lt;esp:reading&gt;</code> element with the <code>id</code> of each item you would like to include in a ‘further reading’ list.  Technically, the element can be placed anywhere on the page, though it may be helpful to put them together at the end.</p>
+
+<p>The specification of <code><esp:bookmark id="esp:reading"/>&lt;esp:reading&gt;</code> is given below:</p>
+
+<pre class="listing">&lt;esp:reading
+	referent="example"
+	page="123"
+/></pre>
+	
+<dl>
+<dt><code>referent</code></dt>
+<dd>Mandatory. The <code>id</code> of a <code>&lt;esp:referent&gt;</code> element in the file <code>referents.xml</code> in the site-content folder.</dd>
+	
+<dt><code>page</code></dt>
+<dd>Optional. The page number or page range to be added to the further reading entry. For example, <code class="example">page="123"</code> or <code class="example">page="123, 125"</code> or <code class="example">page="123-150"</code> (the text <code>p.</code> or <code>pp.</code> is added automatically when the site is <esp:link page="esp-build">rebuilt</esp:link>).</dd>
+</dl>
+<p>NB.  The element is always empty.</p>
+
+<esp:h>References</esp:h>
+<esp:sh><esp:bookmark id="referents"/>The <code>referents.xml</code> file</esp:sh>
+<p>References are stored in the file <code>referents.xml</code> in the folder site-content.  The list of referents is created using a number of <code>&lt;ref:referent&gt;</code> elements inside the root element <code><esp:bookmark id="ref:referents"/>&lt;ref:referents&gt;</code>.</p>
+
+<p>Adding reference functionality is carried out in two stages:</p>
+<ol>
+<li>adding the details of an article/book etc., to the reference list using <code>&lt;ref:referent&gt;</code>:</li>
+<li>creating a link to the reference in the text using <code>&lt;esp:ref&gt;</code>.</li>
+</ol>
+
+<esp:sh>Adding to the reference list</esp:sh>
+<p>To add the details of a book, article, etc., to the reference list, create a new <code>&lt;ref:referent&gt;</code> tag within the reference list <code>&lt;ref:referents&gt;</code>.</p>
+
+<p>The specification of <code><esp:bookmark id="ref:referent"/>&lt;ref:referent&gt;</code> is given below:</p>
+
+<pre class="listing">&lt;ref:referent id="example">
+	Arbitrary inline content
+&lt;/ref:referent></pre>
+
+<dl>
+<dt><code>id</code></dt>
+<dd>A unique identifier for this referent. Becomes part of the URL for that referent, so as well as being unique, each id should be reasonably short, contain no spaces and no accented characters.</dd>
+</dl>
+
+<p>Place the details of the article, book, etc., within the element in whatever reference format you prefer.  The text should not end with a full stop, as this is added by the system.</p>
+
+<p>Here is an example <code>referents.xml</code> file containing two references:</p>
+
+<pre class="example">&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;esp:referents 
+	xmlns:ref="http://oracc.org/ns/esp-refer/1.0"
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml">
+>
+
+&lt;esp:referent id="mercer1993">MERCER, P.A. and SMITH, G., 1993. &lt;i>Private 
+viewdata in the UK.&lt;/i&gt; 2nd ed. London: Longman&gt;/esp:referent>
+
+&lt;esp:referent id="bantz1995">BANTZ, C.R., 1995. Social dimensions of software 
+development. In: J.A. ANDERSON, ed. &lt;i>Annual review of software management 
+and development.&gt;/i&gt; Newbury Park, CA: Sage&lt;/esp:referent>
+
+&lt;/esp:referents></pre>
+
+<esp:sh>Referring to the reference list</esp:sh>
+
+<p>To place a reference in the text to an item in the reference list, use the <code>&lt;esp:ref&gt;</code> element.  ESP will place a bracketed reference number in the text at the point where <code>&lt;esp:ref&gt;</code> is inserted and will place the full details of the reference at the bottom of the page.  (The number acts as a link to the full reference.)  Remember to use the <code>id</code> of the referent as defined in the reference list.</p>
+
+<p>The specification of the <code><esp:bookmark id="esp:ref"/>&lt;esp:ref&gt;</code> element is given below:</p>
+
+<pre class="listing">&lt;esp:ref
+	referent="example"
+	page="123"
+/></pre>
+
+<dl>	
+<dt><code>referent</code></dt>
+<dd>Mandatory. The <code>id</code> of a <code>&lt;esp:referent&gt;</code> element listed in the file <code>referents.xml</code> in the site-content folder.</dd>
+
+<dt><code>page</code></dt>
+<dd>Optional. The page number or page range to be added to the reference. For example, <code class="example">page="123"</code> or <code class="example">page="123, 125"</code> or <code class="example">page="123-150"</code> (the text <code>p.</code> or <code>pp.</code> is added automatically when the site is <esp:link page="esp-build">rebuilt</esp:link>).</dd>
+</dl>
+<p>NB.  This element is always empty.</p>
+
+<esp:sh>Examples of reference functionality</esp:sh>
+<p>See the Whipple Museum’s <esp:link rel="external" url="http://www.hps.cam.ac.uk/whipple/explore">Explore</esp:link> website for examples of reference functionality in use.  It was not utilised in the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp">Knowledge &amp; Power</esp:link> website.</p>
+
+
+
+
+
+</body>
+</html>
+</esp:page>

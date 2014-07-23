@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Creating content</esp:name>
+<esp:title>Creating Textual Content in ESP XML Files</esp:title>
+
+<html><head/><body>
+
+<p class="firstpara">This page describes how to use the basic system-specific ESP elements and attributes to create web pages. It assumes that you know how to use Emacs and are familiar with the basics of HTML.</p>
+
+<p>If you haven't already read the <esp:link page="esp-pages">documentation on page structure</esp:link> in ESP then do so now. We also strongly recommend you read the <esp:link page="espstyle">ESP style guide</esp:link>.</p>
+
+<p><esp:link bookmark="h_headingsandsubheadings">Headings and subheadings</esp:link> | <esp:link bookmark="h_tables">Tables</esp:link> | <esp:link bookmark="h_specialcharacters">Special characters</esp:link> | <esp:link bookmark="h_endmatter">Endmatter</esp:link> | <esp:link bookmark="h_accesskeyssitemapetc.">Accesskeys, sitemap etc.</esp:link> | <esp:link bookmark="h_comments">Comments</esp:link></p>
+
+<esp:h>Headings and subheadings</esp:h>
+
+<p>Including a short and enticing heading for each paragraph or section will help your reader to navigate around the page.</p>
+
+<esp:sh><code>&lt;esp:h&gt;</code></esp:sh>
+<p>The <code>&lt;esp:h&gt;</code> (heading) tag creates a heading and should be used instead of HTML's <code>h1</code>, which it replaces. It includes a bookmark that can be used by external websites to link to this point in the page.</p>
+
+<pre class="listing">
+&lt;esp:h&gt;
+	Inline content
+&lt;/esp:h&gt;</pre>
+
+<p>If, say, your heading looks like this: <code class="example">&lt;esp:h&gt;Aims (and Objectives)&lt;/esp:h&gt;</code>, the processor will generate an HTML <code>a</code> element, with the values of the <code>id</code> and <code>name</code> attributes in lower-case, with a prefix <code>h_</code> and without spaces or punctuation, like this: <code class="example">&lt;a id="h_aimsandobjectives" name="h_aimsandobjectives"&gt;&lt;/a&gt;&lt;h3&gt;Aims&lt;/h3&gt;</code>, enabling other (non-ESP) websites to link to it with the <code>a</code> element in the usual way.</p>
+<p>Within an ESP site, you can link to a heading using the <code><esp:link page="esplinks" bookmark="esp:link">esp:link</esp:link></code> element, setting the <code>bookmark</code> attribute like this: <code class="example">&lt;esp:link page="whatever" bookmark="h_aimsandobjectives"/&gt;</code>.</p>
+
+
+<esp:sh><code>&lt;esp:sh&gt;</code></esp:sh>
+
+<p>Sub-headings for pages are created using the <code>&lt;esp:sh&gt;</code> (sub heading) tag which replaces HTML's <code>h2</code>.  The sub-heading includes a bookmark that can be used by external websites to link to this point in the page.</p>
+
+<pre class="listing">
+&lt;esp:sh&gt;
+	Inline content
+&gt;/esp:sh&gt;</pre>
+
+<p>The <code>&lt;esp:sh&gt;</code> tag is the equivalent of using either <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> tags in HTML.</p>
+
+<p>If, say, your subheading looks like this: <code class="example">&lt;esp:sh&gt;Aims (and Objectives)&lt;/esp:sh&gt;</code>, the processor will generate an HTML <code>a</code> element, with the values of the <code>id</code> and <code>name</code> attributes in lower-case, <code class="example">&lt;a id="h_aimsandobjectives" name="h_aimsandobjectives"&gt;&lt;/a&gt;&lt;h3&gt;Aims&lt;/h3&gt;</code>, enabling other (non-ESP) websites to link to it with the <code>a</code> element in the usual way.</p>
+<p>Within an ESP site, you can link to a heading using the <code><esp:link page="esplinks" bookmark="esp:link">esp:link</esp:link></code> element, setting the <code>bookmark</code> attribute like this: <code class="example">&lt;esp:link page="whatever" bookmark="h_aimsandobjectives"/&gt;</code>.</p>
+
+
+<esp:h>Tables</esp:h>
+<p>You can create tables using the usual HTML tags, and optionally add the attribute <code class="cookbook">&lt;table class="pretty"&gt;</code> to style it more elegantly.</p>
+
+<esp:h>Special characters</esp:h> 
+<p>The characters <code>&gt;</code>, <code>&gt;</code> and <code>&amp;</code> have special meanings in XML (single and double quotes do too, but only inside attribute values, if they then terminate those values). Therefore, if you need to use them in a web page, use the following named character entities as substitutes:</p>
+
+<ul>
+<li>for <code>&amp;</code> use <code>&amp;amp;</code> (ampersand);</li>
+<li>for <code>&gt;</code> use <code>&amp;gt;</code> (greater than);</li>
+<li>for <code>&gt;</code> use <code>&amp;lt;</code> (less than); </li>
+<li>for <code>“</code> use <code>&amp;quot;</code> (use only in attribute values); </li>
+<li>for <code>‘</code> use <code>&amp;apos;</code> (use only in attribute values).</li>
+</ul>
+<p>Note that no other named character entities (such as the non-breaking space, <code>&amp;nbsp;</code>) are supported. Any character defined in HTML 4.01 can be used in ESP (see <esp:link rel="external" url="http://www.w3.org/TR/html401/sgml/entities.html">http://www.w3.org/TR/html401/sgml/entities.html</esp:link> for a list). All can be specified as numeric character entities, such as <code>&amp;#160;</code> (the non-breaking space) or <code>&amp;#169;</code> (the copyright symbol, ©).</p>
+
+<p>‘Smart’ or “smart” quotes, the ellipsis (...) character, and the en-dash (–) and em-dash (—) are automatically converted to 'dumb' or "dumb" quotes, three dots (...), and standard hyphens (-) for browser compatibility reasons.</p>
+
+<p>To avoid errors, in any URLs that include the <code>&amp;</code> (ampersand) character, substitute the entity <code>&amp;amp;</code> in place of the ampersand.  Also see the documentation on <esp:link page="esplinks">Links</esp:link>.</p>
+
+
+
+
+
+
+<esp:h>Endmatter</esp:h>
+<esp:sh>Authors, updates and email addresses</esp:sh>
+<p>The <code><esp:bookmark id="esp:author"/>&lt;esp:author&gt;</code> element defines an author for a page. It may be used any number of times, anywhere within the <code>&lt;body&gt;</code> element. If present at least once, author and citation details are included at the bottom of the content section.</p>
+
+<pre class="listing">&lt;esp:author
+	first-names="George W**ker"
+	last-name="Bush"
+/></pre>
+
+<p>For multiple authors, use multiple <code>&lt;esp:author></code> elements:</p>
+
+<pre>&lt;esp:author first-names="Example A." last-name="Author" />
+&lt;esp:author first-names="Example B." last-name="Author" /></pre>
+
+<p>Names will appear in the same order as the elements are listed. The example above will be displayed as: Example A. Author &amp; Example B. Author</p>
+
+<p>The <code><esp:bookmark id="esp:content-last-modified"/>&lt;esp:content-last-modified/&gt;</code> element inserts the date the content of this page (i.e., the XML file inside <code>00web/</code>) was last modified, in the format <code>18 Sep 2007</code>.</p>
+
+<p> The <code class="example"><esp:bookmark id="esp:email"/>&lt;esp:email address="me@example.com"/&gt;</code> element, which is always empty, creates an email address obfuscated like so – <code class="example">me at example dot com</code> – which is converted back into a real address and made into a <code>mailto:</code> link using JavaScript, where available.</p>
+
+<esp:h>Accesskeys, sitemap etc.</esp:h>
+
+<pre class="listing"><esp:bookmark id="esp:accesskeys-listing"/>&lt;esp:accesskeys-listing/></pre>
+
+<p>Creates a table of the access keys that are defined for the site in <code>structure.xml</code>, and those that are created automatically (such as <code class="example">S</code> for <code class="example">Skip to main content</code>). Probably used only once, on the <code>accesskeys.xml</code> page.</p>	
+
+
+<pre class="listing"><esp:bookmark id="esp:site-map"/>&lt;esp:site-map/></pre>
+
+<p>Creates a site map. Used once, on the <code>sitemap.xml</code> page. Always empty.</p>
+
+<esp:h>Comments</esp:h>
+<p>XML files can contain comments in this format: <code class="example">&lt;!-- Here is a comment --&gt;</code>. Comments cannot be nested inside each other, because the sequence of characters -- is not permitted inside a comment.</p>
+
+<p>Using comments can be handy way to temporarily remove sections of content from the site, as things that are commented out leave no trace in the final output site.</p>
+
+<esp:h>Next steps</esp:h>
+<p>There is an alphabetical reference list of <esp:link page="esp-elements">ESP system elements</esp:link> for quick cross-reference.</p>
+<p>There are also separate ESP help pages about:</p>
+<ul>
+<li><esp:link page="espstyle">Writing style</esp:link></li>
+<li><esp:link page="esplinks">Links</esp:link></li>
+<li><esp:link page="esprefs">Referencing and Bibliography</esp:link></li>
+<li><esp:link page="espglossaries">Glossaries and Index</esp:link></li>
+<li><esp:link page="esp-images">Images</esp:link></li>
+</ul>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

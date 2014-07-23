@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Rebuild errors</esp:name>
+<esp:title>Rebuild errors</esp:title>
+<html><head/><body>
+<p class="firstpara">This page gives some help with fixing rebuild error messages that arise through lemmatisation or glossary management problems.</p>
+
+<esp:h>F2 errors</esp:h>
+
+<p>An L2 feature common to several subsystems is the 'form' or
+'signature'.  This is the basic component of interlinear
+lemmatization, for example.  All of the L2 programs which are written
+in C use the same parser for these forms, so the messages the parser
+produces may occur in a variety of contexts.  When the messages are
+produced as part of lemma-checking, they are labeled as '(f2)'.</p>
+
+<esp:h>F2 Diagnostics</esp:h>
+
+<esp:sh>xxx: parse error at 'x'</esp:sh>
+
+<p>This is an error which is generated when the F2 parser is expecting
+to find any of the delimiter characters that separate parts of the
+form. The first thing it tells you is the string it is looking at when
+it finds the parse error, and at the end of the line it tells you
+which character in the string was the one that confused it.</p>
+
+<p>Here's a real-life example:</p>
+
+<pre class="example">
+sb-I.atf:575: (f2) stack: parse error at 's'</pre>
+
+<p>Looking at line 575 of the offending file we see:</p>
+
+<pre class="example">
+147. zar
+#lem: zar[sheaf (of barley); stack of sheaves]N
+</pre>
+
+<p>So, the error is detected at the 's' of 'stacks'. In L2
+semi-colons are not allowed within a sense: the normal meaning of such
+a semi-colon in a glossary or dictionary is that multiple senses are
+involved, and in L2 the correct way to handle that is to define
+multiple <code>@sense</code> lines in the glossary entry, and to
+separate the GW and the SENSE with <code>//</code> in the
+lemmatization:</p>
+
+<pre class="example">
+147. zar
+#lem: zar[sheaf (of barley)//stack of sheaves]N
+</pre>
+
+<esp:h>LEM errors</esp:h>
+
+<p>This is a list of (lem) error messages that might seem rather mysterious at first, with hints on what they mean and how to fix them. Do get in touch if there are others you would like to be added.</p>
+
+<dl>
+<dt><code>(lem) no FORM `EN.NAM' and no matches for mīnûm[what?]QP in glossary dccmt:akk-x-oldbab</code></dt>
+<dd>The usual cause of this sort of error messages is a surplus <code>$</code> in an auto-lemmatised form, i.e., <code>mīnûm[what?]QP$</code> instead of correct <code>mīnûm[what?]QP</code>. Just delete the <code>$</code>.</dd>
+<dt><code>(lem) no FORM `EN.NAM' and no matches for mīnûm[what?]QP in glossary cdli:akk-x-oldbab</code></dt>
+<dd>Here the lemmatiser is looking for a form in a putative <code>cdli</code> OB glossary, not the project's own one. This is because the protocol lines are in the wrong order. In Oracc 2 the <code>#project:</code> protocol line <em>must</em> come before the <code>#atf:</code> protocol lines. Moving the <code>#project:</code> protocol line to before the <code>#atf:</code> protocol lines will fix this error.</dd>
+</dl>
+
+
+
+</body></html></esp:page>

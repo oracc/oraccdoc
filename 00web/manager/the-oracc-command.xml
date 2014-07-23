@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>The Oracc command</esp:name>
+<esp:title>The Oracc command</esp:title>
+<html><head/><body>
+
+<p class="firstpara">This page documents the various project
+management tasks you can carry out using the oracc programme on the
+Oracc server. </p>
+
+<esp:h>Before you begin</esp:h>
+
+<p>Log in to Oracc with Putty or Terminal.</p> 
+
+<p>To carry out any of these commands type <code class="example">oracc OPTION</code> and press return, where OPTION is any one of the options listed below. For instance, <code class="example">oracc config</code> puts into effect any changes you have made to your <esp:link page="projconfig">project configuration file</esp:link>.</p>
+
+<p>In general, commands send the project or part of it to the build
+server, then check the build server occasionally (usually every 10
+seconds) to see if it is done.  When the build server is done, it
+sends back a log file, <code>oracc.log</code>, as well as any
+processed files such as merged glossaries.   If any of the returned
+files need to be put in particular places, the <code>oracc</code>
+command takes care of that for you. It writes <code>oracc.log</code>
+to the screen for convenience, but you can also review that file as
+necessary.</p> 
+
+<p>To review the <code>oracc.log</code> file, type <code
+class="cookbook">less oracc.log</code> at the command line and press
+return. Scroll up and down the file with the arrow keys and quit the file by
+typing <code class="cookbook">q</code>.</p>
+
+<p>The <code>oracc</code> programme must be run in your project's main directory; if you are in a subdirectory such as <code>00atf</code> it will not work. (The prompt and/or the window header of the terminal will tell you where you are in the directory structure; for instructions on moving between directories see the <esp:link page="projunix" bookmark="h_someusefulunixcommands">list of Unix commands</esp:link>.)</p>
+
+<esp:h>Program options</esp:h>
+<p>The <code>oracc</code> programme understands the following commands:</p>
+
+<esp:sh><code>build [COMMAND]</code></esp:sh>
+  <dl>
+    <dt><code class="cookbook">oracc build</code></dt>
+    <dd>rebuilds any project of any type, doing all the work required for that project's rebuilding</dd>
+    <dt><code class="cookbook">oracc build clean</code></dt>
+    <dd>erases all project files on the build server, then rebuilds the corpus and portal</dd>
+    <dt><code class="cookbook">oracc build corpus</code></dt>
+    <dd>rebuilds only the corpus</dd>
+    <dt><code class="cookbook">oracc build portal</code></dt>
+    <dd>rebuilds only the portal</dd>
+  </dl>
+  
+<esp:sh><code>check [COMMAND]</code></esp:sh>
+  <dl>
+    <dt><code class="cookbook">oracc check dups</code></dt>
+    <dd>checks for duplicate P-numbers in the corpus.</dd>
+
+    <dt><code class="cookbook">oracc check gloss</code></dt>
+    <dd>checks that the glossary files are loadable.</dd>
+
+    <dt><code class="cookbook">oracc check links</code></dt>
+    <dd>checks that the links are correct.</dd>
+
+    <dt><code class="cookbook">oracc check texts</code></dt>
+    <dd>checks that the corpus ATF files are correct.</dd>
+  </dl>
+
+<esp:sh><code>colors</code> or <code>colours</code></esp:sh>
+<p>Updates the colours used by the web display after you have
+  <esp:link page="webcolours">changed them</esp:link> in the
+  configuration file. Note that at present this only updates the
+  colours used by the pager, not by the portal.</p>
+
+<esp:sh><code>harvest</code></esp:sh>
+<p>Collects new words from the corpus and places them in
+  <code>01bld/new/[LANGUAGE].new</code>; the new material can be reviewed but
+                corrections *MUST* be made in the ATF files and/or
+                in <code>00lib/[LANGUAGE].glo</code> (the main glossary file). See <esp:link page="projunix" bookmark="h_harvestingnewlemmatisationdata">this description of harvesting</esp:link> for more information.</p>
+		
+<esp:sh><code>merge [LANGUAGE]</code></esp:sh>
+<p>Redoes the harvest and then merges the <code>01bld/new/[LANGUAGE].new</code>
+  file with the main glossary file. See <esp:link page="projemacs" bookmark="h_mergingtheglossaries">this description of merging</esp:link> for more information.</p>
+
+<esp:sh><code>resources</code></esp:sh>
+<p>Copies the contents of the <code>00res</code> folder to the build server; this must be done any time the contents of <code>00res</code> changes, and it should then be followed by <code class="example">oracc build portal</code>.</p>
+
+<esp:sh><code>update</code></esp:sh><p>Rebuilds the lemmatization data, mostly useful if you are
+    working on correcting glossaries and lemmatized texts and want to
+    get quick feedback on changes.</p>
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

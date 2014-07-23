@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	<esp:name>Standards</esp:name>
+	<esp:title>Oracc and standards</esp:title>
+
+	<html>
+		<head>
+		
+		</head>
+		<body>
+			<p>Oracc aims to be compatible with major international standards; see the following documentation:</p>
+
+<esp:sh><esp:link page="schemas">Schemas</esp:link></esp:sh>
+<p>All of Oracc's schemas are available from this page.</p>
+<esp:sh>O-ATF and C-ATF</esp:sh>
+<p>Oracc-ATF and CDLI-ATF will soon be documented here.</p>
+
+<esp:sh><esp:link page="standards-opendocument">OpenDocument in the Oracc system</esp:link></esp:sh>
+<p>OpenDocument is a powerful XML vocabulary which is
+  an ISO international standard for describing all of the document
+  types that make up an office suite.  This document describes
+  how the Oracc software can be used to create and style OpenDocument
+  Text files.</p> 
+<p>There is also a short, less technical overview <esp:link page="otf">here</esp:link>.</p>
+
+<esp:sh><esp:link page="standards-tei">Text Encoding Initiative for Oracc</esp:link></esp:sh>
+<p>An ATF corpus can be turned into a TEI corpus; this
+  document describes the TEI conventions used and discusses some of
+  the issues in this conversion process.</p>
+			
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+		</body>
+	</html>
+
+</esp:page>

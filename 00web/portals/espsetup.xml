@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>ESP setup</esp:name>
+<esp:title>Setting up your ESP portal website</esp:title><html><head/><body><p class="firstpara">This page describes how to configure the parameters, structure, appearance, and privacy preferences of your ESP website. This page is just for managers of ESP projects. If you are editing ESP pages for someone else to install you don't need to read on.</p>
+
+<p><esp:link bookmark="h_siteparameters">Site parameters</esp:link>
+(<code>parameters.xml</code>) | <esp:link
+bookmark="h_sitestructure">Site structure</esp:link>
+(<code>structure.xml</code>) | <esp:link
+bookmark="h_pages">Pages</esp:link> | <esp:link
+bookmark="h_links">Links</esp:link> | <esp:link bookmark="h_sitestyle">Site style</esp:link></p>
+
+<esp:h>Site parameters</esp:h>
+<p>The parameters of the site are set in the <code>00web/00config/paramaters.xml</code> file. Here is an example <code>parameters.xml</code> file:</p>
+
+<pre class="example">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;param:parameters 
+	xmlns:param="http://oracc.org/ns/esp-param/1.0"
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+&gt;
+	&lt;param:title&gt;The Geography of Knowledge&lt;/param:title&gt;
+	&lt;param:banner&gt;&lt;esp:image file="FILENAME.png" description=""/>&lt;/param:banner&gt;
+	&lt;param:publisher&gt;The GKAB Project&lt;/param:publisher&gt;
+	&lt;param:host&gt;http://oracc.museum.upenn.edu&lt;/param:host&gt;
+	&lt;param:root&gt;/cams/gkab&lt;/param:root&gt;
+	&lt;param:common-headers&gt;
+		&lt;meta name="DC.publisher" content="GKAB Project, Department
+		of History and Philosophy of Science, University of Cambridge, 
+		Free School Lane, Cambridge CB2 3RH, UK"/&gt;
+		&lt;meta name="DC.language" scheme="ISO 639-2/T" content="eng"/&gt;
+		&lt;meta name="DC.rights.copyright" content="Released under a CC-BY-SA 3.0 license, 2007-12"/&gt;
+		&lt;meta name="DC.type" scheme="DCTERMS.DCMIType" 
+		content="Text"/&gt; 	
+		&lt;meta name="DC.format" content="text/html"/&gt;
+	&lt;/param:common-headers&gt;
+	&lt;param:dc-id-prefix&gt;gkab-oracc-museum-upenn-edu/page/
+	&lt;/param:dc-id-prefix&gt;
+	&lt;param:main-menu-caption&gt;Main menu&lt;/param:main-menu-caption&gt;
+	&lt;param:footer&gt;
+&lt;p>&lt;esp:image file="footer/cc88x31.png" description="Oracc's CC
+license" position="inline">&lt;esp:link
+url="http://creativecommons.org/licenses/by-sa/3.0/" hide-print="yes"
+title="Creative Commons Attribution Share-Alike
+license"/>&lt;/esp:image> Released under a &lt;esp:link
+page="licensing">Creative Commons Attribution Share-Alike license
+3.0&lt;/esp:link>,E Robson 2014. &lt;br/>
+&lt;small>Oracc uses cookies only to collect Google Analytics data. Read more &lt;esp:link page="privacy">here&lt;/esp:link>; see the stats &lt;esp:link url="http://www.seethestats.com/site/oracc.museum.upenn.edu" rel="external">here&lt;/esp:link>; opt out &lt;esp:link url="http://tools.google.com/dlpage/gaoptout" rel="external" hide-print="yes">here&lt;/esp:link>.&lt;/small>&lt;/p>
+	&lt;/param:footer&gt;
+&lt;/param:parameters&gt;
+</pre>
+
+<p>The available elements are described below.</p>
+
+<dl>
+<dt><code>&lt;param:title&gt;Text&lt;/param:title&gt;</code></dt>
+
+<dd>Provides the title for the site as a whole. Also used in creating citations.</dd>
+
+<dt><code>&lt;param:banner&gt;&lt;esp:image file="FILENAME.png" description=""/>&lt;/param:banner&gt;</code></dt>
+
+<dd>Optional. Allows you to place a banner in the form of an image at the top of your home page. Content must be <esp:link page="esp-images" bookmark="h_markupforimages"><code>esp:image</code></esp:link>.</dd>
+
+<dt><code>&lt;param:publisher&gt;Text&lt;/param:publisher&gt;</code></dt>
+
+<dd>Used in creating citations.</dd>
+
+<dt><code>&lt;param:host&gt;http://www.servername.ext&lt;/param:host&gt;
+and &lt;param:root&gt;/path/to/site/root&lt;/param:root&gt;</code></dt>
+
+<dd>Describe where the site home page is located. For example, if the home page is at <code class="example">http://oracc.museum.upenn.edu/cams/gkab/</code>, the host is <code class="example">http://oracc.museum.upenn.edu</code> and the root is <code class="example">/cams/gkab</code>. Note that neither should end with a slash.</dd>
+
+<dt><code>&lt;param:common-headers&gt;inline content&lt;/param:common-headers&gt;</code></dt>
+<dd>Any elements within this element are copied directly to the head element of all pages of the site. This can be used, for example, for <esp:link url="http://dublincore.org/">Dublin Core</esp:link> metadata items that are the same on all pages, such as <code>DC.publisher</code>.</dd>
+
+
+<dt><code>&lt;param:dc-id-prefix&gt;Text&lt;/param:dc-id-prefix&gt;</code></dt>
+
+<dd>The text content of this element is prefixed to each page’s id to form a <esp:link url="http://dublincore.org/">Dublin Core</esp:link> identifier for each page. This is to ensure that the identifier is globally unique.</dd>
+
+<dt><code>&lt;param:main-menu-caption&gt;Text&lt;/param:main-menu-caption&gt;</code></dt>
+
+<dd>Optional. If this is present, the main menu is captioned with the supplied text.</dd>
+
+<dt><code>&lt;param:footer&gt;Arbitrary block and/or inline content&lt;param:footer&gt;</code></dt>
+
+<dd>Any elements within this element are copied directly to the footer area of all pages of the site. By default it should include a link to your <esp:link page="esp-overview" bookmark="licensing.xml">licensing page</esp:link>, the project name and date.</dd>
+</dl>
+
+
+<esp:h>Site structure</esp:h>
+
+<p>The structure of the site is defined in the file <code>00web/00config/structure.xml</code>. Here is an example <code>structure.xml</code> file:</p>
+
+<pre class="example">
+&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;struct:page 
+	xmlns:struct="http://oracc.org/ns/esp-struct/1.0"
+        xmlns:wm="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+	file="home.xml" id="home" accesskey="1" type="page">
+  &lt;struct:link url="http://oracc.org/dccmt/corpus" id="corpus" title="Corpus"/>
+  &lt;struct:page file="bibliography.xml" id="bibliography" accesskey="2" type="page"/>
+  &lt;struct:page file="metrology.xml" id="metrology" accesskey="3" type="page"/>
+  &lt;struct:page file="updates.xml" id="updates" accesskey="4" type="page"/>
+  &lt;struct:page file="about.xml" id="about" accesskey="6" type="page">
+    &lt;struct:page file="404.xml" id="404" hide-menu-link="yes" type="page"/>
+    &lt;struct:page file="accesskeys.xml" id="accesskeys" accesskey="0" type="page"/>
+    &lt;struct:page file="cookies.xml" id="cookies" accesskey="7"  type="page"/>
+    &lt;struct:page file="licensing.xml" id="licensing" accesskey="8"  type="page"/>
+    &lt;struct:page file="standards.xml" id="standards" type="page"/>
+    &lt;struct:page file="sitemap.xml" id="sitemap" accesskey="9"  type="page"/>
+   &lt;/struct:page>
+&lt;/struct:page>
+</pre>
+
+<p>As seen above, the file usually contains only <code><esp:link bookmark="h_pages">&lt;struct:page&gt;</esp:link></code> and <code><esp:link bookmark="h_links">&lt;struct:link></esp:link></code>elements. The nesting of these elements defines the structure of the site.</p> 
+
+<esp:sh>Pages</esp:sh>
+<p>The <code>&lt;struct:page&gt;</code> element is used as described below:</p>
+
+<pre class="listing">
+&lt;struct:page 
+id="example"
+file="example.xml"
+accesskey="0"
+hide-menu-link="yes"
+&gt;
+	Other &lt;struct:page&gt; elements (optional)
+&lt;/struct:page&gt;
+</pre>
+
+<dl>
+<dt><code>id</code></dt>
+<dd>Mandatory. The unique identifier for the page. Other pages will link to this page using its <code>id</code>. Give pages ids according to a logical and memorable system: any value can be chosen that you are happy to be open to the public (it may be used in metadata fields).</dd>
+
+<dt><code>file</code></dt>
+<dd>Optional. The location of the XML file containing the information for this page, relative to the pages folder in the <code>site-content</code> folder (if the <code>file</code> attribute is not present, the page’s information must be present inside the <code>&lt;struct:page&gt;</code> element itself, but this is not recommended). Name the XML files, and place them inside folders in the <code>site-content/pages</code> folder, according to a logical and memorable system. No trace of the file names or locations will be present anywhere in the public site.</dd>
+
+<dt><code>accesskey</code></dt>
+<dd>Optional. This defines an access key to be used to access this page from other pages on the site. However, note that the access key will only work on pages on which there is a link to the target page.</dd>
+
+<dt><code>hide-menu-link="yes"</code></dt>
+<dd>Optional. The presence of this attribute determines whether or not a link to the page is displayed in the navigation menu. Note that the <code>404.xml</code> page is usually hidden.</dd>
+</dl>
+<p>The <code>&lt;struct:page&gt;</code> element can contain other <code>&lt;struct:page&gt;</code> elements; these are then ‘children’ (i.e., sub-pages) of this page in the site structure.</p>
+
+<esp:sh>Links</esp:sh>
+
+<p>You can reference external links in <code>structure.xml</code> by using the <code>struct:link</code> element.  This has the following attributes:</p>
+
+<dl>
+<dt><code>id</code></dt>
+<dd>Mandatory. The unique identifier for the page. Other pages will link to this page using its <code>id</code>. Give pages ids according to a logical and memorable system: any value can be chosen that you are happy to be open to the public (it may be used in metadata fields).</dd>
+
+<dt><code>title</code></dt>
+<dd>Mandatory.  The text that is used in the menu when displaying the link entry.</dd>
+
+<dt><code>url</code></dt>
+<dd>Mandatory.  The URL for the resource which is usually external to the ESP site, but may be local.  The URL is handled according to the following rules:
+<ul>
+<li>If the URL begins with <code>http://</code> or <code>/</code> it is passed through unmodified</li>
+<li>Otherwise, the URL is treated the same way as any other <code>esp:link</code>, i.e., it is taken to be relative to the ESP portal's top level directory.</li>
+</ul>
+</dd>
+</dl>
+
+<p>A common application of this feature is to create a link in the menu to reach a corpus referenced by the portal.  To include such a link, you can simply include <code>struct:link</code> in the appropriate place in <code>structure.xml</code>.  For example, to link to the SAAo corpus one could write:</p>
+
+<pre class="cookbook">
+  &lt;struct:link id="SAAo" title="Browse SAAo Corpus" url="/SAAo/corpus"/&gt;
+</pre>
+
+<esp:h>Site style</esp:h>
+<p>Some aspects of the visual appearance of the site are hard-coded
+(you cannot change them). Others defined in the file
+<code>00lib/p3colours.txt</code>. We give instructions on how to edit
+this file on the <esp:link page="webcolours">Colours configuration</esp:link> page.</p>
+
+
+<esp:h>Next steps</esp:h>
+<p>You are now ready to create content for your ESP website.</p>
+<p>All system elements are described in detail on the pages on <esp:link page="esp-content">Creating web content</esp:link> and <esp:link page="esp-images">Embedding images and other files</esp:link>. They are also listed in alphabetical order on the <esp:link page="esp-elements">ESP Elements page</esp:link>.</p>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

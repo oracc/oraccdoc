@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Reusing Oracc</esp:name>
+	<esp:title>How to reuse material from Oracc</esp:title>
+
+	<html><head></head><body>
+		
+<p class="firstpara">You are very welcome to reuse material from any Oracc project, as long as you abide by that project's licensing terms. Here we give some practical tips on how to do this most effectively online, but our suggestions are not meant to be prescriptive or exhaustive.</p>
+
+<p><esp:link bookmark="h_oraccslicensing">Licensing</esp:link> | <esp:link bookmark="h_copyingandpasting">Copying and pasting</esp:link> | <esp:link bookmark="h_linking">Linking</esp:link> | <esp:link bookmark="h_listingtexts">Listing texts</esp:link> | <esp:link bookmark="h_imagesanddownloads">Images and downloads</esp:link> | <esp:link bookmark="h_embeddingobjects">Embedding objects</esp:link></p>
+
+<esp:h>Oracc's licensing</esp:h>
+<p>The Oracc default license is the Creative Commons Attribution Share-Alike license, described <esp:link page="licensing">here</esp:link>. If you abide by this license you do not need to ask permission for reusing Oracc material. If you want to reuse Oracc material under different licensing terms, please email <esp:email address="osc@oracc.org"/> to make an enquiry.</p>
+<p>However some projects, especially those like <esp:link url="http://oracc.org/saao/">SAAo</esp:link> which reuse previously published material, may have different terms. Copyright may be held by the original author and/or publisher. </p>
+<p>Note too that individual images, PDFs or other downloads used by Oracc sites may come from other sources and thus be subject to copyright.</p> 
+<p>You should be able to find details of copyright or licensing in the footer of the relevant page. Each project should also have a prominent link to its licensing terms, written in clear language. If you have any questions or problems about the copyright or license of an individual object, please contact the project director or send an email to <esp:email address="osc@oracc.org"/>.</p>
+
+<esp:h>Copying and pasting</esp:h>
+<p>The easiest way to reuse text from an Oracc portal site is just to cut and paste it into your own site, remembering to attribute it to the relevant Oracc project and (if appropriate) individual author. If you cannot find the project-specific guidance on how to give the attribution, please email <esp:email address="osc@oracc.org"/> for help.</p> 
+
+<esp:h>Linking</esp:h>
+<p>Oracc uses a system of stable URIs, or <esp:link url="https://en.wikipedia.org/wiki/URI" rel="external">Uniform Resource Identifiers</esp:link>, for its pages, and elements of its pages. This means that if you link to an Oracc page, or part of an Oracc page, you can be confident that the link will not break.</p>
+
+<esp:sh>Linking to an Oracc corpus</esp:sh>
+<p>URIs are not always the same as the URL you see in the browser bar when you visit an Oracc corpus page. Use the instructions on <esp:link page="visitor-citing">citing Oracc URLs online</esp:link> in order to link to Oracc's corpus pages most effectively.</p>
+
+<esp:sh>Linking to an Oracc portal</esp:sh>
+<p>Linking to Oracc's portal pages is very straightforward: you can just copy the URL you see in your browser. You can link to any heading or subheading too, as they all have <code>&lt;a></code> tags attached to them automatically.</p> 
+
+<p>You can find out the <code>id</code> attribute of each heading by viewing the page's source code in your browswer, or read a more technical description (written for Oracc content creators) <esp:link page="esp-content" bookmark="h_headingsandsubheadings">here</esp:link>.</p>
+
+<esp:h>Listing texts</esp:h>
+<p>One of the most exciting features of Oracc URIs is that you can make your own lists of cuneiform texts from across the Oracc corpora—that is, you can make your own ad hoc Oracc corpus.</p> 
+<p>For instance, you can create a list of transliterations for a reading class, or collect together translations of texts that share a particular word or feature. Instructions are given on the <esp:link page="visitor-citing" bookmark="h_listoftexts">citing Oracc URLs</esp:link> page.</p>
+
+<!-- to here -->
+<esp:h>Images and downloads</esp:h>
+<p>You are welcome to re-use images and downloads that have been created by Oracc projects, as long as you follow the appropriate licensing terms. In fact many Oracc projects include a dedicated page of links to reusable resources.</p>
+		
+<p>We recommend that you keep links to the originals on Oracc as well as, or instead of, hosting copies on your own site. That way you can be sure that your users have access to the most up-to-date versions.</p>
+
+<esp:h>Embedding objects</esp:h>
+
+<esp:sh>A text from an Oracc corpus</esp:sh>
+<p>To embed a text from an Oracc's project's corpus in your ESP page, you will need to know the its ID-number: a six-digit number prefixed by P, Q or X. Use the following code:</p>
+
+<pre>
+&lt;object width="380px" height="240px" data="http://oracc.org/PROJECT/P000000/html" title="[your text here]"> 
+&lt;/object>
+</pre>	
+
+<p>Remember to replace the word <code>PROJECT</code> with the Oracc code for the relevant project or subproject (e.g., <code>saao/saa17</code> or <code>etcsri</code>). Substitute <code>P000000</code> with the ID-number of the text you want. You can resize the embedded page by changing the value of the <code>width</code> and <code>height</code> attributes.</p>
+
+<p>Here, for instance, is the text SAA 10, 176 (P334126) from SAAo/SAA10, with the width set to 600px:</p>
+
+<p><object width="600px" height="240px" data="http://oracc.org/saao/saa10/P334126/html" title=""></object></p>
+
+<p>Note that the page comes with its own <esp:link bookmark="h_oraccslicensing">licensing terms</esp:link> attached, so you do not have to worry about that.</p>
+
+<p>For more examples of different types of Oracc corpus page to embed, including glossary entries and catalogue data, see the page on <esp:link page="visitor-citing">citing Oracc URLs</esp:link>.</p> 
+
+<esp:sh>Cuneify</esp:sh>
+<p><esp:link url="~/saao/knpp/cuneiformrevealed/cuneify/">Cuneify</esp:link> is a tool developed by Steve Tinney which generates cuneiform script from alphabetic transliteration. To embed Cuneify into your website, copy the following code:</p>
+
+<pre>
+&lt;form action="http://oracc.museum.upenn.edu/cgi-bin/cuneify">
+&lt;p>&lt;input type="text" size="50" name="input" value="type your transliteration here" />&lt;/p>
+&lt;p>&lt;input type="submit" name="button" value="Cuneify" />&lt;/p>
+&lt;/form>
+</pre>
+
+<p>This will produce a form that looks like this:</p>
+<form action="http://oracc.museum.upenn.edu/cgi-bin/cuneify">
+<p><input type="text" size="50" name="input" value="type your transliteration here" /></p>
+<p><input type="submit" name="button" value="Cuneify" /></p>
+<p><input type="hidden" name="project" value="doc2/visitor" /></p>
+</form>
+
+<p>You should point out on your website that to use Cuneify, visitors need to install at least one <esp:link page="visitor-fonts">cuneiform font</esp:link>. At the moment, it is not possible to do this on a mobile phone.</p>
+
+<p>You may also want to copy, or link to, our <esp:link url="~/saao/knpp/cuneiformrevealed/cuneify/#h_tipsforcorrectinput">tips for correct input</esp:link>.</p>
+
+<p>If you are creating an Oracc portal page with Cuneify in it, you should also add the following line of code before <code>&lt;form></code>:</p>
+
+<pre>
+&lt;p>&lt;input type="hidden" name="project" value="saao/knpp/cuneiformrevealed" />&lt;/p>
+</pre>
+
+<p>There is more technical documentation on Cuneify <esp:link page="cuneify">here</esp:link>.</p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+	</body></html>
+
+</esp:page>

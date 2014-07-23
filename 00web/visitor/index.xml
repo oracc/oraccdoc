@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Visiting Oracc</esp:name>
+<esp:title>Visiting Oracc: how to browse, sort, search, display, and reuse</esp:title>
+<html>
+<head/><body>
+<p class="firstpara">These pages describe how to browse Oracc's online corpora, and provide access to free fonts and keyboards for optimising transliteration and cuneiform display. They also explain how to re-use material from across the Oracc projects.</p>
+<esp:sh>Using the Oracc website</esp:sh>
+<p>Oracc is split into many different projects, each created and managed by a different team. A project consists of a 'portal' website and, optionally, a corpus of cuneiform texts. Portals work like any other website so we won't explain them further here. But the corpora have a lot of special features, which these pages describe in more detail.</p>
+<dl>
+<dt><esp:link page="visitor-userguide">Getting started with Oracc online corpora</esp:link></dt>
+<dd>This page describes how to browse and sort any of Oracc's online corpora.</dd>
+<dt><esp:link page="search">Searching Oracc</esp:link></dt>
+<dd>There are several different ways of searching Oracc in its entirety, or project by project. This section of the help pages describe the options.</dd>
+<dt><esp:link page="visitor-glossaries">Using the Oracc glossaries</esp:link></dt>
+<dd>Most Oracc corpora are at least partially lemmatised; that is, the words in them are tagged in order to generate language glossaries. An Oracc corpus usually has more than one glossary (for instance Akkadian, Sumerian, Names) but they all work in essentially the same way. This page describes how to use them.</dd></dl>
+
+<esp:sh>Reusing Oracc content</esp:sh>
+<p>You are welcome to reuse material from any Oracc project as long as you follow the terms of that project's license.</p> 
+<dl>
+<dt><esp:link page="licensing">Licensing</esp:link></dt>
+<dd>The Oracc default license is described <esp:link page="licensing">here</esp:link> but some projects, especially those like <esp:link url="http://oracc.org/saao/">SAAo</esp:link> which reuse previously published material, may have different licensing conditions. Note too that individual images used by Oracc sites may come from external sources and thus be subject to copyright. Each project should have prominent links to its licensing terms, written in clear language, but do email <esp:email address="osc@oracc.org"/> if you have any questions or problems.</dd>
+<dt><esp:link page="visitor-citing">Citing Oracc URLs online and in print</esp:link></dt>
+<dd>This page describes how to refer to Oracc web pages online or in print, using short, stable URLs. A wider range of options, described in more technical language, is given on the <esp:link page="projurls">Oracc URI patterns</esp:link> page.</dd>
+<dt><esp:link page="visitor-reusing">Reusing Oracc material in your own website</esp:link></dt>
+<dd>This page gives some practical tips on reusing texts, images, and tools from Oracc in other websites. You may also find it helpful to look at the instructions on <esp:link page="espdownloads">embedding objects in Oracc portal pages</esp:link>, as many of the same principles apply.</dd>
+</dl>
+
+
+<esp:sh>Characters, fonts and keyboards</esp:sh>
+
+<dl>
+<dt><esp:link page="visitor-unicode">Unicode for cuneiform transliteration</esp:link></dt>
+<dd>This page lists the essential Unicode characters for transliterating and normalising Sumero-Akkadian cuneiform.</dd>
+<dt><esp:link page="visitor-fonts">Unicode fonts for Oracc</esp:link></dt>
+<dd>This page provides access to a variety of Unicode fonts for transliteration and normalisation, as well as for cuneiform script.</dd>
+<dt><esp:link page="visitor-keyboards">Keyboards for cuneiform transliteration</esp:link></dt>
+<dd>This page presents a collection of keyboards supporting Unicode transliterations, implementing a consistent set of input conventions across operating systems.</dd></dl>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

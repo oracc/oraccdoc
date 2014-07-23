@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Sumerian primer</esp:name>
+<esp:title>Sumerian Lemmatization Primer</esp:title>
+<html><head/><body>
+<p class="firstpara">A very quick start to get you lemmatizing
+  Sumerian texts with the minimum effort possible.</p>
+
+
+
+<esp:h>Overview</esp:h>
+
+<p>Sumerian lemmatization works by drawing information from four
+places:</p>
+
+<ul>
+<li>New entries in the interlinear lemmatization in the file</li>
+<li>The project glossary, <code>00lib/sux.glo</code></li>
+<li>ePSD, from the development version which is searchable <esp:link url="http://oracc.museum.upenn.edu/epsd/cbd/sux">on oracc</esp:link></li>
+<li>The morphological analyzer</li>
+</ul>
+
+<p>Sumerian uses the same basic parts of speech as Akkadian, but with
+the addition of three important ones:</p>
+
+<ul>
+<li>MORPH: the morphological analysis</li>
+<li>BASE: the base form of the dictionary word as it occurs in the
+writing</li>
+<li>CONT: a continuation grapheme, i.e., normally a sign whose
+consonant is the same as the end of the citation form of the word, and
+whose vowel is either non-functional or contributes to the post-verbal
+morphology.</li>
+</ul>
+
+
+<esp:h>Principles</esp:h>
+
+<p>As a matter of principle, it is best to do as little as possible
+when lemmatizing Sumerian.  In the normal case, it is enough to
+lemmatize with a citation form and a sense--all of the other
+components will get filled in for you by either ePSD or the
+morphological analyzer.</p>
+
+<p>In particular, ePSD's approach to adjectives in Sumerian is that
+almost all of them are simply verbs, whose nonfinite forms can be used
+in a variety of ways including modifiers and participles.  We
+generally do not tag these using the Extended POS (EPOS), even where a
+word has more than one listed POS in ePSD.  For example, you can
+lemmatize <code>nir</code> as <code>nir[lordly]</code> or
+<code>nir[lord]</code> and the lemmatizer will find the right POS/EPOS
+combination for you.</p>
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

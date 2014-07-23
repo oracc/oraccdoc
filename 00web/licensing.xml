@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Licensing</esp:name>
+	<esp:title>Oracc's license for use and re-use</esp:title>
+
+	<html><head></head><body>
+		
+<p class="firstpara">Blah</p>
+
+			
+	</body></html>
+
+</esp:page>

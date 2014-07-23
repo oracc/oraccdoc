@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>ESP folders</esp:name>
+<esp:title>Overview of ESP folder/directory structure</esp:title>
+<html><head/>
+<body>
+<p class="firstpara">ESP comes pre-installed in your Oracc project with certain files and folders/directories which are explained in more detail here. This page is mostly for ESP site managers but it may be helpful for editors to read too.</p>
+
+<p><esp:link bookmark="h_directorystructure">Directory structure</esp:link> | <esp:link bookmark="h_00res">00res</esp:link> | <esp:link bookmark="h_00web">00web</esp:link> | <esp:link bookmark="h_00web00config">00web/00config</esp:link> | <esp:link bookmark="h_00webabout">00web/about</esp:link></p>
+<esp:h>Directory structure</esp:h>
+<pre class="listing">
+00res/
+    downloads/
+    images/
+00web/
+    00config/
+	parameters.xml
+	referents.xml
+	structure.xml  
+    about/
+        404.xml
+        accesskeys.xml
+        cookies.xml
+	licensing.xml
+        sitemap.xml
+        standards.xml
+    about.xml
+    glossarypage.xml
+    home.xml
+    indexpage.xml
+    techtermspage.xml
+    template-blank.xml
+</pre>
+
+<p>In the course of making your website you will be editing some of these files, as well as adding more as you need them.</p>
+
+<esp:h>00res/</esp:h>
+<p>Put all static content for your portal site in here. Images, PDFs, etc. are typically rather large, and need to be uploaded only once, so we keep them out of the way in a separate folder.</p>
+<dl>
+<dt><code>00res/downloads/</code></dt>
+<dd><p>Any files for the site that are intended to be downloadable, such as copies of PDFs, large images, Google Earth and Google Maps KML/KMZ content, etc.</p> 
+<p>When creating links to downloadable content, use the <esp:link page="esp-content" bookmark="esp:link">&lt;esp:link&gt;</esp:link> tag with the <code>url</code> attribute and the file path relative to the downloads folder. E.g.,</p>
+<pre class="example">
+&lt;esp:link url="~/downloads/example.kmz" title="example file"&gt;Example 
+text&lt;/esp:link&gt;
+</pre>
+</dd>
+<dd>For more information, see the page on <esp:link page="espdownloads">embedded content</esp:link> in ESP.</dd>
+
+<dt><code>00res/images/</code></dt>
+<dd>All images that are to be displayed on the site should be placed in this folder.  When using the <esp:link page="esp-images" bookmark="esp:image"><code>&lt;esp:image&gt;</code></esp:link> tag to insert images into a page, the processor will look for the images in the <code>00res/images</code> folder by default.  You can create subfolders with the same names as your site folder structure to organise your images, but remember to specify the correct location of the image in the <code>file</code> attribute.</dd>
+<dd>For more information, see the page on <esp:link page="esp-images">images</esp:link> in ESP.</dd>
+</dl>
+
+
+<esp:h>00web/</esp:h>
+<p>This folder contains the text pages for the website. You will also find a copy of it in your templates bundle.</p>
+
+<dl>
+<dt><code>about.xml</code></dt>
+<dd>This template file contains a directory listing of all the files in <code><esp:link bookmark="h_00webabout">00web/about</esp:link></code>. You can add to it if you want to add further files to that folder, but we strongly recommend that you do not delete anything from it, as all these files are necessary to comply with basic web accessibility standards and EU Cookies law.</dd>
+
+<dt><code>glossarypage.xml</code></dt>
+<dd>A template file for the People, Gods &amp; Places glossary. See the <esp:link page="espglossaries" bookmark="h_glossary">Glossary</esp:link> help for more information on how to edit this file. Do not change its name.</dd>
+<dd>If you do not want a glossary, you can either delete this file or omit it from the site listing in <code><esp:link bookmark="structure.xml">structure.xml</esp:link></code>.</dd>
+
+<dt><code>home.xml</code></dt>
+<dd>A template file for your ESP site's home page, to get you started. Do not change its name and do not delete it.</dd>
+    
+<dt><code>indexpage.xml</code></dt>
+<dd>A template file for an index of names or other terms. See the <esp:link page="espglossaries" bookmark="h_indexfunctionality">Index</esp:link> help for more information on how to edit this file. Do not change its name.</dd>
+<dd>If you do not want an index, you can either delete this file or omit it from the site listing in <code><esp:link bookmark="structure.xml">structure.xml</esp:link></code>.</dd>
+
+<dt><code>techtermspage.xml</code></dt>
+<dd>A template file for the Technical Terms glossary. See the <esp:link page="espglossaries" bookmark="h_listoftechnicalterms">List of Technical Terms</esp:link> help for more information on how to edit this file. Do not change its name.</dd>
+<dd>If you do not want a list of technical terms, you can either delete this file or omit it from the site listing in <code><esp:link bookmark="structure.xml">structure.xml</esp:link></code>.</dd>
+    
+<dt><code>template-blank.xml</code></dt>
+<dd>A general-purpose template page. Save edited copies with new file names. You can create subfolders in <code>00web/</code> to house new files if you want. Any file not listed in <code><esp:link bookmark="structure.xml">structure.xml</esp:link></code> will not appear on the website, so you can keep <code>template-blank.xml</code> wherever is convenient.</dd>
+</dl>
+
+<p>There are detailed instructions on how to edit or create ESP pages on the <esp:link page="esp-setup" bookmark="h_pagestructure">ESP Setup page</esp:link> and the <esp:link page="esp-content">Content Creation</esp:link> page.</p> 
+
+<esp:sh>00web/00config/</esp:sh>
+<p>This folder contains the files that set the basic appearance of the website. You will need to edit these at least once.</p>
+<dl>
+<dt><code>00web/00config/parameters.xml</code></dt>
+<dd>Some parameters for the site are defined in the file <code>parameters.xml</code>. Most of these parameters will need to be set up initially and then do not need to be altered. There are instructions on the <esp:link page="esp-setup" bookmark="h_siteparameters">ESP setup page</esp:link> on how to do this.</dd>
+<dt><code>00web/00config/referents.xml</code></dt>
+<dd>ESP has extensive functionality for referencing articles, journals, books, websites etc. within the site’s pages. References are stored in this file. There are instructions on the <esp:link page="esp-setup" bookmark="h_references">ESP Content page</esp:link> on how to edit it.</dd>
+<dt><code><esp:bookmark id="structure.xml"/>00web/00config/structure.xml</code></dt>
+<dd>The structure of the website is defined in this file, which is described in more detail on the <esp:link page="esp-setup" bookmark="h_sitestructure">ESP Setup page</esp:link>.</dd>
+</dl>
+
+<esp:sh>00web/about/</esp:sh>
+<p>The pages in this folder are important for compliance with international web standards on <esp:link page="accessibility">accessibility</esp:link> and EU cookies law. You should not edit them unless you notice a problem with them. Ask your liaison for advice if necessary.</p>
+<dl>
+<dt><code>404.xml</code></dt>
+<dd>404 is the HTML code for "file not found". If web visitor tries to access a page that doesn't exist on your site, e.g., by mistyping, ESP will display this page and point them to the site-map. So it is important not to delete it.</dd>
+
+<dt><code>accesskeys.xml</code></dt>
+<dd>This file creates a page giving keyboard shortcuts to the main web pages in your site. It contains only the <esp:link page="esp-content" bookmark="h_accesskeys-listing"><code>accesskeys-listing</code></esp:link> element and should not be edited. To set which pages can be accessed like this, use the <code>accesskey</code> attribute in <code><esp:link bookmark="structure.xml">structure.xml</esp:link></code>.</dd>
+
+<dt><code>cookies.xml</code></dt>
+<dd>All websites viewed in the European Union have to inform visitors if the site uses cookies, and to allow visitors to opt out of cookie use. For more formal details about this requirement, see the <esp:link url="http://www.ico.org.uk/for_organisations/privacy_and_electronic_communications/the_guide/cookies" rel="external">UK Information Commissioner's Office's website</esp:link>.</dd>
+
+<dd>As all Oracc sites use Google Analytics cookies to track visitor trends, we are legally obliged to include this page. Do not edit this page unless you need to add information about extra cookies you have added to your site.</dd>
+
+<dt><esp:bookmark id="licensing.xml"/><code>licensing.xml</code></dt>
+<dd>By default all Oracc sites are released under a <esp:link page="about-oracc" bookmark="h_licensing">Creative Commons Attribution Share-Alike license</esp:link> to encourage sharing and reuse, while fully identifying the creator(s). If you need to negotiate a different license contact your liaison. Note that a portal site may have a different license to the corpus that accompanies it.</dd>  
+
+<dt><code>sitemap.xml</code></dt>
+<dd>This file generates a <esp:link page="esp-content" bookmark="site-map">site-map</esp:link>, which is important for <esp:link page="accessibility">web accessbility</esp:link> compliance. It does not need editing at all.</dd>
+</dl>
+
+ 
+<p>Once you have understood the structure of ESP, you are ready to <esp:link page="esp-setup">set it up on your Oracc project.</esp:link></p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body>
+</html>
+</esp:page>

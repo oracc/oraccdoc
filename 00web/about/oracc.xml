@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+	<esp:name>About Oracc</esp:name>
+	<esp:title>About Oracc</esp:title>
+	<html><head></head><body>
+<p class="firstpara">The Open Richly Annotated Cuneiform Corpus (Oracc) is an international
+cooperative which provides facilities and support for the creation of
+free online editions of cuneiform texts and educational 'portal' websites about ancient cuneiform culture.</p> 
+
+<p><esp:link bookmark="h_licensing">Licensing</esp:link> | <esp:link bookmark="h_history">History</esp:link> | <esp:link bookmark="h_methods">Methods</esp:link> | <esp:link bookmark="h_steeringcommittee">Steering Committee</esp:link> | <esp:link bookmark="h_liaisons">Liaisons</esp:link> | <esp:link bookmark="h_hosting">Hosting</esp:link></p>
+
+<esp:sh>Licensing</esp:sh>
+<p>Because we believe that the
+free reusability of data is essential for scholarly progress, we
+strongly recommend the use of <esp:link url="http://creativecommons.org/about" rel="external">Creative Commons</esp:link> licensing for Oracc projects, and by
+default Oracc projects are placed under the CC <esp:link url="http://creativecommons.org/licenses/by-sa/3.0/" rel="external">"Attribution
+Share-Alike"</esp:link> license. Read more about Oracc's licensing <esp:link page="licensing">here</esp:link>.</p>
+
+<esp:sh>History</esp:sh>
+<p>Oracc emerged from <esp:link url="http://cdli.ucla.edu" rel="external">The Cuneiform
+Digital Library Initiative</esp:link> (CDLI). Oracc is a natural complement to
+CDLI's central archival role as a catalogue and image database of the
+entire cuneiform corpus and a repository for reference
+transliterations of that corpus. Oracc transliterations are
+automatically supplied to the CDLI repository.</p>
+
+<esp:sh>Methods</esp:sh>
+<p>Oracc enables groups of texts to be sliced out of the entire corpus
+and studied intensively within what we call &#x2018;projects&#x2019;. A project&#x2019;s
+functions can include building signlists, glossaries and
+prosopographies of these subcorpora. Multilingual translation support
+is built in to the system, and projects can be turned into Word files,
+PDFs, and books using the ISO <esp:link rel="external" url="http://en.wikipedia.org/wiki/OpenDocument">OpenDocument</esp:link> standard. Project data can also be
+exported to the data format defined by the <esp:link rel="external" url="http://www.tei-c.org/index.xml">Text Encoding Initiative</esp:link>. TEI export may be used by external
+projects for further analysis.</p>
+
+<esp:sh>Steering Committee</esp:sh>
+<p>The Oracc Steering Committee (OSC) currently comprises <esp:link rel="external" url="http://www.hps.cam.ac.uk/people/robson/">Eleanor
+Robson</esp:link> at the University of Cambridge, <esp:link rel="external" url="http://ccat.sas.upenn.edu/anch/faculty/tinney.htm">Steve Tinney</esp:link> at the University of Pennsylvania, and <esp:link rel="external" url="http://www.ocf.berkeley.edu/~veldhuis/">Niek Veldhuis</esp:link> at the University of California Berkeley. The OSC is responsible for
+ensuring the continuity and documentation of the Oracc system and its
+permanent web presence, and for assisting with the creation and
+maintenance of projects. The committee is non-hierarchical and all of
+its members have equal status.</p>
+
+<esp:sh>Liaisons</esp:sh>
+<p>In general, Oracc projects have one OSC member assigned to them as
+the Oracc liaison. We are here to help set up and develop projects. For
+new projects we can provide technical appendices for inclusion in
+grant applications and other input and feedback into that process as
+requested.</p>
+
+<esp:sh>Hosting</esp:sh>
+<p>For ongoing or completed projects using other systems, and for
+individuals who would like to put their text editions permanently
+online, we can provide help with converting the text editions to our
+standards and putting them on the web. Contributors can simply pass
+their work on to us and have no further involvement, or they are
+always welcome to continue working with their material under the Oracc
+umbrella and become managers of their own project.</p>
+
+<p>For more details, see the page on <esp:link page="contributing">Contributing Corpora</esp:link> to Oracc.</p>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+	</body></html>
+
+</esp:page>

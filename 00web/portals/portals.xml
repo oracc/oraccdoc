@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Portals basics</esp:name><esp:title>Choosing and Building Portal Websites</esp:title><html><head/><body>
+
+<p class="firstpara">This page gives very simple instructions on setting up portal websites that serve as the introductory front-end to your Oracc corpus.</p>
+
+<p><esp:link bookmark="h_theoptions">The options</esp:link> | <esp:link bookmark="h_makingaportal">Making a portal</esp:link> | <esp:link bookmark="h_linkingportalandcorpus">Linking portal and corpus</esp:link> | <esp:link bookmark="h_listingportalprojects">Listing portal projects</esp:link></p>
+
+<esp:h>The options</esp:h>
+<p>There are four different ways to create a portal for your Oracc corpus, depending on your particular needs:</p>
+<ol>
+<li><p><esp:bookmark id="option1"/>If you would like a site that looks like <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/">K&amp;P</esp:link>, <esp:link url="http://oracc.museum.upenn.edu/cams/gkab/">GKAB</esp:link>, and <esp:link url="http://www.ucl.ac.uk/sargon/">AEB</esp:link>, you should use <esp:link page="esp">ESP</esp:link> to build your portal site in situ in your project's <code>00web/</code> directory. This is our recommended option.</p></li>
+
+<li><p><esp:bookmark id="option2"/>You can ask your project liaison to create a separate project on Oracc to host your portal site, and build it using <esp:link page="esp">ESP</esp:link>. This is particularly useful if the project and corpus have different remits, managers, funders, etc. In this case, your html files will live in your portal project's (not your corpus project's) <code>00web/</code> directory on Oracc, with subdirectories as dictated by the structure of the website.</p> </li>
+
+<li><p><esp:bookmark id="option3"/>You can create and maintain a portal site on a different server and have your Oracc project link to it by editing the <esp:link page="projconfig">configuration file</esp:link>. This can be helpful if, for instance, your university or funding body expects you to have a web presence on their server (e.g., <esp:link url="http://www.ucl.ac.uk/sargon/">Assyrian Empire Builders</esp:link> on the UCL website, as a portal for <esp:link url="http://oracc.museum.upenn.edu/saao/">SAAo</esp:link>).</p></li>
+
+<li><p><esp:bookmark id="option4"/>If you choose none of the options above, the 40-word blurb and a 320×240 pixel image in your project <esp:link page="projconfig" bookmark="h_editableelements">configuration file</esp:link> will by default serve as your project's front page on the Oracc website (e.g., <esp:link url="http://oracc.museum.upenn.edu/cams/">CAMS</esp:link>).</p></li>
+
+</ol>
+<p><strong>N.B.:</strong> If you choose any of options 1 to 3 you must still complete the image and blurb entries in your <esp:link page="projconfig" bookmark="h_editableelements">configuration file</esp:link>, and also set the public status appropriately in the configuration file; read the section on <esp:link bookmark="h_listingportalprojects">Listing portal projects</esp:link> for more information.</p>
+
+<esp:h>Making a portal</esp:h>
+<esp:sh>Setting up ESP</esp:sh>
+<p>ESP files come pre-installed on every Oracc project. But you will need to follow <esp:link page="esp-install">these instructions</esp:link> to set up template pages, schemas and Emacs (if you do not already have it) in order to make an ESP site.</p>
+
+
+<esp:h>Uploading ESP pages to Oracc</esp:h>
+<p>If you are creating ESP pages on your own computer to upload to Oracc, you can either <esp:link page="projunix" bookmark="h_beforeyoubegin">use a Unix terminal</esp:link> such as Putty (PC) or Terminal (Mac), or a more interactive FTP browswer, such as <esp:link url="http://cyberduck.io" rel="external">Cyberduck</esp:link> (free for PC and Mac).</p>
+
+<p>Put all static resources for your site—images, PDF files, Google Earth files, etc.—into your project's <code>00res/</code> folder on the Oracc server. There are separate subfolders <code>00res/downloads</code> and <code>00res/images/</code>; you can add further subfolders within these if needed.</p>
+
+<p>Put all your XML files (which wil become HTML pages) into your project's <code>00web/</code> folder.</p>
+
+<p>Static and editable ESP content are kept separate like this because images, PDFs, etc. are typically <em>much</em> bigger than text files, and take much longer to upload. You rarely need to upload them more than once, whereas you may repeatedly want to upload new versions of your XML files, particularly when setting up your portal site. This way you don't have to wait for big files to upload when you're only correcting little ones.</p>
+
+<esp:sh>Rebuilding the portal</esp:sh>
+<p><!--Rebuilding the portal happens in two stages: first you make a draft version on the private build server then, once you are happy with how it looks, you put that version onto the public web server.--> You can do this independently of building your project's corpus (if it has one).</p>
+<ul>
+<li><p>Log into the Oracc server <esp:link page="projunix" bookmark="h_beforeyoubegin">with a terminal</esp:link>. At the terminal prompt, type</p> 
+<pre class="cookbook">oracc build portal</pre>
+<p>and press return. <!-- This compiles the new website and makes it available on the private build server. (If you do not know the URL, ask your liaison.)--> This process will run whether or not you are connected to Oracc.</p></li>
+<li><p>You then need to check for errors. You can do this by typing <code class="cookbook">less build.log"</code> at the prompt and pressing return. You can scroll through the listing using the up and down arrow keys on your keyboard, and exit the listing by typing <code>q</code> (for "quit").</p></li>
+<li><p>Once your portal is building cleanly, check how it looks <!--on the build server-->. If you notice mistakes online, you will need to correct these errors too.</p></li>
+<!-- <li><p>You can build to the build server as many times as you like. Once you are ready to release your portal to the public web server, at the terminal prompt type:</p>
+<pre class="cookbook">oracc deploy</pre>
+<p>and press return. This makes the new portal site available on the public web server.  This process will run whether or not you are connected to Oracc. <strong>You cannot undo it!</strong></p></li> -->
+</ul>
+<esp:h>Linking portal and corpus</esp:h>
+<p>For both <esp:link bookmark="option1">options 1</esp:link> and <esp:link bookmark="option2">2</esp:link> above, you will need to edit the <code>pager-back-button</code> and <code>pager-back-url</code> options in your <strong>corpus</strong> project's <esp:link page="projconfig" bookmark="h_pager">configuration file</esp:link> in order to link the two together.</p>
+
+<esp:h>Listing portal projects</esp:h>
+<p>Portal projects that are hosted on Oracc  (i.e., <esp:link bookmark="option2">option 2 above</esp:link>) are included in the public <esp:link page="projlist">Project List</esp:link> by default. You can set the blurb and image in that list by editing the  your project's <esp:link page="projconfig" bookmark="h_editableelements">configuration file</esp:link>.</p> 
+
+<p>If you would like your non-Oracc portal site (i.e., <esp:link bookmark="option3">option 3</esp:link> above) to be included in the <esp:link page="projlist">Project List</esp:link>, then you need to make a configuration file for it, following this model:</p>
+<pre class="example">
+&lt;project xmlns="http://oracc.org/ns/xpd/1.0" 
+	 xmlns:xpd="http://oracc.org/ns/xpd/1.0"
+	 n="knp"&gt;
+  &lt;name&gt;Knowledge and Power in the Neo-Assyrian Empire&lt;/name&gt;
+  &lt;abbrev&gt;K&amp;P&lt;/abbrev&gt;
+  &lt;url&gt;http://knp.prs.heacademy.ac.uk&lt;/url&gt;
+  &lt;public&gt;yes&lt;/public&gt;
+  &lt;blurb&gt;This website presents Neo-Assyrian scholars' letters, queries, and 
+  reports to their kings in seventh-century Nineveh and provides resources 
+  to support their use in undergraduate teaching.&lt;/blurb&gt;
+  &lt;image&gt;palace.jpg&lt;/image&gt;
+  &lt;image-alt&gt;An Assyrian king with his scribes and scholars, as imagined 
+  in the mid-19th century. (A.H. Layard, A Second Series of the Monuments 
+  of Nineveh, London 1853, pl. 2 detail, after a sketch by J. 
+  Fergusson).&lt;/image-alt&gt;
+&lt;/project&gt;
+</pre> 
+<p>Copy this text, edit it in Emacs to suit your portal, and save the file as <code class="cookbook">config.xml</code>. Email it, together with a suitable 320×240 pixel image, to your project liaison for him or her to install it in the projects listing directory on Oracc.</p>
+
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app:appearance xmlns:app="http://oracc.org/ns/esp-appearance/1.0">
+  <app:colours>
+    <app:dark>#333366</app:dark>
+    <app:medium>#777b9d</app:medium>
+    <app:light>#ffcc00</app:light>
+    <app:outline>#ccc</app:outline>
+    <app:alternate>#eeeeee</app:alternate>
+    <app:text>#333333</app:text>
+    <app:page>#ffffff</app:page>
+    <app:highlight>#dbbf3e</app:highlight><app:print>#000</app:print>
+  </app:colours>
+  <app:fonts>
+    <app:body-print>"Palatino Linotype", Palatino, Georgia, "Times New Roman", Times, serif</app:body-print>
+    <app:body-screen>verdana, "trebuchet MS", helvetica, sans-serif</app:body-screen>
+    <app:h1>Georgia, Times, "Times New Roman", serif</app:h1>
+    <app:h2>Georgia, Times, "Times New Roman", serif</app:h2>
+  </app:fonts>
+</app:appearance>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>ESP elements</esp:name><esp:title>ESP System Elements</esp:title>
+<html><head/><body>
+<p class="firstpara">This page gives an alphabetical listing of all the system-specific elements available in ESP, as documented in more detail on the Creating content and Embedding images pages.</p>
+
+
+
+<p>Note that elements are mostly listed here without any attributes.  When using most of these elements, you will need to include the attributes, which are described in detail on the relevant pages.</p>
+ 
+<esp:h>Alphabetical listing</esp:h>
+<dl>
+<dt><code><esp:link page="esp-content" bookmark="esp:accesskeys-listing">&lt;esp:accesskeys-listing/&gt;</esp:link></code></dt>
+<dd>Creates a table of the access keys that are defined for the site in structure.xml, and those that are created automatically (such as <code class="example">S</code> for <code class="example">Skip to main content</code>). Probably used only once, on the <code>accesskeys.xml</code> page.</dd>
+
+<dt><code><esp:link page="esp-content" bookmark="esp:author">&lt;esp:author/&gt;</esp:link></code></dt>
+<dd>Defines an author for a page. May be used any number of times, anywhere within the <code>&lt;body&gt;</code> element. If present at least once, author and citation details are included at the bottom of the content section.</dd>
+
+<dt><code><esp:link page="esplinks" bookmark="esp:bookmark">&lt;esp:bookmark&gt;</esp:link></code></dt>
+<dd>Contains optional inline content. Defines a point on a page that may be jumped to directly from <code>&lt;esp:link&gt;</code> elements on the same or other pages.</dd>
+
+<dt><code><esp:link page="esp-images" bookmark="esp:caption">&lt;esp:caption&gt;</esp:link></code></dt>
+<dd>Inline content. When used inside a <code>&lt;esp:image&gt;</code> element, its content becomes a caption for the image.</dd>
+
+<dt><code><esp:link page="esp-content" bookmark="esp:content-last-modified">&lt;esp:content-last-modified/&gt;</esp:link></code></dt>
+<dd>Inserts the date the content of this page was last modified, in the format <code class="example">11 Sep 2011</code>.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:definition">&lt;esp:definition term="example"&gt;</esp:link></code></dt>
+<dd>Inline content. Creates a definition in the glossary.</dd>
+
+<dt><code><esp:link page="esp-content" bookmark="esp:email">&lt;esp:email address="me@example.com"/&gt;</esp:link></code></dt>
+<dd>Creates an obfuscated email address which is converted back into a real address and made into a mailto: link using JavaScript, where available.</dd>
+
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:glossary">&lt;esp:glossary term="example"&gt;</esp:link></code></dt>
+<dd>Inline content. Creates a link to a term/definition pair on the glossary page.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:glossary-list">&lt;esp:glossary-list&gt;</esp:link></code></dt>
+<dd>Contains <code>&lt;esp:definition&gt;</code> elements. Creates the glossary. Used only once, on the <code>glossary.xml</code> page.</dd>
+
+<dt><code><esp:link page="esp-content" bookmark="esp:h">&lt;esp:h&gt;</esp:link></code></dt>
+<dd>Inline content. Creates a heading (including a bookmark that can be used by external websites to link to this point in the page).</dd>
+
+<dt><code><esp:link page="esp-images" bookmark="esp:image">&lt;esp:image&gt;</esp:link></code></dt>
+<dd>Contains other elements. Places an image on the page.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:index">&lt;esp:index term="example" &gt;</esp:link></code></dt>
+<dd>Inline content. Creates an entry on the <code>indexpage.xml</code> page and, if there is more than one entry for the index term, a cross reference to that term in the index.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:index-list">&lt;esp:index-list/&gt;</esp:link></code></dt>
+<dd>Creates the index. Used only once, on the <code>indexpage.xml</code> page. Always empty. </dd>
+
+<dt><code><esp:link page="esplinks" bookmark="esp:link">&lt;esp:link&gt;</esp:link></code></dt>
+<dd>Inline content (optional). Creates a link to another page within the site or to an external site. See the section on <esp:link page="esplinks" bookmark="Links">Links</esp:link>.</dd>
+
+<dt><code><esp:link page="esp-pages" bookmark="esp:name">&lt;esp:name></esp:link></code></dt>
+<dd>Must occur immediately after the <code>&lt;esp:page</code> element near the start of the XML document. Contains only ASCII text (no characters such as š or ḫ). Gives the gives the short name of the page, as it appears in the navigation menu and URL.</dd>
+
+<dt><code><esp:link page="esp-pages" bookmark="esp:page">&lt;esp:page></esp:link></code></dt>
+<dd>The root element of the XML document. Do not edit this element.</dd>
+
+<dt><code><esp:link page="esprefs" bookmark="esp:page-name">&lt;esp:page-name page="example"/&gt;</esp:link></code></dt>
+<dd>Inserts the name of the page with the given id.</dd>
+
+<dt><code><esp:link page="esprefs" bookmark="esp:page-title">&lt;esp:page-title page="example"/&gt;</esp:link></code></dt>
+<dd>Inserts the title of the page with the given id.</dd>
+
+<dt><code><esp:link page="esprefs" bookmark="esp:reading">&lt;esp:reading referent="example" page="123"/&gt;</esp:link></code></dt>
+<dd>Creates an entry in the further reading list at the bottom of the page.</dd>
+
+<dt><code><esp:link page="esprefs" bookmark="esp:ref">&lt;esp:ref referent="example" page="123"/&gt;</esp:link></code></dt>
+<dd>Creates a bracketed reference number, linked to an entry in the references list at the bottom of the page.</dd>
+
+<dt><code><esp:link page="esp-content" bookmark="esp:sh">&lt;esp:sh&gt;</esp:link></code></dt>
+<dd>Inline content. Creates a sub-heading (including a bookmark that can be used by external websites to link to this point in the page). </dd>
+
+<dt><code><esp:link page="esp-content" bookmark="esp:site-map">&lt;esp:site-map/&gt;</esp:link></code></dt>
+<dd>Creates a site map. Used once, on the <code>sitemap.xml</code> page.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:techterms">&lt;esp:techterms term="example"&gt;</esp:link></code></dt>
+<dd>Inline content. Creates a link to a term/definition pair on the technical terms page.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:techterms-list">&lt;esp:techterms-list&gt;</esp:link></code></dt>
+<dd>Contains <code>&lt;esp:termsdefinition&gt;</code> elements. Creates the technical terms list. Used only once, on the glossary page. Contains only <code>&lt;esp:termsdefinition&gt;</code> elements.</dd>
+
+<dt><code><esp:link page="espglossaries" bookmark="esp:termsdefinition">&lt;esp:termsdefinition term="example"&gt;</esp:link></code></dt>
+<dd>Inline content. Creates a definition in the technical terms list.</dd>
+
+<dt><code><esp:link page="esp-pages" bookmark="esp:title">&lt;esp:title></esp:link></code></dt>
+<dd>Must occur immediately after the <code>&lt;esp:name</code> element near the start of the XML document. Gives the gives the long name of the page, as it appears at the top of the page itself, and in the site map.</dd>
+
+</dl>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

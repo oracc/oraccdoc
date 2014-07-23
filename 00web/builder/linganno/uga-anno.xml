@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Ugaritic</esp:name>
+<esp:title>UGA: Oracc Linguistic Annotation for Ugaritic</esp:title>
+<html><head/><body>
+<p class="firstpara">This document provides an overview of
+  language-specific annotation conventions for Ugaritic used in Oracc.
+</p>
+
+
+<esp:h>Transliteration</esp:h>
+
+<p>Ugaritic is indicated by the language shift <code>%uga</code>.
+Ugaritic is written both with Sumero-Akkadian Cuneiform (SAC) and
+Ugaritic Cuneiform (UC): the notation %uga or %uga/g means tells the
+ATF processor to treat the text as graphemic SAC.  The notation
+%uga-040 tells the ATF processor to treat the text as alphabetic UC.</p>
+
+<p>To write in transcription, use the convention for 'normalized'
+input, as in Akkadian: i.e., follow the language shift with
+<code>/n</code>.</p>
+
+<esp:sh>Ugaritic Cuneiform Transliteration</esp:sh>
+
+<p>The following table shows how to transliterate the UC--for
+conventions on breakage etc., see the <esp:link page="arc-anno">Aramaic
+notations page</esp:link>. The table contains UC in the first
+column, so you may need to install a suitable font, such as <esp:link page="visitor-fonts">George Douros's "Aegean"</esp:link>.</p>
+
+<p><strong>No ASCII notation is provided at present for UC transliteration</strong>.</p>
+
+<table class="pretty">
+  <thead>
+    <tr><th>Cuneiform</th><th>Unicode</th><th>Unicode Name</th><th>ASCII Translit</th><th>Unicode Translit</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>𐎀</td><td>U+10380</td><td>UGARITIC LETTER ALPA</td><td>-</td><td>ʾa</td></tr>
+    <tr><td>𐎁</td><td>U+10381</td><td>UGARITIC LETTER BETA</td><td>-</td><td>b</td></tr>
+    <tr><td>𐎂</td><td>U+10382</td><td>UGARITIC LETTER GAMLA</td><td>-</td><td>g</td></tr>
+    <tr><td>𐎃</td><td>U+10383</td><td>UGARITIC LETTER KHA</td><td>-</td><td>ḫ</td></tr>
+    <tr><td>𐎄</td><td>U+10384</td><td>UGARITIC LETTER DELTA</td><td>-</td><td>d</td></tr>
+    <tr><td>𐎅</td><td>U+10385</td><td>UGARITIC LETTER HO</td><td>-</td><td>h</td></tr>
+    <tr><td>𐎆</td><td>U+10386</td><td>UGARITIC LETTER WO</td><td>-</td><td>w</td></tr>
+    <tr><td>𐎇</td><td>U+10387</td><td>UGARITIC LETTER ZETA</td><td>-</td><td>z</td></tr>
+    <tr><td>𐎈</td><td>U+10388</td><td>UGARITIC LETTER HOTA</td><td>-</td><td>ḥ</td></tr>
+    <tr><td>𐎉</td><td>U+10389</td><td>UGARITIC LETTER TET</td><td>-</td><td>ṭ</td></tr>
+    <tr><td>𐎊</td><td>U+1038A</td><td>UGARITIC LETTER YOD</td><td>-</td><td>y</td></tr>
+    <tr><td>𐎋</td><td>U+1038B</td><td>UGARITIC LETTER KAF</td><td>-</td><td>k</td></tr>
+    <tr><td>𐎌</td><td>U+1038C</td><td>UGARITIC LETTER SHIN</td><td>-</td><td>š</td></tr>
+    <tr><td>𐎍</td><td>U+1038D</td><td>UGARITIC LETTER LAMDA</td><td>-</td><td>l</td></tr>
+    <tr><td>𐎎</td><td>U+1038E</td><td>UGARITIC LETTER MEM</td><td>-</td><td>m</td></tr>
+    <tr><td>𐎏</td><td>U+1038F</td><td>UGARITIC LETTER DHAL</td><td>-</td><td>ḏ (U+01E0F)</td></tr>
+    <tr><td>𐎐</td><td>U+10390</td><td>UGARITIC LETTER NUN</td><td>-</td><td>n</td></tr>
+    <tr><td>𐎑</td><td>U+10391</td><td>UGARITIC LETTER ZU</td><td>-</td><td>ẓ (U+01E93)</td></tr>
+    <tr><td>𐎒</td><td>U+10392</td><td>UGARITIC LETTER SAMKA</td><td>-</td><td>s</td></tr>
+    <tr><td>𐎓</td><td>U+10393</td><td>UGARITIC LETTER AIN</td><td>-</td><td>ʿ</td></tr>
+    <tr><td>𐎔</td><td>U+10394</td><td>UGARITIC LETTER PU</td><td>-</td><td>p</td></tr>
+    <tr><td>𐎕</td><td>U+10395</td><td>UGARITIC LETTER SADE</td><td>-</td><td>ṣ</td></tr>
+    <tr><td>𐎖</td><td>U+10396</td><td>UGARITIC LETTER QOPA</td><td>-</td><td>q</td></tr>
+    <tr><td>𐎗</td><td>U+10397</td><td>UGARITIC LETTER RASHA</td><td>-</td><td>r</td></tr>
+    <tr><td>𐎘</td><td>U+10398</td><td>UGARITIC LETTER THANNA</td><td>-</td><td>ṯ</td></tr>
+    <tr><td>𐎙</td><td>U+10399</td><td>UGARITIC LETTER GHAIN</td><td>-</td><td>ǵ</td></tr>
+    <tr><td>𐎚</td><td>U+1039A</td><td>UGARITIC LETTER TO</td><td>-</td><td>t</td></tr>
+    <tr><td>𐎛</td><td>U+1039B</td><td>UGARITIC LETTER I</td><td>-</td><td>ʾi</td></tr>
+    <tr><td>𐎜</td><td>U+1039C</td><td>UGARITIC LETTER U</td><td>-</td><td>ʾu</td></tr>
+    <tr><td>𐎝</td><td>U+1039D</td><td>UGARITIC LETTER SSU</td><td>-</td><td>ś</td></tr>
+    <tr><td>𐎟</td><td>U+1039F</td><td>UGARITIC WORD DIVIDER</td><td>-</td><td>|</td></tr>
+</tbody></table>
+
+<esp:h>Lemmatization</esp:h>
+
+<p>Lemmatization of Ugaritic follows the guidelines for Akkadian, with
+a few adjustments explained below. If you are not familiar with the
+rules and conventions of Akkadian lemmatization, please consult the <esp:link page="akk-anno">Oracc
+Linguistic Annotation for Akkadian</esp:link> page.</p>
+
+<p>The reference dictionary that is used for Ugaritic is G. Del Olmo
+Lete and J. Sanmartín, <i>A Dictionary of the Ugaritic Language in the
+Alphabetic Tradition</i>, trans. W. G. E. Watson, 2 volumes, Leiden:
+Brill, 2003</p>
+
+<p>Syllabically written Ugaritic is normalized with vowels and vowel length:</p>
+
+<pre class="cookbook">
+1. ka-al-bu
+#lem: klb[dog]N$kalbu
+</pre>
+
+<p>Alphabetically written Ugaritic is normalized without vowels:</p>
+<pre class="cookbook">
+2. lmlk
+#lem: mlk[king]N$lmlk
+</pre>
+
+<p>Occasionally the dictionary gives two possible reconstructions of
+the word, for instance ks/śmn "grain similar to wheat." In such cases
+always use the first option for the Citation Form, and the
+contextually appropriate form in the normalization:</p>
+<pre class="cookbook">
+3. ku-su₂-mu
+#lem: ksmn[grain similar to wheat]N$kussumu
+</pre>
+
+<p>For the Part of Speech (POS) abbreviations and the rules for POS
+and EPOS (Effective Part of Speech) see the documentation for <esp:link page="akk-anno">Akkadian</esp:link>.</p>
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

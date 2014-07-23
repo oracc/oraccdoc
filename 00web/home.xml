@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Oracc</esp:name>
+	<esp:title></esp:title>
+
+	<html><head></head><body>
+		
+	
+
+
+<!-- <div id="hp_banner">
+<esp:image file="home/oracc.png" description="Oracc banner" position="inline" />
+</div>	-->
+<div id="hp_blurb">
+<p>Oracc is a collaborative effort to develop a complete corpus of cuneiform whose rich annotation and open licensing support the next generation of scholarly research. Created by Steve Tinney, Oracc is steered by Eleanor Robson, Tinney, and Niek Veldhuis.</p>
+</div>
+<div id="hp_search">
+<form method="get" action="http://oracc.museum.upenn.edu/find" id="hp_search">
+<p><span class="button">Search Oracc  </span>
+<input class="textbox" name="phrase" id="phrase" type="text" size="14" accesskey="s" value=""
+	/></p>
+    </form>
+
+</div>
+<div id="hp_featured">
+<esp:sh>Today's featured project</esp:sh>
+<object title="Featured Project" data="featuredproject/index.html" type="text/html" height="200px" width="600px"></object></div>
+
+			
+	</body></html>
+
+</esp:page>

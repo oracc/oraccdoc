@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Installation</esp:name>
+<esp:title>Installing Oracc</esp:title>
+<html>
+<head/>
+<body>
+<p class="firstpara">The documents here aim to give enough information to bring the
+Oracc system up on a new server.  It is not (presently) our goal to
+support installing the Oracc system on personal machines so we do not
+try to make things simple enough for ordinary users to carry out this
+procedure.  That said, an extraordinary user with patience and
+expertise almost certainly could get the Oracc system running on a
+notebook.</p>
+
+<p>There are two basic steps to bringing up Oracc on a new machine:</p>
+
+<ol>
+<li><esp:link page="prereqs">Installing Prerequisites</esp:link></li>
+<li><esp:link page="neworacc">Installing Oracc</esp:link></li>
+</ol>
+
+<p>If you are not familiar with Unix installation procedures, there is a 
+<esp:link page="basics">brief introduction here</esp:link>.</p>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body>
+</html>
+</esp:page>

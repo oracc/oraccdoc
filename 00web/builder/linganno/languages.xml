@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Languages</esp:name>
+<esp:title>Languages in Oracc</esp:title>
+<html><head/><body>
+<p class="firstpara">Oracc can handle a wide range of languages, ancient and modern. This page provides a quick access point to the relevant documentation.</p>
+
+<esp:h>Ancient Languages</esp:h>
+<p>See also the documentation on <esp:link page="gdltut" bookmark="h_languages">language codes</esp:link> and on <esp:link page="visitor-unicode">Unicode characters</esp:link>, <esp:link page="visitor-fonts">fonts</esp:link> and <esp:link page="visitor-keyboards">keyboards</esp:link>.</p>
+<esp:sh>Akkadian</esp:sh>
+<p>Documentation on Akkadian includes:</p>
+<dl>
+<dt><esp:link page="akk-anno">AKK: Oracc Linguistic Annotation for Akkadian</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Akkadian used in Oracc. We focus here on the data-entry view of linguistic annotation giving only enough additional technical background to ensure that correct annotation of ATF files can be carried out.</dd>
+<dt><esp:link page="akkstyle">Akkadian Stylesheet</esp:link></dt>
+<dd>There are many valid ways to transliterate Akkadian in ATF, but the more similarly people transliterate texts for Oracc, the better the corpora will work together. This document sets out Oracc's recommended transliteration conventions for Akkadian.</dd>
+<dt><esp:link page="akk-ob">OB Akkadian Guidelines</esp:link></dt>
+<dd>This document sets out Oracc's recommendations for OB Akkadian; it assumes a knowledge of the <esp:link page="akkstyle">Akkadian Stylesheet</esp:link>.</dd>
+<dt>A list of <esp:link page="akk-roots">Akkadian roots</esp:link></dt>
+<dd>This index of Akkadian roots refers to the principal lemma(ta) in the <i>Concise Dictionary of Akkadian</i> which are verbs in which the root letters may occur.</dd>
+</dl>
+
+<esp:sh>Sumerian</esp:sh>
+<p>Documentation on Sumerian includes:</p>
+<dl>
+<dt><esp:link page="sux-anno">SUX: Oracc Linguistic Annotation for Sumerian</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Sumerian used in Oracc. We focus here on the data-entry view of linguistic annotation giving only enough additional technical background to ensure that correct annotation of ATF files can be carried out.</dd>
+<dt><esp:link page="sux-primer">Sumerian Lemmatisation Primer</esp:link></dt>
+<dd>A very quick start to get you lemmatizing Sumerian texts with the minimum effort possible.</dd>
+<dt><esp:link page="sux-syntax">Sumerian Syntax</esp:link>.</dt>
+<dd>This document provides an overview of
+  language-specific annotation conventions for Sumerian syntax used in
+  Oracc.</dd>
+</dl>
+<esp:sh>Proper nouns</esp:sh>
+<dl>
+<dt><esp:link page="qpn-anno">QPN: Oracc Linguistic Annotation for Proper Nouns</esp:link></dt>
+
+<dd>This document provides an overview of annotation conventions for proper nouns used in Oracc. We focus here on the data-entry view of linguistic annotation giving only enough additional technical background to ensure that correct annotation of ATF files can be carried out.</dd>
+</dl>
+<esp:sh>Other languages</esp:sh>
+<p>Oracc handles the following other ancient languages:</p>
+<dl>
+<dt><esp:link page="arc-anno">ARC: Oracc Linguistic Annotation for Aramaic</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Aramaic used in Oracc.</dd>
+<dt><esp:link page="elx-anno">ELX: Oracc Linguistic Annotation for Elamite</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Elamite used in Oracc.</dd>
+<dt><esp:link page="grc-anno">GRC: Oracc Linguistic Annotation for Greek</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Greek used in Oracc.</dd>
+<dt><esp:link page="peo-anno">PEO: Oracc Linguistic Annotation for Old Persian</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Old Persian used in Oracc.</dd>
+<dt><esp:link page="uga-anno">UGA: Oracc Linguistic Annotation for Ugaritic</esp:link></dt>
+<dd>This document provides an overview of language-specific annotation conventions for Ugaritic used in Oracc.</dd>
+</dl>
+
+<esp:h>Multiple ancient languages</esp:h>
+<p>See the pages on <esp:link page="bilinguals">bilingual texts</esp:link> and <esp:link page="lexical">lexical texts</esp:link>.</p>
+<esp:h>Modern languages</esp:h>
+<p>See the page on <esp:link page="translation">translation</esp:link>.</p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

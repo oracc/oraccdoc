@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Labels</esp:name>
+<esp:title>Labels</esp:title>
+<html><head/><body>
+
+<p class="firstpara">Labels are generated for lines by the ATF processor
+  and are used to reference lines in some parts of the ATF system.
+  This document describes the syntax of labels.</p>
+
+
+
+<esp:h>Overview</esp:h>
+
+<p>Labels are a shorthand way of referring to the location of a line
+on an object.  For transliterations, labels consist of at most three
+parts: a <code>SURFACE</code> abbreviation, a <code>COLUMN</code>
+designation and a <code>LINE</code> number.</p>
+
+<esp:sh>SURFACE</esp:sh>
+
+<p>The <code>SURFACE</code> field is an abbreviation of ATF surface
+tags according to the following table:</p>
+
+<table class="pretty">
+<thead>
+<tr><th>ATF</th><th>LABEL</th></tr>
+</thead>
+<tbody>
+<tr><td>@obverse</td><td>o</td></tr>
+<tr><td>@reverse</td><td>r</td></tr>
+<tr><td>@bottom</td><td>b.e.</td></tr>
+<tr><td>@edge</td><td>e.</td></tr>
+<tr><td>@left</td><td>l.e.</td></tr>
+<tr><td>@right</td><td>r.e.</td></tr>
+<tr><td>@top</td><td>t.e.</td></tr>
+</tbody>
+</table>
+
+<p>If the transliteration does not give <code>@obverse</code>
+explicitly, labels for line numbers on the obverse do not include the
+`o'.</p>
+
+<esp:sh>COLUMN</esp:sh>
+
+<p>Column numbers in labels are rendered in roman numerals, which both
+follows normal Assyriological practice and avoids possible confusion
+with the line numbers.  This does mean, however, that the notations
+for column numbers in ATF sources and labels are different:
+<code>@column 1</code> in a label is <code>i</code>.</p>
+
+<p>If the transliteration does not include column number tags, no
+column number component is included in the label.</p>
+
+<esp:sh>LINE</esp:sh>
+
+<p>There are two possible line numbers which the ATF processor can use
+in labels.  By default, the processor renumbers lines according to
+CDLI conventions--restarting line numbers at `1' at the start of each
+surface and numbering lines consecutively.  However, in contexts where
+stability is required--where the labels are being used to link
+exemplar lines to composite lines, for example--the ATF protocol:</p>
+
+<pre class="cookbook">#atf: use mylines
+</pre>
+
+<p>should be used.  This instructs the processor to prefer the user's
+line numbers to its auto-generated ones.  The line numbers in
+transliterations have few restrictions--as long as they consist of a
+series of non-spaces followed by a period followed by a space they are
+considered acceptable.</p>
+
+<esp:h>Syntax</esp:h>
+
+<esp:sh>LABEL</esp:sh>
+
+<p>Considering the preceding comments and using the convention
+<code>?</code> to indicate optional components, the syntax of a single
+label is then:</p>
+
+<pre class="example">LABEL =&gt; SURFACE? COLUMN? LINE
+</pre>
+
+<esp:sh>LABEL_RANGE</esp:sh>
+
+<p>There is a standard syntax for ranges also, which must be observed
+when, e.g., translations use labeling to refer to blocks of
+transliteration.  In such cases, two labels may be given and
+<strong>must</strong> be separated by the sequence: SPACES HYPHEN
+SPACES.  The reason for requiring the spaces is that ATF line numbers
+may contain hyphens so we require ranges to include spaces between the
+components.</p>
+
+<p>Formally, then, we have the following definition:</p>
+
+<pre class="example">LABEL_RANGE =&gt; LABEL ' - ' LABEL
+</pre>
+
+<esp:sh>LABEL_SPEC</esp:sh>
+
+<p>Combining the preceding definitions, we can now define a label
+specification, LABEL_SPEC, as follows (using the standard notation of
+vertical bar (`|') = OR):</p>
+
+<pre class="example">LABEL_SPEC =&gt; LABEL | LABEL_RANGE
+</pre>
+
+<esp:h>Examples</esp:h>
+
+<p>Let the notation <code>@obverse ... @column 1 ... 1.</code> mean
+that the ATF transliteration has block tags <code>@obverse</code> and
+<code>@column 1</code>, among other possible content, and that
+<code>1.</code> is a line number.  Then the following relations
+apply:</p>
+
+<table class="pretty">
+<thead>
+<tr><th>ATF</th><th>LABEL</th></tr>
+</thead>
+<tbody>
+<tr><td>1.</td><td>1</td></tr>
+<tr><td>@column 1 ... 1.</td><td>i 1</td></tr>
+<tr><td>@obverse ... @column 1 ... 1.</td><td>o i 1</td></tr>
+<tr><td>@left ... 3'.</td><td>l.e. 3'</td></tr>
+</tbody>
+</table>
+
+<esp:h>Related documentation</esp:h>
+<ul>
+<li><esp:link page="translation" bookmark="sh_labeled">Labeled translations</esp:link></li>
+<li><esp:link page="linkage">ATF linkage</esp:link></li>
+</ul>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

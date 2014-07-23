@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Using Oracc</esp:name>
+<esp:title>Using Oracc: browse, sort, search, and display</esp:title>
+<html>
+<head/><body>
+<p class="firstpara">These pages document how to browse, sort and search Oracc's online corpora, and provide access to free fonts and keyboards for optimising transliteration and cuneiform display.</p>
+<esp:sh>Working with the Oracc web interface</esp:sh>
+<dl>
+<dt><esp:link page="user-userguide">Getting started with Oracc online corpora</esp:link></dt>
+<dd>This page describes how to browse and sort any of Oracc's online corpora.</dd>
+<dt><esp:link page="user-citing">Citing Oracc URLs online and in print</esp:link></dt>
+<dd>This page describes how to refer to Oracc web pages online or in print, using short, stable URLs. A wider range of options, described in more technical language, is given on the <esp:link page="projurls">Oracc URI patterns</esp:link> page.</dd>
+<dt><esp:link page="user-glossaries">Using the Oracc glossaries</esp:link></dt>
+<dd>Most Oracc corpora are at least partially lemmatised; that is, the words in them are tagged in order to generate language glossaries. An Oracc corpus usually has more than one glossary (for instance Akkadian, Sumerian, Names) but they all work in essentially the same way. This page describes how to use them.</dd></dl>
+
+<esp:sh>Three ways to search Oracc</esp:sh>
+<dl>
+<dt><esp:link page="user-fulltextsearch">Full text search in Oracc</esp:link></dt>
+<dd>You can use the Search Oracc box at the top right of the Oracc home page, and on several project home pages, to search intuitively across the whole of the Oracc site or across that project. This page gives some hints on how to do that most effectively.</dd>
+<dt><esp:link page="user-searching">Searching the Oracc corpora</esp:link></dt>
+<dd>There are many ways to search the Oracc corpora. This page describes how to search the transliterations, lemmatisations, translations, and catalogue data. Instructions on searching the <esp:link page="user-glossaries">glossaries</esp:link> and on <esp:link page="user-advanced">advanced search</esp:link> are given separately.</dd>
+<dt>
+<esp:link page="user-advanced">Advanced searching in Oracc corpora</esp:link></dt>
+<dd>In Oracc corpora you can carry out complex combinations of context-dependent searches. This page describes how to use the Advanced Search tool.</dd>
+</dl>
+
+<esp:sh>Characters, fonts and keyboards</esp:sh>
+
+<dl>
+<dt><esp:link page="user-unicode">Unicode for cuneiform transliteration</esp:link></dt>
+<dd>This page lists the essential Unicode characters for transliterating and normalising Sumero-Akkadian cuneiform.</dd>
+<dt><esp:link page="user-fonts">Unicode fonts for Oracc</esp:link></dt>
+<dd>This page provides access to a variety of Unicode fonts for transliteration and normalisation, as well as for cuneiform script.</dd>
+<dt><esp:link page="user-keyboards">Keyboards for cuneiform transliteration</esp:link></dt>
+<dd>This page presents a collection of keyboards supporting Unicode transliterations, implementing a consistent set of input conventions across operating systems.</dd></dl>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

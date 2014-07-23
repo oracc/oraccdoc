@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Getting started</esp:name>
+<esp:title>Getting started with Oracc online corpora</esp:title>
+<html><head/><body>
+
+<p class="firstpara">These page describse how to browse and sort any of Oracc online corpora. </p>
+
+<esp:h>Before you start</esp:h>
+
+<p>You may find it helpful to print this page out for reference before you start to explore any of the Oracc corpora for the first time. If your browser has problems displaying all the special transliteration characters you may want to download and install a <esp:link page="user-fonts">Unicode transliteration font</esp:link> for Mac, Windows, or Linux.</p>
+
+<esp:h>What you see</esp:h>
+<p>When you go to the front page of an Oracc corpus, you will see the screen split into three parts:</p>
+<ul>
+<li>the coloured <esp:link bookmark="The Header">header</esp:link> at the top;</li>
+<li>the outliner pane below it, to the left;</li>
+<li>and the main pane in the centre of the screen.</li>
+</ul>
+<p>The contents of the <esp:link bookmark="The Header">header</esp:link> stay mostly the same as you move through the corpus. The contents of the outliner pane and main pane change, though, depending on whether you are paging through a listing of texts, glossary entries, or search results in <esp:link bookmark="Outline Mode">Outline Mode</esp:link> or reading a whole text in <esp:link bookmark="Text Item Mode">Text Item Mode</esp:link> or a catalogue entry in <esp:link bookmark="Catalog Item Mode">Catalog Item Mode</esp:link>.</p>
+
+<p>On this page we briefly describe how the Header, Outline Mode, Text Item Mode and Catalog Item Mode work. There are separate pages about <esp:link page="user-searching">searching</esp:link>, <esp:link page="user-advanced">advanced search</esp:link>, and <esp:link page="user-glossaries">glossaries</esp:link>.</p>
+
+<esp:h>The Header</esp:h>
+<p>You can use the coloured header at the top of the screen to navigate your way around the corpus, and to perform searches. It is divided into four different zones, from top to bottom:</p>
+<ul>
+<li>the <esp:link bookmark="The navigation bar">navigation bar</esp:link>, for moving to different parts of the website;</li>
+<li>the project title (which is just plain text, so we'll say no more about it);</li>
+<li>the <esp:link bookmark="The search bar">search bar</esp:link>, for finding signs, words and phrases in the corpus;</li>
+<li>and the <esp:link bookmark="The pager bar">pager bar</esp:link>, for paging through different texts, catalogue entries, and search results.</li>
+</ul>
+
+<h2>The navigation bar</h2>
+<p>The navigation bar enables you to move to different parts of the project's website, and out of it to other useful parts of Oracc. It has up to five components:</p>
+<dl>
+  <dt>Help button</dt>
+  <dd>Takes you to this page.</dd>
+
+  <dt>Links drop-down menu</dt>
+  <dd>Takes you to:</dd>
+<dd> 
+<ul>
+<li>the current project's listing of the contents of its corpus;</li>
+<li>the <esp:link url="http://oracc.museum.upenn.edu/index.html">Oracc home page</esp:link>, from where you can access other corpora and search all of the documentation;</li>
+<li>the current project's home page. (This is usually <strong>not</strong> the front page of the project's corpus but a page describing the project. You may be able to access other resources from there too. Every project's home page is different, so it's difficult to generalise about them here.)</li>
+<li>and optionally, depending on the project, one or more pre-defined subsets of the corpus, and/or links to external websites.</li>
+</ul>
+</dd>
+  <dt>Corpus button</dt>
+  <dd>Takes you back to the current corpus's main listing.</dd>
+
+  <dt>Glossaries menu</dt>
+  <dd>To go to one of the project's glossaries, select an item from the menu. Menu items vary from project to project, but typically include one or more ancient languages and/or dialects, proper nouns, plus one or more different types of proper nouns. The glossaries are explained in more detail on <esp:link page="user-glossaries">a separate page</esp:link>.</dd>
+  <dd>Not every project has a glossary.</dd>
+
+  <dt>Advanced search button</dt>
+  <dd>Opens a pop-up window which enables you to do advanced searches on the current project's corpus. Advanced searching is explained on <esp:link page="user-advanced">a separate page</esp:link>.</dd>
+</dl>
+
+<h2>The search bar</h2>
+<p>The search bar gives you all the tools you need to perform simple searches on the corpus. There is more information on searching on <esp:link page="user-searching">a separate page</esp:link>.</p>
+<p>If you need to carry out more complex searches, use the <esp:link page="user-advanced">Advanced search button</esp:link> on the top navigation bar.</p>
+
+<dl>
+  <dt>Unicode tick-box</dt>
+  <dd>Tick this if you are searching with unicode characters (e.g., <code>ša₃</code>); untick it if you are searching with ASCII characters (e.g., <code>sza3</code>).</dd>
+ 
+  <dt>Search button</dt>
+  <dd>Click this to perform your search, once you have entered your search parameters using the other tools in this row. The results will appear in the main pane below.</dd>
+
+  <dt>Transliterations menu</dt>
+  <dd><p>Use this menu to choose which sort of data you want to search in. You have up to four options:</p>
+  <dl>
+    <dt>transliterations (e.g., <code>a-wi-lum</code>)</dt> 
+<dd>The principles of transliteration are described on the <esp:link url="http://knp.prs.heacademy.ac.uk/cuneiformrevealed/aboutcuneiform/transliteration">Cuneiform Revealed</esp:link> website.</dd>
+    <dt>lemmatizations (e.g., <code>awīlum</code> or <code>awilum</code>)</dt> 
+    <dd>If the corpus has glossaries, you can use the lemmatization option to search for a word or phrase regardless of how it is spelled. For instance, a search for <i>awīlum</i> may return words with the spelling <code>a-wi-lu-um, a-wi-lum</code>, as well as <code>LU₂</code>. But it will not find instances of your search term that are morphologically different (e.g., nouns in a different case or verbs in a different person, stem or tense.) To do that you need to search the glossaries.</dd>
+    <dt>translations (e.g., <code>man</code>)</dt>
+<dd>The search engine understands the basics of English morphology so that if, for instance, you search for "man", it will find "man" and related words such as "men" and "manly". It is not possible to restrict your search to a particular form of the word. However, it will not find words such as "Oman", "mention" or "humanly" which contain the characters "man"  or "men" but are not derived from them.  You can also search for English words using the glossaries.</dd>
+    <dt>catalogue</dt>
+    <dd>The project's catalogue gives a brief description of each text, its place(s) of publication and other key features. They vary from project to project, but we briefly describe the broad principles in the <esp:link bookmark="Catalog_Item_Mode">Catalog Item Mode</esp:link> section below. See the <esp:link page="user-searching">separate page on searching</esp:link> for more information on searching the catalogues.</dd>
+</dl>
+</dd>
+<dt>Search box</dt>
+<dd>Type your search term into this box. Go to the <esp:link page="user-searching">separate page on searching</esp:link> to find out how best to enter search terms.</dd>
+<dt>Line menu</dt>
+<dd>Use this to select whether you want your search results to be displayed within the context of the textual line, the grammatical sentence, or as KWIC (<esp:link url="http://en.wikipedia.org/wiki/Key_Word_in_Context">Key Word in Context</esp:link>). Experiment to find out what works best for you.</dd>
+</dl>
+
+<h2>The pager bar</h2>
+<p>Use the tools on the bottom row of the header to page through the texts, catalogue data, glossary entries, and search results. The outline sorter to the left of the pager bar is described in the section on Outline Mode below.</p>
+<p>The number of tools in the pager bar is context-dependent. Here we describe the three that are always present:</p>
+<dl>
+<dt>&lt;&lt; button</dt>
+<dd>Use this to move back one page.</dd>
+<dt>Page number box</dt>
+<dd>Enter a number here to jump to any page of the pager. If you enter an invalid number, a red cross will appear and you must try again.</dd>
+<dt>&gt;&gt; button</dt>
+<dd>Use this to move back one page.</dd>
+</dl>
+<p>The other pager bar tools are described in the sections on <esp:link bookmark="Outline_Mode">"Outline Mode</esp:link>, <esp:link bookmark="Text_Item_Mode">Text Item Mode</esp:link>, and <esp:link bookmark="Catalog_Item_Mode">Catalog Item Mode</esp:link> below.</p>
+
+<esp:h>Outline Mode</esp:h>
+<p>Outline Mode is what you see when you first access the corpus online. You can use it to browse the corpus. The screen is divided into two unequal halves: the narrow Outline Pane on the left, and a full listing of the corpus in the Main Pane on the right.</p>
+
+<h2>Outline Main Pane</h2>
+<p>In the Main Pane, the tablets are listed by a short, standardised designation, usually based on their place of publication, and grouped by criteria such as period, genre, and provenance. You can move through the listing using the tools in the <esp:link bookmark="The_pager_bar">pager bar</esp:link> immediately above it. You will also see an extra item in the pager bar:</p>
+<dl>
+<dt>Page-size box</dt>
+<dd>You can change the number of items per page by entering a number into this box. If you enter an invalid number a red cross will appear, and you should try again.</dd>
+</dl>
+
+<p>On the left-hand side of each entry you will see a black box with one or more letters in it: either P, Q or X. Clicking on the letter does one of the following things:</p>
+<dl>
+<dt>P</dt>
+<dd>The <esp:link url="http://cdli.ucla.edu">Cuneiform Digital Library Initiative</esp:link> (CDLI) assigns so-called P-numbers to single-item manuscripts, such as tablets. Clicking on the P button takes you to the project's catalogue entry for that manuscript, from where you can access the corresponding entry in the CDLI's database.</dd>
+<dt>Q</dt>
+<dd>Q-numbers are assigned to compositions, which may in turn be attested in more than one manuscript. Clicking on the Q button takes you to the Q-catalogue entry for the composition. The Q-catalogue is described in greater detail <esp:link url="http://oracc.museum.upenn.edu/qcat/qcat-doco.html">in its own section of the Oracc website</esp:link>.</dd>
+<dt>X</dt>
+<dd>X-numbers are assigned to texts that don't yet have CDLI-assigned P-numbers or Oracc-assigned Q-numbers. Clicking on the X button will take you to the project's own catalogue information on the text, which may be very brief.</dd>
+</dl>
+
+<p>The main component of each outline listing is the text's designation (usually a composition name or a publication number). Designations that are coloured link to the Text Item View, which displays the transliteration and translation of a single text. Black designations list texts that have not yet been edited as part of the corpus.</p>
+
+<p>The following columns list information such as textual genre and ancient author, taken from the project's catalogue. They vary from project to project and corpus to corpus. For more information on project-specific keywords, go to that project's home page.</p>
+
+<h2>Outline Outline Pane</h2>
+<p>In Outline Mode the left-hand sidebar gives an overview of the whole of the project's corpus, which in many Oracc projects is grouped by period, genre, and provenance. You can select any one of these groups by clicking on it. You are now in Zoom Mode.</p>
+
+<p>In some projects, the following tools help you move through the outline of the corpus in Zoom Mode:</p>
+
+<dl>
+<dt>Time/Genre/Place menu</dt>
+<dd>This drop-down menu is immediately above the Outline Pane. You can use it to change the order in which the corpus is sorted</dd>
+<dt>↑ and ↓ buttons</dt> 
+<dd>These appear at the top of the Outline Pane when you select a group in the corpus. Use these buttons to scroll through the groups in the current sort order.</dd>
+<dt>Exit Zoom Mode button</dt>
+<dd>When you enter Zoom Mode, by selecting a group in the corpus, this button appears immediately to the left of the &lt;&lt; button in the <esp:link bookmark="The_pager_bar">pager bar</esp:link>. Use it to exit Zoom Mode and return to browsing the entire corpus.</dd>
+</dl> 
+
+<esp:h>Text Item Mode</esp:h>
+<h2>Text Main Pane</h2>
+<p>In Text Item View the Main Pane shows the transliteration and/or translation of a single tablet or composite text. If the text has been lemmatised, you can place the cursor over any word of the transliteration to see its outline glossary entry, and click on the word to go to its full glossary entry. If the line numbers of the transliteration are shown in blue, you can click them to view an associated tablet or composite text.</p>
+
+<p>The following tools in the <esp:link bookmark="The_pager_bar">pager bar</esp:link> allow you to control what you see in Text Item Mode:</p>
+<dl>
+<dt>Hide Outline Pane button</dt>
+<dd>Clicking on this button, which is immediately above the left-hand Text Outline Pane, makes that disappear, so that the text runs the full width of the window.</dd>
+<dt>Show Outline Pane button</dt>
+<dd>When you hide the Outline Pane, this button replaces the Hide Outline Pane button. Click it to bring back the Outline Pane.</dd>
+<dt>Mode menu</dt>
+<dd>Use this drop-down menu, to the left of the &lt;&lt; button, to move between this Text Item Mode, <esp:link bookmark="Catalog_Item_Mode">Catalog Item Mode</esp:link>, and <esp:link bookmark="Outline_Mode">Outline Mode</esp:link> (by choosing Exit Item Mode).</dd>
+<dt>&lt;&lt; button, Item box, and &gt;&gt; button</dt>
+<dd>Use these tools to move between texts, just like in Outline Mode. On some browsers, <code>Ctrl-←</code> and <code>Ctrl-→</code> serve the same function as the <code>&lt;&lt;</code> and <code>&gt;&gt;</code> buttons.</dd>
+<dt>Translations menu</dt>
+<dd>Use this drop-down menu to choose whether you want to see the translation or not. In some projects you can also choose which language to see the translation in.</dd>
+<dt>Translation only tick-box</dt>
+<dd>Select this box if you wish only to see the translation. Note that if you select this box, the "No translation" option in the Translations menu disappears!</dd>
+</dl>
+
+<h2>Text Outline Pane</h2>
+<p>In Text Item View the left-hand Outline Pane gives a set of information about the tablet and text. Its exact contents depend on the project, but it may include some or all of the following data:</p>
+<dl>
+<dt>Numbers</dt>
+    <dd>CDLI catalogue P-number (external link) or Oracc Q-number;</dd>
+    <dd>museum number;</dd>
+    <dd>excavation number (as appropriate)</dd>
+<dt>Views</dt>
+    <dd>Cuneified (for which you need to install the relevant <esp:link page="user-fonts">Unicode cuneiform font</esp:link>)</dd>
+    <dd>Line Art (i.e., cuneiform copy, from <esp:link url="http://cdli.ucla.edu">CDLI</esp:link>)</dd>
+    <dd>Image (i.e., photograph, from <esp:link url="http://cdli.ucla.edu">CDLI</esp:link>)</dd>
+    <dd><esp:link url="http://oracc.museum.upenn.edu/doc/developer/tei">TEI</esp:link> (i.e., marked up according to the Text Encoding Initiative's <esp:link url="http://www.tei-c.org/Guidelines/P5">P5 Guidelines</esp:link>)</dd>
+<dt>Details</dt>
+    <dd>period</dd>
+    <dd>provenance</dd>
+    <dd>genre</dd>
+<dt>Bibliography</dt>
+    <dd>short references to relevant secondary literature</dd>
+</dl>
+
+<esp:h>Catalog Item Mode</esp:h>
+<p>The Catalog Item mode shows selected catalogue data for each item in the project. You can enter Catalog Item Mode by selecting the P, Q or X button in <esp:link bookmark="Outline Main Pane">Outline Mode</esp:link> or via the Mode menu in <esp:link bookmark="Text Main Pane">Text Item Mode</esp:link>.</p>
+
+<h2>Catalog Main Pane</h2>
+<p>Each project uses different sets of catalogue data. Minimally you can expect catalogue records to contain the same information as in Numbers, Details and sometimes Bibliography sections of the <esp:link bookmark="Text Outline Pane">Outline Pane in Text Item Mode</esp:link>. See the <esp:link page="user-searching">separate page on searching</esp:link> for more detailed information on catalogue data.</p>
+
+<p>The tools for paging through the catalogue are the same as for <esp:link bookmark="Text Main Pane">Text Item Mode</esp:link>.</p>
+
+<h2>Catalog Outline Pane</h2>
+<p>In Catalog Item Mode, the Outline Pane is the same as in <esp:link bookmark="Outline Outline Pane">Outline Mode</esp:link>.</p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

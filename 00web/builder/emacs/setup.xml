@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+<esp:name>Emacs setup</esp:name>
+<esp:title>Preparing to work with Emacs</esp:title>
+<html><head/><body>
+
+<p class="firstpara"><esp:link page="emacs">Emacs</esp:link> is a high-powered text editor which, while not particularly pretty, is extremely useful for editing ATF files, managing projects and writing ESP portals. On this page we describe how to obtain, install and configure it for Oracc work.</p>
+
+<esp:h>Obtaining Emacs</esp:h>
+
+<ul>
+<li><p>For Mac OS X we recommend Aquamacs, at <esp:link url="http://www.aquamacs.org">http://www.aquamacs.org</esp:link> and then follow the instructions <esp:link bookmark="sh_forunixandmacosxusers">below</esp:link>.</p></li>
+
+
+<li><p>For Windows we recommend EmacsW32 from <esp:link url="http://www.ourcomments.org/Emacs/EmacsW32.html">http://www.ourcomments.org/Emacs/EmacsW32.html</esp:link>. Download the <strong>latest EmacsW32+Emacs patched</strong> version. Then follow the instructions <esp:link bookmark="sh_forwindowsusers">below</esp:link>.</p></li>
+
+<li>For Unix Emacs is probably already installed; if not, you can go
+to <esp:link url="http://www.gnu.org/software/emacs/">the
+Gnu Emacs page</esp:link> for sources, or (probably) to your distribution
+provider for a binary package. Either way, you will also need to follow the instructions <esp:link bookmark="sh_forunixandmacosxusers">below</esp:link></li>
+</ul>
+
+<esp:h>Fonts</esp:h>
+
+<p>It is best to install the DejaVu fonts before installing ATF mode; 
+see <esp:link url="visitor-fonts">the fonts page</esp:link> for further information.</p>
+
+<esp:h>Downloading and Installing ATF Mode and friends</esp:h>
+
+<esp:sh>For Unix and Mac OS X users</esp:sh>
+<ol class="spaced">
+<li>Download the Emacs lisp files in the archive <esp:link url="~/downloads/atf-mode.zip">atf-mode.zip</esp:link>.</li>
+<li>Unzip the archive to extract the files in the directory or folder
+where you want them to live. It is simplest to extract into your home
+  directory.</li>
+<li>Locate your <code>.emacs</code> file; this will be in your
+home directory and it may be hidden.  It is possible that it may not
+exist, if your Emacs installation creates it on demand when needed to
+store configuration options.  To locate this file it is easiest to use
+Emacs: type <code>ctrl-x ctrl-f</code> and enter the filename as
+<code>~/.emacs</code>.  If the file does not exist, Emacs will create it.</li>
+<li>Edit your <code>.emacs</code> file to include the following line:
+<pre>
+(load-file "~/oracc-init.el")
+</pre>
+(The file name will be different if you do not extract the files to
+your home directory or <code>Application Data</code> under Windows).</li>
+<li>Save your .emacs, exit Emacs and restart.</li>
+</ol>
+
+<esp:sh>For Windows users</esp:sh>
+<p class="alert">If you already have a working
+Win32 Emacs installation on your machine and want to upgrade, you must first delete your existing <esp:link bookmark="h_downloadingandinstallingatfmodeandfriends">ATF Mode files and friends</esp:link>, and then reinstall them after you have installed the new Win32 Emacs. If you do not do this, you are likely to find that Win32 Emacs fails to start up properly.</p>
+
+
+<p>You need to download an extra few files to optimise the functionality of EmacsW32.</p>
+<ol>
+<li>Download the Emacs lisp files in the archive <esp:link url="~/downloads/atf-mode.zip">atf-mode.zip</esp:link>.</li>
+<li>Unzip the archive to extract the files in the directory or folder
+where you want them to live. 
+<ul>
+<li>On <strong>Windows XP</strong> EmacsW32 considers the home directory to be (for  user 's') <code class="cookbook">c:\Documents and Settings\s\</code> or  <code class="cookbook">c:\Documents and Settings\s\Applications Data\</code> (depending on the exact version of XP; you will need to experiment). So if your Windows XP user name (or login name) is Hammurabi, your home directory will be <code class="example">c:\Documents and Settings\Hammurabi\</code> (or  <code class="example">c:\Documents and Settings\Hammurabi\Applications Data)</code> by default.</li>
+<li>On <strong>Windows 7</strong>, your home directory will be (for user 's') <code class="cookbook">c:\Users\s\AppData\Roaming\</code> . Note that the folder AppData is hidden: if you do not see it, you can make it visible by selecting the 'Show hidden files, folders, and drives' option in the Folder Options (tab View) of the Control Panel.</li>
+</ul>
+</li>
+<li>Download the <esp:link url="~/downloads/emacsw32-utils.zip">zipped file of add-ons for EmacsW32</esp:link> and copy it to your home directory. Unzip it.</li> 
+<li>Leave the unzipped <code>.emacs</code> file in your home directory.</li>
+<li>Move <code>w32-winprint.el</code> (an old program by 
+Lennart Borgman that enables printing with Notepad), <code>recentf-ext.el</code> (a program by Rubikitch that allows you to handle 'dired' buffers) and <code>pc-bufsw.el</code> (a program by Igor Boukanov that enables moving between buffers with Ctrl-Tab, Ctrl-Shift-Tab) to <code class="cookbook">c:\Program Files\Emacs\site-lisp\</code> . On <strong>Windows 7</strong> this will be <code class="cookbook">C:\Program Files (x86)\Emacs\site-lisp\</code></li>
+</ol> 
+
+<esp:sh>Tramp and Emacs on Windows</esp:sh>
+
+<p>Windows needs additional programs to enable Tramp to work
+effectively, but installing them is not hard:</p>
+
+<ol>
+<li>Install <code>PuTTy</code> from <esp:link url="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">the
+PuTTY Download Page</esp:link>.  Use the Windows installer that installs
+everything.</li>
+
+<li>Edit your Windows path to include C:\Program Files\PuTTY or (for <strong>Windows 7</strong>) C:\Program Files (x86)\PuTTY:
+<ol>
+<li> Left-click on My Computer</li>
+<li>Select <code>Properties</code></li>
+<li>Go to the <code>Advanced</code> tab</li>
+<li>Click <code>Environment Variables</code> button</li>
+<li>Scroll down to the <code>Path</code> variable in 
+<code>System Variables</code> field</li>
+<li>Double-click <code>Path</code> variable</li>
+<li>Append your PuTTy install directory to the <code>Variable
+value</code> field, for example <br/>
+<code class="cookbook">;C:\Program Files\PuTTy</code> (or, for <strong>Windows 7</strong>, <code class="cookbook">;C:\Program Files (x86)\PuTTy</code>),
+to the end of  the line. Remember the semi-colon first -
+It's important.</li>
+<li>Apply settings, get back to desktop.</li>
+</ol>
+</li>
+<li>Open the file <code>.emacs</code> by typing <code class="cookbook">C-x C-f</code> and answering <code class="cookbook">~/.emacs</code> at the <code class="cookbook">Find
+File:</code> prompt.  Now add the following line to
+<code>.emacs</code> and then save the file:
+<pre class="cookbook">
+(setq tramp-default-method "plink")
+</pre>
+</li>
+
+<li>Restart Emacs.</li>
+</ol>
+
+
+<esp:h>Initialize the secure connection</esp:h>
+
+<p>Once you have installed Emacs (and <esp:link bookmark="sh_trampandemacsonwindows">PuTTy</esp:link> if appropriate) you need to set up your connection to the Oracc server. Generally speaking, you will only need to do this once.</p> 
+<ul>
+<li><p>If you are using a PC, you need to run PuTTy. In the dialogue box  give the following information:</p>
+<pre class="cookbook">
+Host Name: oracc.museum.upenn.edu
+Connection Type: SSH
+</pre>
+<p>The <code>Port</code> number will change automatically when you select <code>SSH</code>; do not change it. Now press the Open button at the bottom of the dialogue box.</p>
+</li>  
+<li><p>If you are using a Mac, open the Terminal (in Applications/Utilities) and
+type:</p>
+
+<pre class="cookbook">
+ssh proj@oracc.museum.upenn.edu
+</pre>
+
+<p>and press return.</p>
+</li>
+</ul>
+
+<p>On either PC or Mac, you will then see a message that looks something like this:</p>
+
+<pre class="example">
+The server's host key is not cached in the registry. You
+have no guarantee that the server is the computer you think it is.
+The server's rsa2 key fingerprint is:
+ssh-rsa 1024 7b:e5:6f:a7:f4:f9:81:62:5c:e3:1f:bf:8b:57:6c:5a
+If you trust this host, hit Yes to add the key to
+PuTTY's cache and carry on connecting.
+If you want to carry on connecting just once, without
+adding the key to the cache, hit No.
+If you do not trust this host, hit Cancel to abandon the
+connection.</pre>
+
+<p>Type <code>yes</code> and press return to set up the connection to the Oracc server. Next:</p>
+
+<ul>
+<li>PuTTy (PC) will ask for your user name (<code>proj</code>) and password</li>
+<li>Terminal (Mac) will ask for your password</li>
+</ul>
+
+<p>Once you have entered this information and pressed return, you will see a prompt that says something like <code>[proj@oracc] $</code>. You should now log out by typing <code>logout</code> and pressing return. You can now quit PuTTy/Terminal and proceed to the next relevant section on this page.</p>
+
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

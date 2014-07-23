@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+    <esp:name>Lexical texts</esp:name>
+    <esp:title>ATF Lexical Conventions</esp:title>
+<html><head/><body>
+    <p class="firstpara">This page describes the ATF features for
+    working with lexical texts.  The original version of this document was
+    written by Madeleine Fitzgerald and Steve Tinney.</p>
+
+
+    <esp:h>Protocol</esp:h>
+    
+      <p>Lexical texts are indicated by a special protocol which should
+be given at the start of each file. This protocol takes the
+form:</p>
+      <pre class="cookbook">
+#atf: use lexical</pre>
+<p>The use of the lexical protocol also automatically enables the
+<code>#atf: use mylines</code> protocol.</p>
+    
+    <esp:h>Fields</esp:h>
+    
+      <p>Columns of lexical texts are treated as fields in the ATF sense,
+i.e., they are segments of a line which have distinct content. The
+ATF field-separator <code>','</code> is used to separate columns of
+a lexical text; if the physical alignment of a lexical text is to
+be mimicked, the ATF column-separator code <code>'&amp;'</code> can
+be used instead.</p>
+      <p>Fields are marked for their content, whether the column contains
+a sign, a pronunciation, a translation or other data type. If the
+column is unmarked, the column contains a word or phrase.</p>
+      <p>The following are the markers for column types. Note that there
+are both shorthand and explicit markers. Shorthand markers must be
+preceded and followed by at least one space or tab character.</p>
+      <table class="pretty">
+        <tr>
+          <th>Shorthand</th>
+          <th>Explicit</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>#</td>
+          <td>,!sv</td>
+          <td>column that follows is sign value</td>
+        </tr>
+        <tr>
+          <td>"</td>
+          <td>,!pr</td>
+          <td>column that follows is pronunciation</td>
+        </tr>
+        <tr>
+          <td>~</td>
+          <td>,!sg</td>
+          <td>column that follows is sign</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>,!sn</td>
+          <td>column that follows is ancient sign name</td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>,!eq</td>
+          <td>column that follows is an equivalent (translation or
+synonym)</td>
+        </tr>
+        <tr>
+          <td>^</td>
+          <td>,!wp</td>
+          <td>column that follows is a word or phrase; this is the default
+column type and the <code>','</code> may be omitted if it is the
+first column</td>
+        </tr>
+        <tr>
+          <td>@</td>
+          <td>,!cs</td>
+          <td>column that follows gives the contained signs which occur within a
+	  container sign</td>
+        </tr>
+      </table>
+      <p>In addition, a bullet-character may be transliterated at the
+start of the line using '*', optionally followed by the grapheme in
+parenthesis, e.g., <code>*</code> or <code>*(disz)</code>.</p>
+      <p>Example:</p>
+      <pre class="cookbook">
+1. !pr e-a ,!sg A ,!eq %a na-a-qu</pre>
+      <p>which may also be entered as:</p>
+      <pre class="cookbook">
+1. " e-a ~ A = %a na-a-qu</pre>
+      <p>This is a three-column text with the first column being the
+pronunciation, the second being the sign, and the third being the
+translation, in this case into Akkadian as indicated by the
+standard <esp:link page="gdltut" bookmark="sh_languages">language shift</esp:link> marker "%a." The
+first example is the full form with the standard notation for field
+breaks, <code>','</code> followed by the notation for the type of
+column. The second example above is the same transliteration with
+shorthand rather than explicit notation. Remember that it is very
+important to have whitespace on either side of the shorthand
+markers.</p>
+    
+    <esp:h>Examples</esp:h>
+    
+    <esp:sh>Paleographic Ea</esp:sh>
+    
+      <pre class="cookbook">
+1. !sg A</pre>
+      <p>This example shows how to mark up a single column list of sign names.</p>
+    
+    <esp:sh>Proto-Ea</esp:sh>
+    
+      <pre class="cookbook">
+1. !pr e-a ,!sg A</pre>
+    
+    <esp:sh>Proto-Aa</esp:sh>
+    
+      <pre class="cookbook">
+1. !pr e-a ,!sg A ,!eq%a mu-u</pre>
+      <p>Here we have a three-column list with pronunciation, sign name,
+and akkadian translation. Shorthand for the same line of
+translation would be:</p>
+      <pre class="cookbook">
+1. " e-a : A = %a mu-u</pre>
+    
+    <esp:sh>Unilingual</esp:sh>
+    
+      <pre class="cookbook">
+1. !wp a </pre>
+      <p>or:</p>
+      <pre class="cookbook">
+1. ^ a</pre>
+      <p>Note that because <code>!wp</code> is the default field type,
+this can also be written as:</p>
+      <pre class="cookbook">
+1. a</pre>
+    
+    <esp:sh>Bilingual</esp:sh>
+    
+      <pre class="cookbook">
+1. !wp a ,!eq%a mu-u </pre>
+      <p>In this case we have a two column list with the Sumerian word in
+the first column and the Akkadian translation in the second. The
+shorthand version would be</p>
+      <pre class="cookbook">
+1. ^ a = %a mu-u </pre>
+      <p>or (because an unmarked column is assumed to contain a word or
+phrase):</p>
+      <pre class="cookbook">
+1. a = %a mu-u</pre>
+      <p>Note again the whitespace on each side of the shorthand markers
+^ and = in the last two examples above.</p>
+    
+    <esp:sh>Trilingual etc.</esp:sh>
+    
+      <pre class="cookbook">
+1. !wp a ,!eq%a mu-u ,!eq%h ba-ba</pre>
+      <p>A three-column text with Sumerian, Akkadian, and Hittite, which
+can also be rendered in shorthand as:</p>
+      <pre class="cookbook">
+1. ^ a = %a mu-u = %h ba-ba</pre>
+      <p>or:</p>
+      <pre class="cookbook">
+1. a = %a mu-u = %h ba-ba</pre>
+    
+    <esp:sh>Prism with unilingual Sumerian vocabulary excerpt from Hh</esp:sh>
+    
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = Hh IX excerpt 44
+@prism
+@face 1
+@column 1
+1. ,!pr a-ab ,!wp ab
+2. ,!pr i-ig ,!wp ig</pre>
+    
+    <esp:sh>Syllabary</esp:sh>
+    
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = XX
+@tablet
+@obverse
+1. * ,!pr du-u ,!sg KAK</pre>
+      <p>or:</p>
+      <pre class="cookbook">
+1. * " du-u : KAK</pre>
+    
+    <esp:sh>Trilingual</esp:sh>
+    
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = XX
+@tablet
+@obverse
+1. " tak-tak ~ TAK4.TAK4 | tak min-a-bi = %a e-ze-bu = %h ar-ha da-lu-mar</pre>
+    
+    <esp:sh>Unilingual Proto-Ea</esp:sh>
+    
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = XX
+@tablet
+@obverse
+1. " su-un : BUR2
+2. " bu-ur : BUR2
+3. " du-un : BUR2
+4. " u3-szu-um : BUR2</pre>
+    
+    <esp:sh>Bilingual Proto-Ea</esp:sh>
+    
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = XX
+@tablet
+@obverse
+1. ,!pr mu-ul  ,!sg MUL ,!eq%a ka-ka-bu
+2. "           ~        =%a szi-t,ir-tu
+3. "           ~        =%a na-pa-hu
+4. "           ~        =%a na-ba-t,u
+5. " szu2-hub2 ~    MUL = %a szu-hu-pu</pre>
+      <p>Remember that <code>!pr</code> is equivalent to <code>"</code>,
+not "ditto," and <code>!sg</code> is equivalent to <code>~ ;</code>
+.</p>
+      <p>If you want to indicate that empty space is meant to indicate a
+repetition of data from a preceding line, you can include the data
+between &lt;(...)&gt; (intentional omission supplied by editor).
+The example above would then be rendered as follows:</p>
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = XX
+@tablet
+@obverse
+1. ,!pr mu-ul  ,!sg MUL , !eq %a ka-ka-bu
+2. &lt;(mu-ul)&gt; ~ &lt;(MUL)&gt; = %a szi-t,ir-tu
+3. &lt;(mu-ul)&gt; ~ &lt;(MUL)&gt; = %a na-pa-hu
+4. &lt;(mu-ul)&gt; ~ &lt;(MUL)&gt; = %a na-ba-t,u
+5. " szu2-hub2  ~ MUL = %a szu-hu-pu</pre>
+    
+    <esp:sh>Emesal</esp:sh>
+    
+      <pre class="cookbook">
+#atf use lexical
+&amp;Pxxxxxx = XX
+@tablet
+@obverse
+1. %e ga-sza-an = %eg nin = %a bel-tu
+2. %e u5-mu = %eg i3-gisz = %a el-lu
+3. %e ze2-eg3 = %eg szum2 = %a na-da-nu</pre>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body>
+</html>
+</esp:page>

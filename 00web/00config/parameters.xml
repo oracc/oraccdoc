@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<param:parameters 
+	xmlns:param="http://oracc.org/ns/esp-param/1.0"
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	<param:title>Oracc: The Open Richly Annotated Cuneiform Corpus</param:title><!-- used at head of page and in citations -->
+	<param:banner><esp:image file="home/oracc.png" description="Oracc banner"/></param:banner>
+	<param:publisher>Oracc</param:publisher><!-- used in citations -->
+	<param:host>http://oracc.museum.upenn.edu</param:host>
+	<param:root>/doc</param:root>
+	<param:cuneify switcher="no" default="no" />
+	<param:common-headers>
+		<meta name="DC.publisher" content="Ocracc"/>
+		<meta name="DC.language" scheme="ISO 639-2/T" content="eng"/>
+		<meta name="DC.rights.copyright" content="Creative Commons SA 3.0 2013"/>
+		<meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" /> 	
+		<meta name="DC.format" content="text/html"/>
+		<!--<script type="text/javascript" src="/library.js"></script>-->
+	<!--	<meta name="robots" content="noindex,nofollow"/> -->
+	</param:common-headers>
+	<param:dc-id-prefix>oracc-museum-upenn-edu/page/</param:dc-id-prefix>
+	<param:main-menu-caption>Main menu</param:main-menu-caption>
+	<param:footer>
+<p><esp:image file="footer/cc88x31.png" description="Oracc's CC license" position="inline"><esp:link url="http://creativecommons.org/licenses/by-sa/3.0/" hide-print="yes" title="Creative Commons Attribution Share-Alike license"/></esp:image> Released under a <esp:link page="licensing">Creative Commons Attribution Share-Alike license 3.0</esp:link>, 2014. 
+<esp:image file="footer/f_logo.png" description="Oracc Facebook page" position="inline"><esp:link url="http://www.facebook.com/opencuneiform" /></esp:image> 
+<esp:image file="footer/blogspot-icon.png" description="Oracc blog" position="inline"><esp:link url="http://oracc.blogspot.com" /></esp:image> 
+<esp:image file="footer/twitter-bird-light-bgs.png" description="Oracc Twitter Account (@oracctivity)" position="inline"><esp:link url="http://www.twitter.com/oracctivity" /></esp:image><br/>
+<small>Oracc uses cookies only to collect Google Analytics data. Read more <esp:link page="privacy">here</esp:link>; see the stats <esp:link url="http://www.seethestats.com/site/oracc.museum.upenn.edu" rel="external">here</esp:link>; opt out <esp:link url="http://tools.google.com/dlpage/gaoptout" rel="external" hide-print="yes">here</esp:link>.</small></p>
+</param:footer>
+</param:parameters>

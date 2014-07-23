@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+<esp:name>Emacs for ATF</esp:name>
+<esp:title>Working with ATF in Emacs using atf-mode</esp:title>
+<html><head/><body>
+
+<p class="firstpara">An Emacs major mode is available which makes editing ATF files a
+bit easier and gives access to the template generator and checker.</p>
+
+
+
+
+<esp:h>Starting to use Emacs</esp:h>
+<p>See the pages on <esp:link page="aquamacs">Aquamacs</esp:link> and <esp:link page="emacsw32">EmacsW32</esp:link> for some additional help on getting started with Emacs.</p>
+
+
+<esp:h>Using ATF mode</esp:h>
+
+<p>If you name your files using the extension <code>.atf</code>, Emacs
+will automatically switch into ATF mode when you create a new file or
+load an existing one.</p>
+
+<p>If you name your files using another extension, for example
+<code>.txt</code>, you can set the mode explicitly by typing Esc-x (escape
+then x) and then entering <code>atf-mode</code> at the prompt.</p>
+
+<p>You can now use the ATF menu to read the ATF mode help, which will
+in turn tell you how to use the other menu items effectively.</p>
+
+<esp:h>Creating New Transliterations</esp:h>
+
+<ol>
+<li><p>Use menu File Visit new file  to open a new file</p></li>
+<li><p>If your new file does not have a <code>.atf</code> extension,
+enter ATF mode manually</p></li>
+<li><p>Enter a template specification in your new file; you can access
+the template help from the ATF menu</p></li>
+<li><p>When you have completed your template, select menu Create
+Template</p></li>
+<li><p>Review the block structure you have created; if is incorrect, use
+the undo function to remove the block structure, edit the template
+specification and recreate the template</p></li>
+<li><p>When you are satisfied with your template, delete the template
+specification</p></li>
+</ol>
+
+<esp:sh>Selective Views</esp:sh>
+
+<p>As of 2009-05-04, atf-mode enables outline-minor-mode;
+use the 'ATF mode help' item from the ATF menu and read the 'Selective
+Display' section for more information.</p>
+
+<esp:h>Using the Checker</esp:h>
+
+<p>Although you can use the menu, there are two particularly useful
+keystrokes for working with the checker:</p>
+
+<dl>
+<dt>C-c-C-c</dt>
+<dd>This is control-c then control-c again.  This runs the checker and
+displays the results in another window.</dd>
+<dt>C-c-C-n</dt>
+<dd>This is control-c then control-n.  This moves the cursor to the
+next erroneous line in your ATF file (it is often easier to use this
+key than C-x-`, which is the mainstream key-binding for the next-error
+command.</dd>
+</dl>
+
+
+<esp:h>Using Tramp to Edit Files on a Server</esp:h>
+
+<p>Emacs includes a package named <code>tramp</code> which can be used
+to edit files on a remote machine.  This means that if you work on a
+project which is hosted on <code>oracc.museum.upenn.edu</code> you can
+keep the files there and edit them using Emacs.  When you save the
+file it is saved back to the server.</p>
+
+<p>Tramp is activated automatically when you type a filename that
+starts with a forward slash (<code>/</code>).  Tramp filenames have
+the following syntax:</p>
+
+<pre class="example">
+/&lt;USER&gt;@&lt;MACHINE&gt;:&lt;FILE&gt;
+</pre>
+
+<p>This works with directories, too, which can then be clicked on to
+open files; and you can also use &lt;TAB&gt;-completion, so tramp will go
+away and get the list of files that complete for you.</p>
+
+<p>So, if you are part of a project named, say, <code>dcclt</code>,
+and you have the DCCLT password, you can start by typing the Emacs
+command to open a file:</p>
+
+<pre class="cookbook">
+C-x C-f
+</pre>
+
+<p>You'll get a prompt <code class="cookbook">Find file:</code> which
+may have some filename or directory already there.  You can ignore
+anything that may be there and type starting with the forward
+slash:</p>
+
+<pre class="cookbook">
+/dcclt@oracc.museum.upenn.edu:00atf/&lt;TAB&gt;
+</pre>
+
+<p>You should be prompted for a password and then see a list of the
+sources.  Click on a file to open it.</p>
+
+
+<esp:h>Troubleshooting</esp:h>
+
+<esp:sh>Checker fails on Windows with strange '&amp;amp;P123456' results</esp:sh>
+
+<p>Check the XML-RPC Customization option 'Xml Rpc Allow Unicode
+String': if it is not set to 'nil', then set it to 'nil' and try
+again.</p>
+
+<p>(To find this option, try <code>Options -&gt; Customize Emacs -&gt; Settings
+Matching Regexp</code> and type <code>xml-rpc-*</code> at the prompt.)</p>
+
+<esp:sh>Using a Remote Access Program, e.g., HummingBird</esp:sh>
+
+<p>If you are having difficulty connecting via a graphical user
+interface to SSH and friends, check that all of the following are
+correct:</p>
+
+<ul>
+<li><p>Hostname = <code>oracc.museum.upenn.edu</code></p></li>
+<li><p>Port number = 80</p></li>
+<li><p>User ID = your project's abbreviation, in lowercase letters</p></li>
+<li><p>Password = the correct password for your project</p></li>
+<li><p>Starting Directory = the path <code>/home/</code> followed by your
+project's abbreviation, in lowercase letters.</p></li>
+</ul>
+
+
+<esp:h>Entering Unicode Characters</esp:h>
+
+<p>The Emacs ATF package includes an input method which is based on
+the Emacs MULE TeX input method but adds some characters which are
+useful for cuneiform transliterations.  If the ATF mode package is
+installed correctly this input method is available under the name
+'Cuneiform'.</p>
+
+<p>To use this input method:</p>
+<ol>
+
+<li><p>Use control-backslash (<code>\</code>) to switch the Cuneiform input method on and off; when the method is enabled you will see a backslash at the left end of the status line</p></li>
+</ol>
+
+
+<esp:sh>Keyboard Sequences in Cuneiform Input Method</esp:sh>
+
+<p>The Cuneiform transliteration input method is based on control
+sequences used by the typesetting package TeX, with some additions.
+In general these sequences start with the backslash character,
+followed by an accent character, then the character that will receive
+the accent.  These sequences are notated as, e.g., <code>\-v-s</code>
+in the following table (meaning, in this case, that you type the
+backslash, then v, then s, which gives you shin, š).</p>
+
+<p>Note that the table below restricts the list of available
+characters to those needed for cuneiform transliteration; many more
+characters are available following the same principles.</p>
+
+<p>See also <esp:link page="visitor-unicode">the Unicode for cuneiform
+transliteration</esp:link> page and <esp:link page="visitor-fonts"> the fonts page</esp:link>.
+If you don't see the subscript x character you probably need to update
+to the latest fonts.</p>
+
+<table class="pretty">
+<tr>
+<td>Sequence</td>
+<td>Accent Name</td>
+<td>Available for:</td>
+<td>Results:</td>
+</tr>
+<tr><td>\-'</td><td>Acute</td><td>aeiuAEIUsS</td><td>áéíúÁÉÍÚśŚ</td></tr>
+<tr><td>\-`</td><td>Grave</td><td>aeiuAEIU</td><td>àèìùÀÈÌÙ</td></tr>
+<tr><td>\-=</td><td>Macron</td><td>aeiuAEIU</td><td>āēīūĀĒĪŪ</td></tr>
+<tr><td>\-^</td><td>Circumflex</td><td>aeiuAEIU</td><td>âêîûÂÊÎÛ</td></tr>
+<tr><td>\-v</td><td>Hachek</td><td>sS</td><td>šŠ</td></tr>
+<tr><td>\-d</td><td>Dot-under</td><td>sStT</td><td>ṣṢṭṬ</td></tr>
+</table>
+
+<p>Several other characters are provided using the following sequences:</p>
+
+<table class="pretty">
+  <tr><td>\-h , \-H</td><td>ḫ , Ḫ</td></tr>
+<tr><td>\-j , \-J</td><td>ŋ , Ŋ</td></tr>
+<tr><td>\-[ , \-]</td><td>˹ , ˺</td></tr>
+<tr><td>\-_[ , \-_]</td><td>⸤ , ⸥</td></tr>
+</table>
+
+<p>(Note that lower left/right square brackets are not used in ATF;
+they are provided for use in citing published work.)</p>
+
+<p>A few characters require typing a word after the backslash:</p>
+
+<table class="pretty">
+<tr><td>\times</td><td>×</td></tr>
+<tr><td>\alef</td><td>ʾ</td></tr>
+<tr><td>\ayin</td><td>ʿ</td></tr>
+</table>
+
+<p>If you are using the <code>#atf: use unicode</code> protocol you
+must also type the grapheme index numbers as Unicode subscripts using
+the <code>\-&lt;digit&gt;</code> sequences:</p>
+
+<table class="pretty">
+<tr><td>\-0</td><td><sub>0</sub></td></tr>
+<tr><td>\-1</td><td><sub>1</sub></td></tr>
+<tr><td colspan="2">...</td></tr>
+<tr><td>\-9</td><td><sub>9</sub></td></tr>
+<tr><td>\-+</td><td><sub>+</sub></td></tr>
+<tr><td>\-x</td><td><sub>x</sub></td></tr>
+</table>
+
+
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:author first-names="Greta" last-name="Van Buylaere"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

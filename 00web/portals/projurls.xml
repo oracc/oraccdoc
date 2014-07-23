@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Project URLs</esp:name><esp:title>Referring to Oracc project URLs</esp:title><html><head/><body><p class="firstpara">This document describes how to refer to Oracc web pages online or in print, using short, stable URIs.</p>
+
+<p>Note too that in ESP must link to other web pages, whether on Oracc or elsewhere using full URLs, not the short forms ("tiny URLs") offered by services such as tiny.cc.</p>
+
+<p>Background | Oracc.org | Definitions | Patterns |</p>
+<esp:h>Background</esp:h>
+
+<p>The Oracc server supports URLs which are easier
+to remember and to use in links, persistent, and safe to cite in print.  This facility is
+not yet fully developed and suggestions for additions are welcome.</p>
+
+<p>For some background to the usefulness of these URLs (which are
+implemented using webserver rewrite rules) see Jakob Nielsen's
+fundamental article <esp:link url="http://www.useit.com/alertbox/990321.html" rel="external">URL as UI</esp:link>.</p>
+
+<p>You may also find it helpful to read the <esp:link url="visitor-citing">visitor help page on citing URLs</esp:link>, which gives a simple introduction to the material presented here.</p>
+
+<esp:h>Oracc.org</esp:h>
+
+<p>When linking to Oracc resources, or citing them in print, you should not cite the
+<code>oracc.museum</code> server directly: instead, use the hostname
+<code>http://oracc.org</code>.  Then append the relevant part of the
+URL as given in the patterns below, which are designed to be
+permanent.</p>
+
+<p>The hostname <code>oracc.org</code> will always redirect to the
+current Oracc server.</p>
+
+<esp:h>Definitions</esp:h>
+
+<p>In order to express the various URLs supported for Oracc projects we
+define some basic components before describing the patterns.</p>
+
+<dl>
+
+<dt>PROJECT</dt>
+<dd>The name of a project or subproject, e.g., <code>dcclt</code> or
+<code>saa/sargon</code>.</dd>
+
+<dt>PQID</dt>
+<dd>A single CDLI P or Q id followed by six digits.  For example,
+<code>P123456</code> or <code>Q000001</code>.</dd>
+
+<dt>PQIDS</dt>
+<dd>A comma-separated list of one or more CDLI IDs, of the form P or Q
+followed by six digits.  For example, <code>P123456</code> or
+<code>P123456,Q000001</code>.</dd>
+
+<dt>LANG</dt>
+<dd>A language code corresponding to a glossary, e.g.: sux, akk.</dd>
+
+<dt>WORDS</dt>
+<dd>One or more words, consisting of letters and numbers.  Depending on
+the context these may be project names, list names or search terms.</dd>
+
+</dl>
+
+<esp:h>Patterns</esp:h>
+
+<dl>
+
+<dt>PROJECT/PQID.html</dt>
+<dd>This pattern produces the HTML version of the text, without the
+pager frame. Example: <code class="example"><esp:link url="http://oracc.org/dcclt/Q000001.html"/></code>.</dd>
+
+<dt>PROJECT/PQIDS</dt>
+<dd>This pattern produces a pager listing of the PQIDS; it replaces
+the functionality of the <code>adhoc</code> method formerly
+recommended for including references to ad hoc collections of
+texts. Example:
+<code class="example"><esp:link url="http://oracc.org/dcclt/Q000001,Q000002"/></code>.
+With a single PQID, this behaves similarly to the pattern
+PROJECT/PQID.html, but includes the pager frame around the text.</dd>
+
+<dt>PROJECT/LANG</dt>
+<dd>This pattern goes straight to the project glossary for the language.
+Example: <code class="example"><esp:link url="http://oracc.org/cams/gkab/akk-x-stdbab"/></code>.
+</dd>
+
+<dt>PROJECT/LANG/WORDS</dt>
+<dd>This pattern searches the glossary in the project language for the words.<code class="example"><esp:link url="http://oracc.org/cams/gkab/akk-x-stdbab/adru"/></code>;<br/>
+<code class="example"><esp:link url="http://oracc.org/cams/gkab/akk-x-stdbab/afraid"/></code>.</dd>
+
+<dt>PROJECT/WORDS</dt>
+<dd><p>This pattern is used for several purposes.</p>
+<ul>
+<li>If the first WORD is the name of a sub-project, the remainder of
+the WORDS are processed in the context of the subproject; all of the
+above patterns as well as the patterns related to WORDS described
+below, then behave exactly as if PROJECT is set to the
+subproject.</li>
+<li>If the first WORD after the project/subproject is `corpus', the
+pager listing for the corpus is displayed (this allows projects which
+have content in their `index.html' to have a link directly to the
+pager listing for the texts.</li>
+<li>If the first WORD after the project/subproject is a list file the
+pager displays the list of texts from that file.  List files are
+special-purpose files created by the projects which simply give lists
+of ID numbers. Example: <code class="example"><esp:link url="http://oracc.org/ckst/middle_assyrian"/></code>.</li>
+<li>Otherwise the WORDS are used as search terms for the project
+catalogue. Example: <code class="example"><esp:link url="http://oracc.org/ckst/middle
+assyrian"/></code> (note the space instead of an underscore).</li>
+</ul>
+</dd>
+
+</dl>
+
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

@@ -1,0 +1,15 @@
+<project n="doc" 
+    xmlns="http://oracc.org/ns/xpd/1.0"
+    xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <name>Oracc Documentation</name>
+  <abbrev>DOC</abbrev>
+  <project-type>oracc</project-type>
+  <type>portal</type>
+  <public>yes</public>
+  <logo type="text">DOC</logo>
+  <blurb></blurb>
+  <image></image>
+  <image-alt></image-alt>
+  <option name="esp2" value="yes"/>
+  <option name="project-hide" value="yes"/>
+</project>

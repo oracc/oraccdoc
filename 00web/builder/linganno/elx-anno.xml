@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Elamite</esp:name>
+<esp:title>ELX: Oracc Linguistic Annotation for Elamite</esp:title>
+<html><head/><body>
+<p class="firstpara">This document provides an overview of
+  language-specific annotation conventions for Elamite used in Oracc.
+
+</p>
+
+
+
+<esp:h>Divided Signs</esp:h>
+
+<p>A very few signs may be split in the middle; these are annotated
+using the ATF <code>@d</code> ("divided") notation as follows:</p>
+
+<table class="pretty">
+<tr><td>ANŠE</td><td>_ansze@d_</td></tr>
+<tr><td>NUMUN</td><td>_numun@d_</td></tr>
+<tr><td>GEŠTIN</td><td>_gesztin@d_</td></tr>
+</table>
+
+<esp:h>Split Words</esp:h>
+
+<p>A new notation has been added to ATF to support splitting words
+over lines.  We call the first part of the split word the head, and
+the following parts the continuations; a split word may be written
+over several lines, and thus may have multiple continuations.</p>
+
+<p>A split word head always ends with the character sequence
+<code>-;</code> (hyphen semi-colon), even if the split occurs before a
+determinative.  A split word continuation always begins with a hyphen,
+even if the split occurs before a determinative.  A split word
+continuation which is not the final element in the chain always ends
+with <code>-;</code>.</p>
+
+<pre class="cookbook">
+1. a-;
+2. -ba-;
+3. -am3
+</pre>
+
+<p>Any structural labels are permitted between the lines containing
+split words.</p>
+
+<esp:h>Number Notations</esp:h>
+
+<p>In general Elamite numbers are notated in the CDLI style as <code class="cookbook">1(u) 1(disz)</code>, etc.</p>
+
+<p>Several unusual signs are used for certain numbers, and these are
+annotated using the ATF <code>@v</code> ("variant") notation; in this
+case, the variation is relative to the normal Sumero-Akkadian
+cuneiform practice rather than implying variation within Elamite
+practice.</p>
+
+<table class="pretty">
+<caption>Elamite numbers and CDLI transliterations</caption>
+<tr><td><esp:image position="inline" file="linganno/elx-1third.png" description="elx-1third"/></td><td>1/3(disz)@v</td><td>1/3</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1half.png" description="elx-1half"/></td><td>1/2(disz)</td><td>1/2</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-2thirds.png" description="elx-2thirds"/></td><td>2/3(disz)@v</td><td>2/3</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1disz.png" description="elx-1disz"/></td><td>1(disz)</td><td>1</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-2disz.png" description="elx-2disz"/></td><td>2(disz)</td><td>2</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-3disz.png" description="elx-3disz"/></td><td>3(disz)</td><td>3</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-4disz.png" description="elx-4disz"/></td><td>4(disz)@v</td><td>4</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-5disz.png" description="elx-5disz"/></td><td>5(disz)</td><td>5</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-6disz.png" description="elx-6disz"/></td><td>6(disz)</td><td>6</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-7disz.png" description="elx-7disz"/></td><td>7(disz)</td><td>7</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-8disz.png" description="elx-8disz"/></td><td>8(disz)</td><td>8</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-9disz.png" description="elx-9disz"/></td><td>9(disz)@v</td><td>9</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1u.png" description="elx-1u"/></td><td>1(u)</td><td>10</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-2u.png" description="elx-2u"/></td><td>2(u)</td><td>20</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-3u.png" description="elx-3u"/></td><td>3(u)</td><td>30</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-4u.png" description="elx-4u"/></td><td>4(u)@v</td><td>40</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-5u.png" description="elx-5u"/></td><td>5(u)@v</td><td>50</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1shu.png" description="elx-1shu"/></td><td>1(szu)</td><td>60</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1gesz1u.png" description="elx-1gesz1u"/></td><td>1(gesz2) 1(u)</td><td>70</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1gesz2u.png" description="elx-1gesz2u"/></td><td>1(gesz2) 2(u)</td><td>80</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1gesz3u.png" description="elx-1gesz3u"/></td><td>1(gesz2) 3(u)</td><td>90</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1disz1me.png" description="elx-1disz1me"/></td><td>1(disz) _me_</td><td>100</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1disz1lim.png" description="elx-1disz1lim"/></td><td>1(disz) _lim_</td><td>1000</td></tr>
+<tr><td><esp:image position="inline" file="linganno/elx-1disz1pi.png" description="elx-1disz1pi"/></td><td>1(disz) _pi_</td><td>10000</td></tr>
+</table>
+
+<esp:h>Sign Values with sub-zero</esp:h>
+
+<p>In the last column are values in Borger ABZ; I have not yet checked
+Borger MZL to see if the not-in-list (nil) values are there.</p>
+
+<pre>
+  dam0   = EL               (nil)
+  mak0   = KUR              (nil)
+  maz0   = MASZ2            maz2
+  muk0   = SAL              muk3
+  muz0   = MUSZ             (nil)
+  rak0   = |SAL+BAR|        (nil)
+  ram0   = EL               (nil)
+  szab0  = "SZAB6"          szab6
+  szap0  = "SZAB6"          szap6
+  szib0  = ESZ              (nil)
+  szip0  = ESZ              (nil)
+  zik0   = ZAK              (nil)
+  zil0   = TAR              zil3
+  zir0   = SZUD             zir4
+</pre>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Advanced search</esp:name>
+<esp:title>Advanced search in Oracc corpora</esp:title>
+<html><head/><body>
+
+<p class="firstpara">In Oracc corpora you can carry out complex combinations of context-dependent searches. This page describes how to use the Advanced Search tool.</p>
+
+<p><esp:link bookmark="h_whatyousee">What you see</esp:link> | <esp:link bookmark="h_transliteration">Transliteration</esp:link> | <esp:link bookmark="h_lemmatisations">Lemmatisations</esp:link> | <esp:link bookmark="h_translation">Translation</esp:link> | <esp:link bookmark="h_catalogue">Catalogue</esp:link></p>
+
+<esp:h>What you see</esp:h>
+<p>When you click on the <code>Advanced Search</code> button at the top of a corpus <esp:link page="visitor-userguide" bookmark="h_theheader">header</esp:link>, a pop-up window appears. (Be patient; it may take a few seconds to load.) Under the heading "Oracc Advanced Search" you will see six different elements:</p>
+<dl>
+<dt>Results summary</dt>
+<dd>This line of plain text tells you how many results have been returned in the <esp:link page="visitor-userguide" bookmark="h_outlinemodemainpane">main pane</esp:link> of your browser window. It also gives the search code in plain text in a grey box below. If you like you can copy, save and perhaps modify those snippets of search code for re-use in the main <esp:link page="visitor-userguide" bookmark="h_thesearchbar">Search Box</esp:link> if you want to replicate your search later.</dd>
+<dt>Search index "transliterations" drop-down menu</dt>
+<dd>Use this to choose whether to search in the transliterations, lemmatisations, translations, or catalogue data of the corpus. The options next to the search box below will change, depending on which you select.</dd>
+<dt>Search box and associated options</dt>
+<dd>The basic search conventions are described on the <esp:link page="visitor-searching">page about simple searches</esp:link>. The options offered in the associated drop-down menus are <esp:link bookmark="h_searchOptions">detailed below</esp:link>.</dd>
+<dt>"Combine with another search" button</dt>
+<dd>Use this to add one or more extra search parameters. The options are <esp:link bookmark="h_combinewithanothersearch">detailed below</esp:link>.</dd>
+<dt>Search button</dt>
+<dd>Click on this only when you have entered your search criteria in the box(es) above. The results of the search will appear in the <esp:link page="visitor-userguide" bookmark="h_outlinemodemainpane">main pane</esp:link> of your browser window, not in the pop-up itself.</dd>
+<dt>Use <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/aboutcuneiform/computercuneiform/#h_unicodetransliterationandnormalisation">Unicode</esp:link> tick-box</dt>
+<dd>This is set to yes by default. Un-check this box if you do not have a suitable <esp:link page="visitor-fonts">Unicode font</esp:link> and <esp:link page="visitor-keyboards">keyboard</esp:link> installed on your computer.</dd>
+</dl>
+<esp:h>Search Options</esp:h>
+<esp:sh>Transliteration</esp:sh>
+<p>Advanced transliteration searches take the textual line as the basic search unit. When you search within transliterations you can specify the positions and roles of the sign (sequence(s)) you are searching for:</p>
+<dl>
+<dt>"Any position" menu</dt>
+<dd>Use this to specify where within a word or line the sign (sequence) you are searching for occurs. The default is <code>Any position</code>, but you may also choose to look for a sign (sequence) at the start or end of a word, or the start or end of a line.</dd>
+<dt>"Any role" menu</dt>
+<dd>Use this if you wish to search only for logograms, sign names, syllable signs, determinatives or phonetic complements. [ONLY THE FIRST TWO CURRENTLY ON OFFER.] The default is <code>Any role</code>.</dd>
+<dt>+/- button</dt>
+<dd>Use this to add or remove one or more further transliteration search terms. (Use <code>Combine with another search</code> as well or instead if you wish to further constrain your single search term.)</dd>
+<dt>"and" drop-down menu</dt>
+<dd>Use this to choose whether you want both your old and new search terms to be found (using <code>and</code>), either or both of them (using <code>or</code>), or the previous one(s) to the exclusion of this one (using <code>without</code>).</dd>
+<dt>"Following" drop-down menu</dt>
+<dd>Use this to specify whether your additional search term(s) should follow or precede the first, or whether it/they can occur on either side of it.</dd>
+<dt>Number box and "Word" drop-down menu</dt>
+<dd>Use these two tools to specify how close or far from the first search term your second term may be. You may choose to count words, lines, texts, or signs.</dd>
+</dl>
+ 
+<esp:sh>Lemmatisations</esp:sh>
+<p>Advanced lemmatisation searches use the sentence as the basic search unit. You can specify which sort of lemmatisation data to search in:</p>
+<dl>
+<dt>"Any" drop-down menu</dt>
+<dd>Choose whether to search the Sumerian/Akkadian (with <code>Citation Form/Normalization</code>), the English equivalents (<code>Guideword/Senses</code>), or -- for Sumerian only -- the morphology. <code>Morphology 1</code> allows you to search the morphemes themselves, while <code>Morphology 2</code> enables you to search the morphemic glosses. See the <esp:link url="http://oracc.museum.upenn.edu/etcsri/">ETCSRI</esp:link> documentation on <esp:link url="http://oracc.museum.upenn.edu/etcsri/parsing">morphological parsing</esp:link>, <esp:link url="http://oracc.museum.upenn.edu/etcsri/glossing/">morphological glossing</esp:link> and <esp:link url="http://oracc.museum.upenn.edu/etcsri/searching/">searching ETCSRI</esp:link> for more information.</dd>
+<dt>"End" tick-box</dt>
+<dd>Use this in conjuction with the <code>Any</code> option if you want to constrain your search to the final morpheme of a word (particularly useful for Sumerian).</dd>
+<dt>+/- button</dt>
+<dd>Use this to add or remove one or more further transliteration search terms. (Use <code>Combine with another search</code> as well or instead if you wish to further constrain your single search term.)</dd>
+<dt>"and" drop-down menu</dt>
+<dd>Use this to choose whether you want both your old and new search terms to be found (using <code>and</code>), either or both of them (using <code>or</code>), or the previous one(s) to the exclusion of this one (using <code>without</code>).</dd>
+<dt>"Following" drop-down menu</dt>
+<dd>Use this to specify whether your additional search term(s) should follow or precede the first, or whether it/they can occur on either side of it.</dd>
+<dt>Number box and "Word" drop-down menu</dt>
+<dd>Use these two tools to specify how close or far from the first search term your second term may be. You may choose to count words, sentences, or texts.</dd>
+</dl>
+
+<esp:sh>Translation</esp:sh>
+<p>The default search unit for translations is the paragraph or line (depending on the structure of the translation). You can refine translation searches by adding further search terms:</p>
+<dl>
+<dt>+/- button</dt>
+<dd>Use this to add or remove one or more further transliteration search terms. (Use <code>Combine with another search</code> as well or instead if you wish to further constrain your single search term.)</dd>
+<dt>"and" drop-down menu</dt>
+<dd>Use this to choose whether you want both your old and new search terms to be found (using <code>and</code>), either or both of them (using <code>or</code>), or the previous one(s) to the exclusion of this one (using <code>without</code>).</dd>
+</dl>
+
+<esp:sh>Catalogue</esp:sh>
+<p>You can choose which of the core fields to search in, and/or search in any catalogue field:</p>
+<dl>
+<dt>"Any field" drop-down menu</dt>
+<dd>Choose whether to constrain your search to one of the four core fields--<code>designation</code>, <code>provenience</code> (provenance), <code>genre</code>, or <code>period</code>--or whether to leave it set to <code>any field</code>.</dd>
+<dd>Alternatively, you can enter the name of the field directly into the search box, followed by a colon and the keyword, as you can with the <esp:link page="visitor-searching" bookmark="h_searchingthecataloguedata">simple search box</esp:link> (e.g., <code class="example">genre:medical</code>).</dd> 
+<dt>+/- button</dt>
+<dd>Use this to add or remove one or more further transliteration search terms. (Use <code>Combine with another search</code> as well or instead if you wish to further constrain your single search term.)</dd>
+<dt>"and" drop-down menu</dt>
+<dd>Use this to choose whether you want both your old and new search terms to be found (using <code>and</code>), either or both of them (using <code>or</code>), or the previous one(s) to the exclusion of this one (using <code>without</code>).</dd>
+</dl>
+
+<esp:sh>Combine with another search</esp:sh>
+<p>When you click the "Combine with another search button" further options appear:</p>
+<dl>
+<dt>"Only include" drop-down menu</dt>
+<dd>Use this menu to choose whether you want both your old and new search criteria to be found (using <code>only include</code>), either or both of them (using <code>also include</code>), or the previous one(s) to the exclusion of this one (using <code>exclude</code>).</dd>
+<dt>"transliterations" drop-down menu</dt>
+<dd>This menu enables you to choose whether to search in the transliterations, lemmatisations, translations, or catalogue data of the corpus, and to access the associated <esp:link bookmark="h_searchoptions">search options</esp:link>.</dd>
+<dt>"Remove this search" button</dt>
+<dd>Use this to clear the new search criteria and start again.</dd>
+</dl>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html></esp:page>

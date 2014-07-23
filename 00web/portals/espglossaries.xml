@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Glossaries</esp:name>
+<esp:title>Creating Glossaries, Lists of Technical Terms and Indices in ESP Pages</esp:title>
+
+<html><head/><body>
+
+<p class="firstpara">Glossaries are mostly used for lists of People, Gods and Places which recur throughout an ESP site and/or an Oracc text corpus. There is also a similar set-up for <esp:link bookmark="h_listoftechnicalterms">lists of Technical Terms</esp:link> and for a site-wide <esp:link bookmark="h_indexfunctionality">Index</esp:link>.</p>
+
+<p><esp:link bookmark="h_glossary">Glossary</esp:link> | <esp:link bookmark="h_addingdefinitions">Adding definitions</esp:link> | <esp:link bookmark="h_referringtoaglossaryentry">Referring to a glossary entry</esp:link> | <esp:link bookmark="h_crossreferencing">Cross referencing</esp:link> | <esp:link bookmark="h_listoftechnicalterms">List of technical terms</esp:link> | <esp:link bookmark="h_indexfunctionality">Index functionality</esp:link> | <esp:link bookmark="h_creatingentriesfortheindex">Creating entries for the index</esp:link></p>
+
+<esp:h>Glossary</esp:h>
+<p>ESP contains glossary functionality, allowing you to create a list of defined terms and link each use of the term back to this list. It is mostly used to make lists of People, Gods and Places.</p>
+
+<p>Adding glossary functionality is carried out in two steps:</p>
+<ol>
+<li>making a new glossary term and definition pair using the <code>&lt;esp:definition&gt;</code>  element</li> 
+<li>a reference to the glossary entry where that word occurs in your text, using the <code>&lt;esp:glossary&gt;</code> element.</li>
+</ol>
+
+<esp:sh>Adding definitions</esp:sh>
+<p>The glossary is generated from the file called <code>glossarypage.xml</code>, which contains the one occurrence of the element <code><esp:bookmark id="esp:glossary-list"/>&lt;esp:glossary-list&gt;</code>.</p>
+
+<p>All glossary term and definition pairs should be created inside <code>&lt;esp:glossary-list&gt;</code> using  the <code>&lt;esp:definition&gt;</code> element.</p>
+
+<p>The specification of <code><esp:bookmark id="esp:definition"/>&lt;esp:definition&gt;</code> is given below:</p>
+
+<pre class="listing">&lt;esp:definition term="example">
+Definition of your glossary term
+&gt;/esp:definition></pre>
+
+<dl>
+<dt><code>term</code></dt>
+<dd>Mandatory. The term to be defined, which appears in the glossary list. It is matched with the <code>term</code> attributes (or content) of <esp:link bookmark="esp:glossary"><code>&lt;esp:glossary&gt;</code></esp:link> elements.</dd>
+</dl>
+
+<p>The  <code>&lt;esp:definition&gt;</code> can contain other elements (including <esp:link bookmark="esp:techterms"><code>&lt;esp:techterms&gt;</code></esp:link> and <esp:link bookmark="esp:glossary"><code>&lt;esp:glossary&gt;</code></esp:link>, such that glossary entries can reference techterms entries or other glossary entries).  See the section on <esp:link bookmark="h_crossreferencing">cross-referencing the glossary and technical terms lists</esp:link>.</p>
+
+<esp:sh>Referring to a glossary entry</esp:sh>
+
+<p>To create a reference in the text to a glossary entry, use the <code><esp:bookmark id="esp:glossary"/>&lt;esp:glossary&gt;</code> element, as outlined below:</p>
+
+<pre class="listing">&lt;esp:glossary
+	term="example"
+>
+	Inline content
+&lt;/esp:glossary></pre>
+
+<dl>
+<dt><code>term</code></dt>
+<dd>Optional. The <code>term</code> attribute specifies the glossary term to link to. It is used when the text on the page is not identical to the term in the glossary.  For example: <code class="example">&lt;esp:glossary term="astrolabe">Astrolabe&lt;/esp:glossary&gt;</code> if your term in the text is capitalized, or <code class="example">&lt;esp:glossary term="astrolabe">astrolabes&lt;/esp:glossary&gt;</code> if your term in the text is in plural.</dd>
+</dl>
+
+<p>If no <code>term</code> attribute is given, the content of the element is used as the term.</p>
+
+<esp:sh>Cross referencing</esp:sh>
+<p>A glossary definition can cross-reference other glossary entries or entries in the technical terms list (see <esp:link bookmark="h_listoftechnicalterms">below</esp:link> for more on the technical terms list).  Thus, the element <code>&lt;esp:definition&gt;</code> can contain the elements <code>&lt;esp:glossary&gt;</code> and <code>&lt;esp:techterms&gt;</code>, which reference glossary and techterms entries respectively.</p>
+
+<esp:h>List of technical terms</esp:h>
+<p>The technical terms functionality operates in the same way as the glossary to provide a reference list of technical terms.  It was added to ESP's forerunner electrostatic by Ruth Horry in 2007 for the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp">Knowledge &amp; Power</esp:link> website.</p>
+
+<p>Adding technical terms (henceforth called ‘techterms’) functionality involves two steps:</p>
+<ol>
+<li>the creation of a new technical term and definition pair using the <code>&lt;esp:termsdefinition&gt;</code>  element;</li>
+<li>a reference to the glossary entry where that word occurs in your text, using the <code>&lt;esp:techterms&gt;</code> element.</li>
+</ol>
+
+<esp:sh>Adding definitions</esp:sh>
+
+<p>The technical terms list is generated from the file called <code>techterms.xml</code>, which contains the one occurrence of the element <code><esp:bookmark id="esp:techterms-list"/>&lt;esp:techterms-list&gt;</code>.</p>
+
+<p>All techterms term and definition pairs should be created inside <code>&lt;esp:techterms-list&gt;</code> using  the <code>&lt;esp:termsdefinition&gt;</code> element.</p>
+
+
+<p>The specification of <code><esp:bookmark id="esp:termsdefinition"/>&lt;esp:termsdefinition&gt;</code> is given below:</p>
+
+<pre class="listing">&lt;esp:termsdefinition term="example">
+Definition of your techterms term
+&lt;/esp:termsdefinition></pre>
+
+<dl>
+<dt><code>term</code></dt>
+<dd>Mandatory. The term to be defined, which appears in the techterms list. It is matched with the <code>term</code> attributes (or content) of <code>&lt;esp:techterms&gt;</code> elements.</dd>
+</dl>
+
+<p>The  <code>&lt;esp:termsdefinition&gt;</code> element can contain other elements (including <code>&lt;esp:glossary&gt;</code> and <code>&lt;esp:techterms&gt;</code>), such that techterms entries can reference glossary entries or other techterms entries.  See  the section on <esp:link bookmark="h_crossreferencing">cross-referencing the glossary and technical terms lists</esp:link>.</p>
+
+<esp:sh>Referring to a techterms entry</esp:sh>
+
+<p>To create a reference in the text to a techterms entry, use the <code><esp:bookmark id="esp:techterms"/>&lt;esp:techterms&gt;</code> element, as outlined below:</p>
+
+<pre class="listing">&lt;esp:techterms
+	term="example"
+>
+	Arbitrary inline content
+&lt;/esp:techterms></pre>
+
+<dl>
+<dt><code>term</code></dt>
+<dd>Optional. The <code>term</code> attribute specifies the techterms term to link to. It is used when the text on the page is not identical to the term in the glossary.  For example: <code class="example">&lt;esp:techterms term="astrolabe"&gt;Astrolabe&lt;/esp:techterms&gt;</code> if your term in the text is capitalized, or <code class="example">&lt;esp:techterms term="astrolabe"&gt;astrolabes&lt;/esp:glossary&gt;</code> if your term in the text is in plural.</dd>
+</dl>
+<p>If no <code>term</code> attribute is given, the content of the element is used as the term.</p>
+
+<esp:h>Index functionality</esp:h>
+
+<p>ESP can create an index of terms used on the site and allows cross referencing between them.  Indexing is done using the <code>&lt;esp:index&gt;</code> element.</p>  
+
+<p>When you index a term that occurs on two different pages, a cross reference (XR) graphic is inserted next to the term.  Clicking on the XR graphic takes you to the index page, listing all of the pages where this term occurs.</p>
+
+<esp:sh>The <code>indexpage.xml</code> file</esp:sh>
+<p>The file <code>indexpage.xml</code> contains the single instance of the element <code><esp:bookmark id="esp:index-list"/>&lt;esp:index-list/&gt;</code>, from which the index is generated.  This element is empty.  No index terms should be placed on this page.  The index is automatically generated from the instances of <code>&lt;esp:index&gt;</code> within the text.</p>
+
+<p>The <code>indexpage.xml</code> file should contain the following code:</p>
+
+<pre class="cookbook">&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	&lt;esp:name>Index&lt;/esp:name&gt;
+
+	&lt;esp:title>Site index&lt;/esp:title&gt;  (any arbitrary name)
+
+	&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;
+		&lt;esp:index-list/&gt;
+	&lt;/body&gt;&lt;/html&gt;
+
+&lt;/esp:page&gt;</pre>
+
+<esp:sh>Creating entries for the index</esp:sh>
+<p>Entries in the index are created using the <code><esp:bookmark id="esp:index"/>&lt;esp:index&gt;</code> element.  If there is more than one entry for the index term, a cross reference to that term is created in the index.</p>
+
+<pre class="listing">&lt;esp:index
+	term="example"
+>
+	Arbitrary inline content
+&lt;/esp:index></pre>
+
+<dl>
+<dt><code>term</code></dt>
+<dd>Optional. The term that is being indexed. Used when the term on the page is not identical to the term in the index—for example, if it is capitalized (<code class="example">&lt;esp:glossary term="astrolabe">Astrolabe&lt;/esp:glossary&gt;</code>) or in the plural (<code class="example">&lt;esp:glossary term="astrolabe"&gt;astrolabes&lt;/esp:glossary&gt;</code>).</dd>
+</dl>
+<p>If no <code>term</code> attribute is given, the content of the element is used as the term.</p>
+</body></html>
+</esp:page>

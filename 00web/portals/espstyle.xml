@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Style Guide</esp:name>
+<esp:title>ESP Style Guide</esp:title>
+
+<html><head/><body>
+
+<p class="firstpara">This page describes how to write clear and accessible portal pages. It assumes that you know how to use Emacs and ESP and are familiar with the basics of HTML.</p>
+
+<p><esp:link bookmark="h_readership">Readership</esp:link> | <esp:link bookmark="h_pagenamesandnamingconventions">Page names</esp:link> | <esp:link bookmark="h_organisingprinciples">Organising principles</esp:link>  | <esp:link bookmark="h_selectingimagesandwritingcaptions">Images and captions</esp:link> | <esp:link bookmark="h_bibliography">Bibliography</esp:link> | <esp:link bookmark="h_moreonreadability">Readability</esp:link></p>
+
+<esp:h>Readership</esp:h>
+<p>Who are you writing for? Target your style and content to a particular readership (not "the general public"!) but bear in mind that anyone with an internet connection can access your site. Are you expecting that entry-level undergraduates, research students, fellow-specialists, university teachers, for instance will be using the site? It is useful to address both students and teachers, perhaps with a separate section with suggestions for lectures, reading classes, project work, essays, etc. </p>
+
+<p>However, because of the internet's inherent accessibility, you must also bear in mind that many unexpected people will also find your site. They may not read English well, and almost certainly will not know as much about your subject as your target readers. Try to limit your use of jargon and use the People, Gods, Places and Technical Terms lists, along with other supports (maps, timelines, etc.) to make your work as accessible as possible.</p> 
+
+<p>The following suggestions are also aimed at increasing the readability of your ESP site.</p>
+
+<esp:h>Page names and naming conventions</esp:h>
+
+<p>Use the following naming conventions to keep the site navigation simple and to prevent errors during site rebuilds:</p>
+
+<ul>
+<li>The page name is given by <esp:link page="esp-pages" bookmark="esp:name"><code>&lt;esp:name></code></esp:link>. Keep this short and meaningful as it will appear in the navigation menu and also becomes the page URL.</li>
+
+<li>The page title is given by <esp:link page="esp-pages" bookmark="esp:title"><code>&lt;esp:title></code></esp:link>. This text can be much longer than that given in <code>&lt;esp:name></code>.</li>
+
+<li>Links to internal pages should use the short page id defined in the <esp:link page="esp-setup" bookmark="h_sitestructure"><code>&lt;struct:page></code></esp:link> tag in <code>structure.xml</code>. See the documentation on internal links.</li>
+
+<li>
+Use lowercase only for all file names (e.g. <code>assurnasirpals-palace.xml</code>) and short page ids (e.g. <code>&lt;esp: link page="assurnasirpals-palace"></code>). Do not use spaces, as this will cause errors during site rebuild. Instead, separate words with an underscore or a hyphen (i.e. <code>BM-92668.jpg</code> and not <code>BM 92668.jpg</code>).</li>
+
+<li>Do not use any special characters (ṣ, š, etc.) within <code>&lt;esp:name></code> as they will not display as part of a URL. Special characters are fine to use within <code>&lt;esp:title></code> though.</li>
+</ul>
+
+<esp:h>Organising principles</esp:h>
+<dl>
+<dt>Upper-level pages</dt>
+<dd>Think hierarchically, not linearly when planning website structure: introductory pages to sections should give an overview of the whole section. Using <code>&lt;dl></code> lists can be useful for this, with the <code>&lt;dt></code> serving as a link to the subpage and the <code>&lt;dd></code> containing a short description of what the reader will find there.</dd>
+<dt>Lower-level pages</dt>
+<dd>However, search engines allow visitors to enter websites on any page. Make sure that each page contains enough contextual information to work as a self-contained entity. Ensure that all sub-pages have a prominent link early on in the text to the appropriate introductory page.</dd>
+
+<dt>First paragraphs</dt>
+<dd>On the same principle, first paragraphs should give overviews of the whole page, with seamless in-text links to what comes next. Tag first paragraphs as <code class="cookbook">&lt;p class="firstpara"></code>.</dd>
+
+<dt>Headings</dt>
+<dd>Include a short and enticing heading for each paragraph or section. This help your reader to navigate around the page and encourage them to read on.</dd>
+
+<dt>Page menus</dt>
+<dd>If the page is particularly long, add a short menu of page headings immediately after the first paragraph, perhaps like this:
+<pre class="example">&lt;p> &lt;esp:link bookmark="h_thing1">Thing 1&lt;/esp:link> | &lt;esp:link bookmark="h_thing2">
+Thing 2&lt;/esp:link> | etc.&lt;/p></pre></dd>
+
+<dt>Paragraph structure</dt>
+<dd>Think about what users need to know and when. Paragraphs should be short, and longer quotes should be blocked using <code>&lt;blockquote></code>. Think about how pages end too.</dd>
+
+<dt>Sentences</dt>
+<dd>Above all, keep your sentences short and simple. Avoid the passive voice whenever possible, and try to write in a lively and accessible style.</dd>
+
+<dt>Images</dt>
+<dd>Do not start a page with an image; the checker will flag this as an error.</dd>
+<dd>Images and their captions should tell a story, preferably complementary to material in the main text. Don't refer explicitly to images in the main text, but link to them instead. See more below on <esp:link bookmark="h_selectingimagesandwritingcaptions">selecting images and writing captions</esp:link>.</dd>
+
+<dt>Glossaries</dt>
+<dd>Compile lists of People, Gods and Places, and of Technical Terms as you go: who, what, when needs further explanation? Write up two-line glossary entries as you go in a separate file, ready to go in the <code><esp:link page="espglossaries" bookmark="esp:glossary-list">&lt;esp:glossary-list></esp:link></code> and <code><esp:link page="espglossaries" bookmark="esp:techterms-list">&lt;esp:techterms-list></esp:link></code>.</dd>
+<dt>Links</dt>
+<dd>You should like to other Oracc pages by following <esp:link page="projurls">the rules given here</esp:link>. You must link to other web pages by using full URLs, not the short forms ("tiny URLs") offered by services such as tiny.cc.</dd>
+</dl>
+
+<esp:h>Selecting images and writing captions</esp:h>
+
+<p>The <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/">Knowledge and Power</esp:link> and <esp:link url="http://oracc.museum.upenn.edu/nimrud/">Nimrud</esp:link> sites use 9cm width as their standard image size. Know the standard image size chosen by your project and consider how each image will look at this size. Don't use tiny versions of very detailed images; instead consider whether a cropped section is more appropriate and eye-catching. To provide the full amount of detail, create a link to a larger version of the image.</p>
+
+<p>Image captions should stand independently from other text on the page and ideally tell a complementary story. Remember that users may choose not to read the main text first (or at all!).</p>
+
+<p>Images of museum objects should ALWAYS be captioned to include the museum name and accession number. </p>
+
+<p>Images sourced externally, e.g. from another museum's website, should be linked back to the source. Provide a link in the image caption (and also consider making the standard image into a link). Include any external credit line (with link to external credits/licensing page) as appropriate.</p>
+
+<p>Make image file-names consistent and sensible. For images of museum objects, for example, use the museum accession number and name, such as <code>BM-92668.jpg</code> rather than <code>some-random-name.jpg</code>. Consistent naming is beneficial for site maintenance and for answering image queries from end-users.</p>
+
+<p>For more technical instructions, see the page on <esp:link page="esp-images">images in ESP</esp:link>.</p>
+
+<esp:h>Bibliography</esp:h>
+<p>There are three methods to create a list of materials suggested for further reading, based on the functionality required. Each project should choose which method to use, and stick to it consistently.</p>
+
+<dl>
+<dt>One centralised bibliography</dt>
+<dd>If you want your readers to have access to a single bibliography (as in the back of a book), use links to a bookmarked bibliography.</dd>
+
+<dt>Footnote lists</dt>
+<dd>If you want to create footnoted references (as in the bottom of a book page), use the <code>referents.xml</code> file </dd>
+
+<dt>Self-contained reference lists</dt>
+<dd>If you do not want a single bibliography, but instead want to create self-contained reference lists on individual pages (as in chapter bibliographies), use the <code>referents.xml</code> file.</dd>
+</dl>
+<p>For more information, see the help page on <esp:link page="esprefs">referencing in ESP</esp:link>.</p>
+<p>Whichever method you choose, use full citation formats (such as given by the Chicago Manual of Style's <esp:link url="http://www.chicagomanualofstyle.org/tools_citationguide.html" rel="external">Quick Guide</esp:link>).  Consistent formatting is essential so as not to confuse your readers, and to adhere to normal academic standards.</p>
+<p>Don't use journal abbreviations, etc. because your readers won't necessarily know what they mean. Add links where possible to online editions/publications.</p>
+
+<esp:h>More on readability</esp:h>
+<p>Here are some useful pages about academic writing for the web, but there are also many others:</p>
+<ul>
+<li>Cambridge University Computing Service's <esp:link rel="external" url="http://web-support.csx.cam.ac.uk/courses/writing/slides/">Writing for the web</esp:link>;</li>
+<li>The University of York's <esp:link rel="external" url="http://www.york.ac.uk/communications/websites/content/writing-for-the-web/">web-writing guide</esp:link>;</li>
+<li>The University of Oxford's <esp:link rel="external" url="http://www.ox.ac.uk/web/guides/writing_for_the_web.html">Writing for the web</esp:link>.</li></ul>
+<p>For the research behind these guidelines, see for instance Jakob Nielsen's <esp:link rel="external" url="http://www.useit.com/alertbox/9710a.html">Reading on the web</esp:link>,  <esp:link rel="external" url="http://www.useit.com/alertbox/percent-text-read.html">How little do users read?</esp:link> and, most recently, <esp:link rel="external" url="http://www.nngroup.com/articles/website-reading/">Website Reading: It (Sometimes) Does Happen</esp:link>.</p>
+
+<p>Your university probably has useful guides and/or tutorials too; ask around.</p>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:author first-names="Ruth" last-name="Horry"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body>
+</html>
+</esp:page>

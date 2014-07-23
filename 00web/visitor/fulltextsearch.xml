@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Full text search</esp:name>
+<esp:title>Full Text Search in Oracc</esp:title>
+<html><head/><body>
+
+<p class="firstpara">You can use the Search Oracc box at the top right of the Oracc home page, and on several project home pages, to search intuitively across the whole of the Oracc site or across that project. This page gives some hints on how to do that most effectively.</p>
+
+<p><esp:link bookmark="h_thebasics">The basics</esp:link> | <esp:link bookmark="h_tipsandtricks">Tips and tricks</esp:link></p>
+
+<esp:h>The basics</esp:h>
+<p>The Full Text Search on the <esp:link url="http://oracc.museum.upenn.edu">Oracc home page</esp:link> is designed to be used very intuitively. Just enter one or more words in any relevant modern or ancient language (in transliteration or transcription) and see what happens. Results will be returned from text transliterations, translations, language glossaries, and portal pages across Oracc—wherever your word occurs.</p>
+
+<p>Compared to Oracc's <esp:link page="visitor-searching">corpus</esp:link>, <esp:link page="visitor-glossaries">glossary</esp:link> and <esp:link page="visitor-advanced">advanced</esp:link> search functions, the Full Text Search is quite fuzzy. It just searches for strings of characters, regardless of whether they are a whole word, or which language they are in. So although the Full Text Search is useful for locate which projects or corpora words appear in, it does not replace the much more sophisticated <esp:link page="visitor-searching">corpus</esp:link>, <esp:link page="visitor-glossaries">glossary</esp:link> and <esp:link page="visitor-advanced">advanced</esp:link> search functions.</p>
+
+<esp:h>Tips and tricks</esp:h>
+<esp:sh>Language, case and words</esp:sh>
+<ul>
+<li>Search isn't case sensitive: you can write, e.g., <code>LUGAL</code>, <code>lugal</code>, or even <code>LuGAl</code> as you like;</li>
+<li>Nor is it language sensitive, so searching for, e.g., <code>man</code> will find both the English word and the cuneifom transliteration (whether syllable or logogram);</li>
+<li>However, searching for searching for, e.g., <code>man</code> will not find (English) <code>men</code> as the corpus search does;</li>
+<li>And searching for, e.g., <code>gub</code> will also find <code>gub₂</code> and <code>gub₃</code>, etc.</li>
+</ul>
+
+<esp:sh>Vowels and consonants</esp:sh>
+<ul>
+<li>Search also ignores vowel length, so that searching for, e.g., <code>akalu</code> will find both <code>akalu</code> and <code>akālu</code>;</li>
+<li>But <code>sh</code> won't find <code>š</code> though, so we recommend having a <esp:link page="visitor-keyboards">Unicode keyboard</esp:link> installed on your computer;</li>
+
+</ul>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

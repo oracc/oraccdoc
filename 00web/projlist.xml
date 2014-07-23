@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Projects</esp:name>
+	<esp:title>List of Oracc projects</esp:title>
+
+	<html><head></head><body>
+		
+   <div class="projects">
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://www.ucl.ac.uk/sargon">AEB: Assyrian Empire Builders</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://www.ucl.ac.uk/sargon">
+            <esp:image file="/agg/aeb.png" description="Two Assyrian shield-bearers. Detail from a wall painting at the palace of Til-Barsip, room XLVII; reign of Tiglathpileser III (744-727 BC). Now in the Louvre, AO 23011 (photo by Karen Radner)"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Places the letters exchanged between Sargon II, king of Assyria (721-705 BC), and his governors and magnates in their historical and cultural context and provides resources and materials for their study.<br/>
+Directed by Karen Radner at University College London and funded by the UK <esp:link rel="external" url="http://www.ahrc.ac.uk">Arts and Humanities Research Council</esp:link>.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/amgg">AMGG: Ancient Mesopotamian Gods and Goddesses</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/amgg">
+            <esp:image file="/agg/amgg.png" description="Detail of Old Babylonian clay plaque, known as the Burney Relief or the &quot;Queen of the Night&quot; showing a naked goddess, perhaps Inana or Ereškigal. © The British Museum."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Offers information about the fifty most important Mesopotamian gods and goddesses and provides starting points for further research.<br/>
+Directed by Nicole Brisch and funded by the UK Higher Education Academy, 2011.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams">CAMS: Corpus of Ancient Mesopotamian Scholarship</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams">
+            <esp:image file="/agg/cams.png" description="Three clay figurines of protective apkallu-sages dressed in fish-cloaks, from 7th-century Nineveh (BM ME 91837)"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Editions and translations of a wide range of Mesopotamian scholarly writings, contributed by many different people and projects.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/anzu">CAMS/Anzu</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/anzu">
+            <esp:image file="/agg/cams/anzu.png" description="Front cover of State Archives of Assyria, vol. 3"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Composite transliterations of the <i>Epic of Anzu</i>, prepared by Amar Annus for the book <i>The Standard Babylonian Epic of Anzu</i> (<esp:link rel="external" url="http://www.helsinki.fi/science/saa/saact-03.html">State Archives of Assyria, Cuneiform Texts 3</esp:link>), Helsinki: The Neo-Assyrian Text Corpus Project, 2001. Lemmatisation by Philip Jones.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/ANNSTANDA">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/barutu">CAMS/Barutu</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/barutu">
+            <esp:image file="/agg/cams/barutu.png" description="The obverse of the Old Babylonian liver model BM 92668."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Texts on extispicy (divination by the entrails of sacrificed animals). Currently contains only the Old Babylonian liver model BM 92668. The ordering of the omens was determined by Ruth Horry, the transliteration and translation made by Eleanor Robson.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/gkab">CAMS/GKAB: CAMS Geography of Knowledge Corpus</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/gkab">
+            <esp:image file="/agg/cams/gkab.png" description="Drawing of a detail from a tablet describing how to make a ritual kettle drum from a bull's hide, Uruk c.200 BC (TCL 6, 47)"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Editions of scholarly tablets from Huzirina, Kalhu, and Uruk for the <esp:link rel="external" url="http://oracc.museum.upenn.edu/gkab">Geography of Knowledge</esp:link> project, comprising editions and translations of a wide range of Mesopotamian scholarly writings.<br/>
+Project directed by Eleanor Robson at the University of Cambridge and funded by the UK<esp:link rel="external" url="http://www.ahrc.ac.uk">Arts and Humanities Research Council</esp:link>, 2007-12.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/ludlul">CAMS/Ludlul</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/ludlul">
+            <esp:image file="/agg/cams/ludlul.png" description="Front cover of State Archives of Assyria, vol. 7"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Score and manuscript transliterations of <i>Ludlul bēl nēmeqi</i>, prepared by Amar Annus and Alan Lenzi for  the book <i>Ludlul Bēl Nēmeqi: The Standard Babylonian Poem of the Righteous Sufferer</i><esp:link rel="external" url="http://www.helsinki.fi/science/saa/saact-07.html">(State Archives of Assyria, Cuneiform Texts 7)</esp:link>,  Helsinki: The Neo-Assyrian Text Corpus Project, 2010.<br/>
+<esp:link rel="external" url="http://www.eisenbrauns.com/item/ANNLUDLUL">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/selbi">CAMS/SelBI: CAMS/Seleucid Building Inscriptions</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cams/selbi">
+            <esp:image file="/agg/cams/selbi.png" description="Close-up of lapis-coloured glazed bricks in the remains of the Irigal temple in Uruk, 2001. Photo by Eleanor Robson."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Third-century BC building inscriptions, from Borsippa and Uruk. Edition of the Antiochus (Borsippa) Cylinder by Kathryn Stevens; edition of the Anu-uballiṭs' inscriptions from Uruk by Eleanor Robson.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cdli">CDLI: The Cuneiform Digital Library Initiative</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/cdli">
+            <esp:image file="/agg/cdli.png" description="CDLI image of Proto-Cuneiform tablet from Uruk, W20367"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The foundational online cataloging and archiving project for
+    the cuneiform corpus, directed by Bob Englund at UCLA.  The Oracc presentation is based directly on
+    public CDLI data which is updated nightly.
+  </p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/contrib">Contributions</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/contrib">
+            <esp:image file="/agg/contrib.png" description=""/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Data contributed to Oracc for reuse by others, normally under the <esp:link rel="external" url="http://http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA license</esp:link>.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/contrib/amarna">Amarna: The Amarna Texts</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/contrib/amarna">
+            <esp:image file="/agg/contrib/amarna.png" description="Shrine-stela of Amenhotep III and queen Tiye (detail), Amarna c.1340 BC. (British Museum EA 57399)"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Contributed by Shlomo Izre'el, the Amarna corpus comprises transliterations of the 380 cuneiform tablets found at Tell el-Amarna (ancient Akhetaten) in Egypt. It contains diplomatic correspondence and Akkadian scholarly works from the mid-14th century BC.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/ctij">CTIJ: Cuneiform Texts Mentioning Israelites, Judeans, and Other Related Groups</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/ctij">
+            <esp:image file="/agg/ctij.png" description="Judean captives leaving the city of Lachish to exile, ca. 701 BC."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Cuneiform texts and onomastic data pertaining to Israelites, Judeans, and related population groups during the Neo-Assyrian, Neo- and Late Babylonian, and Achaemenid Periods (744-330 BCE).<br/>
+Project directed by Ran Zadok and Yoram Cohen, and funded by the <esp:link rel="external" url="www.tau.ac.il/humanities/archaeology/ancient_israel.html">"Ancient Israel" (New Horizons) Research Program</esp:link> of Tel Aviv University.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/dcclt">DCCLT: Digital Corpus of Cuneiform Lexical Texts</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/dcclt">
+            <esp:image file="/agg/dcclt.png" description="Drawing of a list of vessels from Archaic Uruk, circa 3500 BCE"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Editions and translations of lexical texts (word lists and sign lists) from all periods of cuneiform writing<br/>Project directed by Niek Veldhuis at UC Berkeley and supported by the <esp:link rel="external" url="http://www.neh.gov">National Endowment for the Humanities</esp:link>.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/dcclt/nineveh">DCCLT/Nineveh: DCCLT/Lexical Texts in the Royal Libraries at Nineveh</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/dcclt/nineveh">
+            <esp:image file="/agg/dcclt/nineveh.png" description="Horned bull and archaizing sign list."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Nineveh provides editions of the lexical texts in the royal tablet collections discovered in the Assyrian capital. The project is supported by the <esp:link rel="external" url="http://neh.gov">NEH</esp:link> and was carried out in cooperation with the <esp:link rel="external" url="http://www.britishmuseum.org">British Museum</esp:link>.
+  </p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/dccmt">DCCMT: Digital Corpus of Cuneiform Mathematical Texts</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/dccmt">
+            <esp:image file="/agg/dccmt.png" description="Photo of an Old Babylonian school exercise on calculating the area of a triangle (Ashmolean 1931.91)"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Catalogue of around a thousand published cuneiform mathematical tablets, with several hundred transliterations and translations.<br/>
+Project run by Eleanor Robson at the University of Cambridge.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://psd.museum.upenn.edu">ePSD: electronic Pennsylvania Sumerian Dictionary</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://psd.museum.upenn.edu">
+            <esp:image file="/agg/epsd.png" description="Detail photo of an ancient forerunner of a Sumerian dictionary, Nippur, circa 1730 BCE"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">A dictionary of the Sumerian
+  language which aims to be useful to non-specialists as well as
+  Sumerologists.<br/>
+Directed by Steve Tinney at the University of Pennsylvania and funded by the <esp:link rel="external" url="http://www.neh.gov">National Endowment for the Humanities</esp:link>.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/etcsri">ETCSRI: Electronic Text Corpus of Sumerian Royal Inscriptions</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/etcsri">
+            <esp:image file="/agg/etcsri.png" description="Sculpted head of Gudea of Lagash with turban in the Louvre (AO 13). Photo by Gábor Zólyomi"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">An annotated,
+  grammatically and morphologically analyzed, transliterated,
+  trilingual (Sumerian-English-Hungarian), parallel corpus of all
+  Sumerian royal inscriptions.<br/>
+Directed by Gábor Zólyomi at Eötvos Loránd University, Budapest and funded by the <esp:link rel="external" url="http://www.otka.hu/?set_lang=991">Hungarian Scientific Research Fund (OTKA)</esp:link>.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/hbtin">HBTIN: Hellenistic Babylonia: Texts, Iconography, Names</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/hbtin">
+            <esp:image file="/agg/hbtin.png" description="&#10;  A personal seal stamped into a cuneiform tablet from Hellenistic Uruk (BM 105203, detail).&#10;  "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Cuneiform texts, iconography and onomastic data from Hellenistic Babylonia, primarily from Uruk. HBTIN texts form the demonstrator corpus of the <esp:link rel="external" url="http://berkeleyprosopography.org/">Berkeley Prosopography Service</esp:link> (BPS).<br/>
+Directed by Laurie Pearce at UC Berkeley.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/knpp/">K&amp;P: Knowledge and Power in the Neo-Assyrian Empire</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/knpp/">
+            <esp:image file="/agg/knp.png" description="An Assyrian king with his scribes and scholars, as imagined in the mid-19th century. (A.H. Layard, A Second Series of the Monuments of Nineveh, London 1853, pl. 2 detail, after a sketch by J. Fergusson). "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Presents Neo-Assyrian scholars' letters, queries, and reports to their kings in seventh-century Nineveh and provides resources to support their use in undergraduate teaching.<br/>
+Directed by Karen Radner at University College London and Eleanor Robson at the University of Cambridge; funded by the UK <esp:link rel="external" url="http://www.heacademy.ac.uk/">Higher Education Academy</esp:link>, 2007-10.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/nimrud">Nimrud: Materialities of Assyrian Knowledge Production</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/nimrud">
+            <esp:image file="/agg/nimrud.png" description="The Assyrian city of Nimrud, as re-imagined by its first excavator, Austen Henry Layard (detail)."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">A portal to all things related to the ancient Assyrian city of Nimrud (Kalhu/Calah), on Oracc and beyond. Explores how scientific and historical knowledge is made from archaeological objects.<br/>Directed by Eleanor Robson at the University of Camrbidge and funded by the UK <esp:link rel="external" url="http://www.ahrc.ac.uk/">Arts and Humanities Research Council</esp:link>.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/ogsl">OGSL: Oracc Global Sign List</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/ogsl">
+            <esp:image file="/agg/ogsl.png" description="LAK 25, from A. Deimel, Liste der Archaische Keilschriftzeichen."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Provides a global registry of sign names, variants and readings for use by Oracc.<br/>
+Managed by Niek Veldhuis at UC Berkeley.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/qcat">Qcat: The Q Catalogue</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/qcat">
+            <esp:image file="/agg/qcat.png" description="The letter Q; icon of the Orac Qcat project."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Provides a global registry of compositions rather than objects, supporting the creation of scores on Oracc.<br/>
+Managed by Eleanor Robson at the University of Cambridge.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rimanum">rimanum: The House of Prisoners</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rimanum">
+            <esp:image file="/agg/rimanum.png" description=""/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Rīm-Anum, king of Uruk (ca. 1741–1739 BC) revolted against Samsuiluna of Babylon, son of Hammurapi, and enjoyed a short-lived independence. The archive edited in this project derives from the house of prisoners (bīt asiri) that kept the prisoners of war. The editions and translations were prepared by Andrea Seri and accompanies her book "The House of Prisoners" (2013).
+  <br/><esp:link rel="external" url="http://www.degruyter.com/view/product/181597">Buy the book</esp:link>
+from Harrassowitz.
+  </p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap">RINAP: Royal Inscriptions of the Neo-Assyrian Period</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap">
+            <esp:image file="/agg/rinap.png" description="Excavating the Ninurta temple at Kalhu (Nimrud). Watercolor by F.C. Cooper."/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Presents fully searchable, annotated editions of the royal inscriptions of Neo-Assyrian kings Tiglath-pileser III (744-727 BC), Shalmaneser V (726-722 BC), Sargon II (721-705 BC), Sennacherib (704-681 BC), and Esarhaddon (680-669 BC).<br/>Directed by Grant Frame at the University of Pennsylvania and funded by the <esp:link rel="external" url="http://www.neh.gov">National Endowment for the Humanities</esp:link>.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap/rinap1">RINAP 1: Tiglath-pileser III and Shalmaneser V</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap/rinap1">
+            <esp:image file="/agg/rinap/rinap1.png" description="Cover image of RINAP 1"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The official inscriptions of Tiglath-pileser III (744-727 BC) and Shalmaneser V (726-722 BC), kings of Assyria, edited by Hayim Tadmor and Shigeo Yamada.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/TADROYALI">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap/rinap3">RINAP 3: Sennacherib, Part 1</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap/rinap3">
+            <esp:image file="/agg/rinap/rinap3.png" description="Cover image of RINAP 3"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Part 1 of the official inscriptions of Sennacherib (704-681 BC), king of Assyria, edited by A. Kirk Grayson and Jamie Novotny.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/GRA1ROYAL">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap/rinap4">RINAP 4: Esarhaddon</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/rinap/rinap4">
+            <esp:image file="/agg/rinap/rinap4.png" description="Cover of RINAP 4, published by Eisenbrauns"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The official inscriptions of Esarhaddon, king of Assyria (680-669 BC), edited by Erle Leichty.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/LEIROYALI">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao">SAAo: State Archives of Assyria Online</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao">
+            <esp:image file="/agg/saao.png" description="A pair of Assyrian scribes filing reports after the conquest of a Babylonian city, Nimrud, 8th century BC (BM ANE 118882)"/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The online counterpart to the <esp:link rel="external" url="http://www.helsinki.fi/science/saa/saa.html">State Archives of Assyria</esp:link> series, released with the kind permission of <esp:link rel="external" url="http://www.helsinki.fi/science/saa/">The Neo-Assyrian Text Corpus Project</esp:link> and its director Professor Simo Parpola.<br/>Associated portal sites include <esp:link rel="external" url="http://oracc.museum.upenn.edu/saa/knpp/">Knowledge and Power</esp:link> and <esp:link rel="external" url="http://www.ucl.ac.uk/sargon">Assyrian Empire Builders</esp:link>.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa01">SAAo/SAA01: The Correspondence of Sargon II, Part I: Letters from Assyria and the West</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa01">
+            <esp:image file="/agg/saao/saa01.png" description="Cover of published volume S. Parpola, The Correspondence of Sargon II, Part I: Letters from Assyria and the West (1987) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book S. Parpola, <i>The Correspondence of Sargon II, Part I: Letters from Assyria and the West</i> (State Archives of Assyria, 1), 1987.<br/>
+Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa02">SAAo/SAA02: Neo-Assyrian Treaties and Loyalty Oaths</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa02">
+            <esp:image file="/agg/saao/saa02.png" description="Cover of published volume S. Parpola and K. Watanabe, Neo-Assyrian Treaties and Loyalty Oaths (1988) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book S. Parpola and K. Watanabe, <i>Neo-Assyrian Treaties and Loyalty Oaths</i> (State Archives of Assyria, 2), 1988.<br/>
+Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa03">SAAo/SAA03: Court Poetry and Literary Miscellanea</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa03">
+            <esp:image file="/agg/saao/saa03.png" description="Cover of published volume A. Livingstone, Court Poetry and Literary Miscellanea (1989) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book A. Livingstone, <i>Court Poetry and Literary Miscellanea</i> (State Archives of Assyria, 3), 1989.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa04">SAAo/SAA04: Queries to the Sungod: Divination and Politics in Sargonid Assyria</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa04">
+            <esp:image file="/agg/saao/saa04.png" description="Cover of published volume I. Starr, Queries to the Sungod: Divination and Politics in Sargonid Assyria (1990) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book I. Starr, <i>Queries to the Sungod: Divination and Politics in Sargonid Assyria</i> (State Archives of Assyria, 4), 1990.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa05">SAAo/SAA05: The Correspondence of Sargon II, Part II: Letters from the Northern and Northeastern Provinces</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa05">
+            <esp:image file="/agg/saao/saa05.png" description="Cover of published volume G. B. Lanfranchi and S. Parpola, The Correspondence of Sargon II, Part II: Letters from the Northern and Northeastern Provinces (1990) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book G. B. Lanfranchi and S. Parpola, <i>The Correspondence of Sargon II, Part II: Letters from the Northern and Northeastern Provinces</i> (State Archives of Assyria, 5), 1990.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa06">SAAo/SAA06: Legal Transactions of the Royal Court of Nineveh, Part I: Tiglath-Pileser III through Esarhaddon</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa06">
+            <esp:image file="/agg/saao/saa06.png" description="Cover of published volume T. Kwasman and S. Parpola, Legal Transactions of the Royal Court of Nineveh, Part I: Tiglath-Pileser III through Esarhaddon (1991) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book T. Kwasman and S. Parpola, <i>Legal Transactions of the Royal Court of Nineveh, Part I: Tiglath-Pileser III through Esarhaddon</i> (State Archives of Assyria, 6), 1991.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa07">SAAo/SAA07: Imperial Administrative Records, Part I: Palace and Temple Administration</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa07">
+            <esp:image file="/agg/saao/saa07.png" description="Cover of published volume F. M. Fales and J. N. Postgate, Imperial Administrative Records, Part I: Palace and Temple Administration (1992) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book F. M. Fales and J. N. Postgate, <i>Imperial Administrative Records, Part I: Palace and Temple Administration</i> (State Archives of Assyria, 7), 1992.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa08">SAAo/SAA08: Astrological Reports to Assyrian Kings</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa08">
+            <esp:image file="/agg/saao/saa08.png" description="Cover of published volume H. Hunger, Astrological Reports to Assyrian Kings (1992) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book H. Hunger, <i>Astrological Reports to Assyrian Kings</i> (State Archives of Assyria, 8), 1992.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa09">SAAo/SAA09: Assyrian Prophecies</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa09">
+            <esp:image file="/agg/saao/saa09.png" description="Cover of published volume S. Parpola, Assyrian Prophecies (1997) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book S. Parpola, <i>Assyrian Prophecies</i> (State Archives of Assyria, 9), 1997.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa10">SAAo/SAA10: Letters from Assyrian and Babylonian Scholars</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa10">
+            <esp:image file="/agg/saao/saa10.png" description="Cover of published volume S. Parpola, Letters from Assyrian and Babylonian Scholars (1993) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book S. Parpola, <i>Letters from Assyrian and Babylonian Scholars</i> (State Archives of Assyria, 10), 1993.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa11">SAAo/SAA11: Imperial Administrative Records, Part II: Provincial and Militar Administration</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa11">
+            <esp:image file="/agg/saao/saa11.png" description="Cover of published volume F. M. Fales and J. N. Postgate, Imperial Administrative Records, Part II: Provincial and Military Administration (1995) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book F. M. Fales and J. N. Postgate, <i>Imperial Administrative Records, Part II: Provincial and Military Administration</i> (State Archives of Assyria, 11), 1995.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/FAL2IMPE">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa12">SAAo/SAA12: Grants, Decres and Gifts of the Neo-Assyrian Period</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa12">
+            <esp:image file="/agg/saao/saa12.png" description="Cover of published volume L. Kataja and R. Whiting, Grants, Decrees and Gifts of the Neo-Assyrian Period (1995) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book L. Kataja and R. Whiting, <i>Grants, Decrees and Gifts of the Neo-Assyrian Period</i> (State Archives of Assyria, 12), 1995.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/KATCLGRA">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa13">SAAo/SAA13: Letters from Assyrian and Babylonian Priests to Kings Esarhaddon and Assurbanipal</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa13">
+            <esp:image file="/agg/saao/saa13.png" description="Cover of published volume S. W. Cole and P. Machinist, Letters from Assyrian and Babylonian Priests to Kings Esarhaddon and Assurbanipal (1998) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book S. W. Cole and P. Machinist, <i>Letters from Assyrian and Babylonian Priests to Kings Esarhaddon and Assurbanipal</i> (State Archives of Assyria, 13), 1998.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa14">SAAo/SAA14: Legal Transactions of the Royal Court of Nineveh, Part II: Assurbanipal Through Sin-šarru-iškun</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa14">
+            <esp:image file="/agg/saao/saa14.png" description="Cover of published volume R. Mattila, Legal Transactions of the Royal Court of Nineveh, Part II: Assurbanipal Through Sin-šarru-iškun (2002) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book R. Mattila, <i>Legal Transactions of the Royal Court of Nineveh, Part II: Assurbanipal Through Sin-šarru-iškun</i> (State Archives of Assyria, 14), 2002.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/MATCL2LEG">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa15">SAAo/SAA15: The Correspondence of Sargon II, Part III: Letters from Babylonia and the Eastern Provinces</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa15">
+            <esp:image file="/agg/saao/saa15.png" description="Cover of published volume A. Fuchs and S. Parpola, The Correspondence of Sargon II, Part III: Letters from Babylonia and the Eastern Provinces (2001) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book A. Fuchs and S. Parpola, <i>The Correspondence of Sargon II, Part III: Letters from Babylonia and the Eastern Provinces</i> (State Archives of Assyria, 15), 2001.<br/><esp:link rel="external" url="http://www.eisenbrauns.com/item/FUCCL3COR">Buy the book</esp:link> from Eisenbrauns.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa16">SAAo/SAA16: The Political Correspondence of Esarhaddon</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa16">
+            <esp:image file="/agg/saao/saa16.png" description="Cover of published volume M. Luukko and G. Van Buylaere, The Political Correspondence of Esarhaddon (2002) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book M. Luukko and G. Van Buylaere, <i>The Political Correspondence of Esarhaddon</i> (State Archives of Assyria, 16), 2002.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa17">SAAo/SAA17: The Neo-Babylonian Correspondence of Sargon and Sennacherib</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa17">
+            <esp:image file="/agg/saao/saa17.png" description="Cover of published volume M. Dietrich, The Neo-Babylonian Correspondence of Sargon and Sennacherib (2003) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book M. Dietrich, <i>The Neo-Babylonian Correspondence of Sargon and Sennacherib</i> (State Archives of Assyria, 17), 2003.<br/>Out of print.</p>
+      </div>
+      <div class="subproject-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa18">SAAo/SAA18: The Babylonian Correspondence of Esarhaddon and Letters to Assurbanipal and Sin-šarru-iškun from Northern and Central Babylonia</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/saao/saa18">
+            <esp:image file="/agg/saao/saa18.png" description="Cover of published volume F. S. Reynolds, The Babylonian Correspondence of Esarhaddon and Letters to Assurbanipal and Sin-šarru-iškun from Northern and Central Babylonia (2003) "/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">The text editions from the book F. S. Reynolds, <i>The Babylonian Correspondence of Esarhaddon and Letters to Assurbanipal and Sin-šarru-iškun from Northern and Central Babylonia</i> (State Archives of Assyria, 18), 2003.<br/>Out of print.</p>
+      </div>
+      <div class="project-entry">
+        <h2 class="proj-head">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/xcat">Xcat: The X Catalogue</esp:link>
+        </h2>
+        <p class="proj-img">
+          <esp:link rel="external" url="http://oracc.museum.upenn.edu/xcat">
+            <esp:image file="/agg/xcat.png" description=""/>
+          </esp:link>
+        </p>
+        <p class="proj-blurb">Provides a global registry of cuneiform manuscripts, supplementary to CDLI.<br/>
+Managed by Eleanor Robson at the University of Cambridge.</p>
+      </div>
+	
+</div>
+
+
+<!-- What goes in here? -->
+
+			
+	</body></html>
+
+</esp:page>

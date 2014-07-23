@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	<esp:name>Featured Project</esp:name>
+	<esp:title>Featured Project</esp:title>
+
+	<html>
+		<head>
+		</head>
+		<body>
+		        <esp:h><esp:link url="http://www.ucl.ac.uk/sargon" rel="external">AEB: Assyrian Empire Builders</esp:link>
+        </esp:h>
+        <p>
+            <esp:image position="inline" file="/agg/aeb.png" description="Two Assyrian shield-bearers. Detail from a wall painting at the palace of Til-Barsip, room XLVII; reign of Tiglathpileser III (744-727 BC). Now in the Louvre, AO 23011 (photo by Karen Radner)"><esp:link url="http://www.ucl.ac.uk/sargon" rel="external"/></esp:image>
+          Places the letters exchanged between Sargon II, king of Assyria (721-705 BC), and his governors and magnates in their historical and cultural context and provides resources and materials for their study.<br/>
+Directed by Karen Radner at University College London and funded by the UK <esp:link url="http://www.ahrc.ac.uk" rel="external">Arts and Humanities Research Council</esp:link>.</p>
+        
+		</body>
+	</html>
+
+</esp:page>

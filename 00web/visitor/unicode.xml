@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Unicode</esp:name>
+<esp:title>Unicode characters for Cuneiform transliteration</esp:title>
+
+<html><head/><body>
+<p class="firstpara">This page lists the essential Unicode characters for
+transliterating and normalising Sumero-Akkadian cuneiform.</p>
+
+
+
+<p>  Several families of fonts
+containing all of these characters are available from <esp:link page="visitor-fonts">the fonts page</esp:link>.</p>
+<p>A collection of keyboards supporting Unicode transliterations
+implements a consistent set of input conventions across operating
+systems.  The keystrokes in the 'KEYS' column below are composed of
+the comma character (<code>,</code>) followed
+by the character typed to produce a Unicode result.</p>
+<p>For complete details please see <esp:link page="visitor-keyboards">the keyboards
+page</esp:link>.</p>
+<table class="pretty">
+<thead><tr><th>LITERAL</th><th>U+</th><th>UNICODE NAME</th><th>KEYS</th></tr></thead>
+<tbody>
+<tr><td>á</td><td>00E1</td><td>LATIN SMALL LETTER A WITH ACUTE</td></tr>
+<tr><td>é</td><td>00E9</td><td>LATIN SMALL LETTER E WITH ACUTE</td></tr>
+<tr><td>í</td><td>00ED</td><td>LATIN SMALL LETTER I WITH ACUTE</td></tr>
+<tr><td>ú</td><td>00FA</td><td>LATIN SMALL LETTER U WITH ACUTE</td></tr>
+<tr><td>Á</td><td>00C1</td><td>LATIN CAPITAL LETTER A WITH ACUTE</td></tr>
+<tr><td>É</td><td>00C9</td><td>LATIN CAPITAL LETTER E WITH ACUTE</td></tr>
+<tr><td>Í</td><td>00CD</td><td>LATIN CAPITAL LETTER I WITH ACUTE</td></tr>
+<tr><td>Ú</td><td>00DA</td><td>LATIN CAPITAL LETTER U WITH ACUTE</td></tr>
+<tr><td>ś</td><td>015B</td><td>LATIN SMALL LETTER S WITH ACUTE</td><td/></tr>
+<tr><td>Ś</td><td>015A</td><td>LATIN CAPITAL LETTER S WITH ACUTE</td><td/></tr>
+<tr><td>à</td><td>00E0</td><td>LATIN SMALL LETTER A WITH GRAVE</td></tr>
+<tr><td>è</td><td>00E8</td><td>LATIN SMALL LETTER E WITH GRAVE</td></tr>
+<tr><td>ì</td><td>00EC</td><td>LATIN SMALL LETTER I WITH GRAVE</td></tr>
+<tr><td>ù</td><td>00F9</td><td>LATIN SMALL LETTER U WITH GRAVE</td></tr>
+<tr><td>À</td><td>00C0</td><td>LATIN CAPITAL LETTER A WITH GRAVE</td></tr>
+<tr><td>È</td><td>00C8</td><td>LATIN CAPITAL LETTER E WITH GRAVE</td></tr>
+<tr><td>Ì</td><td>00CC</td><td>LATIN CAPITAL LETTER I WITH GRAVE</td></tr>
+<tr><td>Ù</td><td>00D9</td><td>LATIN CAPITAL LETTER U WITH GRAVE</td></tr>
+<tr><td>ā</td><td>0101</td><td>LATIN SMALL LETTER A WITH MACRON</td></tr>
+<tr><td>ē</td><td>0113</td><td>LATIN SMALL LETTER E WITH MACRON</td></tr>
+<tr><td>ī</td><td>012B</td><td>LATIN SMALL LETTER I WITH MACRON</td></tr>
+<tr><td>ū</td><td>016B</td><td>LATIN SMALL LETTER U WITH MACRON</td></tr>
+<tr><td>Ā</td><td>0100</td><td>LATIN CAPITAL LETTER A WITH MACRON</td></tr>
+<tr><td>Ē</td><td>0112</td><td>LATIN CAPITAL LETTER E WITH MACRON</td></tr>
+<tr><td>Ī</td><td>012A</td><td>LATIN CAPITAL LETTER I WITH MACRON</td></tr>
+<tr><td>Ū</td><td>016A</td><td>LATIN CAPITAL LETTER U WITH MACRON</td></tr>
+<tr><td>â</td><td>00E2</td><td>LATIN SMALL LETTER A WITH CIRCUMFLEX</td></tr>
+<tr><td>ê</td><td>00EA</td><td>LATIN SMALL LETTER E WITH CIRCUMFLEX</td></tr>
+<tr><td>î</td><td>00EE</td><td>LATIN SMALL LETTER I WITH CIRCUMFLEX</td></tr>
+<tr><td>û</td><td>00FB</td><td>LATIN SMALL LETTER U WITH CIRCUMFLEX</td></tr>
+<tr><td>Â</td><td>00C2</td><td>LATIN CAPITAL LETTER A WITH CIRCUMFLEX</td></tr>
+<tr><td>Ê</td><td>00CA</td><td>LATIN CAPITAL LETTER E WITH CIRCUMFLEX</td></tr>
+<tr><td>Î</td><td>00CE</td><td>LATIN CAPITAL LETTER I WITH CIRCUMFLEX</td></tr>
+<tr><td>Û</td><td>00DB</td><td>LATIN CAPITAL LETTER U WITH CIRCUMFLEX</td></tr>
+<tr><td>š</td><td>0161</td><td>LATIN SMALL LETTER S WITH CARON</td><td>,c</td></tr>
+<tr><td>Š</td><td>0160</td><td>LATIN CAPITAL LETTER S WITH CARON</td><td>,c</td></tr>
+<tr><td>ṣ</td><td>1E63</td><td>LATIN SMALL LETTER S WITH DOT BELOW</td><td>,s</td></tr>
+<tr><td>Ṣ</td><td>1E62</td><td>LATIN CAPITAL LETTER S WITH DOT BELOW</td><td>,S</td></tr>
+<tr><td>ṭ</td><td>1E6D</td><td>LATIN SMALL LETTER T WITH DOT BELOW</td><td>,t</td></tr>
+<tr><td>Ṭ</td><td>1E6C</td><td>LATIN CAPITAL LETTER T WITH DOT BELOW</td><td>,T</td></tr>
+<tr><td>ḫ</td><td>1E2B</td><td>LATIN SMALL LETTER H WITH BREVE BELOW</td><td>,h</td></tr>
+<tr><td>Ḫ</td><td>1E2A</td><td>LATIN CAPITAL LETTER H WITH BREVE BELOW</td><td>,H</td></tr>
+<tr><td>ŋ</td><td>014B</td><td>LATIN SMALL LETTER ENG</td><td>,j</td></tr>
+<tr><td>Ŋ</td><td>014A</td><td>LATIN CAPITAL LETTER ENG</td><td>,J</td></tr>
+<tr><td>×</td><td>00D7</td><td>MULTIPLICATION SIGN</td><td>,X</td></tr>
+<tr><td>ʾ</td><td>02BE</td><td>MODIFIER LETTER RIGHT HALF RING</td><td>,)</td></tr>
+<tr><td>ʿ</td><td>02BF</td><td>MODIFIER LETTER LEFT HALF RING</td><td>,(</td></tr>
+<tr><td>₀</td><td>2080</td><td>SUBSCRIPT ZERO</td><td>,0</td></tr>
+<tr><td>₁</td><td>2081</td><td>SUBSCRIPT ONE</td><td>,1</td></tr>
+<tr><td>₂</td><td>2082</td><td>SUBSCRIPT TWO</td><td>,2</td></tr>
+<tr><td>₃</td><td>2083</td><td>SUBSCRIPT THREE</td><td>,3</td></tr>
+<tr><td>₄</td><td>2084</td><td>SUBSCRIPT FOUR</td><td>,4</td></tr>
+<tr><td>₅</td><td>2085</td><td>SUBSCRIPT FIVE</td><td>,5</td></tr>
+<tr><td>₆</td><td>2086</td><td>SUBSCRIPT SIX</td><td>,6</td></tr>
+<tr><td>₇</td><td>2087</td><td>SUBSCRIPT SEVEN</td><td>,7</td></tr>
+<tr><td>₈</td><td>2088</td><td>SUBSCRIPT EIGHT</td><td>,8</td></tr>
+<tr><td>₉</td><td>2089</td><td>SUBSCRIPT NINE</td><td>,9</td></tr>
+<tr><td>ₓ</td><td>2093</td><td>LATIN SUBSCRIPT SMALL LETTER X</td><td>,x</td></tr>
+<tr><td>⸢</td><td>2E22</td><td>TOP LEFT HALF BRACKET</td><td>,[</td></tr>
+<tr><td>⸣</td><td>2E23</td><td>TOP RIGHT HALF BRACKET</td><td>,]</td></tr>
+<tr><td>⸤</td><td>2E24</td><td>BOTTOM LEFT HALF BRACKET</td></tr>
+<tr><td>⸥</td><td>2E25</td><td>BOTTOM RIGHT HALF BRACKET</td></tr>
+<tr><td>ʳ</td><td>02B3</td><td>MODIFIER LETTER SMALL R</td><td>,r</td></tr>
+</tbody></table>
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

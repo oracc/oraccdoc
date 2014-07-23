@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+	<esp:name>404</esp:name>
+	<esp:title>404</esp:title>
+
+	<html>
+		<head>
+		
+		</head>
+		<body>
+
+			<p>You have reached this page because you requested a URL which Oracc could not understand and which is not a web page on Oracc.</p>
+
+<p>If you were trying to use a special Oracc URL you might find some help on the <esp:link page="visitor-citing">Citing URLs</esp:link> page.</p>
+
+<p>Perhaps you mis-typed a project name? You can see the <esp:link page="projlist">list of public projects</esp:link> or use the search bar on the <esp:link page="home">Oracc home page</esp:link>.</p> 
+
+<p>Alternatively, if you are looking for a help page you could the <esp:link page="sitemap">Site Map</esp:link> to find what you want.</p>
+		</body>
+	</html>
+
+</esp:page>

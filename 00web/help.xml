@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Help</esp:name>
+<esp:title>Help page overview</esp:title>
+<html><head>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32878242-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+<p class="firstpara">Oracc recognizes several roles people can fulfill when interacting
+with the system.  A single person may act in more than one role.
+At the top level, the help pages are divided up according to
+the roles to which it is principally relevant.</p>
+
+<form method="get" action="http://oracc.org/doc2/find" id="hp_search">
+<p><esp:link url="javascript:void()" 
+	onclick="document.forms['form1'].submit(); return
+		 false;"><span class="button">Search Oracc's help
+pages</span></esp:link>  <input class="textbox" name="phrase" id="phrase" type="text" size="14" accesskey="s" value=""
+	/></p>
+    </form>
+
+<!-- Update to omue -->
+
+<esp:sh><esp:link page="visitor">Visitor</esp:link></esp:sh>
+
+<p>Go to the <esp:link page="visitor">Visiting Oracc</esp:link> pages to learn about browsing, searching or reusing content from the Oracc website.</p>
+
+<esp:sh>Builder</esp:sh>
+
+<p>A builder is someone who is helping
+to build an Oracc project. Building a project can comprise any one or more of the following functions:</p>
+<ul>
+<li><esp:link page="editing">Editing texts in ATF</esp:link></li>
+<li><esp:link page="emacs">Using Emacs</esp:link></li>
+<li><esp:link page="languages">Working with different languages</esp:link></li>
+<li><esp:link page="howtouseit">Lemmatising texts</esp:link></li>
+<li><esp:link page="converting">Converting files to and from ATF</esp:link></li>
+<li><esp:link page="portals">Building portal websites</esp:link></li>
+</ul>
+
+<esp:sh><esp:link page="manager">Manager</esp:link></esp:sh>
+
+<p>A manager is someone who helps administer an Oracc project and who
+therefore needs to understand aspects of the system that builders and
+visitors don't need to care about.</p>
+<p>Read about <esp:link page="manager">managing projects</esp:link>.</p>
+
+<esp:sh>Developer</esp:sh>
+
+<p>A developer is someone who is able to program Oracc at some
+level—writing XQueries for the database, or style files for
+the OpenDocument support, for example.</p>
+
+<p>Developers may be interested in the <esp:link page="schemas">Schema documentation</esp:link>. Installation documentation is <esp:link page="install">here</esp:link>.</p>
+
+<esp:sh>Sysadmin</esp:sh>
+
+<p>Oracc typically has several system administrators—people
+who are able to create new projects, edit the documentation,
+restart the various services.</p>
+
+<p><strong>Sysadmin documentation is only accessible to sysadmins.</strong></p>
+
+<esp:sh>Steerer</esp:sh>
+
+<p>The Oracc Steering Committee consists of a core of senior
+Oracc users who are responsible for oversight and direction
+of Oracc.  Steerers are always sysadmins, but sysadmins do
+not necessarily always need to be steerers.</p>
+
+<p><strong>Steerer documentation is only accessible to steerers.</strong></p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+
+</body></html></esp:page>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Catalogues</esp:name>
+<esp:title>Project Catalogues</esp:title>
+<html><head/><body>
+
+<p class="firstpara">Oracc projects use metadata catalogues to store consistent, searchable information about the tablets and/or composite texts that they contain. For most projects, the CDLI catalogue will be more than adequate. However, this page documents how to create custom catalogues in Filemaker Pro (a commercial database programme for Macs and PCs), and how to export them to XML for use by Oracc. It assumes that you are already familiar with the basic commands in Filemaker.</p>
+
+<p><esp:link bookmark="h_fontsandcharactersets">Fonts and character sets</esp:link> | <esp:link bookmark="h_pcatalogue">P-catalogue</esp:link> | <esp:link bookmark="qcatalogue">Q-catalogue</esp:link> | <esp:link bookmark="h_exportingcataloguedata">Exporting catalogue data</esp:link> | <esp:link bookmark="h_helpwithconversionandhosting">Help with conversion and hosting</esp:link></p>
+
+<esp:h>Fonts and character sets</esp:h>
+<p>Filemaker Pro uses the Unicode (UTF-8) character set. Older, non-Unicode fonts such as Assyrian Dictionary are not compatible with Filemaker, or with Oracc. However, not every Unicode font has all the characters that Assyriologists typically need, so you may want to set Filemaker's default font to <esp:link page="visitor-fonts">DejaVu</esp:link>, which does. To do this:</p>
+
+<ol>
+<li>Open Preferences on the Filemaker Pro menu.</li>
+<li>Choose the Fonts tab.</li>
+<li>Under "Default font for each input type" select "Roman".</li>
+<li>On the "Specify font" menu, choose "DejaVuSerif" or "DejaVuSans".</li>
+<li>Click "OK".</li>
+</ol>
+
+<p>If and when you are importing data into Filemaker from another database or file format, ensure that you know which character set that data uses. During the import process, when you reach the dialogue box headed Import Field Mapping, make sure you choose the correct character set, to enable smooth conversion to Unicode (UTF-8).</p>
+
+<p><esp:link bookmark="h_exportingcataloguedata">Exporting</esp:link> data from Filemaker to Oracc is described below.</p>
+
+<esp:h>P-catalogue</esp:h>
+    <p>The information about tablets is stored in a catalogue that by default has the name <code>[PROJECT-NAME]-P.fp7</code>, e.g., <code>cams-P.fp7</code>. All P-catalogues need to include the following two fields:</p>
+
+    <dl>
+        <dt>id_text</dt>
+        <dd>The tablet's P-number. Every tablet in Oracc is identified by a unique 6-digit number prefixed by P. The catalogue is minimally a list of P-numbers, which is why it is called a P-catalogue.</dd>
+        <dt>designation</dt>
+        <dd>Each p-number is paired with a more comprehensible designation for the tablet. This is usually the publication number (e.g., <code>CTN 4, 027</code>), but may also be a museum number or an excavation number. This serves as a check against mistyping P-numbers.</dd>
+    </dl>
+    <p>P-numbers and their matching designations are assigned by the <esp:link url="http://cdli.ucla.edu">CDLI</esp:link>. If your tablet is not yet in the <esp:link url="http://www.cdli.ucla.edu/cdlisearch/search/indexi.php">CDLI catalogue</esp:link>, e-mail your project liaison (Niek, Steve, or Eleanor) to find out how to get the P-number and designation.</p>
+    
+<esp:sh>CDLI-style information</esp:sh>
+    <p>The CDLI catalogue defines a large number of fields, which describe the tablet's publication information, physical characteristics, provenance, dating, current location, and textual content. They are briefy documented <esp:link url="http://cdli.ucla.edu/methods/cat/cat_doc.html">here</esp:link>. We thus strongly recommend that you create your database from an <esp:link url="http://cdli.ucla.edu/downloads.html">an empty clone of the CDLI database</esp:link>, even if you only want to use a small subset of the CDLI fields.</p>
+
+<p>Project catalogues that contain only CDLI-defined fields and data are known as 'local' catalogues. To implement a local catalogue in your project, be sure to set the <code>catalog-build policy</code> option to 'local' in your <esp:link page="projconfig" bookmark="h_editablecomponents">project configuration file</esp:link>.</p>
+
+    
+<esp:sh>Non-CDLI information</esp:sh>
+    <p>Your project may well need to catalogue metadata that does not fall within the remit of CDLI: names, for instance, or astronomical dates. You can create fields for this information too, with field names that do not reproduce CDLI names. If you want the contents of the field to be a list of more than one item, separate those items with a comma or a semi-colon; do not use FM Pro's repeating fields facility. Make sure you briefly document what each field is for, and if appropriate constrain its permissible contents with a value list.</p>
+
+<p>Project catalogues that contain some non-CDLI-defined fields and data are known as 'custom' catalogues. To implement a custom catalogue in your project, be sure to set the <code>catalog-build policy</code> option to 'custom' in your <esp:link url="#Catalog">project configuration file</esp:link>.</p>
+
+    <esp:h>Q-catalogue</esp:h>
+<p>If your project uses composite texts, compiled from the contents of two or more tablets, you will almost certainly want to relate your catalogue to Oracc's central <esp:link url="http://oracc.museum.upenn.edu/qcat/">Q-catalogue</esp:link> of composite texts. This will enable you to link manuscripts to compositions. The only information from the Q-catalogue you will need in your catalogue is:</p>
+
+
+    <dl>
+        <dt>id_composite</dt>
+        <dd>The composition's Q-number. Every composite text in the Oracc system is identified by a unique 6-digit number prefixed by Q. The catalogue is minimally a list of Q-numbers, which is why it is called a Q-catalogue.</dd>
+        <dt>designation</dt>
+        <dd>Each Q-number is paired with a more comprehensible designation for the composition. This is maximally composed of the elements [PERIOD] [PROVENANCE] [COMPOSITION] [SECTION], where relevant e.g., <code>OB Nippur Ura 02</code> or <code>Maqlu 1</code>. </dd>
+    </dl>
+    <p>Q-numbers and their matching designations are assigned by Eleanor Robson for Oracc. If your composition is not yet in the central Q-catalogue, contact her for information.</p>
+
+
+ <esp:h>Exporting catalogue data</esp:h>
+    <p>To make your catalogue data usable in Oracc, as metadata for your ATF files, you need to export it from Filemaker into UTF-8 XML format. You can do this whenever you update or improve your catalogue data. To do so, follow these instructions.</p>
+    <ol>
+        <li>Ensure that the number of found records is the same as the entire database (in the left-hand panel the Found number and Total number must match).</li>
+        <li>Choose Export Records... from the File menu.</li>
+        <li>In the Export Records to File dialogue box, name the exported file in the Save As field (usually the same name as the database, with extension <code>.xml</code>) and choose <code>XML</code> from the Type menu in the bottom centre. Click Save.</li>
+        <li>In the Specify XML and XSL Options dialogue box, choose <code>FMPXMLRESULT</code> from the Grammar menu. Click Continue...</li>
+        <li>In the Specify Field Order for Export dialogue box, choose which fields are to be exported (that is, all of them that you want to be publicly searchable). The Output File Character Set menu should already be set to <code>Unicode (UTF-8)</code>. Click Export.</li>
+    </ol>
+    <p>You can then <esp:link page="projemacs" bookmark="h_uploadingatfandcataloguefilestooracc">upload</esp:link> the resulting XML file to the <code>00cat/</code> folder on the Oracc server and <esp:link page="projemacs" bookmark="h_rebuildingtheproject">rebuild the project</esp:link> (or just the catalogue)  to instantly access the new metadata.</p>
+
+<esp:h>Help with conversion and hosting</esp:h>
+<p>Converting existing databases to the Oracc/CDLI format can be time-consuming and fiddly. We at Oracc can take care of much of the conversion process for you, including the allocation of P-numbers and Q-numbers. We can also host your Filemaker database on a password-protected server, so that it can be accessed by several researchers simultaneously, wherever they are in the world. For more information about help with database conversion or hosting, please email <esp:email address="osc@oracc.org"/>.</p>
+
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>
