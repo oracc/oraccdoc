@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Home</esp:name>
+	<esp:title>PROJECT TITLE HERE</esp:title>
+
+	<html><head></head><body>
+		
+
+<p>SHORT PROJECT DESCRIPTION HERE</p>
+
+		<esp:image file="FUNDER_logo.gif" description="FUNDER logo"><esp:link url="http://www.FUNDER.ac.uk"/></esp:image> <!-- logo of your funding body -->	
+	</body></html>
+
+</esp:page>

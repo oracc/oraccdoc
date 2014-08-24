@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<param:parameters 
+	xmlns:param="http://oracc.org/ns/esp-param/1.0"
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<!-- replace PROJECT with your project's abbreviation (e.g., saao) and PROJECT NAME with the full name of your project (e.g, State Archives of Assyria online) -->
+
+	<param:title>Your title here</param:title><!-- used at head of page and in citations -->
+	<param:banner><esp:image file="home/banner.png" description="optional banner"/></param:banner>
+	<param:publisher>PROJECT NAME</param:publisher><!-- used in citations -->
+	<param:host>http://oracc.museum.upenn.edu</param:host>
+	<param:root>/PROJECT</param:root>
+	<param:cuneify switcher="no" default="no" />
+	<param:common-headers>
+		<meta name="DC.publisher" content="Ocracc"/>
+		<meta name="DC.language" scheme="ISO 639-2/T" content="eng"/>
+		<meta name="DC.rights.copyright" content="Creative Commons SA 3.0 2013"/>
+		<meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" /> 	
+		<meta name="DC.format" content="text/html"/>
+	<!--	<meta name="robots" content="noindex,nofollow"/> -->
+	</param:common-headers>
+	<param:dc-id-prefix>PROJECT-oracc-museum-upenn-edu/page/</param:dc-id-prefix>
+	<param:main-menu-caption>Main menu</param:main-menu-caption>
+	<param:footer>
+<p><esp:image file="footer/cc88x31.png" description="Oracc's CC license" position="inline"><esp:link url="http://creativecommons.org/licenses/by-sa/3.0/" hide-print="yes" title="Creative Commons Attribution Share-Alike license"/></esp:image> Released under a <esp:link page="licensing">Creative Commons Attribution Share-Alike license 3.0</esp:link>, PROJECT NAME 2014.<br/>
+<small>Oracc sites use cookies only to collect Google Analytics data. Read more <esp:link page="cookies">here</esp:link>; see the stats <esp:link url="http://www.seethestats.com/site/oracc.museum.upenn.edu" rel="external">here</esp:link>; opt out <esp:link url="http://tools.google.com/dlpage/gaoptout" rel="external" hide-print="yes">here</esp:link>.</small></p>
+</param:footer>
+</param:parameters>
