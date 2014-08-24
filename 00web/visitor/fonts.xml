@@ -46,8 +46,8 @@ families in which all fonts have been extended to meet the
 requirements above.</p>  
 
 <ul>
-<li>Version for Mac OS 10.5 and earlier: <esp:link url="~/downloads/UngkamBasic-mac.zip">[Download here]</esp:link></li>
-<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="~/downloads/UngkamBasic-ttf.zip">[Download here]</esp:link>.</li>
+<li>Version for Mac OS 10.5 and earlier: <esp:link url="/downloads/UngkamBasic-mac.zip">[Download here]</esp:link></li>
+<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="/downloads/UngkamBasic-ttf.zip">[Download here]</esp:link>.</li>
 </ul>
 
 <h3>Ungkam Original</h3>
@@ -56,8 +56,8 @@ requirements above.</p>
 meet the requirements above and named Ungkam.  Version 1.2 is now
 available.</p> 
 <ul>
-<li>Version for Mac OS 10.5 and earlier: <esp:link url="~/downloads/ungkam-1.2-mac.zip">[Download here]</esp:link></li>
-<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="~/downloads/ungkam-1.2-ott.zip">[Download here]</esp:link>.</li>
+<li>Version for Mac OS 10.5 and earlier: <esp:link url="/downloads/ungkam-1.2-mac.zip">[Download here]</esp:link></li>
+<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="/downloads/ungkam-1.2-ott.zip">[Download here]</esp:link>.</li>
 </ul>
 
 <esp:sh>DejaVu</esp:sh>
@@ -67,8 +67,8 @@ Instead we strongly recommend the excellent ongoing work to extend Vera under
 the name <esp:link url="http://dejavu-fonts.org/">DejaVu Fonts</esp:link>.</p>
 
 <ul>
-<li>Version for Mac OS 10.5 and earlier: <esp:link url="~/downloads/DejaVu-mac.zip">[Download here]</esp:link></li>
-<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="~/downloads/DejaVu-ttf.zip">[Download here]</esp:link>.</li>
+<li>Version for Mac OS 10.5 and earlier: <esp:link url="/downloads/DejaVu-mac.zip">[Download here]</esp:link></li>
+<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="/downloads/DejaVu-ttf.zip">[Download here]</esp:link>.</li>
 </ul>
 
 
@@ -77,8 +77,8 @@ the name <esp:link url="http://dejavu-fonts.org/">DejaVu Fonts</esp:link>.</p>
 <p>An extended version of the FreeFont project's 2009-01-04 release.
   Minimally tested.</p>
 <ul>
-<li>Version for Mac OS 10.5 and earlier: <esp:link url="~/downloads/FreeFont-mac.zip">[Download here]</esp:link></li>
-<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="~/downloads/FreeFont-ttf.zip">[Download here]</esp:link>.</li>
+<li>Version for Mac OS 10.5 and earlier: <esp:link url="/downloads/FreeFont-mac.zip">[Download here]</esp:link></li>
+<li>Version for Windows, Unix and Mac OS 10.6: <esp:link url="/downloads/FreeFont-ttf.zip">[Download here]</esp:link>.</li>
 </ul>
 
 
@@ -92,7 +92,7 @@ text matrices on-screen even when they include determinatives.  This
 font is distributed only in TrueType format.</p> 
 
 <ul>
-<li><esp:link url="~/downloads/Desconsolata-ttf.zip">[Download here]</esp:link>.</li>
+<li><esp:link url="/downloads/Desconsolata-ttf.zip">[Download here]</esp:link>.</li>
 </ul>
 
 <esp:h>Cuneiform Fonts</esp:h>
@@ -102,14 +102,14 @@ font is distributed only in TrueType format.</p>
 <p>A font based on original MetaFont/Type1 fonts by <esp:link url="http://www-hep2.fzu.cz/~piska/cuneiform.html">Karel Píška</esp:link>
 with Neo-Assyrian sign-forms.</p>
 
-<ul><li><esp:link url="~/downloads/CuneiformNA.zip">[Download here]</esp:link></li></ul>
+<ul><li><esp:link url="/downloads/CuneiformNA.zip">[Download here]</esp:link></li></ul>
 
 <esp:sh>CuneiformOB</esp:sh>
 
 <p>A font based on Cuneiform Composite whose forms are closer to
 those found in Old Babylonian monumental and literary texts.</p>
 
-<ul><li><esp:link url="~/downloads/CuneiformOB.zip">[Download here]</esp:link></li></ul>
+<ul><li><esp:link url="/downloads/CuneiformOB.zip">[Download here]</esp:link></li></ul>
 
 
 <esp:sh>Cuneiform Composite</esp:sh>
@@ -141,7 +141,7 @@ the <esp:link url="http://scripts.sil.org/OFL/">SIL Open Font License</esp:link>
 <esp:link page="cuneitab_4">Unicode Cuneiform Table page 5</esp:link>
 </p></blockquote>
 
-<ul><li><esp:link url="~/downloads/CuneiformComposite-1001.zip">[Download here]</esp:link></li></ul>
+<ul><li><esp:link url="/downloads/CuneiformComposite-1001.zip">[Download here]</esp:link></li></ul>
 
 
 <esp:h>Other Non-Latin Fonts</esp:h>
@@ -152,7 +152,7 @@ Persian, Ugaritic, and other scripts relevant to ancient Near Eastern
 research.  You can download a locally cached
 copy of the distribution here, or go to its <esp:link url="http://users.teilar.gr/~g1951d/">home page here</esp:link>.</p>
 
-<ul><li><esp:link url="~/downloads/Aegean.zip">[Download here]</esp:link></li></ul>
+<ul><li><esp:link url="/downloads/Aegean.zip">[Download here]</esp:link></li></ul>
 
 <esp:h>Installation Instructions</esp:h>
 

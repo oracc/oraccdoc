@@ -12,11 +12,11 @@
 <p class="firstpara">These web tools can help take some of the work out of <esp:link page="editing">producing ATF</esp:link> for CDLI and Oracc.</p>
 <!-- ADD LINKS! -->
 
-<esp:sh><esp:link url="/atfproc.html">ATF Processor</esp:link></esp:sh>
+<esp:sh><esp:link url="/util/atfproc.html">ATF Processor</esp:link></esp:sh>
     <p>Check and <esp:link page="lemm">lemmatize</esp:link> ATF files, <esp:link page="converting">convert</esp:link> to formats such as HTML and RTF, and produce various kinds of lists from your ATF.</p>
-<esp:sh><esp:link url="/atftemplate.html">ATF Templates</esp:link></esp:sh>
+<esp:sh><esp:link url="/util/atftemplate.html">ATF Templates</esp:link></esp:sh>
     <p>Take some of the work out of typing by quickly setting up a template to type transliterations into.</p>
-<esp:sh><esp:link url="/voltemplate.html">Volume Templates</esp:link></esp:sh>
+<esp:sh><esp:link url="/util/voltemplate.html">Volume Templates</esp:link></esp:sh>
     <p>Submitting individual items for the CDLI catalogue is discouraged when the items are part of a larger publication. This service creates a table with the repetitive data so you can just add in the museum numbers and any other text-specific data.</p>
 
 <esp:content-last-modified/>

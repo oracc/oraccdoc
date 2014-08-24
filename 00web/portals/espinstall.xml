@@ -19,7 +19,7 @@
 <esp:sh>How to install the ESP schemas and templates on your computer</esp:sh>
 <p>The schemas are used by Emacs to check that the ESP file is valid. The templates save you time by providing editable outlines for the sorts of files your project is likely to need.</p>
 <ul>
-<li><p>Download these two zip files: <esp:link url="/doc2/downloads/portals/esp-schemas.zip"><code>esp-schemas.zip</code></esp:link> and <esp:link url="/doc2/downloads/portals/esp-templates.zip"><code>esp-templates.zip</code></esp:link>.</p></li>
+<li><p>Download these two zip files: <esp:link url="/doc/downloads/esp-schemas.zip"><code>esp-schemas.zip</code></esp:link> and <esp:link url="/doc/downloads/esp-templates.zip"><code>esp-templates.zip</code></esp:link>.</p></li>
 <li><p>Create a directory (folder) called, say, <code>oracc</code>, in the directory <esp:link page="emacssetup" bookmark="h_forunixandmacosxusers">where your <code>.emacs</code> file lives</esp:link>.</p></li>
 <li><p>Unzip <code>esp-schemas.zip</code> into the directory you just created (e.g., <code>oracc</code>).</p></li>
 <li><p><esp:link page="emacssetup" bookmark="h_forunixandmacosxusers">Open your <code>.emacs</code> file</esp:link> and add this line of code to it:</p>

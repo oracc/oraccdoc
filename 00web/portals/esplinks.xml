@@ -65,7 +65,7 @@
 <dd>Optional. Used as the link text if element is empty. Used in automatically generated title text if the element is not empty and the <code>title</code> attribute is not specified.</dd>
 
 <dt><code>title</code></dt>
-<dd>Optional. Title text for the link. Overrides any title text (after the words “External site") that is automatically generated.</dd>
+<dd>Optional. Title text for the link. Overrides any title text (after the words "External site") that is automatically generated.</dd>
 
 <dt><code>accesskey</code></dt>
 <dd>Optional. Defines an access key for this link. Use not recommended.</dd>
@@ -85,9 +85,9 @@
 <p>Files for download should be placed in the <code>00res/downloads</code> folder or one of its subfolders.</p> 
 <p>Then use the <code>&lt;esp:link&gt;</code> tag together with the <code>url</code> attribute (as described in the section on <esp:link bookmark="h_externallinks">External links</esp:link>) and begin the URL with the <code>~</code> character: this will be replaced with the root of the site (known as a relative URL). For example,</p>
 
-<pre class="example">&lt;esp:link url="~/downloads/example.pdf" title="blah"&gt;... &lt;/esp:link&gt;</pre>
+<pre class="example">&lt;esp:link url="/doc/downloads/example.pdf" title="blah"&gt;... &lt;/esp:link&gt;</pre>
 
-<pre class="example">&lt;esp:link url="~/downloads/adian_eski_kalak.kmz" 
+<pre class="example">&lt;esp:link url="/doc/downloads/adian_eski_kalak.kmz" 
    title="View location of Adian using Google Earth"&gt;View location 
    using Google Earth&lt;/esp:link&gt;</pre>
 

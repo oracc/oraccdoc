@@ -30,7 +30,7 @@ mark followed by three or six hexadecimal digits.  In this scheme,
 <code>#000</code> (or <code>#000000</code>) is black.  There are
 several color maps and wheels on the web, of which one of the nicer
 examples is <esp:link url="http://ficml.org/jemimap/style/color/wheel.html">Jemima
-Pereira's</esp:link> which is also locally cached on <esp:link url="~/downloads/manager/jemimap/wheel.html">the
+Pereira's</esp:link> which is also locally cached on <esp:link url="/doc/downloads/jemimap/wheel.html">the
 Oracc server</esp:link>.</p>
 
 <p>Because colour specification is really separate from the rest of

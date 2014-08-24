@@ -152,7 +152,7 @@ saao/knpp/downloads/adian_eski_kalak.kmz&amp;t=k"
 <pre class="example">
 &lt;esp:definition term="Adian (place)"&gt;A town in central Assyria, possibly now 
 Eski Kalak.
-   &lt;esp:link url="~/downloads/adian_eski_kalak.kmz" title="View location of 
+   &lt;esp:link url="/saao/knpp/downloads/adian_eski_kalak.kmz" title="View location of 
    Adian using Google Earth"&gt;View location using Google Earth
    &lt;/esp:link&gt; |
    &lt;esp:link url="http://maps.google.com/maps?q=http://oracc.museum.upenn.edu/

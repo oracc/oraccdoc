@@ -89,7 +89,7 @@ keyboards from your list in the 'International' settings.</p>
 <esp:sh>Available Key Layouts</esp:sh>
 
 <ul>
-<li><esp:link url="~/downloads/kb-mac-us-tlit.zip">US Extended/Tlit</esp:link></li>
+<li><esp:link url="/downloads/kb-mac-us-tlit.zip">US Extended/Tlit</esp:link></li>
 </ul>
 
 <esp:h>Windows Keyboards</esp:h>
@@ -108,7 +108,7 @@ keyboards from your list in the 'International' settings.</p>
 <esp:sh>Available Key Layouts </esp:sh>
 
 <ul>
-<li><esp:link url="~/downloads/USIntl-Tlit-win.zip">US International/Tlit</esp:link></li>
+<li><esp:link url="/downloads/USIntl-Tlit-win.zip">US International/Tlit</esp:link></li>
 </ul>
 <esp:author first-names="Steve" last-name="Tinney"/>
 <esp:content-last-modified/>

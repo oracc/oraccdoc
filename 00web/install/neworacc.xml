@@ -75,8 +75,7 @@ chmod o+w /var/tmp/oracc/*
 
 <ul>
 
-<li><p>obtain the Oracc distribution from <esp:link url="http://oracc.museum.upenn.edu/downloads/oracc/">the
-distributions directory</esp:link>.</p></li>
+<li><p>obtain the Oracc distribution from <esp:link url="http://github.com/oracc/oracc">github</esp:link>.</p></li>
 
 <li><p>put the current Oracc distribution in 00, and unpack it, then
 link it to src (let's say you've downloaded it to /tmp):</p>

@@ -34,7 +34,7 @@ see <esp:link url="visitor-fonts">the fonts page</esp:link> for further informat
 
 <esp:sh>For Unix and Mac OS X users</esp:sh>
 <ol class="spaced">
-<li>Download the Emacs lisp files in the archive <esp:link url="~/downloads/atf-mode.zip">atf-mode.zip</esp:link>.</li>
+<li>Download the Emacs lisp files in the archive <esp:link url="/downloads/atf-mode.zip">atf-mode.zip</esp:link>.</li>
 <li>Unzip the archive to extract the files in the directory or folder
 where you want them to live. It is simplest to extract into your home
   directory.</li>
@@ -60,7 +60,7 @@ Win32 Emacs installation on your machine and want to upgrade, you must first del
 
 <p>You need to download an extra few files to optimise the functionality of EmacsW32.</p>
 <ol>
-<li>Download the Emacs lisp files in the archive <esp:link url="~/downloads/atf-mode.zip">atf-mode.zip</esp:link>.</li>
+<li>Download the Emacs lisp files in the archive <esp:link url="/downloads/atf-mode.zip">atf-mode.zip</esp:link>.</li>
 <li>Unzip the archive to extract the files in the directory or folder
 where you want them to live. 
 <ul>
@@ -68,7 +68,7 @@ where you want them to live.
 <li>On <strong>Windows 7</strong>, your home directory will be (for user 's') <code class="cookbook">c:\Users\s\AppData\Roaming\</code> . Note that the folder AppData is hidden: if you do not see it, you can make it visible by selecting the 'Show hidden files, folders, and drives' option in the Folder Options (tab View) of the Control Panel.</li>
 </ul>
 </li>
-<li>Download the <esp:link url="~/downloads/emacsw32-utils.zip">zipped file of add-ons for EmacsW32</esp:link> and copy it to your home directory. Unzip it.</li> 
+<li>Download the <esp:link url="/downloads/emacsw32-utils.zip">zipped file of add-ons for EmacsW32</esp:link> and copy it to your home directory. Unzip it.</li> 
 <li>Leave the unzipped <code>.emacs</code> file in your home directory.</li>
 <li>Move <code>w32-winprint.el</code> (an old program by 
 Lennart Borgman that enables printing with Notepad), <code>recentf-ext.el</code> (a program by Rubikitch that allows you to handle 'dired' buffers) and <code>pc-bufsw.el</code> (a program by Igor Boukanov that enables moving between buffers with Ctrl-Tab, Ctrl-Shift-Tab) to <code class="cookbook">c:\Program Files\Emacs\site-lisp\</code> . On <strong>Windows 7</strong> this will be <code class="cookbook">C:\Program Files (x86)\Emacs\site-lisp\</code></li>

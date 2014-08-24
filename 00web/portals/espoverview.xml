@@ -43,9 +43,9 @@
 <dl>
 <dt><code>00res/downloads/</code></dt>
 <dd><p>Any files for the site that are intended to be downloadable, such as copies of PDFs, large images, Google Earth and Google Maps KML/KMZ content, etc.</p> 
-<p>When creating links to downloadable content, use the <esp:link page="esp-content" bookmark="esp:link">&lt;esp:link&gt;</esp:link> tag with the <code>url</code> attribute and the file path relative to the downloads folder. E.g.,</p>
+<p>When creating links to downloadable content, use the <esp:link page="esp-content" bookmark="esp:link">&lt;esp:link&gt;</esp:link> tag with the <code>url</code> attribute and the file name in the project's downloads folder. E.g., for the project <code>doc</code>, the downloads URL would be:</p>
 <pre class="example">
-&lt;esp:link url="~/downloads/example.kmz" title="example file"&gt;Example 
+&lt;esp:link url="/doc/downloads/example.kmz" title="example file"&gt;Example 
 text&lt;/esp:link&gt;
 </pre>
 </dd>
