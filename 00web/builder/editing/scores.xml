@@ -19,7 +19,7 @@ unparsed.  To specify that an ATF transliteration is some kind of
 score, you give one of the following @-protocols immediately after the
 &amp;-line:</p>
 
-<pre class="example">
+<pre class="cookbook">
 @score matrix parsed
 @score matrix unparsed
 @score synopsis parsed
@@ -41,7 +41,7 @@ Sumerian, they are typically specified at the grapheme level.  The
 actual rules for matrices are given later in this page, but an example
 will give the general idea:</p>
 
-<pre class="example">
+<pre class="cookbook">
 1.     	   šag4-ga-ne2 er2 im-si  edin-še3  ba-ra-e3
 
 N1,i_1:    .    .  ,   +   +  +   +    ,    +  +  +
@@ -58,7 +58,7 @@ is word-level in a parsed score, add the token <code>word</code> at
 the end of the <code>@score</code> line (note that you don't need to
 do this with an unparsed matrix):</p>
 
-<pre class="example">
+<pre class="cookbook">
 @score matrix parsed word
 </pre>
 
@@ -118,7 +118,7 @@ ATF source for the score even when they are also defined in an
 external catalogue.  This is done using the <code>#link</code>
 protocol:</dd>
 
-<dd><pre class="example">
+<dd><pre class="cookbook">
 #link: def A = P123456 = N 1
 </pre></dd>
 
@@ -127,8 +127,35 @@ P-number has been assigned to the source, an X-number may be used, in
 which case additional identifiers such as publication places are
 strongly encouraged:</dd>
 
-<dd><pre class="example">
+<dd><pre class="cookbook">
 #link: def B = X000001 = N 1 = PBS 1, 29
+</pre></dd>
+
+<dt>Siglum Map</dt>
+
+<dd>Siglum maps can be used when the exemplar lines reference a tablet
+by fragment rather than the main source.  To use this feature, first
+declare the exemplar as above, then define the maps, then use the
+fragment reference in the exemplar lines.</dd>
+
+<dd>The template for a map entry is:</dd>
+<dd><pre class="example">
+#key: siglum-map FROM_SIGLUM=>TO_SIGLUM</pre></dd>
+
+<dd>Putting all of the components together, a full example looks like this:</dd>
+
+<dd><pre class="cookbook">
+#link: def A = cmawro:P445799 = KUB 37, 44-49
+
+...
+
+#key: siglum-map A₁=>A
+#key: siglum-map A₂=>A
+#key: siglum-map A₃=>A
+
+...
+
+A₁,obv_i_1′:	...
 </pre></dd>
 
 <dt>Label</dt>
@@ -137,14 +164,14 @@ strongly encouraged:</dd>
 comma.  The label should conform to Oracc standards, with spaces
 replaced by underscores:</dd>
 
-<dd><pre class="example">
+<dd><pre class="cookbook">
 A,i_1: a
 </pre></dd>
 
 <dd>A label may reference part of a line by including letter
 subscripts separated from the label by a semi-colon:</dd>
 
-<dd><pre class="example">
+<dd><pre class="cookbook">
 A,i_1;a: a
 </pre></dd>
 
@@ -153,7 +180,7 @@ surrounded by underscores (the Oracc label specification requires
 spaces around a range-hyphen as line-numbers themselves may contain
 hyphens):</dd>
 
-<dd><pre class="example">
+<dd><pre class="cookbook">
 A,i_1_-_i_2b: a
 </pre></dd>
 </dl>
@@ -254,7 +281,7 @@ $-line comes immediately after the composite, it is included in the
 composite.  If the $-line contains an exemplar label, it pertains to
 that witness:</p>
 
-<pre class="example">
+<pre class="cookbook">
 Ki1: $ Omits.
 </pre>
 
@@ -302,7 +329,7 @@ matrix line's text when the source is rendered as a witness
 transliteration; this text must be terminated by a period followed by
 a space.</p>
 
-<pre class="example">
+<pre class="cookbook">
 55: ... szu-na ba-...  
 
 N₂₁_r_5': + +^1^ 
@@ -312,7 +339,7 @@ N₂₁_r_5': + +^1^
  
 <p>Is rendered as:</p>
 
-<pre class="example"> 
+<pre class="cookbook"> 
 5. ... szu-na{{NI?}} ba-... 
 </pre>
  
