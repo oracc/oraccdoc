@@ -14,7 +14,7 @@
 <esp:h>Overview</esp:h>
 
 <p>Oracc divides scores into two types and two modes.  The two types
-are the matrix and the synopsis; the two modes are parsed and
+are the matrix and the synoptic; the two modes are parsed and
 unparsed.  To specify that an ATF transliteration is some kind of
 score, you give one of the following @-protocols immediately after the
 &amp;-line:</p>
@@ -22,8 +22,8 @@ score, you give one of the following @-protocols immediately after the
 <pre class="cookbook">
 @score matrix parsed
 @score matrix unparsed
-@score synopsis parsed
-@score synopsis unparsed
+@score synoptic parsed
+@score synoptic unparsed
 </pre>
 
 <p>Both types of scores use a composite line--the reconstructed line
@@ -62,9 +62,9 @@ do this with an unparsed matrix):</p>
 @score matrix parsed word
 </pre>
 
-<esp:sh>Synopsis</esp:sh>
+<esp:sh>Synoptic</esp:sh>
 
-<p>In a synopsis, the composite line and exemplar lines are both
+<p>In a synoptic score, the composite line and exemplar lines are both
 written out in full.  The composite line may be empty, but this is not
 a recommended practice (it is allowed, as there is so much legacy data
 using this approach, but for new data the editor should, whenever
@@ -187,7 +187,7 @@ A,i_1_-_i_2b: a
 
 <esp:sh>Synopses</esp:sh>
 
-<p>Synopsis conventions for parsed line-content are simple: they are
+<p>Synoptic conventions for parsed line-content are simple: they are
 regular ATF.</p>
 
 <esp:sh>Matrices</esp:sh>

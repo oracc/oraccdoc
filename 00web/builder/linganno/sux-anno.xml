@@ -27,7 +27,7 @@ manner):</p>
 <ul>
 <li>New entries in the interlinear lemmatization in the file</li>
 <li>The project glossary, <code>00lib/sux.glo</code></li>
-<li>ePSD, from the development version which is searchable <esp:link url="http://oracc.museum.upenn.edu/epsd/cbd/sux">on oracc</esp:link></li>
+<li>ePSD, from the development version which is searchable <esp:link url="http://oracc.museum.upenn.edu/epsd2/sux">on oracc</esp:link></li>
 <li>The morphological analyzer</li>
 </ul>
 

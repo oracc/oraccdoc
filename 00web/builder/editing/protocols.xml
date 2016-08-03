@@ -96,7 +96,8 @@ information, e.g.:</p>
 1. a
 #bib: MSL 14, 33</pre>
 
-<p>Could be rendered as: <code>(Some Lexical Text 1 [MSL 14, 33])</code>.</p>
+<p>It could be rendered as: <code>(Some Lexical Text 1 [MSL 14,
+33])</code> but is not currently implemented.</p>
 
 <esp:sh><esp:bookmark id="lem"/>#lem:</esp:sh>
 <p>Gives lemmatization for the line before.  The format is a list of

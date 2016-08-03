@@ -18,9 +18,10 @@
 
 <pre class="cookbook">
 &amp;P348865 = SpTU 5, 283
+#project: cams
 #atf: lang akk-x-ltebab
 #atf: use unicode
-#project: cams
+
 
 @tablet
 
@@ -38,13 +39,13 @@ $ single ruling
 and the text's designation according to the CDLI catalog; if your text
 is not yet in the catalog, e-mail cdli@cdli.ucla.edu or osc@oracc.org to get the ID and
 designation.</dd>
+<dt><code>#project: cams</code></dt>
+<dd>It is mandatory that you specify the project that the text belongs to. The ATF file is not valid if this line is omitted, as the #project line sends essential information to the server and is used for validation and lemmatisation. In addition, this line must come before the #atf protocol lines.</dd>
 <dt><code>#atf: lang akk-x-stdbab</code></dt>
 <dd>You need to specify the main <esp:link page="languages">language and dialect</esp:link> for the text; for Sumerian just
 write <code class="cookbook">#atf: lang sux</code>.</dd>
 <dt><code>#atf: use unicode</code></dt>
 <dd>You can specify that the transliteration is in <esp:link page="visitor-unicode">Unicode</esp:link> (with š, ṣ, ṭ, etc and subscript numerals); if you omit this line then the transliteration must be in ASCII (with sz, s,, and t, and full-size numerals). We strongly recommend that all new ATF files use Unicode for Oracc. <esp:link page="cdli">CDLI ATF</esp:link> continues to use ASCII.</dd>
-<dt><code>#project: cams</code></dt>
-<dd>You can specify the project that the text belongs too; this is particularly useful if the project uses a standard set of protocols and conventions.</dd>
 <dt><code>@tablet</code></dt>
 <dd>You can specify an object type; this is normally @tablet, but
 others include @bulla and @envelope.</dd>
@@ -72,9 +73,10 @@ numbers page</esp:link> and the <esp:link page="math">mathematics page</esp:link
 
 <pre class="cookbook">
 &amp;P348658 = SpTU 2, 055
+#project: cams
 #atf: lang akk-x-ltebab
 #atf: use unicode
-#project: cams
+
 
 @tablet
 

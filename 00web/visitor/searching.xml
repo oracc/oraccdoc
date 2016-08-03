@@ -7,20 +7,20 @@
 <esp:name>Searching corpora</esp:name>
 <esp:title>Searching the Oracc corpora</esp:title>
 <html><head/><body>
-<p class="firstpara">There are many ways to search the Oracc corpora. This page describes how to search the transliterations, lemmatisations, translations, and catalogue data. Instructions on searching the glossaries and on advanced search are given on separate pages.</p>
+<p class="firstpara">There are many ways to search the Oracc corpora. This page describes how to search the transliterations, translations, and catalogue data. Instructions on searching the glossaries and on advanced search are given on separate pages.</p>
 
-<p><esp:link bookmark="h_generalprinciples">General principles</esp:link> | <esp:link bookmark="h_searchingthetransliterations">Searching transliterations</esp:link> | <esp:link bookmark="h_searchingthelemmatisations">Searching lemmatisations</esp:link> | <esp:link bookmark="h_searchingthetranslations">Searching translations</esp:link> | <esp:link bookmark="h_searchingthecataloguedata">Searching catalogue data</esp:link></p>
+<p><esp:link bookmark="h_generalprinciples">General principles</esp:link> | <esp:link bookmark="h_searchingthetransliterations">Searching transliterations</esp:link> | <!-- <esp:link bookmark="h_searchingthelemmatisations">Searching lemmatisations</esp:link> |--> <esp:link bookmark="h_searchingthetranslations">Searching translations</esp:link> | <esp:link bookmark="h_searchingthecataloguedata">Searching catalogue data</esp:link></p>
      
 <esp:h>General principles</esp:h>
-<p>Read the help section about <esp:link page="visitor-userguide" bookmark="h_thesearchbar">the search bar</esp:link> before you begin.</p>
+<p>Read the help section about <esp:link page="visitor-userguide" bookmark="h_thesearchzone">the search zone</esp:link> before you begin.</p>
                  
 <esp:h>Searching the transliterations</esp:h>
 
-<p>You can use <esp:link page="visitor-userguide" bookmark="h_thesearchbar">the search bar</esp:link> in <esp:link page="visitor-userguide" bookmark="h_theheader">the header</esp:link> to search for sequences of signs within the transliterations. However, searching for Akkadian or Sumerian words, regardless of spelling, is best done within the <esp:link page="visitor-glossaries">glossaries</esp:link>.</p>
+<p>You can use <esp:link page="visitor-userguide" bookmark="h_thesearchzone">the search box</esp:link> in <esp:link page="visitor-userguide" bookmark="h_theheader">the header</esp:link> to search for sequences of signs within the transliterations. However, searching for Akkadian or Sumerian words, regardless of spelling, is best done within the <esp:link page="visitor-glossaries">glossaries</esp:link>.</p>
 
 
-<p>To search within the transliterations, type the
-sequence of signs you want to find into <esp:link page="visitor-userguide" bookmark="h_thesearchbar">the search box</esp:link> and click "Search". The lines containing that sequence will be displayed in the <esp:link page="visitor-userguide" bookmark="h_outlinemodemainpane">the Main Pane</esp:link>, with the relevant word highlighted. You can choose whether to see the results within lines, sentences, or keyword-in-context.</p>
+<p>To search within the transliterations, type <code class="cookbook">!txt</code> followed by a space and the
+sequence of signs you want to find into <esp:link page="visitor-userguide" bookmark="h_thesearchzone">the search box</esp:link> and click "Search". The lines containing that sequence will be displayed in the <esp:link page="visitor-userguide" bookmark="h_outlinemodemainpane">the Main Pane</esp:link>, with the relevant word highlighted. You can choose whether to see the results within lines, sentences, or keyword-in-context.</p>
 <p>Click on the coloured designation (publication number or composition name) to
 the right to see the whole text of each tablet or composition found. Place
 the cursor over a word to see its outline <esp:link page="visitor-glossaries">glossary</esp:link> entry, and click on the
@@ -57,12 +57,12 @@ genre, period, and provenance as described for <esp:link page="visitor-userguide
 
 <p>There is a <esp:link page="visitor-unicode">list of unicode characters for cuneiform transliteration</esp:link> elsewhere on these help pages, and an explanation of the difference between unicode and ASCII transliteration on the <esp:link url="http://oracc.museum.upenn.edu/saao/knpp/cuneiformrevealed/aboutcuneiform/computercuneiform">Cuneiform Revealed</esp:link> website.</p>
 
-<esp:h>Searching the lemmatisations</esp:h>
-<p>Use this search box to search for Akkadian or Sumerian words, regardless of how they are spelled, by entering their citation form(s) (dictionary headwords). The project's <esp:link page="visitor-glossaries" bookmark="h_outlinepane">glossary outlines</esp:link> give complete lists of citation forms found in the current corpus.</p>
-<p>You can only search for one or more whole words. Separate words by spaces (e.g., <code>kugsig zagin</code>), not underscores or hyphens.</p>
+<!-- <esp:h>Searching the lemmatisations</esp:h>
+<p>Use the search box to search for Akkadian or Sumerian words, regardless of how they are spelled, by entering their citation form(s) (dictionary headwords). The project's <esp:link page="visitor-glossaries" bookmark="h_outlinepane">glossary outlines</esp:link> give complete lists of citation forms found in the current corpus.</p>
+<p>You can only search for one or more whole words. Separate words by spaces (e.g., <code>kugsig zagin</code>), not underscores or hyphens.</p> -->
 
 <esp:h>Searching the translations</esp:h>
-<p>You can use the search box to search for words within the English translations.</p>
+<p>You can use the search box to search for words within the English translations, by typing <code class="cookbook">!tra</code> followed by a space and then your search term.</p>
 
 <p>The search engine understands the basics of English morphology so that if, for instance, you search for "king", it will find "king" and related words such as "kings" and "kingly". But it will not find words such as "asking", "speaking" or "waking" which contain the characters "king" but have nothing to do with monarchs.</p>
 
@@ -72,7 +72,7 @@ genre, period, and provenance as described for <esp:link page="visitor-userguide
 
 <esp:h>Searching the catalogue data</esp:h>
 
-<p>To search within the catalogue data, type into the search box. Here are some  hints for more efficient catalogue
+<p>To search within the catalogue data, type <code class="cookbook">!cat</code> into the search box followed by a space and your search term. Here are some  hints for more efficient catalogue
 searching:</p>
 
 <ul>

@@ -83,6 +83,12 @@ switch immediately after the <code>==</code>:</p>
 ==%akk	nam-ru ina ap-si-i par-ṣi ez-zu-ti le-qu-u
 $	single ruling
 </pre>
+
+<p>Be aware that when you lemmatise the text, lemmatisation of the
+Sumerian comes immediately after the Sumerian line. Other types of
+lines (<code>$, #, #tr:</code>) cannot come between Sumerian and
+Akkadian. This means that interlinear translation into a modern
+language is not possible in this format.</p>
 </li>
 
 <li><p>For bracketing translations, transliterate the text as it

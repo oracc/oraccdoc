@@ -142,7 +142,20 @@
      <struct:page file="manager/projunix.xml" id="projunix"  type="page"/>
      <struct:page file="manager/the-oracc-command.xml" id="the-oracc-command"  type="page"/>
      <struct:page file="manager/filesystem.xml" id="filesystem"  type="page"/>
-     <struct:page file="manager/projconfig.xml" id="projconfig"  type="page">
+     <struct:page file="manager/projconfig.xml" id="projconfig"
+		  type="page">
+       <struct:page file="manager/configbuild.xml" id="configbuild"
+		    type="page"/>
+       <struct:page file="manager/configatfprocessor.xml" id="configatfprocessor" type="page"/>
+       <struct:page file="manager/configglossary.xml" id="configglossary"
+		    type="page"/>
+       <struct:page file="manager/configpager.xml" id="configpager"
+		    type="page"/>
+       <struct:page file="manager/configrender.xml" id="configrender"
+		    type="page"/>
+       <struct:page file="manager/configoutline.xml" id="configoutline" type="page"/>
+       <struct:page file="manager/configviews.xml" id="configviews"
+	     type="page"/>
        <struct:page file="manager/webcolours.xml" id="webcolours" type="page"/>
      </struct:page>
      <struct:page file="manager/projcats.xml" id="projcats"  type="page"/>

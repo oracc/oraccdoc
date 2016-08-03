@@ -11,23 +11,17 @@
 
 <esp:h>Commentary Protocol</esp:h>
 
-<p>Each ATF file that uses this mechanim must start include the <esp:link page="protocols">protocol line</esp:link>:</p> 
+<p>ATF commentaries do not need a special protocol: four field designations are always available for dividing commentary lines into different parts:</p>
 
-<pre class="cookbook">#atf: use commentary</pre>
-
-<p>at the top of each file, after the project declaration.</p>
-
-<esp:h>Encoding text types</esp:h>
-<p>Within the transliteration of the text, use the following field designations:</p>
 <dl>
-<dt><code class="cookbook">,b</code></dt>    <dd>to introduce a quote from the base text;</dd>
-<dt><code class="cookbook">,o</code></dt>    <dd>to introduce an observation
-from a commentary;</dd>
-<dt><code class="cookbook">,z</code></dt>     <dd>to introduce unknown material.</dd>
+<dt><code class="cookbook">,qt</code></dt>    <dd>to introduce a quote from the base text;</dd>
+<dt><code class="cookbook">,bs</code></dt>    <dd>to introduce the base word(s) commented upon;</dd>
+<dt><code class="cookbook">,cm</code></dt>    <dd>to introduce a commentary on the base word(s);</dd>
+<dt><code class="cookbook">,zz</code></dt>    <dd>to mark text as not belonging to a quote, base of comment.</dd>
 </dl>
-<p>each of these elements is surround by white space.</p>
+<p>each of these elements must be surrounded by white space: instead of <code>[!cm</code> write <code>!cm [</code>.</p>
 
-<p>The milestone <code>,b</code> may be followed by a number, so that
+<!--<p>The milestone <code>,b</code> may be followed by a number, so that
 each <code>,b</code> field designation within a single line of text has a unique identifier. The base text may then be identified in a comment line as follows:</p>
 
 <pre class="example">#,b1 = SB Anzu 1 = cams/anzu:Q002769 56
@@ -59,6 +53,7 @@ li-tu-tu₂ ,z $ŠU $A x
 #,b1 = SB Šumma Izbu 8 = cams/gkab:Q003013 2
 #,b2 = SB Šumma Izbu 9 = cams/gkab:Q003014 43
 </pre>
+-->
 
 <esp:author first-names="Niek" last-name="Veldhuis"/>
 <esp:content-last-modified/>
