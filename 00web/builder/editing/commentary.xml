@@ -14,10 +14,10 @@
 <p>ATF commentaries do not need a special protocol: four field designations are always available for dividing commentary lines into different parts:</p>
 
 <dl>
-<dt><code class="cookbook">,qt</code></dt>    <dd>to introduce a quote from the base text;</dd>
-<dt><code class="cookbook">,bs</code></dt>    <dd>to introduce the base word(s) commented upon;</dd>
-<dt><code class="cookbook">,cm</code></dt>    <dd>to introduce a commentary on the base word(s);</dd>
-<dt><code class="cookbook">,zz</code></dt>    <dd>to mark text as not belonging to a quote, base of comment.</dd>
+<dt><code class="cookbook">!qt</code></dt>    <dd>to introduce a quote from the base text;</dd>
+<dt><code class="cookbook">!bs</code></dt>    <dd>to introduce the base word(s) commented upon;</dd>
+<dt><code class="cookbook">!cm</code></dt>    <dd>to introduce a commentary on the base word(s);</dd>
+<dt><code class="cookbook">!zz</code></dt>    <dd>to mark text as not belonging to a quote, base of comment.</dd>
 </dl>
 <p>each of these elements must be surrounded by white space: instead of <code>[!cm</code> write <code>!cm [</code>.</p>
 
