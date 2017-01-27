@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+>
+
+  <esp:name>About</esp:name>
+  <esp:title>About Oracc: Essentials for Oracc users</esp:title>
+
+  <html><head></head><body>
+
+<esp:h>JSON</esp:h>
+
+<p>Oracc makes much of its data available in JSON format, and more JSON data is planned.  All Oracc JSON files consist of a single object which have a "type" member and, in the case of project data, a "project" member.  The data structure for each type is described here.</p>
+
+<esp:sh>Top-level Data</esp:sh>
+
+<p>Two files are provided at the top level: a simple list of public projects (projects.json) and a complex list of public projects analogous to the one-page listing of projects with blurbs (projectlist.json). In each case, these can be retrieved by prefixing them with an Oracc server name, e.g., http://oracc.org/projects.json or http://oracc.museum.upenn.edu/projects.json.</p>
+
+<dl>
+<dt>projects.json: type "projects"</dt>
+<dd>Provides a simple list of project names which can be concatenated to an Oracc server name to provide the base URL for retrieving additional JSON objects.</dd>
+
+<dt>projectlist.json: type "projectlist"</dt>
+<dd>Provides a version of the data used in the project list at http://oracc.org/projectlist.html.</dd>
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html>
+
+</esp:page>
