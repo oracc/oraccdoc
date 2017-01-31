@@ -47,6 +47,8 @@ typing <code class="cookbook">q</code>.</p>
     <dd>rebuilds only the corpus</dd>
     <dt><code class="cookbook">oracc build portal</code></dt>
     <dd>rebuilds only the portal</dd>
+    <dt><code class="cookbook">oracc build full</code></dt>
+    <dd>rebuilds everything, including TEI</dd>
   </dl>
   
 <esp:sh><code>check [COMMAND]</code></esp:sh>
@@ -82,6 +84,13 @@ typing <code class="cookbook">q</code>.</p>
 
 <esp:sh><code>resources</code></esp:sh>
 <p>Copies the contents of the <code>00res</code> folder to the build server; this must be done any time the contents of <code>00res</code> changes, and it should then be followed by <code class="example">oracc build portal</code>.</p>
+
+
+<esp:sh><code>subproject</code></esp:sh>
+<p>Copies the contents of the <code>00res</code> folder to the build server; this must be done any time the contents of <code>00res</code> changes, and it should then be followed by <code class="example">oracc build portal</code>.</p>
+
+<p>New <esp:link page="projects" bookmark="h_structure">subprojects</esp:link> can be created by project managers with the <code class="example">oracc subproject</code> command. This looks like: <code>oracc subproject Subproject This is a Sub-project</code>, where <code>Subproject</code> is the abbreviation and <code>This is a Sub-project</code> is the full name; e.g., <code class="example">oracc subproject</code> <code>babylon7 The Inscriptions of the Neo-Babylonian Dynasty</code>.</p>
+
 
 <esp:sh><code>update</code></esp:sh><p>Rebuilds the lemmatization data, mostly useful if you are
     working on correcting glossaries and lemmatized texts and want to

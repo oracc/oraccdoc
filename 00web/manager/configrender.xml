@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Render config</esp:name>
+<esp:title>Configuring Display Rendering Options</esp:title>
+<html><head/><body>
+
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>
