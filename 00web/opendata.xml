@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+>
+
+  <esp:name>Open Data</esp:name>
+  <esp:title>Oracc Open Data: A brief introduction for programmers</esp:title>
+
+  <html><head></head><body>
+
+<esp:h>JSON</esp:h>
+
+<p>Oracc makes much of its data available in JSON format, and more JSON data is planned.  All Oracc JSON files consist of a single object which have a "type" member and, in the case of project data, a "project" member.  The data structure for each type is described here.</p>
+
+<esp:sh>Top-level Oracc Data</esp:sh>
+
+<p>Two files are provided at the top level: a simple list of public projects (projects.json) and a complex list of public projects analogous to the one-page listing of projects with blurbs (projectlist.json). In each case, these can be retrieved by prefixing them with an Oracc server name, e.g., http://oracc.org/projects.json or http://oracc.museum.upenn.edu/projects.json.</p>
+
+<dl>
+<dt>projects.json: type "projects"</dt>
+<dd>Provides a simple list of project names which can be concatenated to an Oracc server name to provide the base URL for retrieving additional JSON objects:
+<pre>
+{
+        "type": "projects",
+        "public": [
+                "aemw/alalakh/idrimi",
+                "amgg",
+                "armep",
+                "arrim",
+</pre>
+<p>The <code>public</code> array gives the project names in a form suitable for concatenating to the <code>http://</code> URL for an Oracc server.  You can find the names of JSON files available for a project in the manifest, for which see below.</p>
+</dd>
+
+<dt>projectlist.json: type "projectlist"</dt>
+<dd>Provides a version of the data used in the project list at http://oracc.org/projectlist.html:
+<pre>
+{
+        "type": "projectlist",
+        "projects": [{
+                "pathname": "rimanum",
+                "name": "The House of Prisoners",
+                "abbrev": "Rīm-Anum",
+                "blurb": "Rīm-Anum, king of Uruk (ca. 1741–1739 BC) revolted against Samsuiluna of Babylon, son of Hammurapi, and enjoyed a short-lived independence. The archive edited in this project derives from the house of prisoners (bīt asiri) that kept the prisoners of war. The editions and translations were prepared by Andrea Seri and accompanies her book \"The House of Prisoners\" (2013).    <a href="http://www.degruyter.com/view/product/181597">Buy the book</a> from Harrassowitz.   "
+        } , {
+</pre>
+<p>The <code>projects</code> gives a list of objects, one per project.  Each object contains a subset of the material in the project's configuration object (or <code>config.xml</code> within the Oracc installation.  This information is also available from each project's metadata.json, so the project list is primarily a convenience for anyone wanting to provide a summary of the projects available.</p>
+</dd>
+</dl>
+
+<esp:sh>Project-level Data</esp:sh>
+
+<p>Oracc compiles project content into a collection of XML data structures which have additional annotation and linkage.  The goal is to expose all of this data in JSON format.</p>
+
+<dl>
+
+<dt>manifest.json: type "manifest"</dt>
+<dd>For any given project name in <code>/projects.json</code> you can retrieve <code>/[PROJECT]/manifest.json</code> to discover which JSON formats are provided by the project. This gives a simple list of JSON files retrievable from a project.  For the project <code>rimanum</code>, the URL <code>http://oracc.org/rimanum/manifest.json</code>, yields the following:
+<pre>
+{
+	"type": "manifest",
+	"project": "rimanum",
+	"files": [
+		"corpus.json",
+		"index-akk-x-oldbab.json",
+		"index-cat.json",
+		"index-lem.json",
+</pre>
+<p>For each entry in the array <code>files</code> you can retrieve, e.g., <code>http://oracc.org/rimanum/corpus.json</code>.</p>
+</dd>
+
+<dt>metadata.json: type "metadata"</dt>
+<dd>This provides several objects: "config"--the configuration info for the project; "witnesses"--only present if projects use composite texts, this provides information on which manuscripts are witnesses of the composites in the project; and "formats", a collection of lists indicating the presence of transliterations, transliterations and lemmatized data in the project.
+<pre>
+{
+	"type": "metadata",
+	"config": {
+		"pathname": "rimanum",
+		"name": "The House of Prisoners",
+		"abbrev": "RÄ«m-Anum",
+		...
+	},
+	"formats": {
+		"atf": [ "P295625","P296047","P296277","P296278", ... ],
+		"lem": [ "P295625","P296047","P296277","P296278","P296414", ... ],
+		"tr-en": [ "P295625","P296047","P296277","P296278", ... ],
+		"xtf": [ "P295625","P296047","P296277", ... ]
+	}
+}
+</pre>
+</dd>
+
+<dt>catalogue.json: type "catalogue"</dt>
+<dd>
+Provides the project's catalogue:
+<pre>
+{
+	"type": "catalogue",
+	"project": "rimanum",
+	"members": {
+		"P295625": {
+			"author": "Simmons, Stephen D.",
+			"collection": "J. Pierpont Morgan Library Collection, Yale Babylonian Collection, New Haven, Connecticut, USA",
+			"date_of_origin": "Rim-Anum.01.10.01",
+			"dates_referenced": "Rim-Anum.01.10.01",
+			"designation": "YOS 14, 341",
+			"genre": "Administrative",
+			"height": "40",
+			"language": "Sumerian",
+			...
+</pre>
+<p>Although projects may have their own catalogue fields, all projects provide at least one of id_text or id_composite (some use a mix); designation; period; and provenience.</p>
+</dd>
+
+<dt>corpus.json: type "corpus"</dt>
+<dd><p>Oracc text editions consist of two structures: one is the XML version of the user's transliteration.  The other is entirely generated by Oracc and provides access to the divisions, content, and lemmatization of the text in a relatively simple nested tree format.  In the Oracc world this format is called "XCL", or XML Chunks and Lemmas: the XCL tree has only three primary node types: <code>c</code>, a chunk of text which may be the whole text, a sentence or unit, a clause, a phrase or possibly others; <code>d</code>, a discontinuity, e.g., a line-break, a surface transition, damage to the content of the text; <code>l</code>, a lemma, the lemmatization of the text.  The name of the array of children of any chunk node is called "cdl" based on these three members.</p>
+
+<p>Discontinuities and lemmata have a "text" property which can be concatenated to create text fragments.</p>
+<pre>
+{
+        "type": "corpus",
+        "project": "rimanum",
+        "members": [
+        {
+                "type": "cdl",
+                "project": "rimanum",
+                "id": "P295625",
+                "n": "YOS 14, 341",
+                "cdl": [{
+                        "node": "c",
+                        "type": "text",
+                        "id": "P295625.U0",
+                        "cdl": [{
+                                "node": "d",
+                                "type": "object",
+                                "subtype": "tablet",
+                                "ref": "P295625.x374.1"
+                                } , {
+                                "node": "d",
+                                "type": "surface",
+                                "subtype": "obverse",
+                                "label": "o",
+                                "ref": "P295625.o.2"
+                                } , {
+                                "node": "c",
+                                "type": "discourse",
+                                "subtype": "body",
+                                "id": "P295625.U1",
+                                "cdl": [{
+                                        "node": "c",
+                                        "type": "sentence",
+                                        "label": "o 1 - r 2",
+                                        "id": "P295625.U2",
+                                        "cdl": [{
+                                                "node": "d",
+                                                "type": "line-start",
+                                                "text": "1",
+                                                "label": "o 1",
+                                                "ref": "P295625.3"
+                                                } , {
+                                                "node": "l",
+                                                "text": "5(BAN₂)",
+                                                "lem": "n",
+                                                "ref": "P295625.3.1",
+                                                "id": "P295625.l02b23"
+                                                } , {
+                                                "node": "l",
+                                                "text": "6(SILA₃)",
+                                                "lem": "n",
+                                                "ref": "P295625.3.2",
+                                                "id": "P295625.l02b24"
+                                                } , {
+                                                "node": "l",
+                                                "text": "ZI₃.DA",
+                                                "lem": "qēmu[flour]N",
+                                                "sig": "@rimanum%akk-x-oldbab:ZI₃.DA=qēmu[flour//flour]N'N$qēmu",
+                                                "ref": "P295625.3.3",
+                                                "id": "P295625.l02b25"
+                                                } , {
+</pre>
+<p>In the last entry of the example above, the "sig" property is the string version of the lemmatization associated with a word.  To reduce the size of the JSON files, the parsed versions of the sig properties are collected together in a separate object in the corpus, called "sigs":</p>
+<pre>
+"sigs": {
+                "@rimanum%akk-x-oldbab:30-be-el-i₃-li₂=Sîn-bēl-ilī[00//00]PN'PN$Sîn-bēl-ilī": {
+                        "form": "30-be-el-i₃-li₂",
+                        "cf": "Sîn-bēl-ilī",
+                        "gw": "00",
+                        "sense": "00",
+                        "pos": "PN",
+                        "epos": "PN",
+                        "norm": "Sîn-bēl-ilī"
+
+                } ,
+</pre>
+<p>You can use the string "sig" as a key to look up the parsed form.</p>
+
+</dd>
+
+<dt>glossary-xxx.json: type "glossary"</dt>
+<dd>NOT YET PROVIDED.  These will be JSON versions of the project's glossaries.</dd>
+
+<dt>index-xxx.json: type "index"</dt>
+<dd><p>The index-xxx.json files are exports of a subset of the index data created and used by the Oracc search engine, giving the keys the indexer has generated from the input words and the locations in which they occur in the corpus.  These keys may have been normalized using a variety of processes: accents are rendered as numeric indices; case may be foled; for English translation indexes a stemmer is used so that, e.g., "received" and "receives" will be gathered together under "receive" in the index.</p>
+<pre>
+  {
+        "type": "index",
+        "project":"rimanum",
+        "name": "cat",
+        "keys": [{
+                "key": "1",
+                "count": "16",
+                "instances": [
+                        "rimanum:P405220","rimanum:P405220","rimanum:P405246","rimanum:P405246","rimanum:P405313","rimanum:P405313","
+                ]},{
+                "key": "3",
+                "count": "16",
+                "instances": [
+                        "rimanum:P405225","rimanum:P405225","rimanum:P405229","rimanum:P405229","rimanum:P405248","rimanum:P405248","
+                ]},{
+                "key": "5",
+                "count": "11",
+                "instances": [
+                        "rimanum:P405212","rimanum:P405212","rimanum:P405250","rimanum:P405250","rimanum:P405317","rimanum:P405317","
+                ]},{
+                "key": "6",
+                "count": "11",
+                "instances": [
+                        "rimanum:P405219","rimanum:P405219","rimanum:P405251","rimanum:P405251","rimanum:P405284","rimanum:P405318","
+                ]},{
+</pre>
+<p>The text IDs are always qualified with a project name because any project can use texts from other projects.  For "txt", "lem" and "tra" index types, the instances are given as word IDs, so they can be used to locate the instance in the text edition.  A simple way of displaying instances is to use the URL <code>http://oracc.org/PROJECT/INSTANCE_ID/html</code>, e.g., <code>http://oracc.org/rimanum/P405219.4.1/html</code>.  If you omit the "/html" the text is loaded into the Oracc pager instead of retrieving the simple HTML version.</p>
+</dd>
+
+</dl>
+
+
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+</body></html>
+
+</esp:page>
