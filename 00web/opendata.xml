@@ -341,12 +341,12 @@ Provides the project's catalogue:
 <p>Glossaries are a list of entries which give the distributional data on all of the facets of Oracc lemmatization, gathered under a series of headings for spellings (<code>forms</code>); normalizations (<code>norms</code>) and meanings (<code>senses</code>.  The same data is also given for the full signatures which reference the entry (<code>sigs</code>).</p>
 <p>Several instance-related properties are common to many of these data:
 <dl>
-<dd>icount</dd>
-<dt>The instance count for the datum.</dt>
-<dd>ipct</dd>
-<dt>The percentage of instances of the datum that this count represents.</dt>
-<dd>xis</dd>
-<dt>A reference to the compilation of instances that make up the count for the datum.</dt>
+<dt>icount</dt>
+<dd>The instance count for the datum.</dd>
+<dt>ipct</dt>
+<dd>The percentage of instances of the datum that this count represents.</dd>
+<dt>xis</dt>
+<dd>A reference to the compilation of instances that make up the count for the datum.</dd>
 </dl>
 </p>
 <p>The second element of a glossary object is the set of xis data for the glossary: you can use the reference given in the xis property to access the list of word IDs which makes up the instance set to access the lemmatizations given in the corpus and traverse the context of any instance.</p>
