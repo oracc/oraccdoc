@@ -347,7 +347,7 @@ Provides the project's catalogue:
 <dt>The percentage of instances of the datum that this count represents.</dt>
 <dd>xis</dd>
 <dt>A reference to the compilation of instances that make up the count for the datum.</dt>
-</dll>
+</dl>
 </p>
 <p>The second element of a glossary object is the set of xis data for the glossary: you can use the reference given in the xis property to access the list of word IDs which makes up the instance set to access the lemmatizations given in the corpus and traverse the context of any instance.</p>
 <pre>
