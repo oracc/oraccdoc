@@ -466,7 +466,6 @@ Provides the project's catalogue:
 
 </pre>
 </dd>
-<dd>NOT YET PROVIDED.  These will be JSON versions of the project's glossaries.</dd>
 
 <dt>index-xxx.json: type "index"</dt>
 <dd><p>The index-xxx.json files are exports of a subset of the index data created and used by the Oracc search engine, giving the keys the indexer has generated from the input words and the locations in which they occur in the corpus.  These keys may have been normalized using a variety of processes: accents are rendered as numeric indices; case may be foled; for English translation indexes a stemmer is used so that, e.g., "received" and "receives" will be gathered together under "receive" in the index.</p>
