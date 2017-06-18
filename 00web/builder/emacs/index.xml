@@ -4,12 +4,25 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 >
 
-<esp:name>Using Emacs</esp:name>
-<esp:title>Using Emacs for Oracc work</esp:title>
+<esp:name>Nammu and Emacs</esp:name>
+<esp:title>Using Nammu and Emacs for Oracc work</esp:title>
 <html><head/><body>
-<p class="firstpara">Emacs is a high-powered text editor which, while not particularly pretty, is extremely useful for editing ATF files, managing projects and writing ESP portals. On these pages we discuss:</p>
+<p class="firstpara">Nammu is a simple text editor, written especially
+for Oracc by <esp:link url="http://www.ucl.ac.uk/research-it-services/research-software-development">UCL's Research Development Software Group</esp:link>, that enables all content creators to edit ATF files, one
+file at at time. Use Nammu if your main role in Oracc is to edit texts
+for a corpus project. Emacs is a high-powered text editor which, while
+not particularly pretty, is extremely useful for editing multiple ATF
+files at once,
+managing glossaries projects, and writing ESP portals. For now, use
+Emacs for activities that involve these tasks. In due course Nammu will gradually
+replace all of Emacs functionality.</p>
+
+<p>On these pages we discuss:</p>
 
 <dl>
+  <dt><esp:link page="nammu">Working with Nammu</esp:link></dt>
+  <dd>Here we describe how to install and set up Nammu, and how to
+  edit ATF files with it.</dd>
 <dt><esp:link page="emacssetup">Preparing to work with Emacs</esp:link></dt>
 <dd>On this page we describe how to obtain, install and configure it for Oracc work.</dd>
 <dt><esp:link page="aquamacs">Starting to use Aquamacs (Emacs for Mac)</esp:link></dt>

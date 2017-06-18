@@ -822,7 +822,7 @@ ellipsis (<code>...</code>).</p>
 part of the grapheme sequence the compound brackets
 <code>(#...#)</code> may be used.  This feature should be used rarely
 if ever.</p>
-<pre class="cookbook">mu-un-;e₃          [...]         [(...)]</pre>
+<pre class="cookbook">mu-un;-e₃          [...]         [(...)]</pre>
 
 
 <esp:h>Words</esp:h>
