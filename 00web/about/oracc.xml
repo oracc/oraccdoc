@@ -40,12 +40,19 @@ exported to the data format defined by the <esp:link rel="external" url="http://
 projects for further analysis.</p>
 
 <esp:sh>Steering Committee</esp:sh>
-<p>The Oracc Steering Committee (OSC) currently comprises <esp:link rel="external" url="http://www.hps.cam.ac.uk/people/robson/">Eleanor
-Robson</esp:link> at the University of Cambridge, <esp:link rel="external" url="http://ccat.sas.upenn.edu/anch/faculty/tinney.htm">Steve Tinney</esp:link> at the University of Pennsylvania, and <esp:link rel="external" url="http://www.ocf.berkeley.edu/~veldhuis/">Niek Veldhuis</esp:link> at the University of California Berkeley. The OSC is responsible for
-ensuring the continuity and documentation of the Oracc system and its
-permanent web presence, and for assisting with the creation and
-maintenance of projects. The committee is non-hierarchical and all of
-its members have equal status.</p>
+<p>The Oracc Steering Committee (OSC) currently comprises
+<esp:link rel="external" url="http://www.ag.geschichte.uni-muenchen.de/personen/mitarbeiter/novotny/index.html">Jamie
+Novotny</esp:link> at LMU Munich,
+<esp:link rel="external" url="http://www.hps.cam.ac.uk/people/robson/">Eleanor
+Robson</esp:link> at the University of Cambridge,
+<esp:link rel="external" url="http://ccat.sas.upenn.edu/anch/faculty/tinney.htm">Steve
+Tinney</esp:link> at the University of Pennsylvania, and
+<esp:link rel="external" url="http://www.ocf.berkeley.edu/~veldhuis/">Niek
+Veldhuis</esp:link> at the University of California Berkeley.
+The OSC is responsible for ensuring the continuity and documentation
+of the Oracc system and its permanent web presence, and for assisting
+with the creation and maintenance of projects. The committee is
+non-hierarchical and all of its members have equal status.</p>
 
 <esp:sh>Liaisons</esp:sh>
 <p>In general, Oracc projects have one OSC member assigned to them as

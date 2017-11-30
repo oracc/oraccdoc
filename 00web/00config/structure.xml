@@ -115,6 +115,12 @@
      <struct:page file="builder/converting/otf.xml" id="otf" type="page"/>
    </struct:page>
 
+  <struct:page file="builder/superglo/superglo.xml" id="superglo" type="page">
+    <struct:page file="builder/superglo/workflow.xml" id="workflow" type="page"/>
+    <struct:page file="builder/superglo/maps.xml" id="maps" type="page"/>
+  </struct:page>
+
+   
    <!-- PORTALS -->
    <struct:page file="portals/esp.xml" id="esp" type="page">
      <struct:page file="portals/portals.xml" id="portals"  type="page"/>
