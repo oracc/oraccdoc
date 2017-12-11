@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml"
+	  xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>Glossaries</esp:name><esp:title>Glossaries</esp:title>
+  <html>
+    <head/>
+    <body>
+      <h2>Introduction</h2>
+      <p>Glossaries in Oracc provide a place to collect information
+      about words in a way that can be used by the lemmatizer to
+      create an exhaustive index of words and forms in a corpus.  The
+      formal name of the glossary type in Oracc is the Corpus-Based
+      Dictionary, and the abbreviation CBD is often used in Oracc to
+      refer to this type.</p>
+      <p>An Oracc glossary consists of a brief header and a series of
+      entries.  Each entry consists of a series of tags most of which
+      have content that continues on the rest of the line.  Each tag
+      must begin a new line, and blank lines are not allowed within
+      entries.  When the content is too long to fit on one line
+      comfortably, any tag may be continued onto one or more
+      continuation lines.  Continuation lines must begin with one or
+      more space characters.</p>
+      <h2>Glossary Header</h2>
+      <h2>Core Tags</h2>
+      <h3>@entry ... @end entry</h3>
+      <p>Each glossary article begins with an <code>@entry</code> tag.
+      This gives the Citation Form (CF), Guide Word (GW) and
+      Part-of-Speech (POS) for the word, in the form CF [GW] POS,
+      i.e., the GW is in square brackets, and there is a space before
+      the open bracket and after the close bracket. The CF [GW] POS
+      must be unique within a glossary.</p>
+      <p>The <code>@entry</code> tag may be preceded by characters
+      from the ACD module, and may be followed by an exclamation
+      mark, <code>!</code>, indicating priority, or an
+      asterisk <code>*</code> indicating that the entry is a phrase
+      consisting of a sequence of words which retain their own
+      meanings. PSUs, sequences of words with a meaning distinct from
+      the individual parts, are not marked with the asterisk.</p>
+      <p>Each article must end with <code>@end entry</code> written on
+      its own line.</p>
+      <h3>@bases</h3>
+      <p>The <code>@bases</code> tag is used to list the bases for
+      Sumerian words.  Bases are separated by a semicolon
+      (<code>;</code>), e.g., <code>du; du₃</code>.  Bases may be
+      specified as a primary base with alternate transliterations of
+      the base in parentheses, in whch case multiple alternate bases
+      may be separated by a comma followed by a space
+      (<code>, </code>), e.g., <code>sag₉ (sa₆, ša₆, šag₉)</code>.</p>
+      <p>Stems can be associated with bases by giving the stem,
+      preceded by an asterisk and followed by a space, immediately
+      before a primary base, e.g., <code>*du du₇; *dudu
+      du₇-du₇</code>.</p>
+      <p>The ACD module also provided facilities for remapping an
+      existing base to a new base.</p>
+      <h3>@form</h3>
+      <p>The <code>@form</code> tag links instances in the corpus to
+      the entries in the glossary. The first element is always a
+      written form as it might occur in the corpus but without any
+      half, square, angle or round brackets.  Following the written
+      form various elements may occur depending in part on the
+      language of the corpus. These elements are always marked by one
+      or more characters which indicate the type of the element. No
+      space is allowed between the type character and the data
+      element.</p>
+      <dl>
+      <dt>$ = NORM</dt>
+      <dd>The normalized version of the writing. This varies by
+      language: in Akkadian, for example, it is the transcription of
+      the word-form, without hyphens and determinatives and with
+      accents. This is not used in the source version of Sumerian
+      glossaries because it can be computed from the morphology (see
+      below).</dd>
+      <dt>* = STEM</dt>
+      <dd>The STEM, which may be a form of the BASE in Sumerian, or a
+      notation such as D, Š, N, in Akkadian, or possibly other
+      conventions for other languages.</dd>
+      <dt>/ = BASE</dt>
+      <dd>The BASE utilized in a Sumerian writing. This must match a
+      base given in the <code>@bases</code> part of the entry.</dd>
+      <dt>+ = CONT</dt>
+      <dd>The Sumerian grapheme following the base, used only when that
+      grapheme is the continuation of the end of the BASE,
+      e.g., <code>-ma</code> in <code>inim-ma</code>.  The
+      deconstruction of the grapheme gives the consonant which
+      continues the grapheme followed by the vowel which is normally a
+      morpheme or morpheme constituent.</dd>
+      <dt># = MORPH</dt>
+      <dd>The morphology string for the writing.</dd>
+      <dt>## = MORPH2</dt>
+      <dd>The second morphology string for the writing.</dd>
+      <dt>@ = RWS</dt>
+      <dd>The RWS, Register or Writing System, for the form.</dd>
+      <dt>COFs and PSUs</dt>
+      <dd>Special rules apply to <code>@form</code> lines for COFs and
+      PSUs, as described in the relevant pages.</dd>
+      <dd>The <code>@form</code> tag may be followed by an exclamation
+      mark, <code>!</code>, indicating priority.</dd>
+      </dl>
+      <h3>@sense</h3>
+      <p>The <code>@sense</code> tag gives meanings for the word as
+      well as a Part-of-Speech for the sense, which is the Effective
+      Part-of-Speech (EPOS) in lemmatization.</p>
+      <p>The <code>@sense</code> tag may be preceded by characters
+      from the ACD module, and may be followed by an exclamation
+      mark, <code>!</code>, indicating priority.</p>
+      <p>An optional (in fact, rarely given) guideword specific to the
+      sense, or SGW, may follow the <code>@sense</code> tag in square
+      brackets: this is used by the lemmatizer to provide a strict
+      match when testing the inline sense for a match to the glossary
+      sense.</p>
+      <p>The first required element after the <code>@sense</code> tag
+      is a valid Part-of-Speech.  After the POS comes the meaning for
+      the sense.</p>
+      <h3>@note</h3>
+      <h3>@inote</h3>
+      <h2>Additional Tags</h2>
+      <h3>@equiv</h3>
+      <h3>@isslp</h3>
+      <h3>@bib</h3>
+    </body>
+  </html>
+</esp:page>
