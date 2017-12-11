@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml"
+	  xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>Workflow</esp:name><esp:title>Workflow for Super-glossaries</esp:title>
+  <html>
+    <head/>
+    <body>
+      <ol>
+	<li>
+	  <h2>Induction</h2>
+	  <p>Induction is the procedure for adding a new source
+	  glossary to the super glossary.  The source glossary should
+	  be copied to the folder <code>00raw</code>,
+	  where it may be given any name because the induction process
+	  determines what to call the new source file based on the
+	  header information in the incoming glossary.</p>
+	  <p>By convention, unprocessed glossaries are placed in the 00raw folder.
+	  Assuming we have obtained the Late Babylonian glossary from
+	  from the GKAB project (where it would be called akk-x-ltebab.glo) and copied it to
+	  00raw/akk-x-ltebab.glo, we run the command:</p>
+	  <pre class="cookbook">super-induct.plx 00raw/gkab-akk-late.glo</pre>
+	  <p>which creates the new source file
+	  <code>00src/cams-gkab~akk-x-ltebab.glo</code>.</p>
+	</li>
+	<li>
+	  <h2>Comparison</h2>
+	  <p>Comparison involves running a program to compare the named
+	  source glossary to the base. The results of the output are
+	  placed in a map file which can then be edited so that "new"
+	  entries and senses will either be added to the base or
+	  considered equivalent to existing entries/senses in the
+	  base.</p>
+	  <p>When the comparison is run again, the map file is first
+	  loaded, ignoring items still marked as "new". The add/map
+	  items are then used during the new comparison and only items
+	  which are still "new" are output again to the map file,
+	  along with the existing add/map items.  This means that the
+	  map file contents preserve add/map decisions but udpate what
+	  is considered "new", allowing for an iterative workflow.</p>
+	  <p>To run the comparison using the source example above,
+	  issue the command:</p>
+	  <pre class="cookbook">super-compare.plx 00src/cams-gkab~akk-x-ltebab.glo</pre>
+	  <p>which creates/revises the map file 00map/cams-gkab~akk-x-ltebab.map.</p>
+	</li>
+	<li>
+	  <h2>Mapping</h2>
+	  <p>Mapping involves editing the source's map file as
+	  described in <esp:link page="maps">Map files</esp:link>.</p>
+	</li>
+	<li>
+	  <h2>Preparing</h2>
+	  <p>Preparing, i.e., for the merger of the new source items
+	  into the base, involves extracting the <code>add</code>
+	  items from the map file and creating a glossary from them.
+	  This can be reviewed for correctness before doing the actual
+	  merge.</p>
+	  <p>To prepare for the merge, issue the command:</p>
+	  <pre class="cookbook">super-prepare.plx 00map/cams-gkab~akk-x-ltebab.map</pre>
+	  <p>which creates the glossary of the material to be merged
+	  in 01tmp/cams-gkab~akk-x-ltebab.new and a revised version of
+	  the map file--one without the add items--in 01tmp/cams-gkab~akk-x-ltebab.map</p>
+	</li>
+	<li>
+	  <h2>Merging</h2>
+	  <p>Merging creates a new base glossary with the add items
+	  inserted into it.  The current base glossary is saved before
+	  being overwritten: for a glossary akk.glo, the backup is
+	  named 00bak/akk-DATE.glo where DATE is the current date in
+	  YYYYMMDD format, e.g., 00bak/akk-20140526.glo.  The current
+	  map file is also saved in 00bak with the date inserted into
+	  the filename in the same way.</p>
+	  <p>To merge a new source glossary, issue the command:</p>
+	  <pre class="cookbook">super-merge.plx 01tmp/cams-gkab~akk-x-ltebab.new</pre>
+	</li>
+	<li>
+	  <h2>Rebuilding</h2>
+	  <p>Super-glossaries are rebuilt using the 'oracc build' command.</p>
+	</li>
+      </ol>
+    </body>
+  </html>
+</esp:page>

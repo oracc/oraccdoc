@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml"
+	  xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>Map files</esp:name><esp:title>Super-glossary Map Files</esp:title>
+  <html>
+    <head/>
+    <body>
+      <p>Map files are very simple and have the following schematic structure:</p>
+      <pre class="example">add|cut|fix|map|new	entry|sense	SIGNATURE	=> 	SIGNATURE</pre>
+      <h2>add|cut|fix|map|new</h2>
+      <p>When an entry or sense in the source is not in the base, a
+      <code>new</code> item is generated. You can change this to
+      <code>add</code> to indicate that the item should be added to
+      the base.  To identify this source item with a different base
+      item, you can change the <code>new</code> to <code>map</code>.
+      In this case, the target for the mapping must be specified by
+      giving the special sequence <code>=></code> followed by the base
+      item with which to identify the new source item.</p>
+      <h2>entry|sense</h2>
+      <p>Primarily intended to make the map file more human-readable,
+      this identifies the new item as either a glossary entry or a
+      sense belonging to an entry.</p>
+      <h2>SIGNATURE</h2>
+      <p>Signatures are a core concept of the Oracc lemmatizer, but
+      the super-glossary tools use only a limited subset of the
+      information that can be in a signature.  Signatures in
+      super-glossaries either have the form <code
+      class="example">CF[GW]POS</code> or
+      <code>CF[GW//SENSE]POS'EPOS</code>.</p>
+      <h3>Signature Components</h3>
+      <dl>
+	<dt>CF</dt><dd>Citation Form</dd>
+	<dt>GW</dt><dd>Guide Word</dd>
+	<dt>SENSE</dt><dd>Sense</dd>
+	<dt>POS</dt><dd>Part of Speech</dd>
+	<dt>EPOS</dt><dd>Effective Part of Speech--the POS appropriate to the SENSE</dd>
+      </dl>
+      <h2>Mapping and fixing</h2>
+      <p>Mapping and fixing both enable an item in the source glossary
+      to be treated as a different item in the base glossary.  The two
+      share the same structure in which the right hand side is an
+      arrow made up of an equals sign and a right angle bracket
+      (<code>=></code>), surrounded by spaces, and followed by the
+      base item to which the source item corresponds.  The difference
+      between <code>map</code> and <code>fix</code> is that
+      <code>map</code> should be used when the difference between the
+      source and base is a matter of style or approach between the
+      source and base. By contrast, <code>fix</code> is an assertion
+      that there is an error in the source glossary which could be
+      fixed.  These can be reported to the project manager.  Examples
+      of map and fix are:</p>
+      <pre class="cookbook">fix entry akī[as]PRP => akī[like]PRP
+map entry akī[as]PRP => akī[like]PRP</pre>
+      <h2>Omitting items in the source from the merge</h2>
+      <p>Items which should not be added to the base glossary may be specified using <code>cut</code>:</p>
+      <pre class="cookbook">cut entry akī[as]PRP</pre>
+
+      <h2>Comments in map files</h2>
+      <p>Comments may be entered in the map files by adding lines beginning with the <code>#</code> character (pound sign/hash mark):</p>
+      <pre class="cookbook">
+map entry akī[as]PRP => akī[like]PRP
+# correct GW to align with base glossary</pre>
+
+      <h2>PSU handling</h2>
+      <p>PSUs (Phrasal Semantic Units) are checked and entered into the map file by super-compare just like any other word, and they can be mapped and fixed in the expected manner.</p>  
+
+      <p>If a PSU has an <code>add</code> action, the parts of the PSU are automatically imported from the source glossary into the base glossary.  The super-glossary tools check the parts to ensure that they are either already in the base glossary or are being added from the source glossary that is being mapped.  This means that as long as the components of a PSU are being mapped in from the source glossary or are already known, no special action need be taken.</p>
+
+      <p>It may be, however, that a component of a PSU in the source glossary is not being mapped in from the source, and does not align with an entry in the base glossary either.  In this case, the parts for the PSU can be given in the map file, at the end of the add line, in the following format:</p>
+
+      <pre class="example">
+add [SIGNATURE] @parts [PARTS]</pre>
+
+      <p>See the sample map file for a example.</p>
+
+      <h2>Sample map file</h2>
+<pre class="cookbook">
+map entry akī[as]PRP => akī[like]PRP
+add entry arkānu[later]AV
+add entry bēl āli[city ruler]N @parts bēlu[lord]N ālu[city]N
+new entry dabābu[claim]V
+new sense eṭēru[pay//paying]V'V
+</pre>
+    </body>
+  </html>
+</esp:page>

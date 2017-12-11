@@ -26,7 +26,13 @@
 <esp:h>Rebuilding</esp:h>
 <p>When you have finished creating and editing XML pages and embedded content for your ESP website, make sure that all the files are in the correct directories on Oracc (see the <esp:link page="esp-overview">ESP overview</esp:link> page) and that <esp:link page="esp-setup" bookmark="h_siteparameters"><code>parameters.xml</code></esp:link> and <esp:link page="esp-setup" bookmark="h_sitestructure"><code>structure.xml</code></esp:link> have all been correctly edited.</p>
 
-<p>Log in to Oracc with PuTTy or Terminal and type the command <code class="cookbook">oracc build portal</code>. When this has finished running, type <code class="cookbook">less oracc.log</code>. If there are no errors in your ESP code, you will see output like this:</p>
+<p>Log in to Oracc with PuTTy or Terminal.</p>
+<ul>
+  <li>If you have added new images to <code class="cookbook">00res/images</code> and/or new PDFs or other files to <code class="cookbook">00res/downloads</code>, first type the command <code class="cookbook">oracc resources</code> and hit return.</li>
+  <li>Now type the command <code class="cookbook">oracc build portal</code> and hit return.</li>
+</ul>
+
+<p>When <code class="cookbook">oracc build portal</code> has finished running, type <code class="cookbook">less oracc.log</code>. If there are no errors in your ESP code, you will see output like this:</p>
 
 <pre class="listing">
 ESP processing file:/home/oracc/doc2/01bld/espdev/about/licensing/index.html
