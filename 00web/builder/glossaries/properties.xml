@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml"
+	  xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>Properties</esp:name><esp:title>Properties</esp:title>
+  <html>
+    <head/>
+    <body>
+      <h2>Introduction</h2>
+      <p>Properties provide a flexible way to add information to words
+      in a glossary. Property validation is enforced by the glossary
+      preprocessor while the properties themselves are part of the
+      glossary proper and are thus available in the JSON data that
+      Oracc creates for glossaries.  Because glossaries link to
+      instances, the properties in a glossary can be applied to the
+      contexts in which the words with the property occur.</p>
+      <p>There are two glossary tags used for glossary properties:
+      <code>@proplist</code> and <code>@prop</code>.  Both tags may be
+      used more than once.</p>
+      <h3>@proplist</h3>
+      <p>The <code>@proplist</code> tag has a single argument which is
+      the name of a file containing properties and permissible values.
+      The file name may begin with a project name, followed by a colon
+      (':'). If there is an explicit project name Oracc looks only in
+      the <code>00lib</code> directory of the named project.  If there
+      is no explicit project name, Oracc looks first in the current
+      project's <code>00lib</code> directory, then in the system
+      properties directory.  At present there are no system properties
+      defined, but this feature is implemented for possible use in the
+      future.  System property files live in the
+      <code>lib/data/props</code> directory of the Oracc installation
+      (usually <code>/home/oracc</code> in a multi-user
+      installation).</p>
+      <h3>@prop</h3>
+      <p>The <code>@prop</code> may be given before any senses, in
+      which case the property applies to all senses of the word, or
+      immediately after a <code>@sense</code>, in which case it
+      applies to the sense.</p>
+      <p>The format of a <code>@prop</code> is:</p>
+      <pre class="example">
+	@prop KEY VALUES      </pre>
+      <p>The <code>KEY</code> must be defined in a proplist which has
+      been included in the glossary's scope via a
+      <code>@proplist</code> command, and the VALUES must be declared
+      allowable values for the <code>KEY</code>.  A <code>KEY</code>
+      may have a single <code>VALUE</code> or many.  No spaces are
+      allowed in <code>VALUES</code>.</p>
+      <h3>Proplist format</h3>
+      <p>The file is a simple text file, with the extension
+      <code>.txt</code>.  Blank lines are ignored, as are comment
+      lines which begin with the hash mark (<code>#</code>). The first
+      word of any unindented line apart from comments is an allowable
+      <code>KEY</code>; subsequent words are <code>VALUES</code>,
+      which may be given over more than one line as long as the second
+      and subsequent lines are indented.  A <code>VALUE</code> may not
+      contain spaces.</p>
+      <h3>Example</h3>
+      <p>For a proplist <code>00lib/loctypes.txt</code> containing the following:</p>
+      <pre class="cookbook">
+	loctype monument temple city field      </pre>
+      <p>The <code>qpn.glo</code> for a project would include the
+      proplist giving only the base part of the filename:</p>
+      <pre class="cookbook">
+	@proplist loctypes      </pre>
+      <p>Then reference the proplist:</p>
+      <pre class="cookbook">
+	@entry Entry [1] GN
+	@prop loctype monument
+	...      </pre>
+      <p>To use the properties defined by another project:</p>
+      <pre class="cookbook">
+	@proplist rinap:loctypes      </pre>
+    </body>
+  </html>
+</esp:page>
