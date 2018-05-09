@@ -38,7 +38,13 @@
 	  </struct:page>
 	<struct:page file="visitor/keyboards.xml" id="visitor-keyboards"  type="page"/>
   </struct:page>
-
+    <!-- EMACS -->
+    <struct:page file="builder/emacs/index.xml" id="emacs" type="page">
+	    <struct:page file="builder/emacs/setup.xml" id="emacssetup" type="page" />
+	    <struct:page file="builder/emacs/aquamacs.xml" id="aquamacs" type="page" />
+	    <struct:page file="builder/emacs/emacsw32.xml" id="emacsw32" type="page" />
+            <struct:page file="builder/emacs/emacs.xml" id="emacsuse" type="page"/>
+	</struct:page>
   <!-- EDITOR DOCO -->
   <struct:page file="builder/builder.xml" id="editing" type="page">
      <struct:page file="builder/editing/cdli.xml" id="cdli" type="page">
@@ -69,13 +75,7 @@
 	  <struct:page file="builder/editing/layouts.xml" id="layouts" type="page"/>
 	  <struct:page file="builder/editing/advanced.xml" id="advanced" type="page"/>
     </struct:page>
-    <!-- EMACS -->
-    <struct:page file="builder/emacs/index.xml" id="emacs" type="page">
-	    <struct:page file="builder/emacs/setup.xml" id="emacssetup" type="page" />
-	    <struct:page file="builder/emacs/aquamacs.xml" id="aquamacs" type="page" />
-	    <struct:page file="builder/emacs/emacsw32.xml" id="emacsw32" type="page" />
-            <struct:page file="builder/emacs/emacs.xml" id="emacsuse" type="page"/>
-	</struct:page>
+
 	  
    <!-- LANGUAGES -->
    <struct:page file="builder/linganno/languages.xml" id="languages" type="page">
