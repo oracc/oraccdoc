@@ -1,0 +1,35 @@
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>@collo</esp:name><esp:title>The @collo tag</esp:title>
+  <html><head/>
+  <body>
+    
+<p>The @collo tag gives access to the Ngrammer.  It is normally used with
+some convenient shorthands that are defined only for use in
+glossaries--where the shorthands can be expanded from context.</p>
+
+<p>When the glossary processor reads 00lib/sux.glo it expands the @collo
+rules and puts them in a file, 02pub/coll-sux.ngm.  The lemmatizer
+reads these rules and applies them early in the disambiguation
+sequence.</p>
+
+<p>When we talk of 'expanding' here, we mean that the shorthand given in
+@collo is supplemented with contextual data to create a valid ngram
+entry in the output file 02pub/coll-sux.ngm.</p>
+
+<h2>Shorthands</h2>
+
+<dl>
+ <dt>-</dt><dd>A simple hyphen indicates the current word: it is expanded to CF[GW]POS</dd>
+
+ <dt>-FORM</dt><dd>A hyphen followed immediately, with no whitespace, indicates the current word but with the specific form in question: it is expanded to :FORM=CF[GW]POS</dd>
+
+ <dt>[SENSE]</dt><dd>A pair of square brackets around a sense indicates that the specified sense of the current word should be selected: it is expanded to CF[GW]POS => CF[GW//SENSE]</dd>
+
+ <dt>POS</dt><dd>A simple Part-of-speech (e.g., PN) indicates that any word with that POS should be considered a match: it is expanded to itself (in fact, it is a standard part of the Ngrammer system, but is mentioned here because of its utility for use in @collo)</dd>
+
+ <dt>SIGNATURE</dt><dd>Any other signature than those described above is simply passed through to the ngram rule that is being built from the @collo</dd>
+</dl>
+  </body>
+  </html>
+</esp:page>

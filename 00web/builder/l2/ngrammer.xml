@@ -1,0 +1,35 @@
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>Ngrammer</esp:name><esp:title>The Ngrammer</esp:title>
+  <html><head/>
+  <body>
+<p>The Ngrammer is a phase of Oracc lemmatization that performs
+disambiguation and annotation of sequences of lemmatized forms.  It is
+called automatically during lemmatization, often multiple times for
+different purposes:</p>
+
+<ul>
+<li>to create entries for PSUs (Phrasal Semantic Units, such as Sumerian compound verbs)</li>
+<li>to apply disambiguation rules defined using the new @collo (collocation) tag in glossaries</li>
+<li>to disambiguate ambiguous forms using the lemmatizer's statistics on adjacent forms (bigrams)</li>
+</ul>
+
+<p>In addition, several analyzers are implemented using the Ngrammer but
+are not (at present) widely used throughout Oracc:</p>
+
+<ul>
+<li>Date Specification Analyzer (DSA): annotate sequences of forms which comprise a date</li>
+<li>Person Specification Analyzer (PSA): annotate sequences of forms which comprise a personal name and related information such as genealogical and professional qualifiers</li>
+<li>Number System Analyzer (NSA): annotate sequences of forms which comprise a number or quantity</li>
+</ul>
+
+<p>Ngrammer rules share the same syntax and the various analyzers have
+adjunct data files giving rules for the sequences to be annotated.</p>
+
+<h2>Ngrammer Rules</h2>
+
+<p>An ngram rule consists of two parts: an input side and an output side.  When the forms on the input are matched by the Ngrammer, the rules on the output side are applied.  The output side is optional because when the input side results in one or more matches the matched lemmata are kept and the unmatched lemmata are dropped, meaning that the input side is often enough to effect disambiguation because of the multi-word context it gives for selecting the matched lemmata.</p>
+
+  </body>
+  </html>
+</esp:page>

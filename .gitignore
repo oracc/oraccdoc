@@ -1,9 +1,18 @@
+.oraccstart
+
+01*
+
+02*
 
 .session
 
 .status
 
+*~
+
 *.xml~
+
+*.log
 
 oracc.log
 
