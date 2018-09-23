@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Signatures</esp:name>
+<esp:title>Signatures</esp:title>
+<html><head/><body>
+
+<p>Signatures are the string representation of an instance's
+lemmatization data and consists of a sequence of fields, each
+introduced by a distinct prefix character or characters. A complete
+signature looks like this:</p>
+
+<pre class="cookbook">@epsd2%sux:a=a[water//water]N'N/a#~$a</pre>
+
+<p>Abbreviated Signatures</p>
+
+<p>Oracc's lemmatization allows users to enter just a few key pieces
+of a signature (this is the "instance lemmatization") and the
+lemmatizer looks this data up in the glossary and creates complete
+signatures from it.</p>
+
+<p>Users typically enter just the citation form (CF, a in the example
+above) and the sense (SENSE, water above), and the instance
+lemmatization is then <code class="example">a[water]</code>.  It is
+also not uncommon to give simply a Part-of-Speech, such as <code
+class="example">PN</code>, for the instance lemmatization.</p>
+
+<p>Signature Fields and Prefix Characters</p>
+
+<dl>
+  <dt>@ = PROJECT</dt><dd>The project to which this signature belongs</dd>
+  <dt>% = LANG</dt><dd>The language for the signature; may also have a writing system, e.g., %akk-949 for normalized Akkadian</dd>
+  <dt>: = FORM</dt><dd>The form of the word as it appears in the text</dd>
+  <dt>= = CF</dt><dd>The = separates FORM and CF, or Citation Form; the equals may be omitted if the CF is the first entry in the signature, as in a[water]</dd>
+  <dt>[ ... ]</dt><dd>Square brackets surround the GW, or Guide Word, and/or SENSE</dd>
+  <dt>//</dt><dd>Only within [...], the double slash // separates GW and SENSE</dd>
+  <dt>POS</dt><dd>The POS (Part-of-Speech) is identified by its position immediately after the closing square bracket of [...]</dd>
+  <dt>' = EPOS</dt><dd>The right-quote, ', is the prefix character for the EPOS, the Effective Part-of-Speech</dd>
+  <dt>$ = NORM</dt>
+  <dd>The normalized version of the writing. This varies by
+  language: in Akkadian, for example, it is the transcription of
+  the word-form, without hyphens and determinatives and with
+  accents. This is not used in the source version of Sumerian
+  glossaries because it can be computed from the morphology (see
+  below).</dd>
+  <dt>* = STEM</dt>
+  <dd>The STEM, which may be a form of the BASE in Sumerian, or a
+  notation such as D, Š, N, in Akkadian, or possibly other
+  conventions for other languages.</dd>
+  <dt>/ = BASE</dt>
+  <dd>The BASE utilized in a Sumerian writing. This must match a
+  base given in the <code>@bases</code> part of the entry.</dd>
+  <dt>+ = CONT</dt>
+  <dd>The Sumerian grapheme following the base, used only when that
+  grapheme is the continuation of the end of the BASE,
+  e.g., <code>-ma</code> in <code>inim-ma</code>.  The
+  deconstruction of the grapheme gives the consonant which
+  continues the grapheme followed by the vowel which is normally a
+  morpheme or morpheme constituent.</dd>
+  <dt># = MORPH</dt>
+  <dd>The morphology string for the writing.</dd>
+  <dt>## = MORPH2</dt>
+  <dd>The second morphology string for the writing.</dd>
+  <dt>@ = RWS</dt>
+  <dd>The RWS, Register or Writing System, for the form.</dd>
+</dl>
+
+</body>
+</html>
+</esp:page>

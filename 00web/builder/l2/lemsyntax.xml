@@ -7,11 +7,10 @@
 <esp:title>L2: Signature/Lemmatization Syntax</esp:title>
 <html><head/><body>
 
-<p class="firstpara">This document describes extant and planned elements
-  of the syntax of signatures and the lemmatization specifications
-  that use them.</p>
-
-
+<p class="firstpara">This document describes extant and planned
+elements of the syntax of signatures and the lemmatization
+specifications that use them.  There is also an <esp:link
+page="signatures">introductory page about signatures</esp:link>.</p>
 
 <p>The forms of signatures and inline lemmatizations proper are
 identical as far as core and adjunct fields are concerned.  Signatures

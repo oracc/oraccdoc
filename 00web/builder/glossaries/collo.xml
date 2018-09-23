@@ -9,12 +9,12 @@ some convenient shorthands that are defined only for use in
 glossaries--where the shorthands can be expanded from context.</p>
 
 <p>When the glossary processor reads 00lib/sux.glo it expands the @collo
-rules and puts them in a file, 02pub/coll-sux.ngm.  The lemmatizer
+rules and puts them in a file, 02pub/collo-sux.ngm.  The lemmatizer
 reads these rules and applies them early in the disambiguation
 sequence.</p>
 
 <p>When we talk of 'expanding' here, we mean that the shorthand given in
-@collo is supplemented with contextual data to create a valid ngram
+@collo is supplemented with contextual data to create a valid Ngrammer
 entry in the output file 02pub/coll-sux.ngm.</p>
 
 <h2>Shorthands</h2>
