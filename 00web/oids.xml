@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+  <h1>Oracc IDs (OIDs)</h1>
+  <p>Oracc IDs are presently in development and are not (quite) suitable for external use as persistent IDs. This page will be updated when that stage is reached, probably in summer 2019.</p>
+
+  <h2>Features and Terminology</h2>
+
+  <p>OIDs work with the following elements: ID, DOMAIN, AUTHORITY, KEY, TYPE, EXTENSION.</p>
+
+  <dl>
+    <dt>ID</dt><dd>ID consists of a leading lowercase 'o' followed by 7 decimal digits.</dd>
+    <dt>DOMAIN</dt><dd>DOMAIN is the top-level area division of the data assigned OIDs.  At present there is a domain 'sl', for 'signlist', which covers Sumero-Akkadian Cuneiform, and a domain 'sux', for 'Sumerian'.  When additional languages are added into the OID system, their three-letter ISO codes will be used for their domain, e.g., akk, for Akkadian.</dd>
+    <dt>AUTHORITY</dt><dd>An AUTHORITY is an Oracc project which is allowed to make additions and corrections to an OID domain.  The authority for the signlist domain, 'sl', is the Oracc Global Signlist Project, or OGSL.  The authority for the Sumerian domain, 'sux', is the electronic Pennsylvania Sumerian Dictionary, or ePSD2.</dd>
+    <dt>KEY</dt><dd>A KEY is a string representation of the object assigned the ID. The form of the keys in an OID domain is dependent on the type of the object.</dd>
+    <dt>TYPE</dt><dd>TYPE gives the type of an object within a domain.  For the 'sl' domain, TYPE is presently 'sign' and the KEY is the sign name as given in OGSL.  For language domains such as 'sux', TYPE is 'word' or 'sense', and the KEY is a standard Oracc word or sense signature, i.e., for word it is CF[GW]POS; for sense it is CF[GW//SENSE]POS'EPOS.</dd>
+    <dt>EXTENSION</dt><dd>EXTENSION is only present for objects with type=sense.  The content is the OID of the word to which the sense belongs.</dd>
+  </dl>
+</esp:page>
