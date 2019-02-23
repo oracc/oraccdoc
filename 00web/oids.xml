@@ -3,6 +3,11 @@
         xmlns:esp="http://oracc.org/ns/esp/1.0"
    xmlns="http://www.w3.org/1999/xhtml"
    >
+  <esp:name>OIDs</esp:name>
+  <esp:title>Oracc OIDS</esp:title>
+
+  <html><head></head><body>
+
   <h1>Oracc IDs (OIDs)</h1>
   <p>Oracc IDs are presently in development and are not (quite) suitable for external use as persistent IDs. This page will be updated when that stage is reached, probably in summer 2019.</p>
 
@@ -18,4 +23,5 @@
     <dt>TYPE</dt><dd>TYPE gives the type of an object within a domain.  For the 'sl' domain, TYPE is presently 'sign' and the KEY is the sign name as given in OGSL.  For language domains such as 'sux', TYPE is 'word' or 'sense', and the KEY is a standard Oracc word or sense signature, i.e., for word it is CF[GW]POS; for sense it is CF[GW//SENSE]POS'EPOS.</dd>
     <dt>EXTENSION</dt><dd>EXTENSION is only present for objects with type=sense.  The content is the OID of the word to which the sense belongs.</dd>
   </dl>
+</body></html>
 </esp:page>

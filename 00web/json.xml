@@ -4,7 +4,7 @@
    xmlns="http://www.w3.org/1999/xhtml"
 >
 
-  <esp:name>JSON Data</esp:name>
+  <esp:name>json</esp:name>
   <esp:title>Oracc JSON Data: A brief introduction for programmers</esp:title>
 
   <html><head></head><body>

@@ -209,8 +209,8 @@
 
 <!-- OPEN DATA -->
 <struct:page file="opendata.xml" id="opendata" type="page">
-<struct:page file="oids.xml" id="oids" type="page"/>  
-<struct:page file="json.xml" id="json" type="page"/>  
+  <struct:page file="oids.xml" id="oids" type="page"/>  
+  <struct:page file="json.xml" id="json" type="page"/>  
 </struct:page>
 
 </struct:page>

@@ -3,5 +3,11 @@
         xmlns:esp="http://oracc.org/ns/esp/1.0"
    xmlns="http://www.w3.org/1999/xhtml"
    >
+  <esp:name>opendata</esp:name>
+  <esp:title>Open Data</esp:title>
+
+  <html><head></head><body>
+
   <p>This area of the Oracc documentation hosts information about various ways of using or referencing Oracc data.</p>
+</body></html>
 </esp:page>
