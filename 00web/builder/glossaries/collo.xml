@@ -4,12 +4,16 @@
   <html><head/>
   <body>
     
-<p>The @collo tag gives access to the Ngrammer.  It is normally used with
-some convenient shorthands that are defined only for use in
-glossaries--where the shorthands can be expanded from context.</p>
+<p>The @collo tag gives access to the Ngrammer.  It is normally used
+with some convenient shorthands that are defined only for use in
+glossaries--where the shorthands can be expanded from context.  A
+typical Ngram entry consists of a Left-Hand Side (LHS) and a
+Right-Hand Side (RHS); in <code>@collo</code> entries it's most common
+only to give the LHS and let the <code>@collo</code> system generate
+the RHS for you.</p>
 
 <p>When the glossary processor reads 00lib/sux.glo it expands the @collo
-rules and puts them in a file, 02pub/collo-sux.ngm.  The lemmatizer
+rules and puts them in a file, 02pub/coll-sux.ngm.  The lemmatizer
 reads these rules and applies them early in the disambiguation
 sequence.</p>
 
@@ -26,10 +30,24 @@ entry in the output file 02pub/coll-sux.ngm.</p>
 
  <dt>[SENSE]</dt><dd>A pair of square brackets around a sense indicates that the specified sense of the current word should be selected: it is expanded to CF[GW]POS => CF[GW//SENSE]</dd>
 
+ <dt>-FORM[SENSE]</dt><dd>Form and sense can be combined to mean "select this sense of the current word when this form is used"</dd>
+
  <dt>POS</dt><dd>A simple Part-of-speech (e.g., PN) indicates that any word with that POS should be considered a match: it is expanded to itself (in fact, it is a standard part of the Ngrammer system, but is mentioned here because of its utility for use in @collo)</dd>
 
  <dt>SIGNATURE</dt><dd>Any other signature than those described above is simply passed through to the ngram rule that is being built from the @collo</dd>
 </dl>
+
+<h2>The Ngrammer</h2>
+
+<p>Work-in-progress documentation for the Ngrammer
+is <esp:link page="ngrammer">available here</esp:link>. It is
+sometimes necessary to give full Ngrammer rules in
+a <code>@collo</code> entry, but because the RHS (after
+the <code>=></code> is often unnecessary in the Ngrammer it's rarely
+necessary to give it in <code>@collo</code>. It is never necessary to
+give an RHS consisting entirely of <code>*</code> elements--in fact,
+the <code>@collo</code> system discards an RHS that consists entirely
+of asterisks.</p>
   </body>
   </html>
 </esp:page>
