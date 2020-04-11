@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+	<esp:name>Embedding Oracc</esp:name>
+	<esp:title>How to embed Oracc pages in another website with a PHP readfile() function</esp:title>
+
+	<html><head></head><body>
+		
+	<p class="firstpara">It is possible to embed Oracc pages using a PHP readfile() function. Compared with the HTML &lt;object> and &lt;iframe> tags, this method has the advantage of loading the embedded section as part of the page, not in a frame, which allows a smoother integration.</p>
+	<p>A basic use of the function would be:</p>
+	<blockquote><p class="cookbook">&lt;?php readfile(http://oracc.org/PROJ/CDLIno/html); ?></p></blockquote>
+	<p>For instance, to load the text P392620 from the project CCPo, the line would be:</p>
+	<blockquote><p class="cookbook">&lt;?php readfile(http://oracc.org/ccpo/P392620/html); ?></p></blockquote>
+	<p>This can be easily combined with other PHP functions. For instance, to determine whether a given text is edited in Oracc or not, one can set the URL of the page as a variable and then determine whether the function get_headers() returns true or not:</p>
+<blockquote><p class="cookbook">&lt;?php
+$url = "http://oracc.org/ccpo/P392620/html";
+if (!in_array("0", get_headers($url, 1), TRUE)) { readfile( $url);}
+?></p></blockquote>
+<p>If you are using Drupal for your website, it is possible to retrieve information from any node and combine it with the readfile() function. For instance, one can retrieve the CDLI number from one of the fields of a node and use it to build the URL address. Thus, if the field’s machine-readable name is “field_cdlino,” the code would be:</p>
+<blockquote><p class="cookbook">&lt;?php
+$cdlino = $entity->field_cdlino['und'][0]['value'];
+$url = "http://oracc.org/ccpo/".$cdlino."/html";
+if (!in_array("0", get_headers($url, 1), TRUE)) { readfile( $url);}
+?></p></blockquote>
+<p>The easiest way to integrate this into a Drupal website is to create a “Code field” in which to put the PHP code.</p>
+<p>There is an important caveat. Using the readfile() function will require you to load all of Oracc’s CSS and JavaScript files locally. There are two ways of loading them. The easiest way is to refer to the .js and .css files stored in the Oracc server. Simply add the following lines of code to the &lt;head> section of your page:</p>
+<blockquote><p class="cookbook">&lt;link rel="stylesheet" type="text/css" href="http://oracc.org/css/p3.css" /><br/>
+&lt;script src="http://oracc.org/js/p3.js" type="text/javascript"/></p></blockquote>
+<p>The other option is to download both files (<span class="cookbook">http://oracc.org/css/p3.css</span> and <span class="cookbook">http://oracc.org/js/p3.js</span>) and edit them locally to fit your website’s style. Then you should upload both files to your server, and refer to them using the same HTML &lt;link> and &lt;script> instructions given above. Just make sure to replace http://oracc.org with your server’s URL.
+</p>
+
+<esp:author first-names="Enrique" last-name="Jiménez"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+	</body></html>
+
+</esp:page>

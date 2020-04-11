@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Nammu</esp:name>
+<esp:title>Working with Nammu</esp:title>
+<html><head/><body>
+<p class="firstpara">Nammu is a simple text editor, written especially
+for Oracc by <esp:link url="http://www.ucl.ac.uk/research-it-services/research-software-development">UCL's Research Development Software Group</esp:link>, that enables all content creators to edit ATF files, one
+file at at time. </p>
+
+
+<p>On this page we discuss:</p>
+
+<ul>
+  <li><esp:link bookmark="install">How to install Nammu</esp:link></li>
+  <li><esp:link bookmark="shortcuts">Keyboard shortcuts</esp:link></li>
+  <li><esp:link bookmark="create">How to create and save ATF files with Nammu</esp:link></li>
+  <li><esp:link bookmark="edit">How to edit ATF files with Nammu</esp:link></li>
+  <li><esp:link bookmark="validate">How to validate and lemmatise ATF
+  files with Nammu</esp:link></li>
+  <li><esp:link bookmark="settings">How to change Nammu's settings</esp:link></li>
+  <li><esp:link bookmark="report">How to report bugs and request improvements</esp:link></li>
+</ul>
+
+
+<esp:h><esp:bookmark name="install"/>How to install and set up
+Nammu</esp:h>
+
+<p>It's really easy to install Nammu:</p>
+<ol>
+  <li>Follow <esp:link url="https://github.com/oracc/nammu/releases"
+  name="Oracc Nammu releases">this link to the Github Nammu downloads
+  page</esp:link>.</li>
+  <li>Double-click on the name of the latest release of Nammu, which
+  will have a name like <span
+  class="cookbook">nammu-0.7.0.jar</span>.</li>
+  <li>Save the download to wherever you want it to live on your own
+  computer.</li>
+  <li>Open it by double-clicking on the Nammu icon. </li>
+</ol>
+
+<esp:sh>Troubleshooting</esp:sh>
+<ul>
+  <li><p>If you are running a Mac, your security settings may not let you
+  open Nammu the first time after you install it. If that
+  happens, go to your System Preferences and open "Security &amp;
+  Privacy" in the top row of icons. Under the
+  "General" tab, choose "Open anyway". Close your System Preferences
+  and open Nammu.</p></li>
+  <li><p>If you try to open Nammu and it doesn't work, it might be that you don't have Java installed. You can check if you do by <esp:link>opening a terminal</esp:link> and typing:</p>
+
+<p class="cookbook">java</p>
+
+<p>If that command is not recognised, then you'll need to download and
+install the Java Runtime Environment (JRE). You can find the
+appropriate JRE installable file for your operating system <esp:link url="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">here</esp:link>.</p>
+
+<p>If you keep having trouble, you can also run it from the command line, like this:</p>
+
+<p class="cookbook">java -jar /path/to/nammu.jar</p>
+
+<p>(where you replace <span class="cookbook">/path/to</span> with the
+actual file hierarchy in which your copy of Nammu lives. This will output a clearer log message about what the problem is.</p></li>
+</ul>
+
+<p>If you're an advanced user, and want to edit Nammu's configuration
+file, read the instructions <esp:link
+url="https://github.com/oracc/nammu#nammus-configuration-for-advanced-users"
+rel="external" name="Nammu's configuration for advanced users">on Github</esp:link>.</p>
+
+<esp:h><esp:bookmark name="shortcuts"/>Keyboard shortcuts</esp:h>
+<p>We hope you will find Nammu very easy intuitive to use. Explore the
+items in the five drop-down menus, and hover your cursor over the
+icons at the top of the Nammu window to see what they do. In addition
+you can use these keyboard shortcuts:</p>
+
+<table class="pretty">
+<tr><th>Action</th> 	<th>Keystroke</th></tr>
+<tr><th>New File</th> 	<th>Ctrl/Cmd + N</th></tr>
+<tr><th>Open File</th> 	<th>Ctrl/Cmd + O</th></tr>
+<tr><th>Close File</th> 	<th>Ctrl/Cmd + W</th></tr>
+<tr><th>Save As</th> 	<th>Ctrl/Cmd + E</th></tr>
+<tr><th>Save File</th> 	<th>Ctrl/Cmd + S</th></tr>
+<tr><th>Validate</th> 	<th>Ctrl/Cmd + D</th></tr>
+<tr><th>Lemmatise</th> 	<th>Ctrl/Cmd + L</th></tr>
+<tr><th>Undo</th> 	<th>Ctrl/Cmd + Z</th></tr>
+<tr><th>Redo</th> 	<th>Ctrl/Cmd + Y</th></tr>
+<tr><th>Find</th> 	<th>Ctrl/Cmd + F</th></tr>
+<tr><th>Find next</th> 	<th>Ctrl/Cmd + G</th></tr>
+<tr><th>Replace all</th> 	<th>Ctrl/Cmd + A</th></tr>
+<tr><th>Replace one</th> 	<th>Ctrl/Cmd + R</th></tr>
+<tr><th>Show Help</th> 	<th>Ctrl/Cmd + H</th></tr>
+<tr><th>Split Editor Horizontally</th> 	<th>Ctrl/Cmd + .</th></tr>
+<tr><th>Split Editor Vertically</th> 	<th>Ctrl/Cmd + ;</th></tr>
+<tr><th>Syntax Highlight Switch</th> 	<th>Ctrl/Cmd + T</th></tr>
+
+</table>
+
+<p>If you're already used to editing ATF in Emacs, this should
+all seem very familiar. If not, we give some more detailed help below.</p>
+
+<esp:h><esp:bookmark name="create"/>How to create and save files in
+Nammu</esp:h>
+
+<p>The current version of Nammu only works with files that are on your
+own computer. You cannot create or save files direct to the Oracc
+server. If you're used to doing that, we recommend instead that you
+pull your files off Oracc before you start editing and then, at the
+end of your session, upload edited
+files back to Oracc. We describe how to do that <esp:link
+page="projunix" bookmark="h_uploadingatfodsandcataloguefilestooracc">on a separate
+page</esp:link> [which does not yet exist].</p>
+
+<esp:sh>Creating a new ATF file</esp:sh>
+<p>You can create a new file in Nammu with the File -> New menu
+item, or by clicking the first icon in the toolbar, or by typing
+<span class="cookbook">Ctrl/Cmd + N</span>. They all give the
+same result: a new dialogue box headed "New ATF Template". If you don't want to use this
+template, simply choose the "Leave blank"
+option in the bottom centre and the dialogue box will disappear.</p>
+
+<p>Assuming you do want to use the template, each of the
+text boxes should be self-explanatory, but if not, the help icons on
+the right will tell you what to do. The completed dialogue box should
+look something like this:</p>
+
+<blockquote><p>CDLI's ID: <span class="cookbook">&amp;P123445</span> =
+<span class="cookbook">CT 165, pl. 9</span><br/>
+Project: <span class="cookbook">saao</span> / <span
+class="cookbook">saa72</span><br/>
+Language: <span class="cookbook">Neo-Assyrian</span></p></blockquote>
+
+ <p>Then choose "Create template".  Nammu will auto-fill the main
+ editing window with the text that you entered, e.g.,:</p>
+
+ <blockquote><p class="cookbook">&amp;P123445 = CT 165, pl. 9<br/>
+#project: saao/saa72<br/>
+ #atf: lang akk-x-neoass</p></blockquote>
+
+<p>and will remember your choice of project and language for next
+time. But you can overwrite Nammu's pre-selections at any time, either
+in the dialogue box, or in the main editing window.</p>
+
+<p>Nammu does not auto-save your files. Remember to save at regular
+intervals, so that you don't accidentally lose data.</p>
+
+<esp:sh>Saving files</esp:sh>
+<p>When you save a file for the first time, Nammu will open a "Save"
+dialogue box, just like any word processor, with all the usual
+options.</p>
+
+<p>When you name your file, remember that you:</p>
+<ul>
+ <li>MUST NOT use spaces: use underscore _ or a hypen - instead if you want</li>
+ <li>MUST give your file name the extension
+ <span class="cookbook">.atf</span>.</li>
+</ul>
+
+<p>If your filename doesn't obey these simple rules, your file
+may not work properly with Nammu or with Oracc.</p>
+
+<p>By default, Nammu will suggest you save files to the same
+same place as Nammu itself. But you can choose a different
+folder/directory with the "Settings" dialogue box. You'll find this
+via the File menu, or the cog-wheel icon in the toolbar. Change your
+"working directory" by clicking "Browse" and selecting the
+folder/directory where you want to save (and open) your ATF files. You
+can change this setting as often as you like.</p>
+
+<esp:h><esp:bookmark name="edit"/>How to edit ATF files in
+Nammu</esp:h>
+
+<p>We have designed Nammu to be quite intuitive to use. You can cut and
+paste, find and replace, etc., just as in any text editor. Here are a
+few things you might not know about:</p>
+
+<dl>
+<dt>Validating and lemmatising</dt>
+<dd>Unlike Emacs, you don't have to save a file before you validate or
+lemmatise it. But, as before, you can only lemmatise a valid file. So
+fix any validation errors before you lemmatise. Click on an error
+message in the console at the bottom of the window to go to it in the
+main editing window.</dd>
+
+<dt>Split screen</dt>
+<dd>You can split the window, horizontally or vertically. Find these
+options in the Window menu or in the <esp:link bookmark="shortcuts">keyboard shortcuts</esp:link>. This option is
+particularly useful when you are translating and lemmatising at the
+same time.</dd>
+</dl>
+
+<p>If you're
+an advanced user of Emacs, you won't find every single editorial
+feature that you're used to. If you're really missing something,
+though, please <esp:link bookmark="report">put in a request</esp:link> for it.</p>
+
+<esp:h><esp:bookmark name="report"/>How to report bugs and request
+improvements to Nammu</esp:h>
+
+<p>If you
+want to ask questions, report bugs, or request new features please
+contact us by creating a <span class="cookbook">New Issue</span> with
+the green button on Nammu's Github <esp:link
+url="https://github.com/oracc/nammu/issues" name="Github Oracc/Nammu
+Issues" rel="external">Issues page</esp:link>.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>
