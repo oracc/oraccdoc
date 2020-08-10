@@ -79,7 +79,7 @@ current Oracc server, wherever it is hosted.</p>
 <p>Give the lower-case abbreviation for the glossary or subglossary, without a final <code>/</code>. For example: </p>
 
 <ul>
-<li><code class="example"><esp:link url="http://oracc.org/cams/akk" hide-print="yes">http://oracc.org/cams/gkab/akk</esp:link></code> for the top-level CAMS/GKAB Akkadian glossary;</li>
+<li><code class="example"><esp:link url="http://oracc.org/cams/akk-x-stdbab" hide-print="yes">http://oracc.org/cams/gkab/akk-x-stdbab</esp:link></code> for the top-level CAMS/GKAB Akkadian Standard Babylonian glossary;</li>
 <li><code class="example"><esp:link url="http://oracc.org/etcsri/qpn-x-divine" hide-print="yes">http://oracc.org/etcsri/qpn-x-divine</esp:link></code> for ETCSRI's Divine Names subglossary of the Proper Nouns;</li>
 <li><code class="example"><esp:link url="http://oracc.org/saao/saa01/akk-x-neoass" hide-print="yes">http://oracc.org/saao/saa01/akk-x-neoass</esp:link></code> for the Neo-Assyrian subglossary of the Akkadian glossary of State Archives of Assyria online, volume 1.</li>
 </ul>
