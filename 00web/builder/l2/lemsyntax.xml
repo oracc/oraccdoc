@@ -81,6 +81,33 @@ the values given in the project's 00lib/properties.xml
 then the PROPERTY component is optional giving the
 short form:</p>
 
+<esp:ssh>Property Validation</esp:ssh>
+<p>Properties can be validated and constrained with control lists.  To
+use this facility the project must define the configuration variable
+<code>lem-props</code> with value <code>yes</code>, and also have a
+properties definition file <code>00lib/lemprops.txt</code>.</p>
+
+<p>The format of the lemprops.txt is a series of lines containing
+space-terminated tokens.  In each case, the first token is a property
+name and remaining tokens are value-specifications.  If the line
+starts with a space or tab, the remaining tokens are additional
+value-specifications for the last property given.  Some
+value-specifications are special, as defined in the following
+table.</p>
+
+<table class="pretty">
+<thead>
+  <tr><th>Value</th><th>Meaning</th></tr>
+</thead>
+<tbody>
+  <tr><td>*</td><td>VALUES are not controlled; any word-token is allowed as a value</td></tr>
+  <tr><td>-</td><td>VALUE is BOOLEAN; if the property name is present, the value is TRUE</td></tr>
+  <tr><td>@</td><td>VALUE is a reference; references are resolved when the lemmatization of a text is complete.</td></tr>
+  <tr><td>|</td><td>the special VALUE <code>|</code> is reserved for system use and may not occur in lemprops.txt</td></tr>
+  <tr><td>VALUES</td><td>space-separated tokens other than the above special values are the control set for the property</td></tr>
+</tbody>
+</table>
+
 <pre class="example">$VALUE</pre>
 
 <esp:sh>Anchors</esp:sh>
