@@ -71,6 +71,10 @@ understand "tight" and "loose" formats interchangeably, but in
 principle some contexts prescribe that the CGP be in either tight or
 loose format.</p>
 
+<p>A CGP may have spaces in the CF portion, e.g., <code
+class="cookbook">ki aŋ [love] V/t</code>.  These entries are called
+"compound entries".</p>
+
 <h3>CGSPE</h3>
 
 <p>We also use, less often, the abbreviation <code>CGSPE</code> for
@@ -110,6 +114,9 @@ described before less common tags.</p>
   <dt>@relators</dt>
   <dd>A file containing configuration for the Relations mechanism;
   [[not yet implemented]]. May be given more than once.</dd>
+  <dt>@i18n</dt>
+  <dd>A list of languages that can be used in the i18n ltags--see the
+  discussion at the end of this page.</dd>
 </dl>
 
 <p>In the header, <code>@project @lang @name</code> are required and
@@ -142,7 +149,14 @@ restricted to ePSD.</p>
 <dl>
   <dt>@entry CGP</dt>
   <dd>An @entry tag is followed by a CGP which must be unique in the
-  glossary. The CGP must be given in the loose format.</dd>
+  glossary. The CGP must be given in the loose format.  An @entry may
+  be immediately followed by an asterisk (<code>@entry*</code> to
+  indicate that a compound entry (one which has multiple CFs separated
+  by spaces) is a phrasal usage rather than a compound verb.  For the
+  Sumerian language the distinction is between a compound whose
+  semantics are the sum of the parts as opposed to a compound whose
+  semantics involve a degree of incorporation or opacity relative to
+  the parts.</dd>
   <dt>@alias CGP</dt>
   <dd>An @alias tag is followed by a CGP which may be in either loose
   or tight formats.  The CGP gives an alternate name for the @entry;
