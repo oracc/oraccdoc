@@ -103,8 +103,8 @@ described before less common tags.</p>
   <dd>The CBD version: presently only 1.0 and 2.0 are recognized.  Default is 1.0.</dd>
   <dt>@proplist</dt>
   <dd>A file containing configuration information for the Properties
-  mechansism; see the [[properties page]]. May be given more than
-  once.</dd>
+  mechansism; see <esp:link url="/doc/help/glossaries/properties/">the
+  properties page</esp:link>. May be given more than once.</dd>
   <dt>@relators</dt>
   <dd>A file containing configuration for the Relations mechanism;
   [[not yet implemented]]. May be given more than once.</dd>
@@ -152,8 +152,8 @@ restricted to ePSD.</p>
   <dt>@parts CGP CGP ...</dt>
   <dd>For compound entries or phrases, one or more @parts entries must
   be given. Each @parts entry is a ordered list of the words (given as
-  tight CGPs) that can constitute the phrasal entry.  See the page on
-  <esp:link url="/doc/help/glossaries/psus/">PSUs</esp:link> for
+  tight CGPs) that can constitute the phrasal entry.  See the 
+  <esp:link url="/doc/help/glossaries/psus/">page on PSUs</esp:link> for
   further discussion.</dd>
   <dt>@[DCF-specification] CF</dt>
   <dd>Oracc glossaries use narrowly defined conventions for CFs.
