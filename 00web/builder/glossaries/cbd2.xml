@@ -32,7 +32,7 @@ glossaries in the text-format and, amongst other things, exports the
 XML version, validating the output against the XML schema as it does
 so.</p>
 
-<h2>CBD2 Overview</h2>
+<esp:h>CBD2 Overview</esp:h>
 
 <p>CBD2 glossary files consist of a header followed by zero or more
 entries.  An entry is structured as a sequence of blocks.  The blocks,
@@ -77,7 +77,7 @@ loose format.</p>
 CF-GW-SENSE-POS-EPOS. (<code>a[arm//strength]N'N</code>). There is no
 loose format for this as it is really a minimal signature.</p>
 
-<h2>The Header</h2>
+<esp:sh>The Header</esp:sh>
 
 <p>The common tags in the header are: <code>@project @lang
 @name</code>.  In addition, the header may specify the target language
@@ -169,8 +169,10 @@ restricted to ePSD.</p>
   <dt>@disc</dt>
   <dd>@disc enables glossaries to contain discussions of words and
   senses; the content of @disc is currently plain text, but in future
-  it will support inline styled text as in Oracc's OTF specification
-  as well as the inclusion of files in XHTML and ESP2 formats.</dd>
+  it will support inline styled text as in <esp:link
+  url="/doc/help/convertingatf/otf/">Oracc's OTF
+  specification</esp:link> as well as the inclusion of files in XHTML
+  and ESP2 formats.</dd>
   <dt>Edit Codes</dt>
   <dd>This section is provided for completeness and can be ignored by
   most users. The edit codes are used by tools which create the
@@ -476,7 +478,8 @@ the digit zero) for each COF-constituent after the first:</p>
   <dt>@allow</dt>
   <dd>See above in the discussion of @bases.</dd>
   <dt>@phon</dt>
-  <dd>A text field which gives the phonology of a word. No validation is done on the content.</dd>
+  <dd>A text field which gives the phonology of a word. No validation
+  is done on the content.</dd>
   <dt>@root</dt>
   <dd>A text field which gives the root of a word. No validation is
   done on the content.  In glossaries that use the concept of root,
@@ -509,7 +512,7 @@ character which is not part of the component's value.</p>
   <dd>An SID must begin with the hash or pound sign, '#'; this is
   discarded before storing the SID. The intention of this field is to
   support cross-referencing discussions of senses.  The ID must be a
-  legal XML:ID, so it is easiestt to construct IDs from an initial
+  legal XML:ID, so it is easiest to construct IDs from an initial
   letter followed by letters and digits.  The technical specication
   for an XML:ID NCName <esp:link
   url="https://www.w3.org/TR/xml-names11/#NT-NCName">can be found on
@@ -541,13 +544,13 @@ character which is not part of the component's value.</p>
 
 <h3>Senses with Meta Blocks</h3>
 
-<p>By default, an @entry has one <code>@meta</code> block, after the
-sense block, and belonging to the entry as a whole. A new feature in
-CBD2 allows meta blocks to belong to senses.  In order to use this
-feature the senses block must be wrapped with <code>@senses</code> at
-the start and <code>@end senses</code> at the end of the senses.  This
-allows a further meta block to be given as well which would then
-belong to the entry.</p>
+<p>By default, an @entry has one meta block, after the sense block,
+and belonging to the entry as a whole. A new feature in CBD2 allows
+meta blocks to belong to senses.  In order to use this feature the
+senses block must be wrapped with <code>@senses</code> before the
+first @sense line and <code>@end senses</code> at the end of the
+senses.  This allows a further meta block to be given as well, after
+<code>@end senses</code>, which would then belong to the entry.</p>
 
 <pre class="cookbook">
 @senses
@@ -575,9 +578,75 @@ optional sense fields allowed:</p>
 
 <h2>Meta Block</h2>
 
+<p>The meta block is a collection of adjunct information relevant to
+entries or senses.  The tags in a meta block may be in any order. All
+of meta block tags can occur zero or more times.  They are listed here
+in alphabetical order rather than order of importance.</p>
+
+<dd>
+  <dt>@bib</dt>
+  <dd>Bibliography; no validation or imposed structure.</dd>
+  <dt>@collo</dt>
+  <dd>Collocations; see <esp:link
+  url="/doc/help/glossaries/collo/">the @collo
+  documentation</esp:link>.</dd>
+  <dt>@equiv</dt>
+  <dd>Equivalents; the first item must be a language given with
+  percent-sign, e.g., <code>%akk</code>; the rest of the line is a
+  reference to a word.  These may be single tokens or CGPs.</dd>
+  <dt>@inote</dt>
+  <dd>Free text internal note; these will not be displayed but will be
+  included in outputs not directly intended for display.</dd>
+  <dt>@isslp</dt>
+  <dd>An ePSD-specific tag indicating bibliography of particular
+  (though sometimes now historical) importance.  Not presently
+  validated, the formal structure is a four-digit year (possibly with
+  a range, e.g., <code>2020</code> or <code>1998-2000</code>, an
+  author, a bibliographic abbreviation, and a locator in the published
+  work.</dd>
+  <dt>@note</dt>
+  <dd>Free text note which should be displayed; a future version will
+  support <esp:link url="/doc/help/convertingatf/otf/">OTF styled
+  inline text</esp:link> in this element.</dd>
+  <dt>@oid</dt>
+  <dd>An OID for the word or sense; these should be added
+  programmatically and not modified by users.</dd>
+  <dt>@pl_coord, @pl_id, @pl_alias</dt>
+  <dd>Pleiades support is provided using these three tags which must
+  occur in order. @pl_alias may occur zero or more times.</dd>
+  <dt>@prop</dt>
+  <dd>A property of the entry or sense; see <esp:link
+  url="/doc/help/glossaries/properties/">the properties
+  page</esp:link>.</dd>
+</dd>
+
 <h2>More Glossary Features</h2>
 
 <h3>I18N (Internationalization)</h3>
+
+<p>A new feature in CBD2 is support of internationalization of
+glossaries with multiple translation languages (i18n). The initial
+design supports translating guide words (@gwl); senses (@sensel);
+discussions (@discl); and notes (@notel).  As a shorthand these tags
+are referred to as ltags, or language-tags. The initial implementation
+could be extended based on experience with using the i18n support.</p>
+
+<p>A header tag, @i18n, gives the languages which are allowed in the
+ltags, as <code class="cookbook">@i18n ar fr</code></p>
+
+<p>The ltags all start with the language, including a %-sign, then a
+space, then the content.  They may occur as follows:</p>
+
+<dd>
+  <dt>@gwl</dt>
+  <dd>The @gwl tags must occur immediately after @entry, even before any edit codes.</dd>
+  <dt>@sensel</dt>
+  <dd>The @sensel tags must occur immediately after the @sense to which they correspond.</dd>
+  <dt>@discl</dt>
+  <dd>The @discl tags must occur immediately after the @disc to which they correspond.</dd>
+  <dt>@notel</dt>
+  <dd>The @notel tags must occur immediately after the @note to which they correspond.</dd>
+</dd>
 
 <h3>Lemmatization Ranks</h3>
 
