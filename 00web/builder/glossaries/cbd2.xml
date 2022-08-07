@@ -58,7 +58,7 @@ meta block for each sense.</p>
 <h3>Signature Terminology</h3>
 
 <p>CBD1 and CBD2 both use the terminology of Oracc signatures as
-described in <esp:link href="/doc/help/lemmatising/signatures/">the
+described in <esp:link url="/doc/help/lemmatising/signatures/">the
 lemmatisation page on signatures</esp:link>.</p>
 
 <h3>CGP</h3>
@@ -153,7 +153,7 @@ restricted to ePSD.</p>
   <dd>For compound entries or phrases, one or more @parts entries must
   be given. Each @parts entry is a ordered list of the words (given as
   tight CGPs) that can constitute the phrasal entry.  See the page on
-  <esp:link href="/doc/help/glossaries/psus/">PSUs</esp:link> for
+  <esp:link url="/doc/help/glossaries/psus/">PSUs</esp:link> for
   further discussion.</dd>
   <dt>@[DCF-specification] CF</dt>
   <dd>Oracc glossaries use narrowly defined conventions for CFs.
@@ -167,7 +167,7 @@ restricted to ePSD.</p>
   <dt>Edit Codes</dt>
   <dd>This section is provided for completeness and can be ignored by
   most users. The edit codes are used by tools which create the
-  <esp:link href="/epsd2/oid-history.html">ePSD OID history
+  <esp:link url="/epsd2/oid-history.html">ePSD OID history
   page</esp:link>. An @entry can be preceded by <code>+</code> or
   <code>-</code> meaning that the entry should be added or deleted.
   If the <code>-</code> form is used, there must be a comment
