@@ -166,6 +166,11 @@ restricted to ePSD.</p>
   online or in print. For example, <code>@entry kalbu [dog] N</code>
   might have a DCF <code>@OB kalbum</code>.  Note that only the CF is
   given with a DCF.</dd>
+  <dt>@disc</dt>
+  <dd>@disc enables glossaries to contain discussions of words and
+  senses; the content of @disc is currently plain text, but in future
+  it will support inline styled text as in Oracc's OTF specification
+  as well as the inclusion of files in XHTML and ESP2 formats.</dd>
   <dt>Edit Codes</dt>
   <dd>This section is provided for completeness and can be ignored by
   most users. The edit codes are used by tools which create the
@@ -183,9 +188,319 @@ restricted to ePSD.</p>
 
 <h2>Language Block</h2>
 
+<p>The language block normally contains at least one or more @form
+lines.  In agglutinative languages, like Sumerian and Urartian, it
+also includes a @bases entry.</p>
+
+<p>Less common constituents of the language block are @allow, @phon,
+@root, and @stems.</p>
+
+<h3>@bases</h3>
+
+<p>It's easiest to begin the discussion of the @bases tag with an example:</p>
+
+<pre class="example">
+  @bases ŋar (gar); ŋa₂-ŋa₂ (ga₂-ga₂); %es mar
+</pre>
+
+<p>The @bases tag is a fairly highly structured plain text field
+consisting of a sequence of base specifications separated by
+semicolons.</p>
+
+<p>Each base specification may consist of two parts: the primary base data
+and the alternate base data. A primary base consists of an optional
+language tag followed by a single base.  Alternate bases are given in
+parentheses after the primary base, with commas separating the
+alternate bases.</p>
+
+<p>In the example <code class="example">ŋar</code>, <code
+class="example">ŋa₂-ŋa₂</code>, and <code class="example">mar</code>
+are primary bases. The primary base <code class="example">ŋar</code>
+has an alternate base <code class="example">gar</code> in the same way
+as <code class="example">ŋa₂-ŋa₂</code> has an alternate base <code
+class="example">ga₂-ga₂</code>.  There is also an Emesal primary base,
+<code class="example">mar</code> marked with the ATF language switch
+<code class="example">%es</code>.</p>
+
+<p>Bases in Sumero-Akkadian Cuneiform (script code 020) <em>must</em>
+be conform to the GDL specification.  Every base is validated for form
+(effectively using the ATF checker) and for content (using the
+<esp:link url="/ogsl">Oracc Global Sign List</esp:link>.</p>
+
+<h4>Special features in @bases</h4>
+
+<p>There are several special features used in @bases commands which
+allow more precise description of the nature of certain kinds of
+bases:</p>
+
+<ul>
+<li>The centered dot, ·, means that a single grapheme writes a base
+component that is followed by a non-base component, e.g., ar[praise],
+has a base <code>a-r·e</code></li>
+<li>The degree symbol, °, means that a single grapheme writes a
+non-base component followed by a base component, e.g., e[speak] has
+base writings like <code>m°e</code>.</li>
+<li>A minus symbol, -, is allowed as the first character of a
+determinative to indicate that it is a semantic determinative that is
+not in the list of usual suspects for semantic determinatives. An
+example is the use of <code>{e}</code> to indicate leather objects.
+In ATF transliterations this is usually expressed as a simple
+<code>{e}</code>, but in the @bases specification ePSD uses
+<code>{-e}</code> to provide a persistent marker that this is not to
+be taken as a phonetic determinative.  This in turn allows validation
+to warn if probable phonetic determinatives are not properly marked
+with +, as in <code>banda₃{+da}</code>.</li>
+</ul>
+
+<h4>Validation of @bases</h4>
+
+<p>Several forms of validation are performed on bases by converting
+each primary and alternate base to a signature--a sequence of OGSL
+sign IDs. Primary bases must normally be unique; alternate bases must
+be a valid different transliteration of the primary base; and the
+bases in @form entries must be present in the @bases and must be a
+primary base.  Additional technical rules regarding transliteration
+are also enforced but are not detailed here.</p>
+
+<p>Occasionally a sign or sign sequence has more than one legitimate
+primary transliteration and in these cases the @allow tag must be used
+to permit the duplication.  Each @allow tag specifies a pair of
+allowed primary equivalents; multiple @allow commands can be given if
+necessary. The @allow must come before @bases. Here is an example from ePSD:</p>
+
+<pre class="example">
+@entry e [speak] V/t
+@allow b°e₇ = n°e
+@bases b°e₂ (be₂); b°e₄; b°e₇; m°e; n°e
+</pre>
+
+
+<h3>@form</h3>
+
+<p>The <code>@form</code> tag links instances in the corpus to the
+entries in the glossary. The first element is always a written form as
+it might occur in the corpus but without any half, square, angle or
+round brackets.  Following the written form various elements may occur
+depending in part on the language of the corpus. These elements are
+always marked by one or more field-code characters which indicate the
+type of the element. No space is allowed between the type character
+and the data element.</p>
+
+<p>In the description below the elements after the orthographic form
+(FORM) are listed in the order in which they must be specified.  Each
+of the data items is a "word"--everything from the field-code to the
+next space or end-of-line is the content of the field.  While some of
+the fields do have internal structure, that structure is not dealt
+with in this document.</p>
+
+<dl>
+
+<dt>% = LANG</dt>
+<dd>If no LANG is given the @form's language normally defaults to the
+glossary language.  See below for an exception involving Emegir and
+Emesal.</dd>
+
+<dt>@ = RWS</dt>
+<dd>The RWS, Register or Writing System, for the form.  This is rarely
+used in glossaries and may safely be ignored by most users.</dd>
+  
+<dt>/ = BASE</dt>
+<dd>The BASE utilized in a Sumerian writing. This must match a
+base given in the <code>@bases</code> part of the entry.</dd>
+
+<dt>* = STEM</dt>
+<dd>The STEM, which may be a form of the BASE in Sumerian, or a
+notation such as D, Š, N, in Akkadian, or possibly other
+conventions for other languages.</dd>
+
+<dt>+ = CONT</dt>
+<dd>The Sumerian grapheme following the base, used only when
+that grapheme is the continuation of the end of the BASE, e.g.,
+<code>-ma</code> in <code>inim-ma</code>.  The deconstruction of
+the grapheme gives the consonant which continues the grapheme
+followed by the vowel which is normally a morpheme or morpheme
+constituent.  The format is <code>+-ma=m.a</code>, where
+<code>ma</code> is the continuation grapheme and
+<code>m.a</code> is the decomposition.</dd>
+
+<dt># = MORPH</dt>
+<dd>The morphology string for the writing.</dd>
+
+<dt>## = MORPH2</dt>
+<dd>The second morphology string for the writing.</dd>
+
+<dt>$ = NORM</dt>
+<dd>The normalized version of the writing. This varies by
+language: in Akkadian, for example, it is the transcription of
+the word-form, without hyphens and determinatives and with
+accents. This is not used in the source version of Sumerian
+glossaries because it can be computed from the morphology (see
+below).</dd>
+
+</dl>      
+
+<h4>COFs--Compound Orthographic Forms</h4>
+
+<p><em>NOTE:</em> This passage describes COFs as modified for
+CBD2--this differs slightly from the rules for CBD1 COFs which are
+<esp:link url="/doc/help/glossaries/cofs/">described in this
+page</esp:link>.</p>
+
+<p>Although the entire COF does not get its own glossary entry, every
+word in a COF must contain a <code>@form</code> entry for the
+spelling.  In this <code>@form</code> entry, the normalization which
+corresponds to the glossary <code>@entry</code> is called the primary
+component, and is given without parentheses.  The other words, the
+secondary components, have their appropriate normalization given in
+parentheses:</p>
+
+<pre class="cookbook">
+@entry ina [in] PRP
+@form ip-pa-ni-šu₂ $ina $(pānišu)
+@form ip-pa-ni-šu₂-nu $ina $(pānišunu)
+@form ...
+@sense PRP ina
+@sense ...
+@end entry
+
+...
+
+entry pānu [front] N
+@form ip-pa-ni-šu₂ $(ina) $pānišu
+@form ip-pa-ni-šu₂-nu $(ina) $pānišunu
+@form ...
+@sense N front
+@end entry
+</pre>
+
+<p>COFs may contain more than two elements, and the same principles apply.</p>
+
+<esp:h>Sumerian COFs</esp:h>
+
+<p>COFs require a little extra care in Sumerian, because Sumerian
+<code>@form</code> entries also have BASE, MORPH and perhaps other
+additional fields.  Further, Sumerian glossaries do not contain NORM
+fields directly, because they are computed from the MORPH.</p>
+
+<p>For simplicity of parsing, the rules with Sumerian COFs are as
+follows:</p>
+<ul>
+<li>NORM must be given explicitly; simply use the value of MORPH and
+replace the <code>~</code> (tilde) component with the citation
+form;</li>
+<li>all NORMs must be given consecutively, at the <em>end</em> of the
+@form, as with other CBD2 @form lines</li>
+<li>BASE should be specified using the centre-dot to indicate that
+what precedes the centre-dot is part of the base, and the degree
+symbol to indicate that what follows the degree symbol is part of the
+base.  The two symbols may be combined where several words are written
+using a COF.  The BASE should be included in the <code>@bases</code>
+line.</li>
+</ul>
+
+<p>Here is a real life example (edited for clarity), in which the sign
+<code>ušu₂</code> is used to write <code>u₄ šu₂</code>:</p>
+
+<pre class="cookbook">
+@entry šuš [cover] V/t
+@bases suš₂; u°šu₂
+@form   ušu₂ /u°šu₂ #~ $(ud) $šuš
+@sense V/t to cover, to spread over
+@end entry
+
+@entry ud [sun] N
+@bases ud; u·šu₂
+@form   ušu₂  /u·šu₂ #~ $ud $(šuš)
+@sense N sun
+@end entry</pre>
+
+<esp:h>Cross-glossary COFs</esp:h>
+
+<p>COFs whose components are in different glossaries only occur on
+Oracc when a COF combines a common noun with a proper noun.  No
+special treatment is needed for this case, but the relevant
+<code>@form</code> lines do have to be present for each component just
+as they do when the components are in the same glossary.</p>
+y
+<p>Thus, in <code>akk.glo</code> one would have:</p>
+
+<pre class="cookbook">
+@entry kabūtu [(animal) dung] N
+@form {na₄}ŠURIM.{d}GU₄ $kabūt $(Šeriš)
+...
+</pre>
+
+<p>And in the proper noun glossary, <code>qpn.glo</code>, the relevant
+lines under Šeriš is:</p>
+
+<pre class="cookbook">
+@entry Šeriš [1] DN
+@form {na₄}ŠURIM.{d}GU₄ $(kabūt) $Šeriš
+...
+</pre>
+
+<h4>PSUs--Phrasal Semantic Units</h4>
+
+<p>The <code>@form</code> lines of PSUs also have some special
+characteristics.  One is that the first element of a <code>@form</code>,
+the written form, may contain multiple words: in this case they are
+joined by underscores.  The other is that they may only contain NORM
+entries in addition to the written form, and each of the NORMs is
+prefixed by its own <code>$</code>-sign:</p>
+
+<pre class="cookbook">
+@form ina_pa-ni-šu₂-nu_a-da-gal $ina $pānišunu $adaggal
+@form ina_pa-ni-šu₂-nu_i-da-gal $ina $pānišunu $idaggal
+</pre>
+
+<p>COFs in the written forms of PSUs are straightforward when the
+entire PSU is written with a single COF:</p>
+
+<pre class="cookbook">
+@form im-muh-hi $ina $muhhi
+</pre>
+
+<p>When the writing mixes a COF with other constituents, however, it
+is necessary to declare how many of the NORMs of the
+<code>@form</code> line are used up by the COF.  This is done by
+adding the special sequence <code>_0</code> (underscore followed by
+the digit zero) for each COF-constituent after the first:</p>
+
+<pre class="cookbook">
+@form {na₄}NIR₂.PA_0_iṣ-ṣu-ri $hulāl $kappi $iṣṣūri
+</pre>
+
+<h3>Rarer Language Tags</h3>
+
+<dl>
+  <dt>@allow</dt>
+  <dd>See above in the discussion of @bases.</dd>
+  <dt>@phon</dt>
+  <dd>A text field which gives the phonology of a word. No validation is done on the content.</dd>
+  <dt>@root</dt>
+  <dd>A text field which gives the root of a word. No validation is
+  done on the content.  In glossaries that use the concept of root,
+  the BASE field of forms can be used to specify the root of a given
+  form if necessary.</dd>
+  <dt>@stems</dt>
+  <dd>A text field which declares the known values for STEM in the
+  @form lines for the @entry.  This is stored but no further action is
+  presently taken with it.</dd>
+</dl>
+
 <h2>Senses Block</h2>
 
 <h2>Meta Block</h2>
+
+<h2>More Glossary Features</h2>
+
+<h3>Internationalization</h3>
+
+<h3>Lemmatization Rank</h3>
+
+<p>The <code>@entry</code>, <code>@sense</code>, and
+<code>@form</code> tags may be followed by an exclamation mark, e.g.,
+<code>@form!</code>, indicating higher lemmatizer priority.</p>
 
   </body>
   </html>
