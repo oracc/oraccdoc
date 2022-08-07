@@ -375,7 +375,7 @@ entry pānu [front] N
 
 <p>COFs may contain more than two elements, and the same principles apply.</p>
 
-<esp:h>Sumerian COFs</esp:h>
+<h5>Sumerian COFs</h5>
 
 <p>COFs require a little extra care in Sumerian, because Sumerian
 <code>@form</code> entries also have BASE, MORPH and perhaps other
@@ -414,14 +414,14 @@ line.</li>
 @sense N sun
 @end entry</pre>
 
-<esp:h>Cross-glossary COFs</esp:h>
+<h5>Cross-glossary COFs</h5>
 
 <p>COFs whose components are in different glossaries only occur on
 Oracc when a COF combines a common noun with a proper noun.  No
 special treatment is needed for this case, but the relevant
 <code>@form</code> lines do have to be present for each component just
 as they do when the components are in the same glossary.</p>
-y
+
 <p>Thus, in <code>akk.glo</code> one would have:</p>
 
 <pre class="cookbook">
@@ -490,13 +490,15 @@ the digit zero) for each COF-constituent after the first:</p>
 
 <h2>Senses Block</h2>
 
+
+
 <h2>Meta Block</h2>
 
 <h2>More Glossary Features</h2>
 
-<h3>Internationalization</h3>
+<h3>I18N (Internationalization)</h3>
 
-<h3>Lemmatization Rank</h3>
+<h3>Lemmatization Ranks</h3>
 
 <p>The <code>@entry</code>, <code>@sense</code>, and
 <code>@form</code> tags may be followed by an exclamation mark, e.g.,
