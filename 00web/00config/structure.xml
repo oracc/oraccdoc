@@ -120,6 +120,7 @@
      <struct:page file="builder/l2/COFs.xml" id="cofs" type="page" />
      <struct:page file="builder/l2/PSUs.xml" id="psus" type="page" />
      <struct:page file="builder/l2/BFFs.xml" id="bffs" type="page" />
+     <struct:page file="builder/glossaries/cbd2.xml" id="glosscbd2" type="page" />
      <struct:page file="builder/glossaries/collo.xml" id="glosscollo" type="page" />
      <struct:page file="builder/glossaries/properties.xml" id="glossprops" type="page" />
      <struct:page file="builder/superglo/superglo.xml" id="superglo" type="page">

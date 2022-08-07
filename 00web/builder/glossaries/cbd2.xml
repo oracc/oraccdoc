@@ -1,0 +1,190 @@
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xpd="http://oracc.org/ns/xpd/1.0">
+  <esp:name>CBD2</esp:name><esp:title>CBD version 2</esp:title>
+  <html><head/>
+  <body>
+    
+<p>This page documents 2022's revised Oracc Corpus-Based Dictionary
+(CBD) format code-named CBD2.  This revision corresponds to the
+implementation of a new parser for Oracc glossaries (which have the
+CBD type).  In the XML version of CBD2 the namespace is
+<code>http://oracc.org/ns/cbd/2.0</code>.</p>
+
+<p>There are two major differences between CBD1
+(<code>http://oracc.org/ns/cbd/1.0</code>) and CBD2.  One is that in
+CBD2 the order of most elements is enforced by the validator.  This
+ensures that different glossaries will be structured similarly making
+them easier for users to get used to and read quickly.  The other is
+greater extensibility--the addition of commands for including
+additional files, referencing external URIs, and providing narrative
+discussion as well as the data-focussed elements of CBD1.</p>
+
+<p>Most users will interact most of the time with the simple
+text-based format of Oracc glossaries, the <code>.glo</code> file.
+CBD2 <code>.glo</code>, and the primary purpose of this page is to
+document the <code>.glo</code> version of CBD2.</p>
+
+<p>There are also two grammars of CBD2 are available: an XML schema
+written in Relax NG's rnc format; and a context-free grammar for the C
+language glossary processor, <code>gx</code>, which is written for the
+Bison parser generator.  The processor <code>gx</code> reads CBD2
+glossaries in the text-format and, amongst other things, exports the
+XML version, validating the output against the XML schema as it does
+so.</p>
+
+<h2>CBD2 Overview</h2>
+
+<p>CBD2 glossary files consist of a header followed by zero or more
+entries.  An entry is structured as a sequence of blocks.  The blocks,
+and the common tags which belong to them, are:</p>
+
+<dl>
+  <dt>Entry block</dt>
+  <dd>@entry @alias @parts</dd>
+  <dt>Language block</dt>
+  <dd>@bases @form</dd>
+  <dt>Senses block</dt>
+  <dd>@sense</dd>
+  <dt>Meta block</dt>
+  <dd>@bib @equiv @inote @isslp @pleiades</dd>
+</dl>
+
+<p>In CBD1, the information covered by the meta block could only be
+associated with an entry.  In CBD2 there is provision for including a
+meta block for each sense.</p>
+
+<h2>Definitions</h2>
+
+<h3>Signature Terminology</h3>
+
+<p>CBD1 and CBD2 both use the terminology of Oracc signatures as
+described in <esp:url href="/doc/help/lemmatising/signatures/">the
+lemmatisation page on signatures</esp:url>.</p>
+
+<h3>CGP</h3>
+
+<p>We use the abbreviation <code>CGP</code> for a CF-GW-POS
+specification of the form <code>a[water]N</code> or <code>a [water]
+N</code>.  We refer to the former format as "tight" and the latter as
+"loose"--in practice, all software that works with glossaries should
+understand "tight" and "loose" formats interchangeably, but in
+principle some contexts prescribe that the CGP be in either tight or
+loose format.</p>
+
+<h3>CGSPE</h3>
+
+<p>We also use, less often, the abbreviation <code>CGSPE</code> for
+CF-GW-SENSE-POS-EPOS. (<code>a[arm//strength]N'N</code>). There is no
+loose format for this as it is really a minimal signature.</p>
+
+<h2>The Header</h2>
+
+<p>The common tags in the header are: <code>@project @lang
+@name</code>.  In addition, the header may specify the target language
+for <code>@sense</code> elements (which defaults to <code>en</code>,
+English); describe the CBD version with <code>@cbd</code>, and
+reference one or more configuration files for the properties and
+relations mechanisms: <code>@proplist @relators</code>.</p>
+
+<p>In the following list, and this document generally, common tags are
+described before less common tags.</p>
+
+<dl>
+  <dt>@project</dt>
+  <dd>The name of the project this glossary belongs to.</dd>
+  <dt>@lang</dt>
+  <dd>The language for which this is a glossary, i.e., the language of
+  the entry headwords.</dd>
+  <dt>@name</dt>
+  <dd></dd>
+  <dt>@translang</dt>
+  <dd>The language of translations in the glossary. Default <code>en</code>.</dd>
+  <dt>@cbd</dt>
+  <dd>The CBD version: presently only 1.0 and 2.0 are recognized.  Default is 1.0.</dd>
+  <dt>@proplist</dt>
+  <dd>A file containing configuration information for the Properties
+  mechansism; see the [[properties page]]. May be given more than
+  once.</dd>
+  <dt>@relators</dt>
+  <dd>A file containing configuration for the Relations mechanism;
+  [[not yet implemented]]. May be given more than once.</dd>
+</dl>
+
+<p>In the header, <code>@project @lang @name</code> are required and
+must occur first and in that order; <code>@cbd @proplist
+@relators @translang</code> must come after the required tags and may be in any
+order.</p>
+
+<h2>Entry Block</h2>
+
+<h3>Common Entry Tags</h3>
+
+<p>The entry block is the first part of an entry. An entry begins with
+<code>@entry</code> and ends with <code>@end entry</code>.  In
+addition, the entry block may contain one or more <code>@alias</code>
+tags which give alternate names for the entry.  If the
+<code>@entry</code> is for a phrase, the entry block must also contain
+a <code>@parts</code> element.</p>
+
+<h3>Rarer Entry Tags</h3>
+
+<p>An entry block may contain a variable tag which gives a DCF, or
+<code>Dialect CF</code>--the variable part of this is that a DCF
+consists only of capital letters, e.g., <code>@NA</code>, or
+<code>@EG</code>.  There are also CBD Edit constructs that are
+associated with <code>@entry</code> but use of these is presently
+restricted to ePSD.</p>
+
+<h3>Entry Tag Descriptions</h3>
+
+<dl>
+  <dt>@entry CGP</dt>
+  <dd>An @entry tag is followed by a CGP which must be unique in the
+  glossary. The CGP must be given in the loose format.</dd>
+  <dt>@alias CGP</dt>
+  <dd>An @alias tag is followed by a CGP which may be in either loose
+  or tight formats.  The CGP gives an alternate name for the @entry;
+  it is not required to exist as a separate entry in the glossary
+  because one of the uses of aliases is for the glossary building
+  system to include entries from other projects which may use
+  different names for words (e.g., Ninurtak[1]DN or
+  Ninurta[1]DN).</dd>
+  <dt>@parts CGP CGP ...</dt>
+  <dd>For compound entries or phrases, one or more @parts entries must
+  be given. Each @parts entry is a ordered list of the words (given as
+  tight CGPs) that can constitute the phrasal entry.  See the page on
+  <esp:url href="/doc/help/glossaries/psus/">PSUs</esp:url> for
+  further discussion.</dd>
+  <dt>@[DCF-specification] CF</dt>
+  <dd>Oracc glossaries use narrowly defined conventions for CFs.
+  Rather than allow different glossaries to use, for example, Old
+  Babylonian Akkadian headwords, the glossary must be constructed
+  using Oracc's Conventional Akkadian, but Dialect Citation Forms
+  (DCFs) can be used to display the headword in the variant form
+  online or in print. For example, <code>@entry kalbu [dog] N</code>
+  might have a DCF <code>@OB kalbum</code>.  Note that only the CF is
+  given with a DCF.</dd>
+  <dt>Edit Codes</dt>
+  <dd>This section is provided for completeness and can be ignored by
+  most users. The edit codes are used by tools which create the
+  <esp:url href="/epsd2/oid-history.html">ePSD OID history
+  page</esp:url>. An @entry can be preceded by <code>+</code> or
+  <code>-</code> meaning that the entry should be added or deleted.
+  If the <code>-</code> form is used, there must be a comment
+  immediately after the @entry of the form <code>#why: this gives a
+  reason for deletion</code>. An @entry can also be followed by an
+  entry modifier code.  The single <code>&gt;</code> indicates that
+  the entry should be renamed to the CGP after the <code>&gt;</code>.
+  The double <code>&gt;&gt;</code> indicates that the entry should be
+  merged with the CGP after the <code>&gt;&gt;</code>.</dd>
+</dl>
+
+<h2>Language Block</h2>
+
+<h2>Senses Block</h2>
+
+<h2>Meta Block</h2>
+
+  </body>
+  </html>
+</esp:page>
