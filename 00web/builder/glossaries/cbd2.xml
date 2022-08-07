@@ -96,7 +96,9 @@ described before less common tags.</p>
   <dd>The language for which this is a glossary, i.e., the language of
   the entry headwords.</dd>
   <dt>@name</dt>
-  <dd></dd>
+  <dd>The name is an informal name for the glossary, usually trivially
+  constructed from the project and lang, e.g.,
+  <code>epsd2/sux</code>.</dd>
   <dt>@translang</dt>
   <dd>The language of translations in the glossary. Default <code>en</code>.</dd>
   <dt>@cbd</dt>
