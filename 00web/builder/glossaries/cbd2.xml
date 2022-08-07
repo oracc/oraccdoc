@@ -199,7 +199,7 @@ also includes a @bases entry.</p>
 
 <p>It's easiest to begin the discussion of the @bases tag with an example:</p>
 
-<pre class="example">
+<pre class="cookbook">
   @bases ŋar (gar); ŋa₂-ŋa₂ (ga₂-ga₂); %es mar
 </pre>
 
@@ -213,14 +213,14 @@ language tag followed by a single base.  Alternate bases are given in
 parentheses after the primary base, with commas separating the
 alternate bases.</p>
 
-<p>In the example <code class="example">ŋar</code>, <code
-class="example">ŋa₂-ŋa₂</code>, and <code class="example">mar</code>
-are primary bases. The primary base <code class="example">ŋar</code>
-has an alternate base <code class="example">gar</code> in the same way
-as <code class="example">ŋa₂-ŋa₂</code> has an alternate base <code
-class="example">ga₂-ga₂</code>.  There is also an Emesal primary base,
-<code class="example">mar</code> marked with the ATF language switch
-<code class="example">%es</code>.</p>
+<p>In the example <code class="cookbook">ŋar</code>, <code
+class="cookbook">ŋa₂-ŋa₂</code>, and <code class="cookbook">mar</code>
+are primary bases. The primary base <code class="cookbook">ŋar</code>
+has an alternate base <code class="cookbook">gar</code> in the same way
+as <code class="cookbook">ŋa₂-ŋa₂</code> has an alternate base <code
+class="cookbook">ga₂-ga₂</code>.  There is also an Emesal primary base,
+<code class="cookbook">mar</code> marked with the ATF language switch
+<code class="cookbook">%es</code>.</p>
 
 <p>Bases in Sumero-Akkadian Cuneiform (script code 020) <em>must</em>
 be conform to the GDL specification.  Every base is validated for form
@@ -268,7 +268,7 @@ to permit the duplication.  Each @allow tag specifies a pair of
 allowed primary equivalents; multiple @allow commands can be given if
 necessary. The @allow must come before @bases. Here is an example from ePSD:</p>
 
-<pre class="example">
+<pre class="cookbook">
 @entry e [speak] V/t
 @allow b°e₇ = n°e
 @bases b°e₂ (be₂); b°e₄; b°e₇; m°e; n°e
@@ -490,7 +490,88 @@ the digit zero) for each COF-constituent after the first:</p>
 
 <h2>Senses Block</h2>
 
+<p>The senses block is relatively simple.  In the normal case, it
+consists of a series of series of <code>@sense</code> lines, followed
+by an optional <code>@disc</code> tag.</p>
 
+<h3>@sense Lines</h3>
+
+<p>Sense lines consist of @sense followed by at least two components:
+a part-of-speech, POS, and a meaning, MNG. Between @sense and POS
+there may be a sense ID, SID, an outline key, SOK, and a sense
+guide-word, SGW.</p>
+
+<p>The optional @sense line components each has a distinctive prefix
+character which is not part of the component's value.</p>
+
+<dl>
+  <dt>#SID</dt>
+  <dd>An SID must begin with the hash or pound sign, '#'; this is
+  discarded before storing the SID. The intention of this field is to
+  support cross-referencing discussions of senses.  The ID must be a
+  legal XML:ID, so it is easiestt to construct IDs from an initial
+  letter followed by letters and digits.  The technical specication
+  for an XML:ID NCName <esp:link
+  url="https://www.w3.org/TR/xml-names11/#NT-NCName">can be found on
+  the WWW website.</esp:link></dd>
+  <dt>.SOK</dt>
+  <dd>An SOK must begin with a dot or period, '.'; this is discarded
+  before storing the SOK.  The intention of this field is to support
+  labelling an ordered set of senses, e.g., with 1., 1.1, 1.2,
+  etc. The CBD2 tools do not currently utilize it, but they do store
+  it and include it in outputs so downstream tools are able to utilize
+  this.</dd>
+  <dt>[SGW]</dt>
+  <dd>An SGW must be placed in square brackets, as with a CGP guide
+  word--the square brackets are discarded before storing the SGW. The
+  intention of this field is to support giving a stable human-readable
+  key which relates to the sense.  Best practice with SGW is to ensure
+  that they are unique within senses of the entry.</dd>
+</dl>
+
+<p>Here are example senses from the CBD2 test data:</p>
+<pre class="cookbook">
+@entry a [water] N
+@sense N water
+@sense .1 N water
+@sense #1 N water
+@sense #1 .1 N water
+@sense #1 .1 [water] N water
+</pre>
+
+<h3>Senses with Meta Blocks</h3>
+
+<p>By default, an @entry has one <code>@meta</code> block, after the
+sense block, and belonging to the entry as a whole. A new feature in
+CBD2 allows meta blocks to belong to senses.  In order to use this
+feature the senses block must be wrapped with <code>@senses</code> at
+the start and <code>@end senses</code> at the end of the senses.  This
+allows a further meta block to be given as well which would then
+belong to the entry.</p>
+
+<pre class="cookbook">
+@senses
+@sense N water
+@note This sense is dubious.
+@end senses
+</pre>
+
+<h3>Edit conventions</h3>
+
+<p>It is also permitted to use the editing conventions with @sense,
+but this is not widely done (see the discussion of editing conventions
+with @entry above).  Used with @sense, the <code>&gt;</code> and
+<code>&gt;&gt;</code> codes are followed by a POS and a MNG with no
+optional sense fields allowed:</p>
+
+<pre class="cookbook">
++@sense N water
+-@sense N water
+@sense N water
+> V/t to water
+@sense N water
+>> V/t to water
+</pre>
 
 <h2>Meta Block</h2>
 
