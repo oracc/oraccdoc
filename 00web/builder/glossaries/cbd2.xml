@@ -51,7 +51,8 @@ and the common tags which belong to them, are:</p>
 
 <p>In CBD1, the information covered by the meta block could only be
 associated with an entry.  In CBD2 there is provision for including a
-meta block for each sense.</p>
+meta block for each sense.  Another major addition in CBD2 is support
+for internationalization as described at the bottom of this page.</p>
 
 <h2>Definitions</h2>
 
@@ -80,6 +81,16 @@ class="cookbook">ki aŋ [love] V/t</code>.  These entries are called
 <p>We also use, less often, the abbreviation <code>CGSPE</code> for
 CF-GW-SENSE-POS-EPOS. (<code>a[arm//strength]N'N</code>). There is no
 loose format for this as it is really a minimal signature.</p>
+
+<h3>#-line Comments</h3>
+
+<p>A line beginning with <code>#</code> is a comment and is stored but
+ignored by the CBD2 processor. #-lines like this can occur anywhere
+within an entry, but not before or between entries or after the last
+entry.  If the processor output is another .glo file comments that
+precede the following @-line will be output before the @-line but
+comments are not emitted when producing XML or other formats besides
+.glo files.</p>
 
 <esp:sh>The Header</esp:sh>
 
@@ -168,9 +179,10 @@ restricted to ePSD.</p>
   <dt>@parts CGP CGP ...</dt>
   <dd>For compound entries or phrases, one or more @parts entries must
   be given. Each @parts entry is a ordered list of the words (given as
-  tight CGPs) that can constitute the phrasal entry.  See the 
-  <esp:link url="/doc/help/glossaries/psus/">page on PSUs</esp:link> for
-  further discussion.</dd>
+  tight CGPs) that can constitute the phrasal entry.  See the
+  <esp:link url="/doc/help/glossaries/psus/">page on PSUs</esp:link>
+  for further discussion.  An upcoming extension of CBD2 will support
+  CGSPEs in @parts rather than simple CGPs.</dd>
   <dt>@[DCF-specification] CF</dt>
   <dd>Oracc glossaries use narrowly defined conventions for CFs.
   Rather than allow different glossaries to use, for example, Old
@@ -193,8 +205,8 @@ restricted to ePSD.</p>
   <esp:link url="/epsd2/oid-history.html">ePSD OID history
   page</esp:link>. An @entry can be preceded by <code>+</code> or
   <code>-</code> meaning that the entry should be added or deleted.
-  If the <code>-</code> form is used, there must be a comment
-  immediately after the @entry of the form <code>#why: this gives a
+  If the <code>-</code> form is used, there must be a <code>@why</code>
+  element immediately after the @entry of the form <code>@why this gives a
   reason for deletion</code>. An @entry can also be followed by an
   entry modifier code.  The single <code>&gt;</code> indicates that
   the entry should be renamed to the CGP after the <code>&gt;</code>.
@@ -597,7 +609,7 @@ entries or senses.  The tags in a meta block may be in any order. All
 of meta block tags can occur zero or more times.  They are listed here
 in alphabetical order rather than order of importance.</p>
 
-<dd>
+<dl>
   <dt>@bib</dt>
   <dd>Bibliography; no validation or imposed structure.</dd>
   <dt>@collo</dt>
@@ -632,7 +644,7 @@ in alphabetical order rather than order of importance.</p>
   <dd>A property of the entry or sense; see <esp:link
   url="/doc/help/glossaries/properties/">the properties
   page</esp:link>.</dd>
-</dd>
+</dl>
 
 <h2>More Glossary Features</h2>
 
@@ -651,7 +663,7 @@ ltags, as <code class="cookbook">@i18n ar fr</code></p>
 <p>The ltags all start with the language, including a %-sign, then a
 space, then the content.  They may occur as follows:</p>
 
-<dd>
+<dl>
   <dt>@gwl</dt>
   <dd>The @gwl tags must occur immediately after @entry, even before any edit codes.</dd>
   <dt>@sensel</dt>
@@ -660,7 +672,84 @@ space, then the content.  They may occur as follows:</p>
   <dd>The @discl tags must occur immediately after the @disc to which they correspond.</dd>
   <dt>@notel</dt>
   <dd>The @notel tags must occur immediately after the @note to which they correspond.</dd>
-</dd>
+</dl>
+
+<h3>Relationships Between Words</h3>
+
+<p>CBD2 includes a mechanism for specifying relationships between
+words. The implementation has not yet been applied widely and as a
+result may change over time to accommodate additional needs.  The
+examples given here are indicative rather than being drawn from actual
+glossaries.</p>
+
+<p>The <code>@rel</code> tag is part of the meta block (meaning it can
+apply to entire entries or just to a specific sense) and may be used
+multiple times to express multiple relationships.  Relationships have
+the following types:</p>
+
+<dl>
+  <dt>Nyms</dt>
+  <dd>Common semantic relations include synonyms, antonymns, homonyms, and others.</dd>
+  <dt>Groups</dt>
+  <dd>A collection of words according various criteria.  In CBD2 a
+  <code>group</code> is by definition unordered.</dd>
+  <dt>Complements</dt>
+  <dd>A collection of words which complement each other, such as suppletive forms.</dd>
+  <dt>Forms</dt>
+  <dd>A collection of words which are (by)forms of each other.</dd>
+</dl>
+
+<p>Every @rel tag must start with the name of a collection.  For nyms,
+the name (the nym-type) must be followed by a list of CGPs or CGSPEs
+that the entry or sense relates to in the manner specified by the
+type.  For groups and forms no additional argments are required after
+the name.  For comps a free text description of the conditions
+governing selection of the complementary form among the collection
+should be given.</p>
+
+<pre>
+  @entry sag [good] V/i
+  @rel antonym hulu[bad]V/i
+</pre>
+
+<p>Or:</p>
+
+<pre>
+  @entry guza [chair] N
+  @rel furniture
+</pre>
+
+<p>Or:</p>
+
+<pre>
+  @entry du [go] V/i
+  @rel suppletive.go imperfect singular
+</pre>
+
+<p>A special form of @rel consists @rel, a name, and the keyword head.
+This is a hint to processors that if they are listing the collection
+they should start with the current entry or sense.  To provide an
+order for an entire collection use a @sequence tag.</p>
+
+<h4>@sequence</h4>
+
+<p>The tag @sequence (not yet implemented) denotes an ordered
+collection of words. These tags are part of the glossary header and
+have the form:</p>
+
+<pre class="example">
+  @sequence NAME DESCRIPTION = LIST
+</pre>
+
+<p>The LIST which begins after the equals sign, <code>=</code>,
+consists of CGPs or CGSPEs.  If the ordering of any component is
+uncertain a question mark, <code>?</code>, can be placed before the
+component.  If the collection is known to be a sequence but few or
+none of the relative orderings are known the entire list can be
+preceded by a double question mark <code>??</code>.</p>
+
+<p>This facility is particularly intended for metrological terms and
+quality designations.</p>
 
 <h3>Lemmatization Ranks</h3>
 
