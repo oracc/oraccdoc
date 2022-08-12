@@ -851,8 +851,9 @@ quality designations.</p>
 CBD2 as well as a list of differences. These are still in progress.
 The timeline for adoption of CBD2 is loose.  It is intended that it
 will be used for the next release of ePSD2 in December 2022: if that
-goes well, other Oracc projects will be migrated in 2023.  Projects
-will be rebuilt and checked as part of the migration process.</p>
+goes well, other Oracc projects will be migrated early in 2023.
+Projects will be rebuilt and checked as part of the migration
+process.</p>
 
 <h2>Technical Information</h2>
 
@@ -874,5 +875,6 @@ will be rebuilt and checked as part of the migration process.</p>
 
 <p>As development of CBD2 and the new CBD2 toolchain continues there
 will be further Relax NG grammar variants which define the annotations
-and data restructuring that is carried with glossaries.</p> </body>
+and data restructuring that is carried out with glossaries.</p>
+</body>
 </html> </esp:page>
