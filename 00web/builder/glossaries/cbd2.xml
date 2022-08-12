@@ -351,9 +351,13 @@ necessary. The @allow must come before @bases. Here is an example from ePSD:</p>
 <h3>@form</h3>
 
 <p>The <code>@form</code> tag associates language data relevant to an
-instance of a word to the spelling of the word-form. The first
-element, FORM, is always a written form as it might occur in the
-corpus but without any half, square, angle or round brackets.</p>
+instance of a word to the spelling of the word-form.</p>
+
+<h4>FORM</h4>
+
+<p>The first element, FORM, is always a written form as it might occur
+in the corpus but without any half, square, angle or round
+brackets.</p>
 
 <p>For Sumerian it is an error for two FORMs in the same entry to be
 identical; to code forms which are written the same but have different
@@ -365,6 +369,8 @@ disambiguation string consisting of a backslash+disambiguator (e.g.,
   @form a-a    /a #~,a
   @form a-a\ak /a #~,ak
 </pre>
+
+<h4>Additional @form Fields</h4>
 
 <p>Following the written form various elements may occur depending in
 part on the language of the corpus. These elements are always marked
