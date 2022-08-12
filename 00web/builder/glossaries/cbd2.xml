@@ -107,14 +107,14 @@ to these cases:</p>
   <li>When the content must be file, the filename is unmarked, e.g.,
   <code>@proplist props.txt</code></li>
   <li>When the content must be a file or a URI, a filename is
-  unmarked, a URI is indicated by <code>@&lt;...@</code>.  The URI may
+  unmarked, a URI is indicated by <code>@&lt;...@></code>.  The URI may
   be followed by a space and some text, in which case the text is used
   as the highlighted URI text in the output, e.g.,
   <code>@&lt;http://oracc.org/amgg/listofdeities/enki/ the AMGG page
   about Enki@></code>.</li>
   <li>When the content may be text, or a file, or a URI, a file or a
   URI must be marked using the <code>@&lt;...@></code>convention: if
-  there is any ambiguity about whether the text after <code>@@</code>
+  there is any ambiguity about whether the text in <code>@&lt;...@></code>
   is a filename or a URI, the URI protocol for files,
   <code>file://</code>, must be used.</li>
 </ol>
@@ -236,9 +236,8 @@ restricted to ePSD.</p>
     a single <code>&lt;div> ... &lt;/div></code> element. The contents
     are physically included as a block element which is a child of the
     current <code>&lt;disc></code> element in the XML output of the
-    glossary.</li>
-    <li>URI: the URI
-    must be preceded by <code>@@</code> and is replaced in the
+    glossary.</li> <li>URI: the URI must use the
+    <code>@&lt;...@></code> convention, and is replaced in the
     glossary with a link to the resource.</li> <li>TEXT: the text
     content of @disc is currently plain text, but in future it will
     support inline styled text as in <esp:link
