@@ -782,7 +782,7 @@ data is given in the glossary header using the <code>@reldef</code>
 tag (these can be gathered in files and included using
 <code>@include</code>).</p>
 
-<h4 name="reldef">The @reldef Tag</h4>
+<h4><a name="reldef">The @reldef Tag</a></h4>
 
 <p>A @reldef has the following general structure:</p>
 
