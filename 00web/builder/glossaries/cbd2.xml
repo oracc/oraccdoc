@@ -509,11 +509,11 @@ line.</li>
 
 <h5>Cross-glossary COFs</h5>
 
-<p>COFs whose components are in different glossaries only occur on
-Oracc when a COF combines a common noun with a proper noun.  No
-special treatment is needed for this case, but the relevant
-<code>@form</code> lines do have to be present for each component just
-as they do when the components are in the same glossary.</p>
+<p>COFs whose components are in different glossaries may occur when a
+COF combines a common noun with a proper noun.  No special treatment
+is needed for this case, but the relevant <code>@form</code> lines do
+have to be present for each component just as they do when the
+components are in the same glossary.</p>
 
 <p>Thus, in <code>akk.glo</code> one would have:</p>
 
@@ -640,8 +640,9 @@ and belonging to the entry as a whole. A new feature in CBD2 allows
 meta blocks to belong to senses.  In order to use this feature the
 senses block must be wrapped with <code>@senses</code> before the
 first @sense line and <code>@end senses</code> at the end of the
-senses.  This allows a further meta block to be given as well, after
-<code>@end senses</code>, which would then belong to the entry.</p>
+senses, after any <code>@disc</code> belonging to the last sense.
+This allows a further meta block to be given as well, after <code>@end
+senses</code>, which would then belong to the entry.</p>
 
 <pre class="cookbook">
 @senses
