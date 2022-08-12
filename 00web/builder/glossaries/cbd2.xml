@@ -766,25 +766,67 @@ result may change over time to accommodate additional needs.  The
 examples given here are indicative rather than being drawn from actual
 glossaries.</p>
 
-<p>A header tag, <code>@relators</code>, can be given in the header
-(possibly multiple times).  The value is a file name.</p>
+<p>The validation and configuration information for <code>@rel</code>
+data is given in the glossary header using the <code>@reldef</code>
+tag (these can be gathered in files and included using
+<code>@include</code>).</p>
+
+<h4>The @reldef Tag</h4>
+
+<p>A @reldef has the following general structure:</p>
+
+<pre class="example">
+  @reldef [TYPE] [NAME] [MEMBERS]
+</pre>
+
+<h5>@reldef TYPE</h5>
+
+<p>The TYPE component has the following values:</p>
+
+<dl>
+  <dt>nym</dt>
+  <dd>Common semantic relations include synonyms, antonymns, homonyms, and others.</dd>
+  <dt>group</dt>
+  <dd>A collection of words according various criteria.  In CBD2 a
+  <code>group</code> is by definition unordered.</dd>
+  <dt>complement</dt>
+  <dd>A collection of words which complement each other, such as suppletive forms.</dd>
+  <dt>form</dt>
+  <dd>A collection of words which are (by)forms of each other.</dd>
+  <dt>sequence</dt>
+  <dd>A collection of words which has a sequenced relationship.  If
+  the ordering of any component of a sequence is uncertain a question
+  mark, <code>?</code>, can be placed before the component.  If the
+  collection is known to be a sequence but few or none of the relative
+  orderings are known the entire list can be preceded by a double
+  question mark <code>??</code>.  The sequence facility is
+  particularly intended for groups such as metrological terms, quality
+  designations, and month names.</dd>
+</dl>
+
+<h5>@reldef NAME</h5>
+
+<p>A NAME is a string which may not contain spaces, tabs, or newlines.
+Although CBD2 does not interpret any structure within the string,
+names may be structured by using punctuation characters, e.g.:</p>
+
+<pre class="cookbook">
+  @reldef sequence EDIIIb/Lagash/Months
+</pre>
+
+<h5>@reldef MEMBERS</h5>
+
+<p>The MEMBERS component is optional.  If given, it gives CGPs or
+CGSPEs which are members of the collection being defined.  If
+additional members are added in the glossary entries they are appended
+to the members given in the @reldef.</p>
+
+<h4>The @rel Tag</h4>
 
 <p>The <code>@rel</code> tag is part of the meta block (meaning it can
 apply to entire entries or just to a specific sense) and may be used
 multiple times to express multiple relationships.  Relationships have
 the following types:</p>
-
-<dl>
-  <dt>Nyms</dt>
-  <dd>Common semantic relations include synonyms, antonymns, homonyms, and others.</dd>
-  <dt>Groups</dt>
-  <dd>A collection of words according various criteria.  In CBD2 a
-  <code>group</code> is by definition unordered.</dd>
-  <dt>Complements</dt>
-  <dd>A collection of words which complement each other, such as suppletive forms.</dd>
-  <dt>Forms</dt>
-  <dd>A collection of words which are (by)forms of each other.</dd>
-</dl>
 
 <p>Every @rel tag must start with the name of a collection.  For nyms,
 the name (the nym-type) must be followed by a list of CGPs or CGSPEs
@@ -815,29 +857,7 @@ should be given.</p>
 
 <p>A special form of @rel consists @rel, a name, and the keyword head.
 This is a hint to processors that if they are listing the collection
-they should start with the current entry or sense.  To provide an
-order for an entire collection use a @sequence tag.</p>
-
-<h4>@sequence</h4>
-
-<p>The tag @sequence (not yet implemented) denotes an ordered
-collection of words. These tags must be included in files or URIs
-which are included in the glossary header as <code>@relators</code>
-and have the form:</p>
-
-<pre class="example">
-  @sequence NAME DESCRIPTION = LIST
-</pre>
-
-<p>The LIST which begins after the equals sign, <code>=</code>,
-consists of CGPs or CGSPEs.  If the ordering of any component is
-uncertain a question mark, <code>?</code>, can be placed before the
-component.  If the collection is known to be a sequence but few or
-none of the relative orderings are known the entire list can be
-preceded by a double question mark <code>??</code>.</p>
-
-<p>This facility is particularly intended for metrological terms and
-quality designations.</p>
+they should start with the current entry or sense.</p>
 
 <h3>Lemmatization Ranks</h3>
 
