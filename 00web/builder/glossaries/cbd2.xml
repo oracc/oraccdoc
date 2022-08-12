@@ -113,7 +113,7 @@ to these cases:</p>
   <code>@&lt;http://oracc.org/amgg/listofdeities/enki/ the AMGG page
   about Enki@></code>.</li>
   <li>When the content may be text, or a file, or a URI, a file or a
-  URI must be marked using the <code>@&lt;...@></code>convention: if
+  URI must be marked using the <code>@&lt;...@></code> convention: if
   there is any ambiguity about whether the text in <code>@&lt;...@></code>
   is a filename or a URI, the URI protocol for files,
   <code>file://</code>, must be used.</li>
@@ -276,9 +276,8 @@ also includes a @bases entry.</p>
   @bases ŋar (gar); ŋa₂-ŋa₂ (ga₂-ga₂); %es mar
 </pre>
 
-<p>The @bases tag is a fairly highly structured plain text field
-consisting of a sequence of base specifications separated by
-semicolons.</p>
+<p>The @bases value is a structured plain text field consisting of a
+sequence of base specifications separated by semicolons.</p>
 
 <p>Each base specification may consist of two parts: the primary base data
 and the alternate base data. A primary base consists of an optional
@@ -296,9 +295,9 @@ class="cookbook">ga₂-ga₂</code>.  There is also an Emesal primary base,
 <code class="cookbook">%es</code>.</p>
 
 <p>Bases in Sumero-Akkadian Cuneiform (script code 020) <em>must</em>
-be conform to the GDL specification.  Every base is validated for form
+conform to the GDL specification.  Every base is validated for form
 (effectively using the ATF checker) and for content (using the
-<esp:link url="/ogsl">Oracc Global Sign List</esp:link>.</p>
+<esp:link url="/ogsl">Oracc Global Sign List</esp:link>).</p>
 
 <h4>Special features in @bases</h4>
 
@@ -330,12 +329,13 @@ with +, as in <code>banda₃{+da}</code>.</li>
 <p>Several forms of validation are performed on bases by converting
 each primary and alternate base to a signature--a sequence of OGSL
 sign IDs. Primary bases must normally be unique; alternate bases must
-be a valid different transliteration of the primary base; and the
-bases in @form entries must be present in the @bases and must be a
-primary base.  Additional technical rules regarding transliteration
-are also enforced but are not detailed here.</p>
+be a valid different transliteration of the primary base (i.e., they
+must resolve to the same sign signature as the primary base); and the bases
+in @form entries must be present in the @bases and must be a primary
+base.  Additional technical rules regarding transliteration are also
+enforced but are not detailed here.</p>
 
-<p>Occasionally a sign or sign sequence has more than one legitimate
+<p>Occasionally a sign or sign sequence has more than one allowable
 primary transliteration and in these cases the @allow tag must be used
 to permit the duplication.  Each @allow tag specifies a pair of
 allowed primary equivalents; multiple @allow commands can be given if
@@ -350,14 +350,27 @@ necessary. The @allow must come before @bases. Here is an example from ePSD:</p>
 
 <h3>@form</h3>
 
-<p>The <code>@form</code> tag links instances in the corpus to the
-entries in the glossary. The first element is always a written form as
-it might occur in the corpus but without any half, square, angle or
-round brackets.  Following the written form various elements may occur
-depending in part on the language of the corpus. These elements are
-always marked by one or more field-code characters which indicate the
-type of the element. No space is allowed between the type character
-and the data element.</p>
+<p>The <code>@form</code> tag associates language data relevant to an
+instance of a word to the spelling of the word-form. The first
+element, FORM, is always a written form as it might occur in the
+corpus but without any half, square, angle or round brackets.</p>
+
+<p>For Sumerian it is an error for two FORMs in the same entry to be
+identical; to code forms which are written the same but have different
+possible morphological interpretations it is necessary to use a
+disambiguation string consisting of a backslash+disambiguator (e.g.,
+<code>\ak</code>). Thus an entry might contain:</p>
+
+<pre class="cookbook">
+  @form a-a    /a #~,a
+  @form a-a\ak /a #~,ak
+</pre>
+
+<p>Following the written form various elements may occur depending in
+part on the language of the corpus. These elements are always marked
+by one or more field-code characters which indicate the type of the
+element. No space is allowed between the type character and the data
+element.</p>
 
 <p>In the description below the elements after the orthographic form
 (FORM) are listed in the order in which they must be specified.  Each
