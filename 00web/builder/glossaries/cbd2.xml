@@ -181,9 +181,11 @@ one or more <code>@parts</code> elements.</p>
 <p>An entry block may contain a variable tag which gives a DCF, or
 <code>Dialect CF</code>--the variable part of this is that a DCF
 consists only of capital letters, e.g., <code>@NA</code>, or
-<code>@EG</code>.  There are also CBD Edit constructs that are
-associated with <code>@entry</code> but use of these is presently
-restricted to ePSD.</p>
+<code>@EG</code>.</p>
+
+<p>There are also CBD Edit constructs that are associated with
+<code>@entry</code> but use of these is presently restricted to
+ePSD.</p>
 
 <h3>Entry Block Details</h3>
 
@@ -388,9 +390,8 @@ with in this document.</p>
 <dl>
 
 <dt>% = LANG</dt>
-<dd>If no LANG is given the @form's language normally defaults to the
-glossary language.  See below for an exception involving Emegir and
-Emesal.</dd>
+<dd>If no LANG is given the @form's language defaults to the
+glossary language.</dd>
 
 <dt>@ = RWS</dt>
 <dd>The RWS, Register or Writing System, for the form.  This is rarely
