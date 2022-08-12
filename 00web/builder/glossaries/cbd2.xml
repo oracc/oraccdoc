@@ -92,6 +92,26 @@ precede the following @-line will be output before the @-line but
 comments are not emitted when producing XML or other formats besides
 .glo files.</p>
 
+<h3>Files and URLs</h3>
+
+<p>There are several places in a CBD2 glossary where the content can
+or must be expressed as an included file or a referenced URL.  Files
+and URLs may not contain spaces.  The following file-or-url rules apply
+to these cases:</p>
+
+<ol>
+  <li>When the content must be file, the filename is unmarked, e.g.,
+  <code>@proplist props.txt</code></li>
+  <li>When the content must be a file or a URL, a filename is
+  unmarked, a URL is indicated by <code>@@</code>, e.g.,
+  <code>@@http://oracc.org/amgg/enki/</code>.</li>
+  <li>When the content may be text, or a file, or a URL, a file or a
+  URL must be marked using the <code>@@</code>convention: if there is
+  any ambiguity about whether the text after <code>@@</code> is a
+  filename or a URL, the URL protocol for files,
+  <code>file://</code>, must be used.</li>
+</ol>
+
 <esp:sh>The Header</esp:sh>
 
 <p>The common tags in the header are: <code>@project @lang
@@ -119,12 +139,14 @@ described before less common tags.</p>
   <dt>@cbd</dt>
   <dd>The CBD version: presently only 1.0 and 2.0 are recognized.  Default is 1.0.</dd>
   <dt>@proplist</dt>
-  <dd>A file containing configuration information for the Properties
-  mechansism; see <esp:link url="/doc/help/glossaries/properties/">the
-  properties page</esp:link>. May be given more than once.</dd>
+  <dd>The value must be the name of a file containing configuration
+  information for the Properties mechansism; see <esp:link
+  url="/doc/help/glossaries/properties/">the properties
+  page</esp:link>. May be given more than once.</dd>
   <dt>@relators</dt>
-  <dd>A file containing configuration for the Relations mechanism;
-  [[not yet implemented]]. May be given more than once.</dd>
+  <dd>The value must be a file or URL giving configuration information
+  for the Relations mechanism; [[not yet implemented]]. May be given
+  more than once.</dd>
   <dt>@i18n</dt>
   <dd>A list of languages that can be used in the i18n ltags--see the
   discussion at the end of this page.</dd>
@@ -194,11 +216,27 @@ restricted to ePSD.</p>
   given with a DCF.</dd>
   <dt>@disc</dt>
   <dd>@disc enables glossaries to contain discussions of words and
-  senses; the content of @disc is currently plain text, but in future
-  it will support inline styled text as in <esp:link
-  url="/doc/help/convertingatf/otf/">Oracc's OTF
-  specification</esp:link> as well as the inclusion of files in XHTML
-  and ESP2 formats.</dd>
+  senses, or to include files or links with such discussions.  The allowed values of @disc are:
+  <ul>
+    <li>FILE: the FILE is included in the glossary.  If the filename
+    ends in <code>.txt</code> or <code>.otf</code>, the file's
+    contents are parsed exactly as though they were a part of the
+    glossary being processed.  If the filename ends in
+    <code>.xml</code>, <code>.html</code>, or <code>.xhtml</code>, the
+    contents must be well-formed XML conforming to the CBD2 or XHTML
+    schema.  For XHTML the content must consist at the outer level of
+    a single <code>&lt;div> ... &lt;/div></code> element. The contents
+    are physically included as a block element which is a child of the
+    current <code>&lt;disc></code> element in the XML output of the
+    glossary.</li>
+    <li>URL: the URL
+    must be preceded by <code>@@</code> and is replaced in the
+    glossary with a link to the resource.</li> <li>TEXT: the text
+    content of @disc is currently plain text, but in future it will
+    support inline styled text as in <esp:link
+    url="/doc/help/convertingatf/otf/">Oracc's OTF
+    specification</esp:link> as well as the inclusion of files in
+    XHTML and ESP2 formats.</li> </ul></dd>
   <dt>Edit Codes</dt>
   <dd>This section is provided for completeness and can be ignored by
   most users. The edit codes are used by tools which create the
@@ -756,6 +794,20 @@ quality designations.</p>
 <p>The <code>@entry</code>, <code>@sense</code>, and
 <code>@form</code> tags may be followed by an exclamation mark, e.g.,
 <code>@form!</code>, indicating higher lemmatizer priority.</p>
+
+<h2>Technical Information</h2>
+
+<p>There are several parsers and schemas available in the Oracc code repo which may be useful to programmers:</p>
+
+<ul>
+  <li>An anaemic Relax NG schema for an XML output which correponds closely to the <code>.glo</code> structure, <esp:link url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/cbd-gx.rnc">cbd/cbd-gx.rnc</esp:link>.</li>
+  <li>The Bison grammar used by the <code>gx</code> processor when parsing glossaries, <esp:link url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/grammar.y">cbd/grammar.y</esp:link>.</li>
+  <li>The Flex scanner used by the <code>gx</code> processor to tokenize glossaries, <esp:link url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/scanner.l">cbd/scanner.l</esp:link>.</li>
+</ul>
+
+<p>As development of CBD2 and the new CBD2 toolchain continues there
+will be further Relax NG grammar variants which define the annotations
+and data restructuring that is carried with glossaries.</p>
 
   </body>
   </html>
