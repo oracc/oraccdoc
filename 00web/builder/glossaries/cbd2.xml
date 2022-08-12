@@ -10,19 +10,23 @@ implementation of a new parser for Oracc glossaries (which have the
 CBD type).  In the XML version of CBD2 the namespace is
 <code>http://oracc.org/ns/cbd/2.0</code>.</p>
 
-<p>There are two major differences between CBD1
+<p>Although CBD2 is very largely upwardly compatible with CBD1, there
+are some important differences between CBD1
 (<code>http://oracc.org/ns/cbd/1.0</code>) and CBD2.  One is that in
-CBD2 the order of most elements is enforced by the validator.  This
+CBD2 the order of many elements is enforced by the validator.  This
 ensures that different glossaries will be structured similarly making
 them easier for users to get used to and read quickly.  The other is
 greater extensibility--the addition of commands for including
 additional files, referencing external URIs, and providing narrative
-discussion as well as the data-focussed elements of CBD1.</p>
+discussion as well as the data-focussed elements of CBD1.  Details and
+notes on other CBD2 features are included throughout this page.</p>
 
 <p>Most users will interact most of the time with the simple
-text-based format of Oracc glossaries, the <code>.glo</code> file.
-CBD2 <code>.glo</code>, and the primary purpose of this page is to
-document the <code>.glo</code> version of CBD2.</p>
+text-based format of Oracc glossaries, the <code>.glo</code> file, and
+the primary purpose of this page is to document the <code>.glo</code>
+version of CBD2.  The XML derivatives involve some data normalization,
+augmentation with additional data, and integration of statistics from
+the corpus.  These matters are not dealt with here.</p>
 
 <p>There are also two grammars of CBD2 are available: an XML schema
 written in Relax NG's rnc format; and a context-free grammar for the C
@@ -30,7 +34,7 @@ language glossary processor, <code>gx</code>, which is written for the
 Bison parser generator.  The processor <code>gx</code> reads CBD2
 glossaries in the text-format and, amongst other things, exports the
 XML version, validating the output against the XML schema as it does
-so.</p>
+so.  Links to these resources are at the very bottom of this page.</p>
 
 <esp:h>CBD2 Overview</esp:h>
 
@@ -92,27 +96,27 @@ precede the following @-line will be output before the @-line but
 comments are not emitted when producing XML or other formats besides
 .glo files.</p>
 
-<h3>Files and URLs</h3>
+<h3>Files and URIs</h3>
 
 <p>There are several places in a CBD2 glossary where the content can
-or must be expressed as an included file or a referenced URL.  Files
-and URLs may not contain spaces.  The following file-or-url rules apply
+or must be expressed as an included file or a referenced URI.  Files
+and URIs may not contain spaces.  The following file-or-url rules apply
 to these cases:</p>
 
 <ol>
   <li>When the content must be file, the filename is unmarked, e.g.,
   <code>@proplist props.txt</code></li>
-  <li>When the content must be a file or a URL, a filename is
-  unmarked, a URL is indicated by <code>@@</code>, e.g.,
+  <li>When the content must be a file or a URI, a filename is
+  unmarked, a URI is indicated by <code>@@</code>, e.g.,
   <code>@@http://oracc.org/amgg/enki/</code>.</li>
-  <li>When the content may be text, or a file, or a URL, a file or a
-  URL must be marked using the <code>@@</code>convention: if there is
+  <li>When the content may be text, or a file, or a URI, a file or a
+  URI must be marked using the <code>@@</code>convention: if there is
   any ambiguity about whether the text after <code>@@</code> is a
-  filename or a URL, the URL protocol for files,
+  filename or a URI, the URI protocol for files,
   <code>file://</code>, must be used.</li>
 </ol>
 
-<esp:sh>The Header</esp:sh>
+<h2>The Header</h2>
 
 <p>The common tags in the header are: <code>@project @lang
 @name</code>.  In addition, the header may specify the target language
@@ -144,7 +148,7 @@ described before less common tags.</p>
   url="/doc/help/glossaries/properties/">the properties
   page</esp:link>. May be given more than once.</dd>
   <dt>@relators</dt>
-  <dd>The value must be a file or URL giving configuration information
+  <dd>The value must be a file or URI giving configuration information
   for the Relations mechanism; [[not yet implemented]]. May be given
   more than once.</dd>
   <dt>@i18n</dt>
@@ -229,7 +233,7 @@ restricted to ePSD.</p>
     are physically included as a block element which is a child of the
     current <code>&lt;disc></code> element in the XML output of the
     glossary.</li>
-    <li>URL: the URL
+    <li>URI: the URI
     must be preceded by <code>@@</code> and is replaced in the
     glossary with a link to the resource.</li> <li>TEXT: the text
     content of @disc is currently plain text, but in future it will
@@ -795,20 +799,34 @@ quality designations.</p>
 <code>@form</code> tags may be followed by an exclamation mark, e.g.,
 <code>@form!</code>, indicating higher lemmatizer priority.</p>
 
+<h2>Differences and Conversion</h2>
+
+<p>A conversion process will be available for migrating from CBD1 to
+CBD2 as well as a list of differences. These are still in progress.
+The timeline for adoption of CBD2 is loose.  It is intended that it
+will be used for the next release of ePSD2 in December 2022: if that
+goes well, other Oracc projects will be migrated in 2023.  Projects
+will be rebuilt and checked as part of the migration process.</p>
+
 <h2>Technical Information</h2>
 
 <p>There are several parsers and schemas available in the Oracc code repo which may be useful to programmers:</p>
 
 <ul>
-  <li>An anaemic Relax NG schema for an XML output which correponds closely to the <code>.glo</code> structure, <esp:link url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/cbd-gx.rnc">cbd/cbd-gx.rnc</esp:link>.</li>
-  <li>The Bison grammar used by the <code>gx</code> processor when parsing glossaries, <esp:link url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/grammar.y">cbd/grammar.y</esp:link>.</li>
-  <li>The Flex scanner used by the <code>gx</code> processor to tokenize glossaries, <esp:link url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/scanner.l">cbd/scanner.l</esp:link>.</li>
+  <li>An anaemic Relax NG schema for an XML output which correponds
+  closely to the <code>.glo</code> structure, <esp:link
+  url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/cbd-gx.rnc">cbd/cbd-gx.rnc</esp:link>.
+  This schema does not yet represent the constraints on the content of
+  most elements.</li>
+  <li>The Bison grammar used by the <code>gx</code> processor when
+  parsing glossaries, <esp:link
+  url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/grammar.y">cbd/grammar.y</esp:link>.</li>
+  <li>The Flex scanner used by the <code>gx</code> processor to
+  tokenize glossaries, <esp:link
+  url="https://github.com/oracc/oracc/blob/master/c/otf/cbd/scanner.l">cbd/scanner.l</esp:link>.</li>
 </ul>
 
 <p>As development of CBD2 and the new CBD2 toolchain continues there
 will be further Relax NG grammar variants which define the annotations
-and data restructuring that is carried with glossaries.</p>
-
-  </body>
-  </html>
-</esp:page>
+and data restructuring that is carried with glossaries.</p> </body>
+</html> </esp:page>
