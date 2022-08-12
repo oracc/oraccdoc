@@ -107,12 +107,15 @@ to these cases:</p>
   <li>When the content must be file, the filename is unmarked, e.g.,
   <code>@proplist props.txt</code></li>
   <li>When the content must be a file or a URI, a filename is
-  unmarked, a URI is indicated by <code>@@</code>, e.g.,
-  <code>@@http://oracc.org/amgg/enki/</code>.</li>
+  unmarked, a URI is indicated by <code>@&lt;...@</code>.  The URI may
+  be followed by a space and some text, in which case the text is used
+  as the highlighted URI text in the output, e.g.,
+  <code>@&lt;http://oracc.org/amgg/listofdeities/enki/ the AMGG page
+  about Enki@></code>.</li>
   <li>When the content may be text, or a file, or a URI, a file or a
-  URI must be marked using the <code>@@</code>convention: if there is
-  any ambiguity about whether the text after <code>@@</code> is a
-  filename or a URI, the URI protocol for files,
+  URI must be marked using the <code>@&lt;...@></code>convention: if
+  there is any ambiguity about whether the text after <code>@@</code>
+  is a filename or a URI, the URI protocol for files,
   <code>file://</code>, must be used.</li>
 </ol>
 
@@ -120,10 +123,11 @@ to these cases:</p>
 
 <p>The common tags in the header are: <code>@project @lang
 @name</code>.  In addition, the header may specify the target language
-for <code>@sense</code> elements (which defaults to <code>en</code>,
-English); describe the CBD version with <code>@cbd</code>, and
-reference one or more configuration files for the properties and
-relations mechanisms: <code>@proplist @relators</code>.</p>
+for <code>@sense</code> elements (<code>@translang</code>, which
+defaults to <code>en</code>, English); describe the CBD version with
+<code>@cbd</code>, and reference one or more configuration files for
+the properties and relations mechanisms: <code>@proplist
+@relators</code>.</p>
 
 <p>In the following list, and this document generally, common tags are
 described before less common tags.</p>
@@ -157,9 +161,9 @@ described before less common tags.</p>
 </dl>
 
 <p>In the header, <code>@project @lang @name</code> are required and
-must occur first and in that order; <code>@cbd @proplist
-@relators @translang</code> must come after the required tags and may be in any
-order.</p>
+must occur first and in that order; <code>@cbd @i18n @proplist
+@relators @translang</code> must come after the required tags and may
+be in any order.</p>
 
 <h2>Entry Block</h2>
 
@@ -169,8 +173,8 @@ order.</p>
 <code>@entry</code> and ends with <code>@end entry</code>.  In
 addition, the entry block may contain one or more <code>@alias</code>
 tags which give alternate names for the entry.  If the
-<code>@entry</code> is for a phrase, the entry block must also contain
-a <code>@parts</code> element.</p>
+<code>@entry</code> is a compound, the entry block must also contain
+one or more <code>@parts</code> elements.</p>
 
 <h3>Rarer Entry Tags</h3>
 
@@ -181,13 +185,13 @@ consists only of capital letters, e.g., <code>@NA</code>, or
 associated with <code>@entry</code> but use of these is presently
 restricted to ePSD.</p>
 
-<h3>Entry Tag Descriptions</h3>
+<h3>Entry Block Details</h3>
 
 <dl>
   <dt>@entry CGP</dt>
   <dd>An @entry tag is followed by a CGP which must be unique in the
   glossary. The CGP must be given in the loose format.  An @entry may
-  be immediately followed by an asterisk (<code>@entry*</code> to
+  be immediately followed by an asterisk (<code>@entry*</code>) to
   indicate that a compound entry (one which has multiple CFs separated
   by spaces) is a phrasal usage rather than a compound verb.  For the
   Sumerian language the distinction is between a compound whose
@@ -724,6 +728,9 @@ result may change over time to accommodate additional needs.  The
 examples given here are indicative rather than being drawn from actual
 glossaries.</p>
 
+<p>A header tag, <code>@relators</code>, can be given in the header
+(possibly multiple times).  The value is a file name.</p>
+
 <p>The <code>@rel</code> tag is part of the meta block (meaning it can
 apply to entire entries or just to a specific sense) and may be used
 multiple times to express multiple relationships.  Relationships have
@@ -776,8 +783,9 @@ order for an entire collection use a @sequence tag.</p>
 <h4>@sequence</h4>
 
 <p>The tag @sequence (not yet implemented) denotes an ordered
-collection of words. These tags are part of the glossary header and
-have the form:</p>
+collection of words. These tags must be included in files or URIs
+which are included in the glossary header as <code>@relators</code>
+and have the form:</p>
 
 <pre class="example">
   @sequence NAME DESCRIPTION = LIST
