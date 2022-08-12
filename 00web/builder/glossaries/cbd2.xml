@@ -104,8 +104,7 @@ and URIs may not contain spaces.  The following file-or-url rules apply
 to these cases:</p>
 
 <ol>
-  <li>When the content must be file, the filename is unmarked, e.g.,
-  <code>@proplist props.txt</code></li>
+  <li>When the content must be file, the filename is unmarked</li>
   <li>When the content must be a file or a URI, a filename is
   unmarked, a URI is indicated by <code>@&lt;...@></code>.  The URI may
   be followed by a space and some text, in which case the text is used
@@ -119,15 +118,22 @@ to these cases:</p>
   <code>file://</code>, must be used.</li>
 </ol>
 
+<h3>The @include Tag</h3>
+
+<p>A glossary can include files which are processed exactly as though
+their content occurred at the point of the <code>@include</code> tag.
+The value of the tag is a filename.  This can be used, amongst other
+things, to store common configuration info for use by several
+glossaries.</p>
+
 <h2>The Header</h2>
 
 <p>The common tags in the header are: <code>@project @lang
 @name</code>.  In addition, the header may specify the target language
 for <code>@sense</code> elements (<code>@translang</code>, which
 defaults to <code>en</code>, English); describe the CBD version with
-<code>@cbd</code>, and reference one or more configuration files for
-the properties and relations mechanisms: <code>@proplist
-@relators</code>.</p>
+<code>@cbd</code>, carry out configuration of the properties and
+relations mechanisms: <code>@props @reldef</code>.</p>
 
 <p>In the following list, and this document generally, common tags are
 described before less common tags.</p>
@@ -146,14 +152,18 @@ described before less common tags.</p>
   <dd>The language of translations in the glossary. Default <code>en</code>.</dd>
   <dt>@cbd</dt>
   <dd>The CBD version: presently only 1.0 and 2.0 are recognized.  Default is 1.0.</dd>
-  <dt>@proplist</dt>
-  <dd>The value must be the name of a file containing configuration
-  information for the Properties mechansism; see <esp:link
-  url="/doc/help/glossaries/properties/">the properties
-  page</esp:link>. May be given more than once.</dd>
-  <dt>@relators</dt>
-  <dd>The value must be a file or URI giving configuration information
-  for the Relations mechanism; [[not yet implemented]]. May be given
+  <dt>@props</dt>
+  <dd>The value is a name of a set of properties followed by the
+  allowed values, e.g., <code>@props loctype monument temple city
+  field</code>. The CBD1 version of properties is documented <esp:link
+  url="/doc/help/glossaries/properties/">on the properties
+  page</esp:link>.  Note that an important difference between CBD1 and
+  CBD2 is that in CBD1 the <code>@props</code> tag was not needed to
+  define a list of properties. In CBD2 properties may be stored in
+  files and those files included using the <code>@include</code>
+  tag.  May be given more than once.</dd>
+  <dt>@reldef</dt>
+  <dd><a href="#reldef">See below under <code>@reldef</code></a>. May be given
   more than once.</dd>
   <dt>@i18n</dt>
   <dd>A list of languages that can be used in the i18n ltags--see the
@@ -758,6 +768,7 @@ space, then the content.  They may occur as follows:</p>
   @notel %fr Ici on attend une note.
   @end entry
 </pre>
+
 <h3>Relationships Between Words</h3>
 
 <p>CBD2 includes a mechanism for specifying relationships between
@@ -771,7 +782,7 @@ data is given in the glossary header using the <code>@reldef</code>
 tag (these can be gathered in files and included using
 <code>@include</code>).</p>
 
-<h4>The @reldef Tag</h4>
+<h4 name="reldef">The @reldef Tag</h4>
 
 <p>A @reldef has the following general structure:</p>
 
@@ -794,14 +805,14 @@ tag (these can be gathered in files and included using
   <dt>form</dt>
   <dd>A collection of words which are (by)forms of each other.</dd>
   <dt>sequence</dt>
-  <dd>A collection of words which has a sequenced relationship.  If
-  the ordering of any component of a sequence is uncertain a question
-  mark, <code>?</code>, can be placed before the component.  If the
-  collection is known to be a sequence but few or none of the relative
-  orderings are known the entire list can be preceded by a double
-  question mark <code>??</code>.  The sequence facility is
-  particularly intended for groups such as metrological terms, quality
-  designations, and month names.</dd>
+  <dd>An ordered group, i.e., a collection of words which has a
+  sequenced relationship.  If the ordering of any component of a
+  sequence is uncertain a question mark, <code>?</code>, can be placed
+  before the component.  If the collection is known to be a sequence
+  but few or none of the relative orderings are known the entire list
+  can be preceded by a double question mark <code>??</code>.  The
+  sequence facility is particularly intended for groups such as
+  metrological terms, quality designations, and month names.</dd>
 </dl>
 
 <h5>@reldef NAME</h5>
