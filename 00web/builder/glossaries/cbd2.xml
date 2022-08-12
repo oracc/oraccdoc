@@ -740,6 +740,24 @@ space, then the content.  They may occur as follows:</p>
   <dd>The @notel tags must occur immediately after the @note to which they correspond.</dd>
 </dl>
 
+<p>A contrived example:</p>
+
+<pre class="cookbook">
+  @project epsd2
+  @lang sux
+  @name epsd2/lang
+  @i18n fr
+
+  @entry ur [dog] N
+  @gwl %fr chien
+  @sense N dog
+  @sensel %fr chien
+  @disc I prefer cats.
+  @discl %fr Moi, je préfère les chats.
+  @note We expect a note here.
+  @notel %fr Ici on attend une note.
+  @end entry
+</pre>
 <h3>Relationships Between Words</h3>
 
 <p>CBD2 includes a mechanism for specifying relationships between
