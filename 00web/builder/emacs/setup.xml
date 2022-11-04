@@ -14,15 +14,17 @@
 <esp:h>Obtaining Emacs</esp:h>
 
 <ul>
-<li><p>For Mac OS X we recommend Aquamacs, at <esp:link url="http://www.aquamacs.org">http://www.aquamacs.org</esp:link> and then follow the instructions <esp:link bookmark="sh_forunixandmacosxusers">below</esp:link>.</p></li>
+  
+  <!--<li><p>For Mac OS X we recommend Aquamacs, at <esp:link url="http://www.aquamacs.org">http://www.aquamacs.org</esp:link> and then follow the instructions <esp:link bookmark="sh_forunixandmacosxusers">below</esp:link>.</p></li>-->
 
+<li><p>An overview of where to get Emacs for Unix, MacOS, and Windows, is available on <esp:link url="https://www.gnu.org/software/emacs/download.html">the GNU Emacs website.</esp:link>.</p></li>
+  
+<li><p>For Mac OS X, we have had good results with Emacs for Mac OS X at <esp:link url="https://emacsformacosx.com/">https://emacsformacosx.com/</esp:link>.  Simply download and follow the installation instructions.</p></li>
 
-<li><p>For Windows we recommend EmacsW32 from <esp:link url="http://www.ourcomments.org/Emacs/EmacsW32.html">http://www.ourcomments.org/Emacs/EmacsW32.html</esp:link>. Download the <strong>latest EmacsW32+Emacs patched</strong> version. Then follow the instructions <esp:link bookmark="sh_forwindowsusers">below</esp:link>.</p></li>
+<li><p>For Unix and MacOS you will also need to follow the instructions <esp:link bookmark="sh_forunixandmacosxusers">below</esp:link>.</p></li>
 
-<li>For Unix Emacs is probably already installed; if not, you can go
-to <esp:link url="http://www.gnu.org/software/emacs/">the
-Gnu Emacs page</esp:link> for sources, or (probably) to your distribution
-provider for a binary package. Either way, you will also need to follow the instructions <esp:link bookmark="sh_forunixandmacosxusers">below</esp:link></li>
+<li><p>For current Windows instructions on installing ATF mode ...</p></li>
+
 </ul>
 
 <esp:h>Fonts</esp:h>

@@ -25,8 +25,8 @@ replace all of Emacs functionality.</p>
   edit ATF files with it.</dd>
 <dt><esp:link page="emacssetup">Preparing to work with Emacs</esp:link></dt>
 <dd>On this page we describe how to obtain, install and configure it for Oracc work.</dd>
-<dt><esp:link page="aquamacs">Starting to use Aquamacs (Emacs for Mac)</esp:link></dt>
-<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in Aquamacs (Emacs for Mac), apart from those provided by atf-mode.</dd>
+<!--<dt><esp:link page="aquamacs">Starting to use Aquamacs (Emacs for Mac)</esp:link></dt>
+<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in Aquamacs (Emacs for Mac), apart from those provided by atf-mode.</dd>-->
 <dt><esp:link page="emacsw32">Starting to use EmacsW32 (Emacs for PC)</esp:link></dt>
 <dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in EmacsW32 (Emacs for Windows), apart from those provided by atf-mode.</dd>
 <dt><esp:link page="emacsuse">Working with ATF in Emacs using atf-mode</esp:link></dt>

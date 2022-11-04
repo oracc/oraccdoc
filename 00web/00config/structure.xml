@@ -41,8 +41,8 @@
     <!-- EMACS -->
     <struct:page file="builder/emacs/index.xml" id="emacs" type="page">
 	    <struct:page file="builder/emacs/setup.xml" id="emacssetup" type="page" />
-	    <struct:page file="builder/emacs/aquamacs.xml" id="aquamacs" type="page" />
-	    <struct:page file="builder/emacs/emacsw32.xml" id="emacsw32" type="page" />
+	    <!--<struct:page file="builder/emacs/aquamacs.xml" id="aquamacs" type="page" />-->
+	    <struct:page file="builder/emacs/emacs-tips.xml" id="emacs-tips" type="page" />
             <struct:page file="builder/emacs/emacs.xml" id="emacsuse" type="page"/>
 	</struct:page>
   <!-- EDITOR DOCO -->
