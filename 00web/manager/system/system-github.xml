@@ -26,7 +26,7 @@ user@build:.ssh/id_rsa.pub serverkey.pub</code>.</p>
 while you go back to the terminal where you copied the server key.</p>
 
 <p>Now copy the server key to the clipboard with <code
-class="cookbook">pbcopy serverkey.pub</code>.</p>
+class="cookbook">pbcopy &lt;serverkey.pub</code>.</p>
 
 <p>To add the server key to your GitHub account:</p>
 
