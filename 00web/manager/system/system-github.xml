@@ -49,6 +49,8 @@ or you don't have permissions to edit the repository (you can still
 clone using http but you can't submit changes directly back to the
 repository.</p>
 
+<p>Log in to your account on the server.</p>
+
 <p>To install the Oracc documentation project, you can type <code
 class="cookbook">git clone
 git@github.com:oracc/oraccdoc.git</code>.</p>
