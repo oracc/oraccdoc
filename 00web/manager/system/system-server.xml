@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Server Setup</esp:name>
+<esp:title>Server Configuration and Tool Setup</esp:title>
+<html><head/><body>
+
+<p class="firstpara">This page explains how to get SSH configured on the server.</p>
+
+<esp:h>Create SSH key on Server</esp:h>
+
+<p>An SSH key is needed to authenticate to github when working with a github repo on the server.</p>
+
+<p>First set up passwordless login from your client to the server.</p>
+
+<p>Now log in to the server with <code class="cookbook">ssh -C userid@server</code></p>
+
+<p>Type <code class="cookbook">ssh-keygen -b 4096 -t rsa</code>.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

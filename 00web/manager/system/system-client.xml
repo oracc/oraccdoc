@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Client Setup</esp:name>
+<esp:title>Client Configuration and Tool Setup</esp:title>
+<html><head/><body>
+
+<p class="firstpara">This page explains how to get SSH configured on the server.</p>
+
+<esp:h>Create SSH key on Client</esp:h>
+
+<p>This requires the following steps:</p>
+<ol>
+  <li>Open Terminal; this is located in Applications/Utilities on MacOS</li>
+  <li>Create the key:
+  <ul>
+    <li><code class="cookbook">ssh-keygen -b 4096 -t rsa</code></li>
+    <li>Type &lt;RETURN> to all the prompts</li>
+    <li>This creates a directory .ssh in your home folder that
+    contains your public (id_rsa.pub) and private (id_rsa) keys.</li>
+  </ul>
+  </li>
+  <li>Copy the key to the server by typing <code
+  class="example">ssh-copy-id USER@SERVER</code>. For example, for
+  user 'hkane' on the build server: <code class="cookbook">ssh-copy-id
+  hkane@build</code>. You will need to enter your password for this
+  step.</li>
+  <li>Log in to the server; you should be able to do so without being
+  prompted for your password.</li>
+  <li>Once passwordless login is configured it&#39;s a good idea to reset
+  your password to an even more secure one.</li>
+</ol>
+
+<esp:h>Add a Server Shortcut</esp:h>
+
+<p>You can add server shortcuts to the file /etc/hosts.  To do this:</p>
+
+<ol>
+  <li>Open Terminal</li>
+  <li>Type <code class="cookbook">sudo su</code>; enter your password when prompted.</li>
+  <li>Type <code class="cookbook">nano /etc/hosts</code>.</li>
+  <li>Add lines as required giving the IP address and a name, for
+  example <code class="cookbook">130.91.81.219 build</code> will allow
+  you to refer to https://build-oracc.museum.upenn.edu as
+  'build'.</li>
+</ol>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

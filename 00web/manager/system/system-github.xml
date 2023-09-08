@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>GitHub Setup</esp:name>
+<esp:title>GitHub Configuration and Tool Setup</esp:title>
+<html><head/><body>
+
+<p class="firstpara">This page explains how to get SSH configured with
+GitHub to support editing and working with GitHub repositories on the
+server.</p>
+
+<p>First <esp:link page="systemclient">set your account up on the
+client (your own machine)</esp:link> and then <esp:link
+page="systemserver">set up your server account.</esp:link>.</p>
+
+<esp:h>Add your Server SSH Key to your GitHub Account</esp:h>
+
+<p>It's easiest to copy your server key to your client machine first
+by opening a terminal and typing <code class="example">scp
+user@build:.ssh/id_rsa.pub serverkey.pub</code>.</p>
+
+<p>Log in to your GitHub account and keep the browser window handy
+while you go back to the terminal where you copied the server key.</p>
+
+<p>Now copy the server key to the clipboard with <code
+class="cookbook">pbcopy serverkey.pub</code>.</p>
+
+<p>To add the server key to your GitHub account:</p>
+
+<ol>
+  <li>Click on your profile icon in the top right corner of your GitHub account page.</li>
+  <li>Click on 'Settings'</li>
+  <li>Click on 'SSH and GPG keys'</li>
+  <li>Click on 'New SSH key'</li>
+  <li>Paste the server key that you copied to the clipboard with
+  pbcopy into the large 'Key' text area and add a title.</li>
+  <li>Click on 'Add SSH key'</li>
+</ol>
+
+<esp:h>Installing Repositories</esp:h>
+
+<p>To install a repository on your server account you need the GitHub
+SSH code, which you can find in the CODE button on a repository--if it
+isn't showing an SSH key (only HTTP) then either you aren't logged in
+or you don't have permissions to edit the repository (you can still
+clone using http but you can't submit changes directly back to the
+repository.</p>
+
+<p>To install the Oracc documentation project, you can type <code
+class="cookbook">git clone
+git@github.com:oracc/oraccdoc.git</code>.</p>
+
+<esp:h>GitHub Hints</esp:h>
+
+<p>The most commonly used GitHub command-line interface (CLI) commands are:</p>
+
+<dl>
+
+  <dt>git pull</dt><dd>Refresh the local copy of the repo from the
+  master; it's a good working habit to do this before making any
+  changes to the repo in case someone else has committed changes.</dd>
+  
+  <dt>git status</dt><dd>See what has changed in the repo.</dd>
+
+  <dt>git add [FILENAME]</dt><dd>Add new files to the repo--git status
+  will show untracked files unless they are mentioned in the repo's
+  .gitignore file.</dd>
+
+  <dt>git commit -a -m "MESSAGE"</dt><dd>Commit changes to the repo;
+  the message is in double quotes and should briefly mention what
+  changes are in this commit, e.g., <code class="cookbook">git commit
+  -a -m "revise Emacs documentation"</code>.</dd>
+
+  <dt>git push</dt><dd>Push the commits to the repo; if you don't do
+  this the central repo will not be updated and further changes to the
+  central repo may complicate merging of the un-pushed commits.</dd>
+  
+</dl>
+
+<esp:sh>Never leave the Emacs!</esp:sh>
+
+<p>You can issue these commands without leaving Emacs: just use Meta-!
+(M-!) to run a shell command while visiting a file from the server
+repo--Emacs will run the shell command on the remote machine.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>

@@ -150,6 +150,11 @@
 
    <!-- MANAGER -->
    <struct:page file="manager/index.xml" id="manager"  type="page">
+     <struct:page file="manager/system/index.xml" id="system" type="page">
+       <struct:page file="manager/system/system-client.xml" id="systemclient" type="page"/>
+       <struct:page file="manager/system/system-server.xml" id="systemserver" type="page"/>
+       <struct:page file="manager/system/system-github.xml" id="systemgithub" type="page"/>
+     </struct:page>
      <struct:page file="manager/projects.xml" id="projects"  type="page"/>
  <!--    <struct:page file="manager/projemacs.xml" id="projemacs"
  type="page"/> -->

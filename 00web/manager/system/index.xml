@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>System Setup</esp:name>
+<esp:title>System Configuration and Tool Setup</esp:title>
+<html><head/><body>
+
+<p class="firstpara">These pages provide help on setting up your
+computer and your server login to make it easier to work on Oracc
+projects.</p>
+
+<p>On these pages we discuss:</p>
+
+<dl>
+  <dt><esp:link page="systemclient">Client login configuration</esp:link></dt>
+  <dd>Setting up your user on your own machine(s); presently only for MacOS</dd>
+
+  <dt><esp:link page="systemserver">Server login configuration</esp:link></dt>
+  <dd>Setting up your server login (for projects, this is the project basename
+  excluding any subproject appendages).</dd>
+
+  <dt><esp:link page="systemgithub">Github login configuration</esp:link></dt>
+  <dd>Setting up your Github UserID to be able to work directly on repositories.</dd>  
+</dl>
+
+<p>After having followed these steps you should be able to log in to
+the server without being prompted for your password, edit files with
+Emacs via Tramp, again without being prompted for a password, and
+carry out github commands in the project on the server from within
+Emacs using <code class="cookbook">M-!</code>.</p>
+
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>
