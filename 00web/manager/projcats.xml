@@ -28,7 +28,7 @@
 <p><esp:link bookmark="h_exportingcataloguedata">Exporting</esp:link> data from Filemaker to Oracc is described below.</p>
 
 <esp:h>P-catalogue</esp:h>
-    <p>The information about tablets is stored in a catalogue that by default has the name <code>[PROJECT-NAME]-P.fp7</code>, e.g., <code>cams-P.fp7</code>. All P-catalogues need to include the following two fields:</p>
+    <p>The information about tablets is stored in a catalogue that by default has the name <code>[PROJECT-NAME]-P.fp12</code>, e.g., <code>cams-P.fp12</code>. All P-catalogues need to include the following two fields:</p>
 
     <dl>
         <dt>id_text</dt>
@@ -36,10 +36,10 @@
         <dt>designation</dt>
         <dd>Each p-number is paired with a more comprehensible designation for the tablet. This is usually the publication number (e.g., <code>CTN 4, 027</code>), but may also be a museum number or an excavation number. This serves as a check against mistyping P-numbers.</dd>
     </dl>
-    <p>P-numbers and their matching designations are assigned by the <esp:link url="http://cdli.ucla.edu">CDLI</esp:link>. If your tablet is not yet in the <esp:link url="http://www.cdli.ucla.edu/cdlisearch/search/indexi.php">CDLI catalogue</esp:link>, e-mail your project liaison (Niek, Steve, or Eleanor) to find out how to get the P-number and designation.</p>
+    <p>P-numbers and their matching designations are assigned by the <esp:link url="http://https://cdli.mpiwg-berlin.mpg.de">CDLI</esp:link>. If your tablet is not yet in the <esp:link url="https://cdli.mpiwg-berlin.mpg.de">CDLI catalogue</esp:link>, you can add it <esp:link url="https://cdli.mpiwg-berlin.mpg.de/artifacts/add">here</esp:link> (for single artefacts) or <esp:link url="https://cdli.mpiwg-berlin.mpg.de/artifacts-updates/add">here</esp:link> (for lists of artefact; log-in required).</p>
     
 <esp:sh>CDLI-style information</esp:sh>
-    <p>The CDLI catalogue defines a large number of fields, which describe the tablet's publication information, physical characteristics, provenance, dating, current location, and textual content. They are briefy documented <esp:link url="http://cdli.ucla.edu/methods/cat/cat_doc.html">here</esp:link>. We thus strongly recommend that you create your database from an <esp:link url="http://cdli.ucla.edu/downloads.html">an empty clone of the CDLI database</esp:link>, even if you only want to use a small subset of the CDLI fields.</p>
+    <p>The CDLI catalogue defines a large number of fields, which describe the tablet's publication information, physical characteristics, provenance, dating, current location, and textual content. They are briefy documented <esp:link url="https://cdli.mpiwg-berlin.mpg.de/docs/add-and-edit-artifact-metadata">here</esp:link>. We thus strongly recommend that you create your database from an <esp:link url="~/resources/cdlicat-clone.fmp12">an empty clone of the CDLI database</esp:link>, even if you only want to use a small subset of the CDLI fields.</p>
 
 <p>Project catalogues that contain only CDLI-defined fields and data are known as 'local' catalogues. To implement a local catalogue in your project, be sure to set the <code>catalog-build policy</code> option to 'local' in your <esp:link page="projconfig" bookmark="h_editablecomponents">project configuration file</esp:link>.</p>
 
@@ -79,7 +79,7 @@
 
 <esp:author first-names="Eleanor" last-name="Robson"/>
 <esp:content-last-modified/>
-<esp:email address="osc@oracc.org"/>
+<p><esp:email address="osc@oracc.org"/></p>
 
 
 </body></html></esp:page>

@@ -163,7 +163,9 @@
      <struct:page file="manager/filesystem.xml" id="filesystem"  type="page"/>
      <struct:page file="manager/projconfig.xml" id="projconfig"
 		  type="page">
-       <struct:page file="manager/configbuild.xml" id="configbuild"
+       <struct:page file="manager/configcore.xml" id="configcore"
+		    type="page"/>
+      <struct:page file="manager/configbuild.xml" id="configbuild"
 		    type="page"/>
        <struct:page file="manager/configatfprocessor.xml" id="configatfprocessor" type="page"/>
        <struct:page file="manager/configglossary.xml" id="configglossary"
