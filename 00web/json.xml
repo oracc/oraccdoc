@@ -15,7 +15,7 @@
 
 <esp:sh>Top-level Oracc Data</esp:sh>
 
-<p>Two files are provided at the top level: a simple list of public projects (projects.json) and a complex list of public projects analogous to the one-page listing of projects with blurbs (projectlist.json). In each case, these can be retrieved by prefixing them with an Oracc server name, e.g., http://oracc.org/projects.json or http://oracc.museum.upenn.edu/projects.json.</p>
+<p>Two files are provided at the top level: a simple list of public projects (projects.json) and a complex list of public projects analogous to the one-page listing of projects with blurbs (projectlist.json). In each case, these can be retrieved by prefixing them with an Oracc server name, e.g., http://oracc.org/json/projects.json or http://oracc.museum.upenn.edu/json/projects.json.</p>
 
 <dl>
 <dt>projects.json: type "projects"</dt>
