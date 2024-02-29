@@ -135,6 +135,7 @@
      <struct:page file="portals/espinstall.xml" id="esp-install" type="page"/>
      <struct:page file="portals/esppages.xml" id="esp-pages" type="page"/>
      <struct:page file="portals/espcontent.xml" id="esp-content" type="page"/>
+     <struct:page file="portals/esprtl.xml" id="esp-rtl" type="page"/>
      <struct:page file="portals/espstyle.xml" id="espstyle" type="page"/>
      <struct:page file="portals/espelements.xml" id="esp-elements" type="page"/>	 
      <struct:page file="portals/projurls.xml" id="projurls" type="page"/>
@@ -222,4 +223,3 @@
 </struct:page>
 
 </struct:page>
-
