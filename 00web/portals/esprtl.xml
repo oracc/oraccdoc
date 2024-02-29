@@ -27,7 +27,10 @@
 <p>In <code>00web/00config/parameters.xml</code>, some parameters can be edited to optimise for RTL content, e.g.,: </p>
 <pre class="example">
     &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    &lt;param:parameters xmlns:param="http://oracc.org/ns/esp-param/1.0" xmlns:xpd="http://oracc.org/ns/xpd/1.0" xmlns:esp="http://oracc.org/ns/esp/1.0" xmlns="http://www.w3.org/1999/xhtml"&gt;
+    &lt;param:parameters xmlns:param="http://oracc.org/ns/esp-param/1.0" 
+        xmlns:xpd="http://oracc.org/ns/xpd/1.0" 
+        xmlns:esp="http://oracc.org/ns/esp/1.0" 
+        xmlns="http://www.w3.org/1999/xhtml"&gt;
     &lt;param:title&gt;مقدمة في الكتابة المسمارية&lt;/param:title&gt;
     &lt;param:publisher&gt;مشروع المقدمة في الكتابة المسمارية&lt;/param:publisher&gt;
     &lt;param:host&gt;http://oracc.org&lt;/param:host&gt;
