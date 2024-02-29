@@ -6,7 +6,9 @@
 
 
 <esp:name>RTL scripts in portals</esp:name>
-<esp:title>Creating portal content in right-to-left scripts</esp:title><html><head/>
+<esp:title>Creating portal content in right-to-left scripts</esp:title>
+
+<html><head></head>
 
 <body><p class="firstpara">This page gives some notes on how to include content in modern right-to-left (RTL) scripts, such as Arabic, Farsi, Hebrew or Kurdish, in ESP portal pages.</p>
 
