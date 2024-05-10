@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+
+  <esp:name>Oracc2 Pager</esp:name>
+  <esp:title>Oracc II Pager</esp:title>
+
+  <html><head></head><body>
+
+  <p>The Oracc II Pager, px, works with lists of texts, lines, words,
+  or glossary entries, and provides a mechanism for stepping through
+  the lists a page at a time, and for viewing items from the list.</p>
+
+  <p>The Pager is inherently complex in the sense that it provides an
+  interface to interact with multiple data sources in multiple
+  ways. This complexity is mitigated by structuring the pager around a
+  few core concepts.</p>
+
+  <esp:sh>Data Sources</esp:sh>
+
+  <p>Data can come from one of two primary sources: a search or a list</p>
+
+  <esp:sh>Data Types</esp:sh>
+
+  <p>Data is typed by the Oracc constituents: catalogue; texts; glossary</p>
+
+  <p>The category "texts" is referred to below by the Oracc data type extension, "xtf".</p>
+
+  <esp:sh>Data Items</esp:sh>
+
+  <p>The item type depends on the data type: catalogues have type
+  xtf--the item is the text display; glossaries have type ent--the
+  item is a glossary entry (article)</p>
+
+  <p>The Pager display can be complex because a glossary will have
+  entry items, but the instance lists in glossaries have xtf
+  items.  This is handled transparently to the user.</p>
+
+  <esp:sh>Pager Presentation Hierarchy</esp:sh>
+
+  <p>The Pager is agnostic about where its lists come from: its job is
+  to present the lists in a paged form and negotiate the
+  step-down/step-up from page to item display and back.</p>
+
+  <p>When resolving a request for a page, the Pager slices the data
+  according to a series of criteria:</p>
+
+  <dl>
+    <dt>PROJECT</dt><dd>The current project</dd>
+    <dt>LIST</dt><dd>The current list, regardless of its origin</dd>
+    <dt>SORT</dt><dd>The current sort order for the list. This is based on metadata fields and defaults to Time/Place/Genre. The Oracc Neo project only uses the default sort.  The sort is encoded for the pager as a permutation of integers where each integer represents a field--the default sort is "123". Projects can define metadata fields and orders in config.xml, but this is not presently obeyed in the initial implementation of the Pager.</dd>
+    <dt>ZOOM</dt><dd>The list can be narrowed to any one of the precomputed metadata combinations, and this is called a "zoom" and is expressed as an integer index into the list of precomputed zoom possibilities.  For glossaries, the letter selection is the "zoom", and is expressed as the letter in focus.</dd>
+    <dt>PAGE</dt><dd>after list selection, sorting, and possible zooming, the pager creates pages which are presently restricted to 25 items per page, but that restriction will be expanded to allow 50 or 100 items per page in future.</dd>
+  </dl>
+
+  <esp:sh>Pager Implementation</esp:sh>
+
+  <p>The Pager response is a single HTML page whose outer div has the
+  id #p4Pager--the system is designed so that a future implementation
+  could provide the option to retrieve an HTML page or just the
+  div.</p>
+
+  <p>The Pager div's class attribute has a series of class tags which
+  define the nature and scopeof the data being presented on the page:
+  this is used to control the structure and displayed elements via
+  CSS.  The Pager CSS is in <esp:link
+  url="/css/p4.css">p4.css</esp:link>.</p>
+
+  <p>In addition to the class attribute, the Pager div has "data-XXXX"
+  attributes which provide the necessary state for implementing
+  successive requests.</p>
+
+  <p>In lieu of proper documentation of class and data attributes a
+  selection of typical examples is given below.</p>
+
+  <pre>
+  &lt;div id="p4Pager" class=" list page dcat rcat default"
+  data-proj="rimanum" data-list="outlined.lst" data-zoom="0"
+  data-sort="123" data-page="1" data-pmax="16">
+  </pre>
+
+  <pre>
+  </pre>
+  
+</body>
+  </html>
+</esp:page>

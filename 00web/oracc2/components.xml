@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+
+  <esp:name>Oracc2 Subsystems</esp:name>
+  <esp:title>Oracc II Subsystems</esp:title>
+
+  <html><head></head><body>
+
+  <p>Oracc II is composed of the following (non-exhaustive list of) sub-systems:</p>
+
+  <dl>
+    <dt>wx/qx/px</dt><dd><esp:link page="wqp">web/query/pager</esp:link></dd>
+    <dt>qx</dt><dd>search/indexing</dd>
+    <dt>sx</dt><dd>signlist processor</dd>
+    <dt>gx</dt><dd>glossary processor</dd>
+    <dt>ax</dt><dd>atf processor</dd>
+    <dt>ox</dt><dd>OID processor</dd>
+    <dt>cx</dt><dd>Catalogue processor</dd>
+  </dl>
+</body>
+  </html>
+</esp:page>

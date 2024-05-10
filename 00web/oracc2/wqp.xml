@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+
+  <esp:name>Oracc2 WQP</esp:name>
+  <esp:title>Oracc II Web/Query/Pager</esp:title>
+
+  <html><head></head><body>
+
+  <p>Web-based interaction with Oracc II is implemented using three
+  daisy-chained programs: wx, qx, and px.</p>
+
+  <dl>
+    <dt>wx</dt><dd>wx is the web executable, and is the cgi-bin program that resolves URLs</dd>
+    <dt>qx</dt><dd>qx is the search engine; wx calls qx when there is a new search, and qx calls the pager, px, to present the results</dd>
+    <dt>px</dt><dd>px is the pager, presenting data from multiple data sources and in multiple modalities</dd>
+  </dl>
+</body>
+  </html>
+</esp:page>
