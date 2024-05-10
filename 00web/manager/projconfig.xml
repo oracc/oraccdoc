@@ -152,7 +152,7 @@ an abbreviation will result in files not being found).</p>
 <esp:sh>Editable components</esp:sh>
 <p>Several components of the config file may be edited by projects, however.</p> 
 
-<p>Some are required for all projects. They are described on the page of <esp:link url="http://oracc.museum.upenn.edu/configdoc/core.html">core</esp:link> config elements.</p>
+<p>Some are required for all projects. They are described on the page of <esp:link page="configcore">core</esp:link> config elements.</p>
 
 <p>Then there are a large number of configuration options. In order to ensure some
 kind of systematization in the options we categorize them into groups.

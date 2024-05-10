@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+<esp:name>Core config</esp:name>
+<esp:title>Core Configuration Options</esp:title>
+<html><head/><body>
+
+<p class="firstpara">The core elements required for all projects, are:</p>
+<ul>
+  <li><esp:link bookmark="h_n">n</esp:link></li>
+  <li><esp:link bookmark="h_name">name</esp:link></li>
+  <li><esp:link bookmark="h_abbrev">abbrev</esp:link></li>
+  <li><esp:link bookmark="h_type">type</esp:link></li>
+  <li><esp:link bookmark="h_logo">logo</esp:link></li>
+  <li><esp:link bookmark="h_public">public</esp:link></li>
+  <li><esp:link bookmark="h_blurb">blurb</esp:link></li>
+  <li><esp:link bookmark="h_image">image</esp:link></li>
+  <li><esp:link bookmark="h_image-alt">image-alt</esp:link></li>
+  <li><esp:link bookmark="h_url">url</esp:link></li>
+</ul>
+
+ <esp:h>n</esp:h> 
+<p>The basename of the project as used in directories, e.g., <code>epsd2</code>.
+For subprojects this includes the parent projects separated by slashes, e.g., <code>epsd2/late</code>. This parameter is set when the project is created and cannot be altered without consultation with your project liaison. This should be the first line of your config file. E.g.,</p>
+<pre class="example">&lt;project n="cams/gkab"></pre>
+
+
+  <esp:h>name</esp:h> 
+ <p>The  long, human-readable name of the project is not restricted in the same way as
+ the abbreviated name and the project name itself. You can edit this as you like. E.g.,</p>
+       <pre class="example">&lt;name>electronic Pennsylvania Sumerian Dictionary&lt;/name></pre>
+ 
+  <esp:h>abbrev</esp:h>
+ <p>The human-readable abbreviation for the project should be a single word, which can
+ mix case, like <code>ePSD</code>. E.g., </p>
+    <pre class="example">&lt;abbrev>DCCLT</pre> 
+ 
+
+  <esp:h>type</esp:h>
+ <p>Oracc recognizes several different project types which affect things
+     like how the default home page is constructed, and how the pager
+     formats a browsable view of the project data.  This parameter is 
+    set when the project is created and cannot be altered without 
+ consultation with your project liaison. The options are:</p>
+ <dl>
+    <dt>Project is primarily a corpus (default)</dt>
+       <dd><pre class="cookbook">&lt;type>corpus&lt;/type> </pre></dd> 
+       <dt>project is primarily a glossary</dt>
+        <dd><pre class="cookbook">&lt;type>glossary&lt;/type> </pre></dd> 
+      <dt>project is a portal providing only content-pages</dt>
+       <dd><pre class="cookbook">&lt;type>portal&lt;/type> </pre></dd> 
+       <dt>project is primarily a signlist</dt>
+        <dd><pre class="cookbook">&lt;type>signlist&lt;/type> </pre></dd> 
+ </dl>
+ 
+  <esp:h>logo</esp:h>
+   <p>The text logo to display in the top left corner of the page, e.g.,</p>
+  <pre class="example">&lt;logo type="text">corpusdcclt&lt;/logo> </pre>
+           
+  <esp:h>public</esp:h>
+   <p>This parameter makes the project public and includes it in Oracc search, etc. It should not be altered without consultation with your project liaison. The options are:</p>
+   <pre class="cookbook">&lt;public>yes&lt;/public> </pre>
+   <p>or</p>
+    <pre class="cookbook">&lt;public>no&lt;/public> </pre> 
+    
+
+  <esp:h>blurb</esp:h>
+<p>You have 40 words, about 300 characters including spaces, to give
+the most interesting and relevant information about your project,
+which is used in the Oracc project list.</p>
+
+<p>Do not repeat the title and abbreviation, because that
+is already in the heading. You may include links in the blurb using the HTML tag &lt;a href="..."> --they
+do not count against your word or character limit.</p>
+
+<p>If you want split your blurb into two or more paragraphs, each
+paragraph must start with a &lt;p> tag and end with a &lt;/p> tag. E.g.,</p>  
+
+<pre class="example">&lt;blurb>&lt;p>Editions and translations of lexical texts (word lists and sign lists) from all periods of cuneiform writing.&lt;/p><br/>
+&lt;p>Project directed by Niek Veldhuis at UC Berkeley and supported by the 
+&lt;a href="http://www.neh.gov">National Endowment for the Humanities&lt;/a>.&lt;/p>&lt;/blurb></pre>
+
+ <esp:h>image</esp:h>
+<p>This image accompanies the blurb. It is always scaled to 320 x 240
+pixels (i.e., a 4:3 ratio), so should be chosen with this
+constraint in mind. It does not need to be an image that is used
+ elsewhere in the project, but it must be placed in the <code>00web/images</code>
+directory and given the name <code>thumb.png</code> or <code>thumb.jpg</code>.</p>
+
+<p>Please scale your images so that they are a reasonable size: images
+over 100K in size will be rejected by the system. The best format
+is <code>.png</code>, but <code>.jpg files are also acceptable.</code></p>
+
+<p>Please try not to use pictures of tablets! For some projects, that
+may be inevitable, but since we have so many pictures of tablets in
+so many places, it is more interesting to promote your project with
+ a scene of relevance either to the context of the work you are
+ doing or to the content of the tablets. If you do use a tablet
+ image, please choose a relevant section of a relevant text, and
+ present something that is meaningful to those able to read it. The section presented should be scaled and processed so that it is
+ clearly readable online.</p>
+    <pre class="example">&lt;image>thumb.png&lt;image></pre>
+
+  <esp:h>image-alt</esp:h> 
+    <p>When the image is displayed online it is accompanied by
+    a short description which is used by browsers which do not
+    display the image.  This alternative text is required.</p>
+
+  <p>The text should be brief but descriptive--the project 
+  list has a number of examples of good practice.  In general, 
+  the image content, its provenance and date are a good starting 
+  point.</p>
+    <pre class="example">&lt;image-alt>Drawing of a list of vessels from Archaic Uruk, circa 3500 BCE&lt;/image-alt></pre>
+
+      <esp:h>url</esp:h>
+<p>Projects may be integrated on the Oracc server or they may be
+separated, with the portal content on another server and only 
+the corpus on the Oracc server.  For the latter type of project, 
+this element gives the address of the portal-server.</p>
+
+<pre class="example">&lt;https://www.ucl.ac.uk/sargon&lt;</pre>
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:author first-names="Steve" last-name="Tinney"/>
+<esp:content-last-modified/>
+<p><esp:email address="osc@oracc.org"/></p>
+
+
+</body></html></esp:page>

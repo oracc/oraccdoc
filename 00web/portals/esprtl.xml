@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+
+<esp:name>RTL scripts in portals</esp:name>
+<esp:title>Creating portal content in right-to-left scripts</esp:title>
+
+<html><head></head>
+
+<body><p class="firstpara">This page gives some notes on how to include content in modern right-to-left (RTL) scripts, such as Arabic, Farsi, Hebrew or Kurdish, in ESP portal pages.</p>
+
+<p>These preliminary notes are only in English for now, but we will produce an Arabic version very soon.</p>
+
+<esp:sh>Choice of editor</esp:sh>
+<p>We have experimented with different code editors. <esp:link url="https://code.visualstudio.com">Visual Studio Code</esp:link> has several advantages over other packages:</p>
+<ul>
+    <li>It is available for Mac, PC, and Linux;</li>
+    <li>It copes much better than, e.g., Emacs, with switching between LRT and RTL scripts;</li>
+    <li>It is also the environment that our RTL/LTR ATF editor <esp:link url="https://github.com/oracc/nisaba">Nisaba</esp:link> runs in;</li>
+    <li>And it has Github functionality built in.</li>
+</ul>
+
+<esp:sh>Parameters</esp:sh>
+<p>In <code>00web/00config/parameters.xml</code>, some parameters can be edited to optimise for RTL content, e.g.,: </p>
+<pre class="example">
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;param:parameters xmlns:param="http://oracc.org/ns/esp-param/1.0" 
+        xmlns:xpd="http://oracc.org/ns/xpd/1.0" 
+        xmlns:esp="http://oracc.org/ns/esp/1.0" 
+        xmlns="http://www.w3.org/1999/xhtml"&gt;
+    &lt;param:title&gt;مقدمة في الكتابة المسمارية&lt;/param:title&gt;
+    &lt;param:publisher&gt;مشروع المقدمة في الكتابة المسمارية&lt;/param:publisher&gt;
+    &lt;param:host&gt;http://oracc.org&lt;/param:host&gt;
+    &lt;param:root&gt;/kish/cuneiform&lt;/param:root&gt;
+    &lt;param:menu-drop-down&gt;yes&lt;param:menu-drop-down&gt;
+    &lt;param:common-headers&gt;
+        &lt;meta name="DC.publisher" content="مشروع المقدمة في الكتابة المسمارية"/&gt;
+        &lt;meta name="DC.language" scheme="ISO 639-2/T" content="ar"/&gt;
+        &lt;meta name="DC.rights.copyright" content="CC BY-SA مشروع المقدمة في الكتابة المسمارية 2024"/&gt;
+        &lt;meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text"/&gt;
+        &lt;meta name="DC.format" content="text/html"/&gt;
+        &lt;meta name="robots" content="noindex,nofollow"/&gt;
+    &lt;/param:common-headers&gt;
+    &lt;param:dc-id-prefix&gt;kish-cuneiform-oracc-org/page/&lt;/param:dc-id-prefix&gt;
+    &lt;param:main-menu-caption&gt;القائمة الرئيسية&lt;/param:main-menu-caption&gt;
+    &lt;param:footer&gt;&lt;a href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;CC BY-SA 2024 مشروع المقدمة في الكتابة المسمارية&lt;/a&gt;&lt;/param:footer&gt;
+    &lt;/param:parameters&gt;
+</pre>
+
+
+<esp:author first-names="Eleanor" last-name="Robson"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+</body></html></esp:page>
