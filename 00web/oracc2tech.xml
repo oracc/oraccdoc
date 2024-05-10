@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+
+  <esp:name>Oracc2Tech</esp:name>
+  <esp:title>Oracc II Technical Notes</esp:title>
+
+  <html><head></head><body>
+
+  <p>Oracc II is an update of Oracc with several goals:</p>
+  <ul>
+    <li>Re-implement core Oracc components that are presently written in Perl in C</li>
+    <li>Improve processing capacity and performance for large projects such as ePSD</li>
+    <li>Improve support for sign lists, both the system-wide sign lists and corpus-based sign lists</li>
+  </ul>
+
+  <p>These pages provide notes about the implementation and features
+  of Oracc II. They are primarily intended for advanced users and
+  programmers who are working with the Oracc UI or Oracc data.</p>
+</body>
+  </html>
+</esp:page>

@@ -219,5 +219,7 @@
   <struct:page file="json.xml" id="json" type="page"/>  
 </struct:page>
 
+<struct:page file="oracc2tech.xml" id="oracc2tech" type="page"/>
+
 </struct:page>
 
