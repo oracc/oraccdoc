@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+
+  <esp:name>P4 URL Tester</esp:name>
+  <esp:title>Test Page for P4 URLs</esp:title>
+
+  <html><head></head><body>
+
+  <p>This page combines examples of P4 URLs with test links to verify
+  that they are working.</p>
+
+  <esp:sh>Pager</esp:sh>
+
+  <p>The entry point to a project corpus is the [PROJECT]/pager link:
+  <esp:link class="demo"
+  url="/rimanum/pager">/rimanum/pager</esp:link></p>
+
+  <p>The default list is <code>outlined.lst</code> and does not need
+  to be included in the URL. The next few examples use the default
+  list to illustrate zooming and paging.</p>
+
+  <p>To go to the second page use page=2 in the QUERY_STRING:
+  <esp:link class="demo"
+	    url="/rimanum/pager">/rimanum/pager?page=2</esp:link>.</p>
+
+  <p>To select a group using the zoom menu, the pager uses the index
+  in the list of group options, e.g., zoom=2 in the QUERY_STRING:
+  <esp:link class="demo"
+	    url="/rimanum/pager?zoom=2">/rimanum/pager?zoom=2</esp:link></p>
+
+  <p>When zoom is non-zero the pager first selects the zoom-group and
+  then selects the requested page within that group.</p>
+
+  <p>To use a list other than the default specify list= in the
+  QUERY_STRING: <esp:link class="demo"
+  url="/rimanum/pager?list=withlem&amp;page=2">/rimanum/pager?list=withlem&amp;page=2"</esp:link>.</p>
+
+  <p>For selecting pager items, normally text editions, see <esp:link
+  bookmark="h_items">the Items section below</esp:link>.</p>
+
+  <esp:sh>Glossaries</esp:sh>
+
+  <p>A glossary is selected by appending the glossary language string
+  to the URL: <esp:link class="demo"
+  url="/rimanum/sux">/rimanum/sux</esp:link></p>
+
+  <p>In glossaries, the zoom menu consists of the letter sections the
+  glossary has--unlike pager zoom items they are named with the
+  letter: <esp:link class="demo"
+  url="/rimanum/sux?zoom=M">/rimanum/sux?zoom=M</esp:link>.</p>
+
+  <p>In glossaries the selected item is a glossary article, see <esp:link
+  bookmark="h_items">the Items section below</esp:link>.</p>
+
+  <p>Glossary articles contain instance lists, for which see <esp:link
+  bookmark="h_instances">the Instances section below</esp:link>.</p>
+
+  <esp:sh>Instances</esp:sh>
+
+  <p>Instances are references that record the occurrence of a word or
+  key. Instances can prepackaged in the glossary, or from search
+  results, or from static lists. Instance references are most often to
+  words, but may also be to catalogue entries or glossary
+  articles.</p>
+
+  <p>Glossary instances are treated like lists with the special
+  QUERY_STRING option xis: <esp:link class="demo"
+  url="/rimanum/sux?xis=sux.r000002">/rimanum/sux?xis=sux.r00002</esp:link>.</p>
+
+  <p>Search instances are lists with the special prefix
+  <code>s.</code>: <esp:link class="demo"
+  url="/rimanum?list=s.12e2f6">/rimanum?list=s.12e2f6</esp:link>.</p>
+  
+  <esp:sh>Items</esp:sh>
+
+  <p>Items are most often either text editions or glossary
+  articles. They configure their own zoom and page settings, and the
+  item is given at the end of the URL rather than in the QUERY_STRING.</p>
+
+  <p>A text instance is a PQX-name after the project URL: <esp:link
+  class="demo" url="/rimanum/P405120">/rimanum/P405120</esp:link>.</p>
+
+  <p>A glossary article instance is an OID after the project/glossary
+  URL: <esp:link class="demo"
+  url="/rimanum/sux/x0000002">/rimanum/sux/x0000002"</esp:link>.</p>
+  
+</body>
+  </html>
+</esp:page>

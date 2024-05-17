@@ -1,0 +1,7 @@
+  <p>The current list can be narrowed using the menu to the left, the
+  "zoom menu"; this focuses the pager on a prepared group of texts
+  sorted and grouped using the project's catalogue fields. The fields
+  are numbered to result in a set of sort options that are named using
+  a series of three digits--123 is Time/Place/Genre; 213 would be
+  Place/Time/Genre, etc. The default sort order, 123, does not need to
+  be specified in the URL; </p>
