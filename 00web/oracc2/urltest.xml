@@ -9,34 +9,82 @@
 
   <html><head></head><body>
 
-  <p>This page combines examples of P4 URLs with test links to verify
-  that they are working.</p>
+  <p>This page serves two purposes: it acts as a show-and-tell guide
+  to the main P4 URL styles, and also provides examples of P4 URLs
+  with test links to verify that they are working.</p>
 
+  <esp:sh>Concepts</esp:sh>
+
+  <p>P4 data display works on several levels:</p>
+
+  <dl>
+    <dt>Record</dt>
+    <dd>The <code>record</code> level is the top level for a given
+    data type. When viewing a catalogue, the records are summaries of
+    each catalogue record.  When viewing a glossary, the records are
+    the prepackaged summary of the glossary articles.  When viewing
+    instances, the records are the summaries of the occurrence of the
+    instance as a reference--a text fragment and its label.</dd>
+    <dt>Item</dt>
+    <dd>The summaries displayed in the pages of a record view link to
+    items.  For catalogues, the item is a text edition
+    (<code>text</code> for short).  For glossaries, the item is a
+    glossary article.  For instances, the item is also a
+    <code>text</code>.</dd>
+  </dl>
+
+  <p>Displayed data can come from a <code>list</code> or a
+  search--search results are a transient form of
+  <code>list</code>.</p>
+
+  <p>A <code>list</code> contains one or more IDs, and the IDs (which
+  are all of the same kind in a given list) may be simple text IDs
+  (PQX-numbers); word or grapheme IDs; or OIDs for glossary
+  articles.</p>
+
+  <p>Whether an item is arrived at from a catalogue or a set of
+  instances, the view is the same. Whether instances come from a
+  prepackaged glossary <code>xis</code> or a dynamic search result,
+  the view is also the same. A search of a catalogue produces a set of
+  catalogue record summaries; a search of a glossary produces a set of
+  glossary article summaries; a search of the corpus produces a set of
+  instance summaries. This allows a wide variety of navigation options
+  to be provided with relatively few basic URLs.</p>
+
+  <esp:sh>URL Elements</esp:sh>
+
+  <p>P4 treats a URL as two distinct parts: the PATH before the
+  QUERY_STRING, and the QUERY_STRING itself (the part after the
+  <code>?</code>-character).  The content being viewed is encoded in
+  the PATH--the project, the glossary if any, the item.  Variables
+  related to how the content is arrived at or selected are in the
+  QUERY_STRING.</p>
+  
   <esp:sh>Pager</esp:sh>
 
-  <p>The entry point to a project corpus is the [PROJECT]/pager link:
-  <esp:link class="demo"
-  url="/rimanum/pager">/rimanum/pager</esp:link></p>
+  <p>The entry point to a project corpus is the [PROJECT]/pager link
+  which presents pages of catalogue record summaries: <esp:link
+  class="demo" url="/rimanum/pager">/rimanum/pager</esp:link></p>
 
-  <p>The default list is <code>outlined.lst</code> and does not need
-  to be included in the URL. The next few examples use the default
-  list to illustrate zooming and paging.</p>
+  <p>The default pager list is <code>outlined.lst</code> and does not
+  need to be named explicitly in the URL. The next few examples use
+  the default list to illustrate zooming and paging.</p>
 
-  <p>To go to the second page use page=2 in the QUERY_STRING:
+  <p>To go to the second page omit /pager and use page=2 in the QUERY_STRING:
   <esp:link class="demo"
-	    url="/rimanum/pager">/rimanum/pager?page=2</esp:link>.</p>
+	    url="/rimanum?page=2">/rimanum?page=2</esp:link>.</p>
 
   <p>To select a group using the zoom menu, the pager uses the index
   in the list of group options, e.g., zoom=2 in the QUERY_STRING:
   <esp:link class="demo"
-	    url="/rimanum/pager?zoom=2">/rimanum/pager?zoom=2</esp:link></p>
+	    url="/rimanum?zoom=2">/rimanum/pager?zoom=2</esp:link></p>
 
   <p>When zoom is non-zero the pager first selects the zoom-group and
   then selects the requested page within that group.</p>
 
-  <p>To use a list other than the default specify list= in the
+  <p>To use a list other than the default specify <code>list=</code> in the
   QUERY_STRING: <esp:link class="demo"
-  url="/rimanum/pager?list=withlem&amp;page=2">/rimanum/pager?list=withlem&amp;page=2"</esp:link>.</p>
+  url="/rimanum?list=withlem&amp;page=2">/rimanum?list=withlem&amp;page=2"</esp:link>.</p>
 
   <p>For selecting pager items, normally text editions, see <esp:link
   bookmark="h_items">the Items section below</esp:link>.</p>
@@ -61,18 +109,18 @@
   <esp:sh>Instances</esp:sh>
 
   <p>Instances are references that record the occurrence of a word or
-  key. Instances can prepackaged in the glossary, or from search
-  results, or from static lists. Instance references are most often to
-  words, but may also be to catalogue entries or glossary
-  articles.</p>
+  key. Instances can come from prepackaged instance-sets (IS) in the
+  glossary, or from search results, or from static lists. Instance
+  references are most often to words, but may also be to catalogue
+  entries or glossary articles.</p>
 
   <p>Glossary instances are treated like lists with the special
   QUERY_STRING option xis: <esp:link class="demo"
   url="/rimanum/sux?xis=sux.r000002">/rimanum/sux?xis=sux.r00002</esp:link>.</p>
 
-  <p>Search instances are lists with the special prefix
-  <code>s.</code>: <esp:link class="demo"
-  url="/rimanum?list=s.12e2f6">/rimanum?list=s.12e2f6</esp:link>.</p>
+  <p>Search results are lists with the special prefix
+  <code>s.</code> (the example is illustrative but non-functional):
+  <span class="demo">/rimanum?list=s.12e2f6</span>.</p>
   
   <esp:sh>Items</esp:sh>
 
@@ -85,7 +133,9 @@
 
   <p>A glossary article instance is an OID after the project/glossary
   URL: <esp:link class="demo"
-  url="/rimanum/sux/x0000002">/rimanum/sux/x0000002"</esp:link>.</p>
+  url="/rimanum/sux/x000000010">/rimanum/sux/x000000010"</esp:link>
+  (the OID form <code>x000000010</code> is a legacy-style ID; current
+  OIDs are 'o' or 'x' followed by seven digits).</p>
   
 </body>
   </html>
