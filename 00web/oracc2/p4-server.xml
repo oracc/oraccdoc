@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+        xmlns:esp="http://oracc.org/ns/esp/1.0"
+   xmlns="http://www.w3.org/1999/xhtml"
+   >
+
+  <esp:name>P4 Server</esp:name>
+  <esp:title>P4 Server Preparation</esp:title>
+
+  <html><head></head>
+  <body>
+
+  <p>There are several server-side setup needs for P4:</p>
+
+  <dl>
+    <dt>Apache Config</dt>
+    <dd><p>Oracc's Apache config uses a redirect to supply
+    <code>/</code> when the URL ends with a project name, like
+    <code>https://oracc.museum.upenn.edu/rimanum</code>.  To support
+    P4's use of the QUERY_STRING this needs to be conditionalized:</p>
+    <pre class="code">
+    RewriteCond /home/oracc/www/%{REQUEST_FILENAME}  -d
+    RewriteCond %{QUERY_STRING} =""
+    RewriteRule ^(.+[^/])$           $1/  [R,L]
+</pre></dd>
+
+    <dt>cgi-bin</dt>
+    <dd><p>The web-request handler <code>wx</code> must be in the
+    <code>cgi-bin</code> directory and CGI needs to be enabled in the
+    Apache config:</p>
+    <pre class="code">
+    &lt;Directory "/home/oracc/www/cgi-bin">
+               AllowOverride None
+               Options ExecCGI            Require all granted
+    &lt;/Directory>
+</pre></dd>
+  </dl>
+
+  <dt>Working Directories</dt>
+  <dd><p>P4 uses two working directories:
+  <code>/home/oracc/www/htm</code> and
+  <code>/home/oracc/www/is.d</code>.  The <code>htm</code> has been in
+  use on Oracc for some years, but <code>is.d</code> is new. Both
+  directories need to have <code>www-data:oracc</code> ownership and
+  <code>drwxr-s--x</code> permissions.</p></dd>
+    
+  </body>
+  </html>
+</esp:page>

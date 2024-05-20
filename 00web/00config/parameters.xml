@@ -11,7 +11,7 @@
 	<param:root>/doc</param:root>
 	<param:cuneify switcher="no" default="no" />
 	<param:common-headers>
-		<meta name="DC.publisher" content="Ocracc"/>
+		<meta name="DC.publisher" content="Oracc"/>
 		<meta name="DC.language" scheme="ISO 639-2/T" content="eng"/>
 		<meta name="DC.rights.copyright" content="Creative Commons SA 3.0 2013"/>
 		<meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" /> 	

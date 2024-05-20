@@ -4,14 +4,15 @@
    xmlns="http://www.w3.org/1999/xhtml"
    >
 
-  <esp:name>Oracc2 Pager</esp:name>
+  <esp:name>P4 Pager</esp:name>
   <esp:title>Oracc II Pager</esp:title>
 
   <html><head></head><body>
 
-  <p>The Oracc II Pager, px, works with lists of texts, lines, words,
-  or glossary entries, and provides a mechanism for stepping through
-  the lists a page at a time, and for viewing items from the list.</p>
+  <p>The Oracc II Pager, P4, implemented mostly with the program
+  <code>px</code>, works with lists of texts, lines, words, or
+  glossary entries, and provides a mechanism for stepping through the
+  lists a page at a time, and for viewing items from the list.</p>
 
   <p>The Pager is inherently complex in the sense that it provides an
   interface to interact with multiple data sources in multiple

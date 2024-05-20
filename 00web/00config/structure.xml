@@ -8,7 +8,6 @@
 <!-- dummy featured project -->
 <struct:page file="featured.xml" id="featured" hide-menu-link="yes" type="page"/>
 
-
 <!-- PROJECT LIST -->
 <struct:link url="http://oracc.museum.upenn.edu/projectlist.html" id="projlist" title="Projects"/>
 
@@ -196,8 +195,8 @@
 <struct:page file="about.xml" id="about" accesskey="6" type="page">
   <struct:page file="about/oracc.xml" id="about-oracc" type="page"/>
   <struct:page file="accessibility.xml" id="accessibility"  type="page"/>
-    <struct:page file="accesskeys.xml" id="accesskeys" accesskey="0" type="page"/>
-    <struct:page file="sitemap.xml" id="sitemap" accesskey="9"  type="page"/>
+  <struct:page file="accesskeys.xml" id="accesskeys" accesskey="0" type="page"/>
+  <struct:page file="sitemap.xml" id="sitemap" accesskey="9"  type="page"/>
   <struct:page file="privacy.xml" id="privacy" accesskey="7"  type="page"/>
   <struct:page file="copyright.xml" id="licensing" accesskey="8"  type="page"/>
   <struct:page file="about/contributing.xml" id="contributing" type="page">
@@ -207,14 +206,15 @@
     <struct:page file="standards/schemas.xml" id="schemas" type="page"/>
     <struct:page file="standards/opendocument.xml" id="standards-opendocument" type="page"/>
     <struct:page file="standards/tei.xml" id="standards-tei" type="page"/>
-</struct:page>
+  </struct:page>
 </struct:page>
 
 <!-- TOOLS -->
 <struct:page file="tools.xml" id="tools" type="page">
   <struct:page file="tools/cuneify.xml" id="cuneify" type="page"/>
 </struct:page>
-<struct:page file="404.xml" id="404" hide-menu-link="yes" type="page"/>
+
+<!--<struct:page file="404.xml" id="404" hide-menu-link="yes" type="page"/>-->
 
 <!-- OPEN DATA -->
 <struct:page file="opendata.xml" id="opendata" type="page">
@@ -222,11 +222,13 @@
   <struct:page file="json.xml" id="json" type="page"/>  
 </struct:page>
 
+<!-- Oracc II -->
 <struct:page file="oracc2tech.xml" id="oracc2tech" type="page">
   <struct:page file="oracc2/components.xml" id="o2components" type="page"/>
   <struct:page file="oracc2/wqp.xml" id="wqp" type="page"/>
   <struct:page file="oracc2/pager.xml" id="px" type="page">
     <struct:page file="oracc2/urltest.xml" id="pxurltest" type="page"/>
+    <struct:page file="oracc2/p4-server.xml" id="p4server" type="page"/>
   </struct:page>
 </struct:page>
 
