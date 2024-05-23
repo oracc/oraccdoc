@@ -37,12 +37,29 @@
   </dl>
 
   <dt>Working Directories</dt>
-  <dd><p>P4 uses two working directories:
-  <code>/home/oracc/www/htm</code> and
-  <code>/home/oracc/www/is.d</code>.  The <code>htm</code> has been in
-  use on Oracc for some years, but <code>is.d</code> is new. Both
-  directories need to have <code>www-data:oracc</code> ownership and
-  <code>drwxr-s--x</code> permissions.</p></dd>
+  <dd><p>P4 makes heavy use of caching for which it needs the working
+  directory <code>/home/oracc/www/p4.d</code>.  This should have
+  <code>www-data:oracc</code> ownership and <code>drwxr-s--x</code>
+  permissions.</p></dd>
+
+  <dt>Test Environment</dt>
+  <dd><p>wx, qx, and px can all be used from the command line to
+  facilitate testing and debugging.  When doing this it's also
+  important to set the <code>ORACC_P4_CACHE</code> environment variable
+  so you don't get errors because the <code>www/p4.d</code> is not
+  accessible.  After <code>mkdir ~/p4.d</code> the user
+  <code>oraccuser</code> could set the variable in the the login
+  files, e.g., <code>.profile</code> as:</p>
+  <pre>
+    ORACC_P4_CACHE=~/p4.d ; export ORACC_P4_CACHE
+  </pre>
+  <p>There is a script to help with this but it is not installed for
+  general users--it is in the oracc2 repo
+  <code>bin/px/p4-mk-cache.sh</code>.  Invoked with no arguments it
+  attempts to make the system cache using <code>sudo</code>. Invoked
+  as <code>./p4-mk-cache.sh local</code> it attempts to make the local
+  cache and add the environment variable to <code>.profile</code>.</p>
+  </dd>
     
   </body>
   </html>

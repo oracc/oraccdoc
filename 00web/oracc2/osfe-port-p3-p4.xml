@@ -1,0 +1,232 @@
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0"
+	  xmlns="http://www.w3.org/1999/xhtml"
+>
+
+  <esp:title>Porting OSFE from P3 to P4</esp:title>
+  <esp:name>Porting OSFE from P3 to P4</esp:name>
+  
+  <html><head/>
+  <body>
+      
+<p>Notes on the changes needed to migrate OSFE (github
+oracc-search-front-end repo) from P3 to P4.  The TS code snippets come
+from <code>src/app/services/get-data/get-data.service.ts</code> which
+seems to be the only place that OSFE makes requests to the server.</p>
+
+<esp:sh>Definitions</esp:sh>
+
+<pre>
+  
+  private baseUrl = environment.apiUrl;
+  private searchURL = `${this.baseUrl}/search/`;
+  private glossaryArticleURL = `${environment.glossaryArticleURL}/neo/`;
+  private searchSuggestionsUrl = `${this.baseUrl}/suggest_all/`;
+  private oraccBaseUrl = `${environment.glossaryArticleURL}`;
+
+</pre>
+
+<esp:sh>getSearchData()</esp:sh>
+
+<pre>
+  public getSearchData() {
+    return this.http.get(this.searchURL + this.searchParam);
+  }
+
+  public getSearchSuggestionsData(partialSearchTerm: string) {
+    return this.http.get(this.searchSuggestionsUrl + partialSearchTerm);
+  }
+</pre>
+
+<p>These not P3/P4 URLs.</p>
+
+<esp:sh>getGlossaryArticleData</esp:sh>
+
+  <pre>
+  public getGlossaryArticleData() {
+    return this.http.get(this.glossaryArticleURL + this.lang + '/' + this.id, {
+      responseType: 'text'
+    });
+  }
+</pre>
+
+<p>This is unchanged: this.lang is the language of the glossary;
+this.id is the glossary article ID. E.g.,
+<code>/neo/akk/x0001754</code>.</p>
+
+<esp:sh>getProectTextData</esp:sh>
+
+<pre>
+  public getProjectTextData(params: ParamMap) { const projectId =
+  params.get('projectId'); const subProjectId =
+  params.get('subprojectId'); const textId = params.get('textId');
+
+    const url = subProjectId
+      ? `${this.oraccBaseUrl}/${projectId}/${subProjectId}/${textId}`
+      : `${this.oraccBaseUrl}/${projectId}/${textId}`;
+
+    return this.http.get(url, {
+      responseType: 'text'
+    });
+  }
+</pre>
+
+<p>I'm not sure exactly what <code>projectId</code> and
+<code>subProjectId</code> are, respectively, but I'm guessing that
+between them they make the path to a project or subproject and then
+<code>textId</code> is a PQX-number like P123456.</p>
+
+<p>This has changed in P4 so from June 4th onwards all projects will use a
+new form of this URL. It's an easy change.  In P3 this URL:</p>
+
+<pre code="cookbook">
+  https://build-oracc.museum.upenn.edu/dccmt/P010678
+</pre>
+
+<p>Retrieves just the HTML formatted version of the text along with
+its metadata sidebar.</p>
+
+<p>In P4 it retrieves the entire pager framework with the zoom/page
+automatically configured.</p>
+
+<p>The new form of the URL that OSFE needs to use adds <code>html</code> to the query string:</p>
+
+<pre code="cookbook">
+  https://build-oracc.museum.upenn.edu/dccmt/P010678?html
+</pre>
+
+<p><b>NOTE THAT THIS PARTICULAR FORM DOES NOT WORK AS OF 2024-05-24</b>.</p>
+
+<esp:sh>getSubsequentGlossaryArticleData()</esp:sh>
+
+<pre>
+   public getSubsequentGlossaryArticleData() {
+    const bio = '\u2623'; // force encoding always to be utf8
+    const encodedString = encodeURIComponent(bio + this.glossaryArticleParam);
+    return this.http.get(this.glossaryArticleURL + 'sig?' + encodedString, {
+      responseType: 'text'
+    });
+  }
+</pre>
+
+<p>This uses a URL that retrieves an article via its signature. It
+emulates a JS function which has changed slightly from P3 to P4 (now
+in /js/p4.js):</p>
+
+<pre>
+// In P3 sigfixer added (empty) lang and proj arguments to the pop1sig
+// call but in P4 we have data-proj and are ignoring the old (and by
+// default empty) lang arg for now
+function pop1sig(sig) {
+    var bio = '\u2623'; // force encoding always to be utf8
+    var esig = encodeURIComponent(bio+sig);
+    let pager = getPager();
+    let proj = pager.getAttribute('data-proj');
+    var url = '/'+proj+'/sig?'+esig;
+    popup(url,'cbdarticle',400,600,0,0);
+}
+</pre>
+
+<p>This means that code parsing the <code>pop1sig</code> function in
+the HTML sources may need to be modified to recognize that the
+signature is now the only parameter.</p>
+
+<esp:sh>getDetailData()</esp:sh>
+
+<pre>
+ public getDetailData() {
+    return this.http.get(
+      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
+      {
+        responseType: 'text'
+      }
+    );
+  }
+</pre>
+
+<p>This URL retrieves an instance set from a glossary and relied on
+the behaviour that a query string argument of the form
+<code>?akk.r00123</code> was implicitly understood as an ID for an XML
+Instance Set.</p>
+
+<p>The underlying architecture has been generalized and the new form
+requires explicitly using <code>?list=akk.r00123</code>.</p>
+
+<esp:sh>getDetailDataPage</esp:sh>
+
+<pre>
+  public getDetailDataPage(pageNumber) {
+    return this.http.get(
+      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
+      {
+        responseType: 'text'
+      }
+    );
+  }
+</pre>
+
+<p>This URL steps through the instance set one page at a time. In P4
+the list is moved to the query string and needs the <code>list=</code>
+parameter specification as above.  The <code>page=[PAGENUMBER]</code>
+remains the same, but I need to check on what was returned by P3 in these cases.</p>
+
+<p>In P4 the return is an entire pager framework--I need to go back
+and check the P3 code to see what that is doing here.</p>
+
+<esp:sh>getTermData()</esp:sh>
+
+<pre>
+  public getTermData() {
+    return this.http.get(`${this.glossaryArticleURL}${this.termDataParam}`, {
+      responseType: 'text'
+    });
+  }
+</pre>
+
+<p>Help me out ... I'm not sure what is happening here.</p>
+
+
+<esp:sh>getSourceData()</esp:sh>
+
+<pre>
+ public getSourceData() {
+    let sourceDataURL = `${this.oraccBaseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
+
+    if (this.sourceParams[2].length > 0) {
+      sourceDataURL = sourceDataURL + '?' + this.sourceParams[2];
+      if (this.sourceParams[3].length > 0) {
+        sourceDataURL = sourceDataURL + ',' + this.sourceParams[3];
+      }
+    }
+    return this.http.get(sourceDataURL, {
+      responseType: 'text'
+    });
+  }
+</pre>
+
+<p>Not sure about this.  If <code>${this.sourceParams[0]}</code> is a
+project name and <code>${this.sourceParams[1]}</code> is a PQX-number
+then this retrieves some form of the data for a text--when is it called?</p>
+
+
+<esp:sh>getPopupData</esp:sh>
+
+<pre>
+ public getPopupData(project: string, item: string, blockId: string) {
+    return this.http.get(
+      `${this.oraccBaseUrl}/${project}/${item}/score?${blockId}`,
+      {
+        responseType: 'text'
+      }
+    );
+  }
+</pre>
+
+<p>This URL retrieves the block of data about a line that you get when
+clicking on the line number in a score.  I haven't tested that yet but
+it will likely change because P4 separates the format of data into the
+query string and restricts the URL to giving only the content
+data. This means that the new form of this is likely going to be
+something like
+<code>/dcclt/Q000001?what=score&amp;form=html</code>.</p>
+
+</body></html></esp:page>

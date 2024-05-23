@@ -229,6 +229,7 @@
   <struct:page file="oracc2/pager.xml" id="px" type="page">
     <struct:page file="oracc2/urltest.xml" id="pxurltest" type="page"/>
     <struct:page file="oracc2/p4-server.xml" id="p4server" type="page"/>
+    <struct:page file="oracc2/osfe-port-p3-p4.xml" id="osfep3p4" type="page"/>
   </struct:page>
 </struct:page>
 
