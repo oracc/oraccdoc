@@ -192,7 +192,7 @@ to neo and P4 between them.</p>
     const glossaryContentInput = htmlData.getElementsByTagName('body')[0];
 
     if (
-      glossaryContentInput.querySelector('p') &&
+      glossaryContentInput.querySelector('p') &amp;&amp;
       (glossaryContentInput
         .querySelector('p')
         .innerText.toLowerCase()
