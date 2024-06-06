@@ -271,9 +271,8 @@ me:</p>
 
 <esp:sh>./src/app/services/get-data/get-data.service.ts</esp:sh>
 
-<p>The TS code snippets come from
-<code>src/app/services/get-data/get-data.service.ts</code> which seems
-to be the only place that OSFE makes requests to the server.</p>
+<p>This module seems to be the only place that OSFE makes requests to
+the server.</p>
 
 <h3>Definitions</h3>
 
