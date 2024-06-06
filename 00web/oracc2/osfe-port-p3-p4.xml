@@ -167,7 +167,7 @@ needed is now on the #p4Pager div:</p>
 
 <pre>
   &lt;p class="icount">
-    &lt;a class="icount" href="javascript:distprof2('rimanum','akk-x-oldbab','akk.r00000a')">21 instances</a>
+    &lt;a class="icount" href="javascript:distprof2('rimanum','akk-x-oldbab','akk.r00000a')">21 instances&lt;/a>
   &lt;/p>
 </pre>
 
