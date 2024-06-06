@@ -166,9 +166,9 @@ needed is now on the #p4Pager div:</p>
 <p>Locates a link with class 'icount' and decodes the P3 JS link:</p>
 
 <pre>
-  <p class="icount">
-    <a class="icount" href="javascript:distprof2('rimanum','akk-x-oldbab','akk.r00000a')">21 instances</a>
-  </p>
+  &lt;p class="icount">
+    &lt;a class="icount" href="javascript:distprof2('rimanum','akk-x-oldbab','akk.r00000a')">21 instances</a>
+  &lt;/p>
 </pre>
 
 <p>This JS call still exists because the glossary articles are
