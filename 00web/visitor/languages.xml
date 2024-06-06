@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<esp:page
+	xmlns:esp="http://oracc.org/ns/esp/1.0"
+	xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<esp:name>Languages</esp:name>
+<esp:title>Language Settings</esp:title>
+<html><head/><body>
+
+<p class="firstpara">You can use set your language preferences in the
+browser and Oracc will return translations in your chosen language(s)
+if they exist.</p>
+
+<esp:sh>Chrome</esp:sh>
+
+<ol>
+<li>Open Chrome settings: Click on the three vertical dots icon at the top right corner of your screen and select “Settings” from the dropdown.</li>
+<li>Scroll to the bottom: Scroll down to the “Advanced” section and click on “Languages”.</li>
+<li>Add languages: Click on “Add languages” to add a new language to your preferred list.</li>
+<li>Select your preferred language: Choose your preferred language from the list of available languages.</li>
+<li>Order the list: Order the languages in your preferred list in descending order of preference.</li>
+<li>Save changes: Once you’ve made your changes, click “OK” to save them.</li>
+<li>This can also be done through your Google account if you use it for Chrome.</li>
+</ol>
+
+<h3>Sorani</h3>
+
+<p>In Chrome Sorani can be found under <code>Central Kurdish</code>.</p>
+
+<esp:sh>Safari</esp:sh>
+
+<h3>For MacOS:</h3>
+
+<ol>
+<li>Go to System Preferences on your Mac. You can find it in the Apple menu or in the Dock.</li>
+<li>Click on General then Language &amp; Region.</li>
+<li>Ensure that your preferred language is present and listed as the “Primary” language at the top of the list on the left.</li>
+<li>Add others with the “+” button and drag to reorder.</li>
+<li>Close the System Preferences window.</li>
+<li>Quit Safari and then relaunch it to apply the new language settings.</li>
+</ol>
+
+<h3>For iOS:</h3>
+
+<ol>
+<li>Open the Settings app on your iOS device.</li>
+<li>Tap on General then Language and Region.</li>
+<li>Add languages and drag to reorder, the top one is primary preference </li>
+</ol>
+
+<h3>Sorani</h3>
+
+<p>In Safari, Sorani can be found under <code>Kurdish, Central</code>.</p>
+
+<esp:sh>Firefox</esp:sh>
+
+<ol>
+<li>Open Firefox and click on the menu icon (the three horizontal bars) in the upper-right corner.</li>
+<li>Select Settings (or Preferences on some systems).</li>
+<li>Scroll down to the Language and Appearance section.</li>
+<li>Click on Language.</li>
+<li>Select Set Alternatives.</li>
+<li>Choose the language you want to add from the list.</li>
+<li>Click Add to add the language to the list.</li>
+<li>You can reorder the languages by clicking the Move Up or Move Down buttons.</li>
+<li>Click OK to save your changes.</li>
+</ol>
+
+<h3>Sorani</h3>
+
+<p>Firefox does not yet support Sorani; we will update this page if it changes.</p>
+
+<esp:sh>Edge</esp:sh>
+
+<ol>
+<li>Open Microsoft Edge and click on the three dots (⋯) at the top right corner of the browser window.</li>
+<li>Click on Settings from the dropdown menu.</li>
+<li>Scroll down to the Languages section.</li>
+<li>Click on Add languages.</li>
+<li>Search for the language you want to add or use the scroll bar to find it.</li>
+<li>Select the language and click Add.</li>
+<li>The language will be added to the list of preferred languages.</li>
+</ol>
+
+<h3>Sorani</h3>
+
+<p>Please contact us if you are able to verify the status of Sorani on Edge.</p>
+
+<esp:author first-names="Amanda" last-name="Ho-Lyn"/>
+<esp:content-last-modified/>
+<esp:email address="osc@oracc.org"/>
+
+
+</body></html></esp:page>

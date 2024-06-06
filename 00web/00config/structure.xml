@@ -24,6 +24,7 @@
   <!-- VISITOR DOCO -->
   <struct:page file="visitor/index.xml" id="visitor" accesskey="5" type="page">	
 	<struct:page file="visitor/visitorguide.xml" id="visitor-userguide"  type="page"/>
+	<struct:page file="visitor/languages.xml" id="visitor-languages"  type="page"/>
 	<struct:page file="visitor/glossaries.xml" id="visitor-glossaries"  type="page"/>
 	<struct:page file="visitor/citing.xml" id="visitor-citing"  type="page"/>
 	<struct:page file="visitor/reusing.xml" id="visitor-reusing"  type="page"/>	
