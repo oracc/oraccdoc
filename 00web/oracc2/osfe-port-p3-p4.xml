@@ -9,11 +9,273 @@
   <body>
       
 <p>Notes on the changes needed to migrate OSFE (github
-oracc-search-front-end repo) from P3 to P4.  The TS code snippets come
-from <code>src/app/services/get-data/get-data.service.ts</code> which
-seems to be the only place that OSFE makes requests to the server.</p>
+oracc-search-front-end repo) from P3 to P4.  Several TS modules parse
+the Oracc HTML--often retrieving it as a text and parsing the text
+form. </p>
 
-<esp:sh>Definitions</esp:sh>
+<p>P4 is much more transparent than P3--you can learn a lot by going
+to <esp:link url="https://build-oracc.museum.upenn.edu/neo">the neo
+project</esp:link> and playing around with it to see what URLs are
+producing which results.  The general P4 architecture is that any
+action modifies variables on the page, then JS routines construct URLs
+to change the page state and assign the URL to window.location. This
+means that what you see in the URL bar is what was used to get the
+results on the page (modulo bugs).</p>
+
+<esp:sh>./src/app/pages/details/details.component.ts</esp:sh>
+
+<pre>
+    const metadataPanelInput = htmlData.getElementById('p3left');
+    const middlePanelInput = htmlData.getElementById('p3right');
+    const textPanelInput = htmlDataToBeReduced.getElementById('p3right');
+</pre>
+
+<p>In P3 there were just two panes; in P4 there are three.  The
+p3right pane is the same but is now #p4XtfData--it is the text
+display; the old #p3left pane is now split into the navigation/zoom
+menu and the metadata panel.</p>
+
+<h3>Zoom</h3>
+
+<p>For zoom the inner enclosing div is #p4MenuOutline--the div has a
+data attribute, data-zmax, which gives the maximum value of zoom
+(i.e., the number of clickable headings in the zoom-menu.</p>
+
+<p>Each zoomable para has act_zoom(n) as its onclick action where n is
+the index of the zoom para among its siblings; the same n is also an
+attribute data-zoom on the para so there's no need to parse the
+onclick if you just need the zoom index.</p>
+
+<h3>Metadata</h3>
+
+<p>This is only available when a text item is being displayed. The div
+#p4Item contains two divs: #p4XtfMeta and #p4XtfData.</p>
+
+<h3>const controlsInput = htmlData.getElementById('p3controls');</h3>
+
+<p>The arrangement and some details have changed, but in general this is now #p4Controls.</p>
+
+<h3>Line/Page counts etc.</h3>
+
+<p>There are several approaches to getting the count of data items in the current TS code:</p>
+
+<pre>
+this.totalLines = parseInt(
+      controlsInput.querySelector(
+        '.p3-pages .p3toccenter.bg-dk span:nth-of-type(5)'
+      ).innerHTML,
+      10
+    );
+...      
+    this.totalPages = Array(
+      parseInt(
+        controlsInput.querySelector(
+          '.p3-pages .p3toccenter.bg-dk span:nth-of-type(6)'
+        ).innerHTML,
+        10
+	)
+    )
+...
+  if (isTermData) {
+      this.isTermDataShown = true;
+      this.totalTexts = parseInt(
+        controlsInput.querySelector(
+          '#p3navRight .p3-items .p3toccenter.bg-dk span:nth-of-type(5)'
+        ).innerHTML,
+        10
+      );
+</pre>
+
+<p>In P4 these approaches are unnecessary and don't work.  The
+controls are divided into sections that are displayed or hidden
+depending on what is being displayed.  Much of the information that is
+needed is now on the #p4Pager div:</p>
+
+<pre>
+&lt;div id="p4Pager"
+     class="bborder-top list item dcat itxt zoom default"
+     data-proj="babii" data-list="outlined.lst" data-zoom="1"
+     data-sort="12" data-prev=""
+     data-item="X000088" data-next="X000082" data-bkmk="X000088"
+     data-page="1" data-pmax="1">
+</pre>
+
+<p>There may be additional data-XXXX attributes that would be helpful.  For example, the status shown when stepping through items looks like this:</p>
+
+<pre>
+        <span id="p4ItemView"> [ITEM 6 of 27] </span>
+</pre>
+
+<p>It may be desireable to add data-XXXX attributes:</p>
+
+<pre>
+      <span id="p4ItemView" data-curr="6" data-imax="27"> [ITEM 6 of 27] </span>
+</pre>
+
+<p>Please let me know if that would be good--it would be very easy.</p>
+
+
+
+<esp:sh>./src/app/pages/glossary-article/glossary-article.component.ts</esp:sh>
+
+<p>One of the fundamental actions is getting the instance lists from glossary articles. This code:</p>
+
+<pre>
+   public handleTermClick(e) {
+    const anchorEl = e.path
+      ? e.path.find((el) => {
+          return !!el.className ? el.className.match('icount') : '';
+        })
+      : composedPath(e.target).find((el) => {
+          return !!el.className ? el.className.match('icount') : '';
+        });
+
+    if (!!anchorEl) {
+      const anchorElText = anchorEl.querySelector('span')
+        ? anchorEl.querySelector('span').innerText
+        : anchorEl.innerText;
+      e.preventDefault();
+      const queryParams = anchorEl.href
+        .split('(')
+        .slice(1)
+        .join()
+        .slice(0, -1)
+        .replace(/'/g, '')
+        .split(',');
+      const filteredText = anchorElText.match('%')
+        ? Array.prototype.slice
+            .call(anchorEl.parentNode.childNodes)
+            .filter((node) => {
+              return node.nodeType === 3 ? node : '';
+            })[0].textContent
+        : anchorElText;
+
+      this.getDataService.setDetailsPageParams(
+        queryParams[0],
+        queryParams[1],
+        queryParams[2]
+      );
+      this.getDataService.setChosenTermText(filteredText);
+
+      // navigates to details component
+      this.router.navigate([decodeURI(this.router.url), 'occurrences']);
+    }
+  }
+</pre>
+
+<p>Locates a link with class 'icount' and decodes the P3 JS link:</p>
+
+<pre>
+  <p class="icount">
+    <a class="icount" href="javascript:distprof2('rimanum','akk-x-oldbab','akk.r00000a')">21 instances</a>
+  </p>
+</pre>
+
+<p>This JS call still exists because the glossary articles are
+essentially P3 legacy data; as a note to myself it would be good to
+have an attribute data-gxis on the a.icount to give the 'akk.r00000a'
+value; the project and glossary (here 'rimanum' and 'akk-x-oldbab',
+but with neo 'neo' and 'akk-x-oldbab') are already on #p4Pager.</p>
+
+
+
+<esp:sh>./src/app/pages/glossary-article-source/glossary-article-source.component.ts</esp:sh>
+
+<p>The below seems to be trapping an error return from P3--I'm need to
+evaluate whether that error return is still possible with the updates
+to neo and P4 between them.</p>
+
+<pre>
+  private handleTextToHTMLConversion(text: string) {
+    const parser = new DOMParser();
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const glossaryContentInput = htmlData.getElementsByTagName('body')[0];
+
+    if (
+      glossaryContentInput.querySelector('p') &&
+      (glossaryContentInput
+        .querySelector('p')
+        .innerText.toLowerCase()
+        .match('no such map') ||
+        glossaryContentInput
+          .querySelector('p')
+          .innerText.toLowerCase()
+          .match('no html file found'))
+    ) {
+      this.glossaryContent = `<p class="glossary__fallback">No glossary article found</p>`;
+    } else {
+      this.glossaryContent = this.sanitizer.bypassSecurityTrustHtml(
+        glossaryContentInput.innerHTML
+      );
+    }
+  }
+</pre>
+
+<esp:sh>./src/app/pages/details-texts/details-texts.component.ts</esp:sh>
+
+<p>Some of these are P3 legacy and have not changed:</p>
+
+<pre>
+      middlePanelInput.querySelectorAll('td').forEach((node) => {
+      if (node.className === 't1 xtr') {
+        if (typeof node.remove === 'function') {
+          node.remove();
+        } else {
+          node.outerHTML = '';
+        }
+      }
+    });
+    textPanelInput.querySelectorAll('td').forEach((node) => {
+      if (node.className !== 't1 xtr') {
+        if (typeof node.remove === 'function') {
+          node.remove();
+        } else {
+          node.outerHTML = '';
+        }
+      }
+    });
+
+</pre>
+
+<p>I'm very unhappy about this one but don't have an immediate
+solution--words that have lemmatization info have class "w" and
+because of a formatting issue, if the next class-component is empty
+you get "w ", and this parsing relies on "w " which feels wrong to
+me:</p>
+
+<pre>
+    const anchorElWrapper = e.path
+      ? e.path.find((el) => {
+          return !!el.className ? el.className.includes('w ') : '';
+        })
+      : composedPath(e.target).find((el) => {
+          return !!el.className ? el.className.includes('w ') : '';
+        });
+</pre>
+
+<p>Others are scraping the p3controls for data counts, see above.</p>
+
+<p>The following is not yet reimplemented in P4 (probably broken but untested):</p>
+
+<pre>
+        if (anchorEl.href.includes('showexemplar')) {
+        sessionStorage.setItem(
+          SESSION_KEYS.METADATA_CONTENT,
+          this.unsanatizedMetadataPanel
+        );
+        this.router.navigate([this.router.url, 'source'], {
+          state: { data: this.unsanatizedMetadataPanel }
+        });
+</pre>
+
+
+<esp:sh>./src/app/services/get-data/get-data.service.ts</esp:sh>
+
+<p>The TS code snippets come from
+<code>src/app/services/get-data/get-data.service.ts</code> which seems
+to be the only place that OSFE makes requests to the server.</p>
+
+<h3>Definitions</h3>
 
 <pre>
   
@@ -91,10 +353,12 @@ automatically configured.</p>
 <p>The new form of the URL that OSFE needs to use adds <code>html</code> to the query string:</p>
 
 <pre code="cookbook">
-  https://build-oracc.museum.upenn.edu/dccmt/P010678?html
+  https://build-oracc.museum.upenn.edu/neo/P010678?html
 </pre>
 
-<p><b>NOTE THAT THIS PARTICULAR FORM DOES NOT WORK AS OF 2024-05-24</b>.</p>
+<p>This URL now works, and the proxying from neo to the project where
+the text actually lives is handled transparently on the server
+side.</p>
 
 <esp:sh>getSubsequentGlossaryArticleData()</esp:sh>
 
@@ -149,7 +413,7 @@ the behaviour that a query string argument of the form
 Instance Set.</p>
 
 <p>The underlying architecture has been generalized and the new form
-requires explicitly using <code>?list=akk.r00123</code>.</p>
+requires explicitly using <code>?xis=akk.r00123</code>.</p>
 
 <esp:sh>getDetailDataPage</esp:sh>
 
@@ -171,6 +435,11 @@ remains the same, but I need to check on what was returned by P3 in these cases.
 
 <p>In P4 the return is an entire pager framework--I need to go back
 and check the P3 code to see what that is doing here.</p>
+
+<p>This is probably worth experimenting with even though I haven't had
+a chance to review the code--you can probably dig what you need out of
+the pager result and if not we can touch base about it and I can
+adjust what the server is sending.</p>
 
 <esp:sh>getTermData()</esp:sh>
 
@@ -206,6 +475,9 @@ and check the P3 code to see what that is doing here.</p>
 <p>Not sure about this.  If <code>${this.sourceParams[0]}</code> is a
 project name and <code>${this.sourceParams[1]}</code> is a PQX-number
 then this retrieves some form of the data for a text--when is it called?</p>
+
+<p>Note that I have not yet reimplemented scores, sources, and
+score-blocks in P4.</p>
 
 
 <esp:sh>getPopupData</esp:sh>
