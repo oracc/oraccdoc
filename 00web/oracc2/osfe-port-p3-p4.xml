@@ -181,7 +181,7 @@ but with neo 'neo' and 'akk-x-oldbab') are already on #p4Pager.</p>
 
 <esp:sh>./src/app/pages/glossary-article-source/glossary-article-source.component.ts</esp:sh>
 
-<p>The below seems to be trapping an error return from P3--I'm need to
+<p>The below seems to be trapping an error return from P3--I need to
 evaluate whether that error return is still possible with the updates
 to neo and P4 between them.</p>
 
