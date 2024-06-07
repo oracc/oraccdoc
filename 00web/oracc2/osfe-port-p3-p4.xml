@@ -96,25 +96,60 @@ needed is now on the #p4Pager div:</p>
      class="bborder-top list item dcat itxt zoom default"
      data-proj="babii" data-list="outlined.lst" data-zoom="1"
      data-sort="12" data-prev=""
-     data-item="X000088" data-next="X000082" data-bkmk="X000088"
-     data-page="1" data-pmax="1">
+     data-item="X000088" data-next="X000082" data-bkmk="X000088">
 </pre>
 
-<p>There may be additional data-XXXX attributes that would be helpful.  For example, the status shown when stepping through items looks like this:</p>
+<p>Several data-XXX attributes are added to the divs that wrap
+navigation blocks, #p4itemNav and #p4pageNav. They correspond to the
+values displayed in the navigation display, e.g.:</p>
 
 <pre>
         <span id="p4ItemView"> [ITEM 6 of 27] </span>
 </pre>
 
-<p>It may be desireable to add data-XXXX attributes:</p>
+<p>The items are:</p>
+
+<dl>
+  <dt><code>data-ityp</code></dt>
+  <dd>The item type, ENTRY, ITEM,
+  TEXT</dd>
+
+  <dt><code>data-inth</code></dt>
+  <dd>The index of the item currently being displayed ('6' in the
+  example above). This is the index into the total list or current
+  zoom-narrowing.</dd>
+  
+  <dt><code>data-imax</code></dt>
+  <dd>The maximum value of <code>data-inth</code> in the current
+  context; this is the number of items in the total list or current
+  zoom-narrowing.</dd>
+  
+  <dt><code>data-page</code></dt><dd>The page currently being
+  displayed in the total list or the current zoom-narrowing.</dd>
+
+  <dt><code>data-pmax</code></dt><dd>The last possible page in the
+  current context; this is is the number of pages the total list or
+  current zoom-narrowing.</dd>
+  
+</dl>
+
+<p>Here are some example for the URL <code>/neo/sux/o0023102</code> as
+of 2024-06-06 (the numbers can change as neo's content changes):</p>
 
 <pre>
-      <span id="p4ItemView" data-curr="6" data-imax="27"> [ITEM 6 of 27] </span>
+  &lt;div id="p4itemNav" class="p4items" data-ityp="ENTRY" data-inth="3" data-imax="190">
+
+  ...
+
+  &lt;div id="p4PageNav" class="p4pages" data-page="1" data-pmax="8" data-imax="190">
+
 </pre>
 
-<p>Please let me know if that would be good--it would be very easy.</p>
 
-
+<p>Search results maintain two counts: the number of results and the
+number of texts containing the results (three <code>lugal</code> in
+one text is three results but one text). These are not yet properly
+implemented as data-XXX attributes.</p>
 
 <esp:sh>./src/app/pages/glossary-article/glossary-article.component.ts</esp:sh>
 
