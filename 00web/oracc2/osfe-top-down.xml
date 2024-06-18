@@ -1,0 +1,146 @@
+<esp:page xmlns:esp="http://oracc.org/ns/esp/1.0"
+	  xmlns="http://www.w3.org/1999/xhtml"
+>
+
+  <esp:title>Porting OSFE P4 Top-Down</esp:title>
+  <esp:name>Porting OSFE P4 Top-Down</esp:name>
+  
+  <html><head/>
+  <body>
+    <p>This page walks through the P4 URLs that are used to obtain
+    glossary articles and descendant operations using <code>neo</code>
+    URLs that should be useful for the OSFE implementation.</p>
+
+    <h2>Glossary Summaries</h2>
+
+    <p>The paragraph-unit that is indexed and returned by the OSFE
+    search is the glossary summary.  Clicking on the summary leads to
+    the glossary article.</p>
+
+    <p>The OSFE search results are analagous to a page of summaries
+    from the glossary of a project. In <code>neo</code> you can access
+    such a list by going to <esp:link href="/neo/sux"/>.</p>
+
+    <p>If you click on <code>a [WATER] N</code> you will get the
+    glossary article for that word.  Because of the way P4 works you
+    can see URL that fetches the glossary article:
+    <code>/neo/sux/o0023102</code>.  The format is
+    <code>PROJECT/LANGUAGE/ID</code>.</p>
+
+    <h2>Glossary Articles</h2>
+
+    <p>Glossary articles contains data and statistics: we call the
+    statistics XIS--XML instance sets.</p>
+
+    <p>In the top right corner of the glossary article is a linkn to
+    all of the instances of the word which has the form <code>N
+    instances</code>, e.g., <code class="cookbook">295
+    instances</code>.</p>
+
+    <p>Clicking on the <code>N instances</code> link brings up the
+    list of instances--again, P4 exposes the URL that is used to get
+    there: <code>/neo/sux?xis=sux.r00003a</code>.</p>
+
+   <p>The URL is constructed from two attributes on the link,
+   <code>data-lang</code>, which gives the glossary, and
+   <code>data-isid</code>, which gives the instance set ID. A typical
+   link would be:</p>
+
+   <pre class="example">&lt;a class="icountu" href="javascript://" onclick="act_isid(event)"
+            data-lang="sux" data-isid="sux.r000003"></pre>
+
+   <!--
+   <p>The <code>bkmk</code> QS option comes from
+   <code>data-bkmk</code> on the p4Pager div and is the article from
+   which the instance set was accessed.</p>
+   -->
+
+    <h2>Instance Sets</h2>
+
+    <p>Clicking on an instance set produces a three part page.  At the
+    top is a set of controls which gives information on the current
+    display state--we call this the controls pane. On the left is a
+    list of the sort-groups for times/places/genre which gives
+    focussed access on the group--we call this a <code>zoom</code> and
+    we call the left pane the zoom menu or zoom pane.  On the right is
+    a list of instances--we call this the data pane.</p>
+
+    <h3>Zoom and Unzoomed Modes</h3>
+
+    <p>Clicking on a menu item in the zoom pane restricts the
+    displayed results to the zoom group.  This can be reversed by
+    clicking on the <code>All Results</code> button in the controls
+    pane.</p>
+    
+    <h3>List and Item Mode</h3>
+
+    <p>The instances are first shown in <code>list-mode</code>, where
+    a text fragment and a label are displayed for each reference in
+    the instance set.  Clicking on a label enters
+    <code>item-mode</code>.</p>
+
+    <h4>List Mode</h4>
+    
+    <p>In List mode, the controls pane operates on the instance set,
+    showing 25 references at a time; buttons allow paging forward and
+    backwards.  If zooming is in effect the paging operates within the
+    context of the zoom group.</p>
+
+    <p>The current page and zoom are encoded in the query string; if
+    page=1 it is omitted from the QS; if zoom=0 it is omitted from the
+    QS.  This is the initial state when a URL such as
+    <code>/neo/sux?xis=sux.r00003a</code> is requested.</p>
+
+    <p>After clicking on the zoom for <code>Sippar-Yahrurum (mod. Tell
+    Abu Habbah) [73]</code> and going a page forward, P4's URL is:
+    <code>/neo/sux?xis=sux.r00003a&amp;zoom=7&amp;page=2</code>.</p>
+
+    <h4>Item Mode</h4>
+    
+    <p>Clicking on a label enters item-mode in which an individual
+    text is displayed.</p>
+
+    <p>After clicking on the first label in sux.r00003a, the P4 URL
+    is: <code>/neo/sux?xis=sux.r00003a&amp;ref=P259270.59</code>.  The
+    list context (sux.r00003a) is preserved in the URL and the line-ID
+    for the reference is used to request the text.</p>
+
+    <p>The URL is constructed from an attribute on the link,
+    <code>data-iref</code> which gives the item for the reference.  A
+    typical link would be:</p>
+
+    <pre class="example">&lt;a href="javascript://" onclick="act_iref(event)" data-iref="P405163.13"></pre>
+    
+    <p>The counters change when going from list-mode to item-mode
+    because item-mode has one entry for each text but list-mode has
+    one entry per reference.  Because several references often come
+    from the same text the number of texts is often smaller than the
+    number of references.</p>
+
+    <h2>Item Links</h2>
+
+    <p>Items also contain many links.  The most common is that
+    lemmatized words contain a link to the glossary article the word
+    occurs in.  If an item is a score, its line numbers will often be
+    links to a block of score witnesses.</p>
+
+
+    <h3>Lemmatization Links</h3>
+
+    <pAfter clicking on a lemmatized word the P4 URL is:
+    <code>/neo/sux?xis=sux.r000002&amp;ref=P405120.12</code>.</p>
+
+    <p>The URL is constructed from an attribute on the link,
+    <code>data-wsig</code> which gives the word signature for the
+    lemmatization.  A typical link would be:</p>
+
+    <pre class="example">&lt;a class="cbd " href="javascript://" onclick="act_wsig(event)"
+    data-wsig="☣@neo%sux:lugal=lugal[king//king]N´N$lugal/lugal#~"></pre>
+
+    <h3>Score Block Links</h3>
+
+    
+    
+  </body>
+  </html>
+</esp:page>

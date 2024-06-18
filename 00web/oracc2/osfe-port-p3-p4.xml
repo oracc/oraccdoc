@@ -349,7 +349,7 @@ the server.</p>
 this.id is the glossary article ID. E.g.,
 <code>/neo/akk/x0001754</code>.</p>
 
-<esp:sh>getProectTextData</esp:sh>
+<esp:sh>getProjectTextData</esp:sh>
 
 <pre>
   public getProjectTextData(params: ParamMap) { const projectId =
