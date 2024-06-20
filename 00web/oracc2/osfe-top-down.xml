@@ -98,7 +98,9 @@
     <h4>Item Mode</h4>
     
     <p>Clicking on a label enters item-mode in which an individual
-    text is displayed.</p>
+    text is displayed.  The text has three parts: the zoom menu on the
+    left; a metadata pane in the middle; and the content pane on the
+    right.</p>
 
     <p>After clicking on the first label in sux.r00003a, the P4 URL
     is: <code>/neo/sux?xis=sux.r00003a&amp;ref=P259270.59</code>.  The
@@ -109,7 +111,8 @@
     <code>data-iref</code> which gives the item for the reference.  A
     typical link would be:</p>
 
-    <pre class="example">&lt;a href="javascript://" onclick="act_iref(event)" data-iref="P405163.13"></pre>
+    <pre class="example">&lt;a href="javascript://"
+    onclick="act_iref(event)" data-iref="P405163.13"></pre>
     
     <p>The counters change when going from list-mode to item-mode
     because item-mode has one entry for each text but list-mode has
@@ -124,10 +127,9 @@
     occurs in.  If an item is a score, its line numbers will often be
     links to a block of score witnesses.</p>
 
-
     <h3>Lemmatization Links</h3>
 
-    <pAfter clicking on a lemmatized word the P4 URL is:
+    <p>After clicking on a lemmatized word the P4 URL is:
     <code>/neo/sux?xis=sux.r000002&amp;ref=P405120.12</code>.</p>
 
     <p>The URL is constructed from an attribute on the link,
@@ -139,8 +141,52 @@
 
     <h3>Score Block Links</h3>
 
+    <p>Line numbers in a score are links to a block of text giving the
+    composite text and the witnesses: the P4 URL is
+    <code>/neo/Q000012?block=sb.Q000012.1</code>.</p>
+
+    <p>The URL is constructed from an attribute on the link,
+    <code>data-bloc</code>; the project and item are available on
+    <code>#p4Pager</code>.  A typical link would be:</p>
+
+    <pre>&lt;a href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.1"></pre>
+
+    <h2>Score Links</h2>
+
+    <p>The score block content is extracted on the server from a
+    single file containing the entire score. If a text has a score,
+    there is a <code>Score</code> link in the metadata pane.  After
+    clicking on a <code>Score</code> link the P4 URL is:
+    <code>/neo/Q000012?score</code>.</p>
+
+    <p>The link is constructed from the <code>data-item</code>
+    attribute on <code>#p4Pager</code>, with a constant QS component,
+    <code>score</code>.</p>
+
+    <h3>Score Block Links</h3>
+
+    <p>In both the one-big-file score and the individual score blocks,
+    the lemmatization links are functional as usual in a text item.
+    The individual exemplar lines are like instance set results--they
+    have a text fragment and a label.  The labels are links that
+    function the same as the reference links in instance sets.  A
+    score block label looks like this:</p>
+
+    <pre>&lt;a href="javascript://" onclick="act_iref(event)" data-iref="P010677.4"></pre>
+
+    <p>These were previously implemented with a JS function, <code>showexemplar</code>.</p>
+
+    <h3>Sources Tables</h3>
+
+    <p>Another score-related link in the metadata panel is the
+    <code>Sources</code> link.  This is analogous to the
+    <code>Score</code> link.  The P4 URL is
+    <code>/neo/Q000012?sources</code>.</p>
     
-    
+    <p>The link is constructed from the <code>data-item</code>
+    attribute on <code>#p4Pager</code>, with a constant QS component,
+    <code>sources</code>.</p>
+
   </body>
   </html>
 </esp:page>
