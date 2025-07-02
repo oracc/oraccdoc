@@ -4,25 +4,17 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 >
 
-<esp:name>Nammu and Emacs</esp:name>
-<esp:title>Using Nammu and Emacs for Oracc work</esp:title>
+<esp:name>Nisaba and Emacs</esp:name>
+<esp:title>Using Nisaba or Emacs for Oracc work</esp:title>
 <html><head/><body>
-<p class="firstpara">Nammu is a simple text editor, written especially
-for Oracc by <esp:link url="http://www.ucl.ac.uk/research-it-services/research-software-development">UCL's Research Development Software Group</esp:link>, that enables all content creators to edit ATF files, one
-file at at time. Use Nammu if your main role in Oracc is to edit texts
-for a corpus project. Emacs is a high-powered text editor which, while
-not particularly pretty, is extremely useful for editing multiple ATF
-files at once,
-managing glossaries projects, and writing ESP portals. For now, use
-Emacs for activities that involve these tasks. In due course Nammu will gradually
-replace all of Emacs functionality.</p>
+<p class="firstpara">Nisaba is a cuneioform text editor plug-in, written especially
+for Oracc by <esp:link url="https://www.ucl.ac.uk/advanced-research-computing/advanced-research-computing-centre">UCL's Advanced Research Computing Centre</esp:link>, that enables all content creators to edit ATF files within the open-source editor <esp:link url="https://code.visualstudio.com">Visual Studio Code</esp:link>. With Nisaba, you can edit multiple texts at a time and produce translations in both left-to-right scripts such as the western alphabet and right-to-left scripts such as many modern Middle Eastern ones. You can also use it to edit project glossaries and write ESP portals. We now recommend Nisaba as our preferred editor. However, as some colleagues still use Emacs, we have kept our help pages for that code editor here too.</p>
 
 <p>On these pages we discuss:</p>
 
 <dl>
-  <dt><esp:link page="nammu">Working with Nammu</esp:link></dt>
-  <dd>Here we describe how to install and set up Nammu, and how to
-  edit ATF files with it.</dd>
+  <dt><esp:link page="nammu">Working with Nisaba</esp:link></dt>
+  <dd>Here we link to the Github pages on how to install and set up Nisaba, and how to edit ATF files with it. We also recommend a workflow using Nisaba (in Visual Studio Code) and Github Desktop.</dd>
 <dt><esp:link page="emacssetup">Preparing to work with Emacs</esp:link></dt>
 <dd>On this page we describe how to obtain, install and configure it for Oracc work.</dd>
 <!--<dt><esp:link page="aquamacs">Starting to use Aquamacs (Emacs for Mac)</esp:link></dt>
