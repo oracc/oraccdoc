@@ -157,7 +157,7 @@
        <struct:page file="manager/system/system-github.xml" id="systemgithub" type="page"/>
      </struct:page>
      <struct:page file="manager/projects.xml" id="projects"  type="page"/>
- <!--    <struct:page file="manager/projemacs.xml" id="projemacs"
+ <!--    <struct:page file="manager/projunix.xml" id="projunix"
  type="page"/> -->
      <struct:page file="manager/projunix.xml" id="projunix"  type="page"/>
      <struct:page file="manager/the-oracc-command.xml" id="the-oracc-command"  type="page"/>

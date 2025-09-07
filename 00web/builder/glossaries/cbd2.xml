@@ -163,7 +163,7 @@ described before less common tags.</p>
   files and those files included using the <code>@include</code>
   tag.  May be given more than once.</dd>
   <dt>@reldef</dt>
-  <dd><a href="#reldef">See below under <code>@reldef</code></a>. May be given
+  <dd><esp:link bookmark="#reldef">See below under <code>@reldef</code></esp:link>. May be given
   more than once.</dd>
   <dt>@i18n</dt>
   <dd>A list of languages that can be used in the i18n ltags--see the
@@ -782,7 +782,7 @@ data is given in the glossary header using the <code>@reldef</code>
 tag (these can be gathered in files and included using
 <code>@include</code>).</p>
 
-<h4><a name="reldef">The @reldef Tag</a></h4>
+<h4><esp:bookmark id="reldef">The @reldef Tag</esp:bookmark></h4>
 
 <p>A @reldef has the following general structure:</p>
 

@@ -80,7 +80,7 @@ typing <code class="cookbook">q</code>.</p>
 		
 <esp:sh><code>merge [LANGUAGE]</code></esp:sh>
 <p>Redoes the harvest and then merges the <code>01bld/new/[LANGUAGE].new</code>
-  file with the main glossary file. See <esp:link page="projemacs" bookmark="h_mergingtheglossaries">this description of merging</esp:link> for more information.</p>
+  file with the main glossary file. See <esp:link page="projunix" bookmark="h_mergingtheglossaries">this description of merging</esp:link> for more information.</p>
 
 <esp:sh><code>resources</code></esp:sh>
 <p>Copies the contents of the <code>00res</code> folder to the build server; this must be done any time the contents of <code>00res</code> changes, and it should then be followed by <code class="example">oracc build portal</code>.</p>

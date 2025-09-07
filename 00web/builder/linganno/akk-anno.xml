@@ -511,7 +511,7 @@ Soden, <i>Grundriss der akkadischen Grammatik</i>, 3rd edition
 
 
 <esp:h>Roots</esp:h>
-<p>If you want to assign <esp:link page="akk-roots">roots</esp:link> to Akkadian content words (nouns, adjectives, verbs and adverbs), you must do this in your project's Akkadian glossary (the <code>akk.glo</code> file). See the <esp:link page="projemacs" bookmark="h_adding linguisticannotationstotheglossary">Projects and Emacs</esp:link> page for more information.</p>
+<p>If you want to assign <esp:link page="akk-roots">roots</esp:link> to Akkadian content words (nouns, adjectives, verbs and adverbs), you must do this in your project's Akkadian glossary (the <code>akk.glo</code> file). See the <esp:link page="projunix" bookmark="h_adding linguisticannotationstotheglossary">Projects and Emacs</esp:link> page for more information.</p>
 
 <p>There is a list of Akkadian roots on a <esp:link page="akk-roots">separate page</esp:link>.</p>
 
@@ -543,7 +543,7 @@ $ single ruling
 </pre>
 <p>In the first two lines of this example, the dialect switching always runs to the end of the line, so there is no need to explicitly switch back.</p></li>
 
-<li>Dialect CFs can be added by hand to the glossary; see  the <esp:link page="projemacs" bookmark="h_addinglinguisticannotationstotheglossary">Projects and Emacs</esp:link> page for more information.
+<li>Dialect CFs can be added by hand to the glossary; see  the <esp:link page="projunix" bookmark="h_addinglinguisticannotationstotheglossary">Projects and Emacs</esp:link> page for more information.
 </li>
 </ul>
 

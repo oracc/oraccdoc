@@ -35,7 +35,7 @@
 
    <dt>merge [LANGUAGE]</dt>
 <dd><p>Redoes the harvest and then merges the <code>01bld/new/[LANGUAGE].new</code>
-                file with the main glossary file. See <esp:link page="projemacs" bookmark="h_mergingtheglossaries">this description of merging</esp:link> for more information.</p></dd>
+                file with the main glossary file. See <esp:link page="projunix" bookmark="h_mergingtheglossaries">this description of merging</esp:link> for more information.</p></dd>
 
     <dt>update</dt>
 <dd><p>Rebuilds the glossaries. There is no need to run this command if you are planning to rebuild the whole website too.</p></dd>

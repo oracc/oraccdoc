@@ -385,7 +385,7 @@ example might then look like this:</p>
 <p>After lemmatizing, you can review the ATF files to check ambiguous
 lemmatizations and typographical errors. If you are using Emacs, choose the Harvest Notices item on the ATF menu to generate a list of all the long-form lemmatizations (the ones with a plus sign) so that you can review them individually.</p> 
 
-<p>New lemmatizations should also be checked by project managers as part of the glossary management process. This is described in the documentation on <esp:link page="projemacs" bookmark="h_harvestingnelemmatisation data">Project Management with Emacs</esp:link>.</p>
+<p>New lemmatizations should also be checked by project managers as part of the glossary management process. <!--This is described in the documentation on <esp:link page="projunix" bookmark="h_harvestingnelemmatisation data">Project Management with Emacs</esp:link>.--></p>
 
 
 <esp:h>Next Steps</esp:h>

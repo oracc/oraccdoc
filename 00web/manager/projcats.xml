@@ -71,7 +71,7 @@
         <li>In the Specify XML and XSL Options dialogue box, choose <code>FMPXMLRESULT</code> from the Grammar menu. Click Continue...</li>
         <li>In the Specify Field Order for Export dialogue box, choose which fields are to be exported (that is, all of them that you want to be publicly searchable). The Output File Character Set menu should already be set to <code>Unicode (UTF-8)</code>. Click Export.</li>
     </ol>
-    <p>You can then <esp:link page="projemacs" bookmark="h_uploadingatfandcataloguefilestooracc">upload</esp:link> the resulting XML file to the <code>00cat/</code> folder on the Oracc server and <esp:link page="projemacs" bookmark="h_rebuildingtheproject">rebuild the project</esp:link> (or just the catalogue)  to instantly access the new metadata.</p>
+    <p>You can then <esp:link page="projunix" bookmark="h_uploadingatfandcataloguefilestooracc">upload</esp:link> the resulting XML file to the <code>00cat/</code> folder on the Oracc server and <esp:link page="projunix" bookmark="h_rebuildingtheproject">rebuild the project</esp:link> (or just the catalogue)  to instantly access the new metadata.</p>
 
 <esp:h>Help with conversion and hosting</esp:h>
 <p>Converting existing databases to the Oracc/CDLI format can be time-consuming and fiddly. We at Oracc can take care of much of the conversion process for you, including the allocation of P-numbers and Q-numbers. We can also host your Filemaker database on a password-protected server, so that it can be accessed by several researchers simultaneously, wherever they are in the world. For more information about help with database conversion or hosting, please email <esp:email address="osc@oracc.org"/>.</p>

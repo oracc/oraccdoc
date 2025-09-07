@@ -166,7 +166,7 @@ terms.</p>
 <li><esp:link page="emacssetup">Obtaining, installing and configuring Emacs</esp:link></li>
 <li><esp:link page="emacsw32">EmacsW32</esp:link> (Emacs for Windows)</li>
 <li><esp:link page="emacs">Working with ATF in Emacs using ATF mode</esp:link></li>
-<li><esp:link page="projemacs">Managing your project in Emacs</esp:link></li>
+<!-- <li><esp:link page="projunix">Managing your project in Emacs</esp:link></li> -->
 </ul>
 
 <esp:author first-names="Eleanor" last-name="Robson"/>

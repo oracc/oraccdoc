@@ -41,7 +41,7 @@
                 "pathname": "rimanum",
                 "name": "The House of Prisoners",
                 "abbrev": "Rīm-Anum",
-                "blurb": "Rīm-Anum, king of Uruk (ca. 1741–1739 BC) revolted against Samsuiluna of Babylon, son of Hammurapi, and enjoyed a short-lived independence. The archive edited in this project derives from the house of prisoners (bīt asiri) that kept the prisoners of war. The editions and translations were prepared by Andrea Seri and accompanies her book \"The House of Prisoners\" (2013).    <a href="http://www.degruyter.com/view/product/181597">Buy the book</a> from Harrassowitz.   "
+                "blurb": "Rīm-Anum, king of Uruk (ca. 1741–1739 BC) revolted against Samsuiluna of Babylon, son of Hammurapi, and enjoyed a short-lived independence. The archive edited in this project derives from the house of prisoners (bīt asiri) that kept the prisoners of war. The editions and translations were prepared by Andrea Seri and accompanies her book \"The House of Prisoners\" (2013).    &lt;a href="http://www.degruyter.com/view/product/181597"&gt;Buy the book&lt;/a&gt; from Harrassowitz.   "
         } , {
 </pre>
 <p>The <code>projects</code> gives a list of objects, one per project.  Each object contains a subset of the material in the project's configuration object (or <code>config.xml</code> within the Oracc installation.  This information is also available from each project's metadata.json, so the project list is primarily a convenience for anyone wanting to provide a summary of the projects available.</p>

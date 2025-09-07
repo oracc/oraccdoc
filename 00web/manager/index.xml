@@ -15,7 +15,7 @@
 <dt><esp:link page="projects">Overview of Oracc project management</esp:link></dt>
 <dd>The basic unit in the Oracc system is the project. This document gives a basic introduction to how projects are organized and how to create and work with them.</dd>
 
-<!--<dt><esp:link page="projemacs">Project management through Emacs</esp:link></dt><dd>This page describes how to manage your lemmatised Oracc corpus through Emacs, using the CBD (corpus-based dictionary) and ORACC menus. It takes you through uploading files to Oracc, checking the project, adding new entries to the glossaries, making corrections to texts that are already online, and rebuilding the project website.</dd>-->
+<!--<dt><esp:link page="projunix">Project management through Emacs</esp:link></dt><dd>This page describes how to manage your lemmatised Oracc corpus through Emacs, using the CBD (corpus-based dictionary) and ORACC menus. It takes you through uploading files to Oracc, checking the project, adding new entries to the glossaries, making corrections to texts that are already online, and rebuilding the project website.</dd>-->
 
 <dt><esp:link page="projunix">Project management procedures</esp:link></dt>
 <dd>This page describes how to manage your Oracc corpus through a Unix terminal from a PC or Mac. It takes you through uploading files to Oracc, checking the project, adding new entries to the glossaries, making corrections to texts that are already online, and rebuilding the project website.</dd>

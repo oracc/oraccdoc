@@ -18,13 +18,13 @@ for Oracc by <esp:link url="https://www.ucl.ac.uk/advanced-research-computing/ad
 <dt><esp:link page="emacssetup">Preparing to work with Emacs</esp:link></dt>
 <dd>On this page we describe how to obtain, install and configure it for Oracc work.</dd>
 <!--<dt><esp:link page="aquamacs">Starting to use Aquamacs (Emacs for Mac)</esp:link></dt>
-<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in Aquamacs (Emacs for Mac), apart from those provided by atf-mode.</dd>-->
-<dt><esp:link page="emacsw32">Starting to use EmacsW32 (Emacs for PC)</esp:link></dt>
-<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in EmacsW32 (Emacs for Windows), apart from those provided by atf-mode.</dd>
+<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in Aquamacs (Emacs for Mac), apart from those provided by atf-mode.</dd>
+<dt><esp:link page="emacsw32">Starting to use EmacsW32 (Emacs for PC)</esp:link></dt> 
+<dd>Here we give a short description of some features that we have found useful for editing and lemmatising ATF in EmacsW32 (Emacs for Windows), apart from those provided by atf-mode.</dd> -->
 <dt><esp:link page="emacsuse">Working with ATF in Emacs using atf-mode</esp:link></dt>
 <dd>An Emacs major mode is available which makes editing ATF files a bit easier and gives access to the template generator and checker.</dd>
 </dl>
-<p>See also the pages on <esp:link page="projemacs">managing projects with Emacs</esp:link> and <esp:link page="esp">building ESP portals</esp:link>.</p>
+<p>See also the pages on <!--<esp:link page="projunix">managing projects with Emacs</esp:link> and--> <esp:link page="esp">building ESP portals</esp:link>.</p>
 
 <esp:content-last-modified/>
 <esp:email address="osc@oracc.org"/>
